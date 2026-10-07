@@ -1,6 +1,6 @@
 # Moving the fractions app into this repo
 
-Status (2026-10-07): **copied, not yet on the kit.** After the schoolbook rebuild ("Brüche und Dezimalbrüche", Kapitel 1–5) the finished app was copied unchanged into `brueche/index.html` (steps 1 and 6 done), and the landing card links there. It still carries its own copy of the styles and has no link back to the overview. Steps 2–5, 7 and 8 are open. The app's working source is assembled from `prototype/src` (`build.py`) in the project's shared files, with `doctype`/charset/viewport lines prepended, and is published as `brueche/index.html` here.
+Status (2026-10-07): **done.** The app is in `brueche/index.html`, uses `../kit/tokens.css` and `../kit/kit.css`, and has the home link (steps 1–4, 6–8 done). Step 5 (loading `kit.js`) is not done: the app keeps its own JS helpers, with the kit's `tween` fix copied in. The app's working source is the single file `prototype/fraction-workshop.html` in the project's shared files (the older `prototype/src` + `build.py` is stale); it is published here with `doctype`/charset/viewport lines prepended. Known exception to rule 6: on phones, 3.4 (Karopapier) scrolls sideways inside its own drawing area, not the page.
 
 ## Steps
 
