@@ -9,6 +9,7 @@ Live: <https://hashseed.github.io/tutor/>
 | App | Ordner | Thema |
 | --- | --- | --- |
 | Brüche (Bruch-Werkstatt) | [`brueche/`](https://hashseed.github.io/tutor/brueche/) | Brüche und Dezimalbrüche, Kapitel 1–5 |
+| Kommas (Komma-Werkstatt) | [`komma/`](https://hashseed.github.io/tutor/komma/) | Kommaregeln, Kommas in Texte setzen |
 
 ## Aufbau
 

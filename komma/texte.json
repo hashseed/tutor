@@ -1,0 +1,108 @@
+{
+  "_hinweis": "Texte der Komma-Werkstatt. \"text\" ist der richtige Text mit allen Kommas. \"kommas\" hat genau einen Eintrag pro Komma, in der Reihenfolge im Text: Regel-Id aus regeln.json, optional \"optional\": true (wird nie als falsch gewertet) und \"warum\" (Erklärung für genau dieses Komma).",
+  "texte": [
+    {
+      "id": "e-001",
+      "art": "erzaehlung",
+      "titel": "Der verschwundene Schlüssel",
+      "thema": "Familie, Suche, Haustier",
+      "text": "„Wo ist denn nur der Schlüssel?“, fragte Mama am Montagmorgen. Paul zuckte mit den Schultern, denn er hatte ihn nicht gesehen. Seine Schwester Mia suchte im Flur, in der Küche, im Bad und sogar im Kühlschrank. „Mia, schau doch mal in deiner Jackentasche nach!“, rief Paul. Mia schüttelte den Kopf, weil sie ganz sicher war. Plötzlich bellte Bruno laut, und alle drehten sich um. Der Hund, der unter dem Sofa lag, hatte etwas Glänzendes zwischen den Pfoten. „Oh, da ist er ja!“, lachte Mama. Bruno wollte den Schlüssel nicht hergeben, aber für ein Leckerli tauschte er ihn sofort.",
+      "kommas": [
+        { "regel": "woertliche_rede", "warum": "Die Frage „Wo ist denn nur der Schlüssel?“ ist zu Ende, dann kommt der Begleitsatz „fragte Mama“." },
+        { "regel": "satzreihe", "warum": "Vor „denn“ steht ein Komma: „er hatte ihn nicht gesehen“ ist ein zweiter Hauptsatz." },
+        { "regel": "aufzaehlung", "warum": "Mia suchte an vielen Orten: im Flur, in der Küche, im Bad. Die Orte werden aufgezählt." },
+        { "regel": "aufzaehlung", "warum": "Auch zwischen „in der Küche“ und „im Bad“ steht ein Komma. Erst vor „und“ fällt es weg." },
+        { "regel": "anrede", "warum": "Paul spricht Mia direkt an. Die Anrede „Mia“ wird abgetrennt." },
+        { "regel": "woertliche_rede", "warum": "Nach dem Ausrufezeichen und dem Anführungszeichen folgt der Begleitsatz „rief Paul“." },
+        { "regel": "nebensatz", "warum": "„weil“ leitet einen Nebensatz ein: „weil sie ganz sicher war“. Das Verb „war“ steht am Ende." },
+        { "regel": "satzreihe", "optional": true, "warum": "Zwei Hauptsätze sind mit „und“ verbunden. Hier darfst du ein Komma setzen, musst aber nicht." },
+        { "regel": "relativsatz", "warum": "„der unter dem Sofa lag“ erklärt, welcher Hund gemeint ist. Der Relativsatz beginnt hier." },
+        { "regel": "relativsatz", "warum": "Hier endet der Relativsatz „der unter dem Sofa lag“. Er steht mitten im Satz, darum braucht er zwei Kommas." },
+        { "regel": "ausruf", "warum": "„Oh“ ist ein Ausruf am Satzanfang. Danach kommt ein Komma." },
+        { "regel": "woertliche_rede", "warum": "Die wörtliche Rede ist zu Ende, dann folgt der Begleitsatz „lachte Mama“." },
+        { "regel": "gegensatz", "warum": "Vor „aber“ steht immer ein Komma." }
+      ]
+    },
+    {
+      "id": "s-001",
+      "art": "sachtext",
+      "titel": "Der Igel",
+      "thema": "Tiere im Garten, Lexikon",
+      "text": "Der Igel ist ein kleines Säugetier, das in Gärten, Hecken und Wäldern lebt. Auf seinem Rücken trägt er Tausende spitze Stacheln. Wenn ein Igel Gefahr spürt, rollt er sich zu einer Kugel zusammen. Igel sind nachtaktiv, tagsüber schlafen sie in einem Versteck. Nachts suchen sie nach Käfern, Würmern, Schnecken und Raupen. Obst fressen Igel kaum, obwohl viele Menschen das glauben. Im Herbst fressen sie sich ein dickes Fettpolster an, damit sie den Winter überstehen. Ihren Winterschlaf halten sie in einem Nest aus Laub, das gut geschützt ist. Wer einen Igel im Garten haben möchte, sollte einen Laubhaufen liegen lassen. Igel sind niedlich, aber man darf sie nicht einfach mitnehmen.",
+      "kommas": [
+        { "regel": "relativsatz", "warum": "„das in Gärten, Hecken und Wäldern lebt“ erklärt das Nomen „Säugetier“ genauer. Das ist ein Relativsatz." },
+        { "regel": "aufzaehlung", "warum": "Gärten, Hecken und Wälder werden aufgezählt. Vor „und“ steht kein Komma, davor schon." },
+        { "regel": "nebensatz", "warum": "„Wenn ein Igel Gefahr spürt“ ist ein Nebensatz. Er steht vorne, das Komma kommt nach seinem Verb „spürt“." },
+        { "regel": "satzreihe", "warum": "„Igel sind nachtaktiv“ und „tagsüber schlafen sie in einem Versteck“ sind zwei Hauptsätze." },
+        { "regel": "aufzaehlung", "warum": "Käfer, Würmer, Schnecken und Raupen werden aufgezählt." },
+        { "regel": "aufzaehlung", "warum": "Auch zwischen „Würmern“ und „Schnecken“ steht ein Komma. Erst vor „und“ fällt es weg." },
+        { "regel": "nebensatz", "warum": "„obwohl“ leitet einen Nebensatz ein. Das Verb „glauben“ steht am Ende." },
+        { "regel": "nebensatz", "warum": "„damit“ leitet einen Nebensatz ein. Das Verb „überstehen“ steht am Ende." },
+        { "regel": "relativsatz", "warum": "„das gut geschützt ist“ erklärt das Nest genauer. Das ist ein Relativsatz." },
+        { "regel": "nebensatz", "warum": "„Wer einen Igel im Garten haben möchte“ ist ein Nebensatz. Nach dem Verb „möchte“ kommt das Komma." },
+        { "regel": "gegensatz", "warum": "Vor „aber“ steht immer ein Komma." }
+      ]
+    },
+    {
+      "id": "e-002",
+      "art": "erzaehlung",
+      "titel": "Das Fußballturnier",
+      "thema": "Sport, Mannschaft, Ich-Erzählung",
+      "text": "Heute ist endlich das große Turnier, auf das ich so lange gewartet habe. Ich packe meine Schuhe, mein Trikot, die Trinkflasche und einen Apfel ein. „Hast du deine Schienbeinschoner?“, fragt Papa an der Tür. „Ja, die sind in der Tasche“, antworte ich. Unser erstes Spiel verlieren wir knapp, doch dann läuft es besser. Im zweiten Spiel schieße ich ein Tor, als nur noch eine Minute zu spielen ist. Alle jubeln, meine Trainerin klatscht laut in die Hände. „Lukas, das war super!“, ruft sie. Am Ende werden wir Dritter, obwohl wir die jüngste Mannschaft sind.",
+      "kommas": [
+        { "regel": "relativsatz", "warum": "„auf das ich so lange gewartet habe“ erklärt das Turnier genauer. Ein Relativsatz kann auch mit „auf das“ beginnen." },
+        { "regel": "aufzaehlung", "warum": "Schuhe, Trikot, Trinkflasche und Apfel werden aufgezählt." },
+        { "regel": "aufzaehlung", "warum": "Auch zwischen „mein Trikot“ und „die Trinkflasche“ steht ein Komma. Erst vor „und“ fällt es weg." },
+        { "regel": "woertliche_rede", "warum": "Nach der Frage in Anführungszeichen folgt der Begleitsatz „fragt Papa“." },
+        { "regel": "ausruf", "warum": "„Ja“ ist ein Antwortwort am Satzanfang. Danach kommt ein Komma." },
+        { "regel": "woertliche_rede", "warum": "Die wörtliche Rede ist zu Ende, dann folgt der Begleitsatz „antworte ich“." },
+        { "regel": "gegensatz", "warum": "Vor „doch“ steht ein Komma." },
+        { "regel": "nebensatz", "warum": "„als“ leitet hier einen Nebensatz ein: „als nur noch eine Minute zu spielen ist“. Das Verb „ist“ steht am Ende." },
+        { "regel": "satzreihe", "warum": "„Alle jubeln“ und „meine Trainerin klatscht laut in die Hände“ sind zwei Hauptsätze." },
+        { "regel": "anrede", "warum": "Die Trainerin spricht Lukas direkt an. Die Anrede wird abgetrennt." },
+        { "regel": "woertliche_rede", "warum": "Nach dem Ausrufezeichen und dem Anführungszeichen folgt der Begleitsatz „ruft sie“." },
+        { "regel": "nebensatz", "warum": "„obwohl“ leitet einen Nebensatz ein. Das Verb „sind“ steht am Ende." }
+      ]
+    },
+    {
+      "id": "s-002",
+      "art": "sachtext",
+      "titel": "Wie ein Vulkan ausbricht",
+      "thema": "Erde, Naturgewalten, Erklärtext",
+      "text": "Tief unter der Erde ist es so heiß, dass Gestein schmilzt. Dieses flüssige Gestein nennt man Magma. Weil Magma leichter ist als das feste Gestein, steigt es langsam nach oben. Oft sammelt es sich in einer Kammer, die unter dem Vulkan liegt. Dort entstehen Gase, und der Druck wird immer größer. Wenn der Druck zu groß wird, bricht der Vulkan aus. Dann fließt Lava aus dem Krater, Asche fliegt hoch in die Luft. Die Asche kann Dächer, Felder, Straßen und ganze Städte bedecken. Forscher beobachten Vulkane genau, damit sie einen Ausbruch früh erkennen. Sie messen nicht nur die Temperatur, sondern auch kleine Erdbeben.",
+      "kommas": [
+        { "regel": "nebensatz", "warum": "„dass“ leitet einen Nebensatz ein. Das Verb „schmilzt“ steht am Ende." },
+        { "regel": "nebensatz", "warum": "„Weil Magma leichter ist als das feste Gestein“ ist ein Nebensatz. Er ist hier zu Ende, danach kommt der Hauptsatz." },
+        { "regel": "relativsatz", "warum": "„die unter dem Vulkan liegt“ erklärt die Kammer genauer. Das ist ein Relativsatz." },
+        { "regel": "satzreihe", "optional": true, "warum": "Zwei Hauptsätze sind mit „und“ verbunden. Hier darfst du ein Komma setzen, musst aber nicht." },
+        { "regel": "nebensatz", "warum": "„Wenn der Druck zu groß wird“ ist ein Nebensatz. Nach dem Verb „wird“ kommt das Komma." },
+        { "regel": "satzreihe", "warum": "„Dann fließt Lava aus dem Krater“ und „Asche fliegt hoch in die Luft“ sind zwei Hauptsätze." },
+        { "regel": "aufzaehlung", "warum": "Dächer, Felder, Straßen und Städte werden aufgezählt." },
+        { "regel": "aufzaehlung", "warum": "Auch zwischen „Felder“ und „Straßen“ steht ein Komma. Erst vor „und“ fällt es weg." },
+        { "regel": "nebensatz", "warum": "„damit“ leitet einen Nebensatz ein. Das Verb „erkennen“ steht am Ende." },
+        { "regel": "gegensatz", "warum": "Vor „sondern“ steht immer ein Komma, auch bei „nicht nur …, sondern auch“." }
+      ]
+    },
+    {
+      "id": "e-003",
+      "art": "erzaehlung",
+      "titel": "Nachts im Zeltlager",
+      "thema": "Ferien, Abenteuer, Wildtier",
+      "text": "In der ersten Nacht im Zeltlager konnte ich nicht schlafen, weil draußen etwas raschelte. „Jonas, hörst du das auch?“, flüsterte ich. Jonas, der neben mir lag, schnarchte nur leise. Ich nahm meine Taschenlampe, öffnete vorsichtig das Zelt und leuchtete hinaus. Zuerst sah ich nichts, doch dann blitzten zwei kleine Augen auf. „Ach, das ist ja nur ein Fuchs!“, dachte ich erleichtert. Der Fuchs schnupperte an unserem Topf, den wir draußen vergessen hatten. Als ich mich bewegte, lief er schnell davon. Am Morgen erzählte ich allen davon, aber niemand glaubte mir.",
+      "kommas": [
+        { "regel": "nebensatz", "warum": "„weil“ leitet einen Nebensatz ein. Das Verb „raschelte“ steht am Ende." },
+        { "regel": "anrede", "warum": "Hier wird Jonas direkt angesprochen. Die Anrede wird abgetrennt." },
+        { "regel": "woertliche_rede", "warum": "Nach der Frage in Anführungszeichen folgt der Begleitsatz „flüsterte ich“." },
+        { "regel": "relativsatz", "warum": "„der neben mir lag“ erklärt, wer Jonas ist. Der Relativsatz beginnt hier." },
+        { "regel": "relativsatz", "warum": "Hier endet der Relativsatz „der neben mir lag“. Mitten im Satz braucht er zwei Kommas." },
+        { "regel": "aufzaehlung", "warum": "Hier werden Handlungen aufgezählt: nahm, öffnete und leuchtete." },
+        { "regel": "gegensatz", "warum": "Vor „doch“ steht ein Komma." },
+        { "regel": "ausruf", "warum": "„Ach“ ist ein Ausruf am Satzanfang. Danach kommt ein Komma." },
+        { "regel": "woertliche_rede", "warum": "Die wörtliche Rede ist zu Ende, dann folgt der Begleitsatz „dachte ich erleichtert“." },
+        { "regel": "relativsatz", "warum": "„den wir draußen vergessen hatten“ erklärt den Topf genauer. Das ist ein Relativsatz." },
+        { "regel": "nebensatz", "warum": "„Als ich mich bewegte“ ist ein Nebensatz. Nach dem Verb „bewegte“ kommt das Komma." },
+        { "regel": "gegensatz", "warum": "Vor „aber“ steht immer ein Komma." }
+      ]
+    }
+  ]
+}

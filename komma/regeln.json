@@ -1,0 +1,149 @@
+{
+  "_hinweis": "Kommaregeln der Komma-Werkstatt. Beispiel-Markup: {Teil} wird farbig markiert, *Wort* ist das Signalwort, [,] ist das Komma, das eingeblendet wird. Übungssätze: normale Sätze mit Kommas; jedes Komma gehört zur Regel.",
+  "regeln": [
+    {
+      "id": "aufzaehlung",
+      "name": "Aufzählung",
+      "regel": "Zählst du Wörter oder Wortgruppen auf, trennst du sie durch Kommas. Vor „und“ und „oder“ steht kein Komma.",
+      "teil": "die Teile der Aufzählung",
+      "signal": ["und", "oder"],
+      "signalText": "Zwischen allen Teilen der Aufzählung steht ein Komma. Nur vor „und“ oder „oder“ steht keins.",
+      "warum": "Hier werden Dinge aufgezählt. Zwischen die Teile einer Aufzählung gehört ein Komma.",
+      "beispiele": [
+        "Wir kauften {Äpfel}[,] {Birnen}[,] {Pflaumen} *und* {Kirschen}.",
+        "Mia {lachte}[,] {sprang auf} *und* {rannte los}."
+      ],
+      "uebung": [
+        "Im Zoo sahen wir Löwen, Zebras, Affen und Pinguine.",
+        "Tom packte seinen Ranzen, zog die Jacke an und lief zur Schule.",
+        "Rot, Gelb und Blau sind die Grundfarben."
+      ]
+    },
+    {
+      "id": "gegensatz",
+      "name": "Vor aber, sondern, doch",
+      "regel": "Vor den Bindewörtern „aber“, „sondern“, „doch“ und „jedoch“ steht ein Komma.",
+      "teil": "der Teil mit dem Gegensatz",
+      "signal": ["aber", "sondern", "doch", "jedoch"],
+      "signalText": "„aber“, „sondern“, „doch“ und „jedoch“ zeigen einen Gegensatz. Davor steht immer ein Komma.",
+      "warum": "Danach kommt „aber“, „sondern“, „doch“ oder „jedoch“. Vor diesen Wörtern steht immer ein Komma.",
+      "beispiele": [
+        "Das Wasser war kalt[,] *aber* {klar}.",
+        "Wir gingen nicht ins Kino[,] *sondern* {in den Park}."
+      ],
+      "uebung": [
+        "Ich war müde, aber ich wollte noch lesen.",
+        "Das ist kein Hase, sondern ein Kaninchen.",
+        "Der Weg war lang, doch wir kamen pünktlich an."
+      ]
+    },
+    {
+      "id": "satzreihe",
+      "name": "Hauptsatz + Hauptsatz",
+      "regel": "Stehen zwei Hauptsätze nebeneinander, trennst du sie durch ein Komma. Das gilt auch vor „denn“. Vor „und“ oder „oder“ darfst du das Komma weglassen.",
+      "teil": "die beiden Hauptsätze",
+      "signal": ["denn"],
+      "signalText": "Jeder Hauptsatz hat sein eigenes Verb an zweiter Stelle. Auch „denn“ verbindet zwei Hauptsätze.",
+      "warum": "Hier stehen zwei Hauptsätze nebeneinander. Jeder hat sein eigenes Verb. Dazwischen gehört ein Komma.",
+      "beispiele": [
+        "{Es regnete}[,] {wir blieben drinnen}.",
+        "{Ich ziehe eine Jacke an}[,] *denn* {es ist kalt}."
+      ],
+      "uebung": [
+        "Die Sonne schien, die Vögel sangen.",
+        "Lisa lachte, denn der Witz war gut.",
+        "Der Bus kam spät, wir mussten rennen."
+      ]
+    },
+    {
+      "id": "nebensatz",
+      "name": "Hauptsatz + Nebensatz",
+      "regel": "Einen Nebensatz trennst du vom Hauptsatz durch ein Komma ab. Du erkennst ihn am Bindewort am Anfang und am gebeugten Verb am Ende.",
+      "teil": "der Nebensatz",
+      "signal": ["weil", "dass", "wenn", "als", "ob", "obwohl", "damit", "nachdem", "bevor", "während", "wer"],
+      "signalText": "Das Bindewort leitet den Nebensatz ein. Das gebeugte Verb steht am Ende des Nebensatzes.",
+      "warum": "Hier beginnt oder endet ein Nebensatz. Er wird immer durch ein Komma vom Hauptsatz getrennt.",
+      "beispiele": [
+        "Ich bleibe hier[,] {*weil* es regnet}.",
+        "{*Wenn* die Glocke läutet}[,] beginnt die Pause."
+      ],
+      "uebung": [
+        "Ich weiß, dass du recht hast.",
+        "Als wir ankamen, war es schon dunkel.",
+        "Wir spielen draußen, wenn es nicht regnet."
+      ]
+    },
+    {
+      "id": "relativsatz",
+      "name": "Relativsatz",
+      "regel": "Ein Relativsatz erklärt ein Nomen genauer. Er beginnt mit „der“, „die“, „das“ oder „welcher“ und wird durch Kommas abgetrennt. Steht er mitten im Satz, braucht er zwei Kommas.",
+      "teil": "der Relativsatz",
+      "signal": ["der", "die", "das", "den", "dem", "welcher", "welche", "welches"],
+      "signalText": "Das Relativpronomen bezieht sich auf das Nomen davor. Das gebeugte Verb steht am Ende des Relativsatzes.",
+      "warum": "Hier beginnt oder endet ein Relativsatz. Er erklärt ein Nomen genauer und wird mit Kommas abgetrennt.",
+      "beispiele": [
+        "Der Hund[,] {*der* bellt}[,] heißt Bello.",
+        "Ich lese das Buch[,] {*das* du mir geschenkt hast}."
+      ],
+      "uebung": [
+        "Die Frau, die dort wartet, ist meine Tante.",
+        "Wir besuchten die Burg, die auf dem Berg steht.",
+        "Das Fahrrad, das im Hof steht, gehört mir."
+      ]
+    },
+    {
+      "id": "woertliche_rede",
+      "name": "Wörtliche Rede",
+      "regel": "Steht der Begleitsatz nach der wörtlichen Rede, trennst du ihn mit einem Komma ab. Das Komma steht nach dem schließenden Anführungszeichen, auch nach „?“ und „!“.",
+      "teil": "die wörtliche Rede",
+      "signal": ["„", "“"],
+      "signalText": "Nach dem schließenden Anführungszeichen kommt der Begleitsatz: wer spricht.",
+      "warum": "Hier endet die wörtliche Rede und der Begleitsatz folgt. Dazwischen steht ein Komma, auch nach „?“ oder „!“.",
+      "beispiele": [
+        "„{Komm mit}“[,] rief Mia.",
+        "„{Wer war das?}“[,] fragte der Lehrer."
+      ],
+      "uebung": [
+        "„Ich bin gleich zurück“, sagte Papa.",
+        "„Wie spät ist es?“, fragte Anna.",
+        "„Pass auf!“, rief der Trainer."
+      ]
+    },
+    {
+      "id": "anrede",
+      "name": "Anrede",
+      "regel": "Sprichst du jemanden direkt an, trennst du die Anrede durch ein Komma ab. Steht sie mitten im Satz, braucht sie zwei Kommas.",
+      "teil": "die Anrede",
+      "signal": [],
+      "signalText": "Die Person, mit der jemand spricht, wird mit Namen genannt.",
+      "warum": "Hier wird jemand direkt angesprochen. Die Anrede trennst du mit einem Komma vom Rest des Satzes ab.",
+      "beispiele": [
+        "{Tim}[,] hilfst du mir?",
+        "Kommst du mit[,] {Lena}[,] oder bleibst du hier?"
+      ],
+      "uebung": [
+        "Mama, wann essen wir?",
+        "Hör mal zu, Ben!",
+        "Kannst du mir, Papa, beim Tragen helfen?"
+      ]
+    },
+    {
+      "id": "ausruf",
+      "name": "Ausruf am Satzanfang",
+      "regel": "Ausrufe und Antwortwörter wie „ach“, „oh“, „ja“, „nein“ oder „hurra“ am Satzanfang trennst du durch ein Komma ab.",
+      "teil": "der Ausruf",
+      "signal": ["ach", "oh", "ja", "nein", "hurra"],
+      "signalText": "Das Ausrufewort steht ganz vorne und zeigt ein Gefühl oder eine Antwort.",
+      "warum": "Am Satzanfang steht ein Ausruf oder ein Antwortwort. Danach kommt ein Komma.",
+      "beispiele": [
+        "{*Oh*}[,] wie schön!",
+        "{*Nein*}[,] das glaube ich nicht."
+      ],
+      "uebung": [
+        "Ach, das macht doch nichts.",
+        "Ja, ich komme mit.",
+        "Hurra, morgen sind Ferien!"
+      ]
+    }
+  ]
+}
