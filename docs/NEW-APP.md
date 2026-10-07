@@ -21,4 +21,5 @@ Larger apps (like the fractions app) are organised as **parts** (`.unit` in the 
 | Prefix | App |
 | --- | --- |
 | `bw` | Brüche (Bruch-Werkstatt) |
+| `km` | Kommas (Komma-Werkstatt) |
 | `vl` | `vorlage/` (example only) |

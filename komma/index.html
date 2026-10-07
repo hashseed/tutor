@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Komma-Werkstatt · Lern-Werkstatt</title>
+<meta name="description" content="Kommas setzen üben: Regeln ansehen, Kommas in Texte einsetzen und prüfen.">
+<link rel="icon" href="../kit/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/kit.css">
+<style>
+  /* Komma-Werkstatt. App prefix "km-". Colours only via tokens. */
+
+  /* ---- Üben: rules on the left, text on the right ---- */
+  .km-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-items:start}
+  .km-main{display:flex;flex-direction:column;gap:16px;min-width:0}
+  .km-rules{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .km-rules>h3{margin:0;font-size:var(--fs-h3)}
+  .km-rules>p{margin:0 0 4px;color:var(--muted);font-size:var(--fs-small)}
+  @media (min-width:960px){
+    .km-grid{grid-template-columns:330px minmax(0,1fr)}
+    .km-rules{position:sticky;top:78px;max-height:calc(100dvh - 96px);overflow-y:auto;overscroll-behavior:contain;padding:2px 6px 8px 2px}
+  }
+  @media (max-width:959px){.km-rules{order:2}}
+
+  .km-rule{gap:6px;padding:12px 14px;scroll-margin:8px}
+  .km-rule h3{font-size:19px}
+  .km-rule p{font-size:15px}
+  .km-rule .km-ex{background:var(--plate);border-radius:var(--r-sm);padding:6px 10px;font-size:16px}
+  .km-rule .link{align-self:flex-start;font-size:var(--fs-small)}
+  .km-comma{color:var(--accent);font-weight:800}
+
+  /* Text picker */
+  .km-pick{display:flex;flex-direction:column;gap:12px}
+  .km-pick .chip .km-tick{color:var(--good)}
+  .km-pick .chip[aria-pressed="true"] .km-tick{color:inherit}
+
+  /* Text card */
+  .km-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+  .km-art{font-size:var(--fs-label);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--line);border-radius:var(--r-pill);padding:2px 10px}
+  .km-count{font-weight:700;font-variant-numeric:tabular-nums}
+  .km-meta .toggle{margin-left:auto}
+  .km-textcard h3{font-size:var(--fs-h3)}
+
+  /* ---- The gap text (shared by Üben and the rule checks) ---- */
+  .km-text p{margin:0 0 .5em;font-size:21px;line-height:2.15;max-width:62ch}
+  .km-text p:last-child{margin-bottom:0}
+  .km-text.km-small p{font-size:20px}
+  /* A gap is a fixed-width button right after a word, so setting a comma never reflows the text. */
+  .km-w{white-space:nowrap}
+  .km-gap{position:relative;display:inline-block;width:.3em;height:1.25em;margin:0;padding:0 0 0 .02em;border:0;border-radius:5px;background:none;vertical-align:baseline;text-align:left;cursor:pointer;font:inherit;line-height:1.25em}
+  .km-gap::after{content:"";position:absolute;inset:-.4em -.4em}
+  .km-c{position:relative;display:inline-block;font-weight:800;font-size:1.15em;opacity:0;color:var(--ink);transform-origin:50% 80%}
+  .km-gap[aria-pressed="true"] .km-c{opacity:1}
+  @media (hover:hover){.km-text:not(.km-locked) .km-gap:hover .km-c{opacity:.4;color:var(--muted)}
+    .km-text:not(.km-locked) .km-gap[aria-pressed="true"]:hover .km-c{opacity:1;color:var(--ink)}}
+  .km-locked .km-gap{cursor:default}
+  .km-locked .km-gap.km-res{cursor:pointer}
+  .km-gap.km-ok .km-c{opacity:1;color:var(--good)}
+  .km-gap.km-miss .km-c,.km-gap.km-extra .km-c{opacity:1;color:var(--bad);font-size:1.35em}
+  .km-gap.km-extra .km-c::after{content:"";position:absolute;left:-.2em;right:-.2em;top:45%;height:.13em;border-radius:1px;background:var(--bad);transform:rotate(-55deg)}
+  .km-gap.km-opt .km-c{color:var(--muted);opacity:1}
+  .km-gap.km-opt:not([aria-pressed="true"]) .km-c{opacity:.45}
+  .km-gap.km-sel{background:var(--sun-soft);box-shadow:0 0 0 .1em var(--sun)}
+  .km-pop .km-c{animation:km-pop .35s ease-out}
+  @keyframes km-pop{from{transform:scale(2.2) translateY(-.2em);opacity:0}}
+
+  /* Legend under the text after checking */
+  .km-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0;padding:0;list-style:none;font-size:var(--fs-small);color:var(--muted)}
+  .km-legend b{font-size:1.2em}
+  .km-legend .g{color:var(--good)} .km-legend .r{color:var(--bad)} .km-legend .m{color:var(--muted)}
+  .km-legend .s{color:var(--bad);text-decoration:line-through;text-decoration-thickness:2px}
+
+  .readout .km-rname{font:800 22px var(--display);margin:0}
+  .readout .km-score{font:800 44px/1 var(--display);color:var(--accent)}
+
+  /* ---- Regeln: animated example ---- */
+  .km-stage{display:flex;flex-direction:column;justify-content:center;min-height:220px}
+  .km-stage .km-big{margin:0;padding:28px 18px 18px;font-size:clamp(23px,4.2vw,32px);line-height:1.8;text-align:center;text-wrap:balance}
+  .km-part{border-radius:8px;padding:.05em .12em;transition:background-color var(--t-med)}
+  .km-part.on{background:var(--accent-soft)}
+  .km-sig{font-weight:700;text-decoration:underline 3px transparent;text-underline-offset:6px;transition:text-decoration-color var(--t-med)}
+  .km-sig.on{text-decoration-color:var(--sun)}
+  .km-drop{position:relative;color:var(--accent);font-weight:800;opacity:0}
+  .km-signal{display:flex;flex-wrap:wrap;gap:6px}
+  .km-signal span{background:var(--plate);border-radius:var(--r-pill);padding:2px 10px;font-weight:700;font-size:15px}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Navigation">
+  <div class="nav-row">
+    <a class="nav-home" href="../" title="Zur Übersicht"><img class="logo" src="../kit/logo.svg" width="30" height="30" alt=""><b>Übersicht</b></a>
+    <div class="units">
+      <button type="button" class="unit" aria-pressed="true" data-part="ueben"><b>Üben</b><span>Kommas in Texte setzen</span></button>
+      <button type="button" class="unit" aria-pressed="false" data-part="regeln"><b>Regeln</b><span>Jede Regel einzeln</span></button>
+    </div>
+  </div>
+  <div class="nav-row sub">
+    <div class="tabs" role="tablist" aria-label="Kommaregeln" id="rule-tabs" hidden></div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <main>
+    <section class="module" id="ueben">
+      <div class="mod-head">
+        <p class="eyebrow">Üben · Kommas setzen</p>
+        <h2>Wo fehlen die Kommas?</h2>
+        <p class="lede">In diesem Text sind alle Kommas verschwunden. Tippe auf die Lücke nach einem Wort, um ein Komma zu setzen. Noch einmal tippen nimmt es wieder weg.</p>
+      </div>
+
+      <div class="card km-pick">
+        <div class="controls"><div id="pick-art"></div></div>
+        <div class="chips" id="pick-list" aria-label="Text wählen"></div>
+      </div>
+
+      <div class="km-grid">
+        <aside class="km-rules" id="rule-cards" aria-labelledby="rules-h">
+          <h3 id="rules-h">Kommaregeln</h3>
+          <p>Nach dem Prüfen: Tippe auf ein Komma im Text. Dann leuchtet hier die passende Regel auf.</p>
+        </aside>
+
+        <div class="km-main">
+          <div class="card km-textcard">
+            <div class="km-meta">
+              <span class="km-art" id="t-art"></span>
+              <span class="km-count" id="t-count" aria-live="polite"></span>
+              <label class="toggle"><input type="checkbox" id="t-zahl"> Anzahl verraten</label>
+            </div>
+            <h3 id="t-title"></h3>
+            <div id="t-text" role="group" aria-label="Text: Setze die Kommas. Mit den Pfeiltasten wechselst du die Lücke, mit Leertaste oder Komma setzt du ein Komma."></div>
+            <ul class="km-legend" id="t-legend" hidden>
+              <li><b class="g">,</b> richtig</li>
+              <li><b class="r">,</b> fehlt</li>
+              <li><b class="s">,</b> zu viel</li>
+              <li><b class="m">,</b> darf, muss aber nicht</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn go" id="t-check">Prüfen</button>
+            <button type="button" class="btn ghost" id="t-again">Nochmal</button>
+            <button type="button" class="btn ghost" id="t-solve">Lösung zeigen</button>
+            <button type="button" class="btn ghost" id="t-next">Nächster Text →</button>
+          </div>
+          <div class="readout" id="t-out" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="regeln" hidden></section>
+  </main>
+</div>
+
+<script src="../kit/kit.js"></script>
+<script>
+const { $, $$, esc, tween, wait, makeSeg, mountCheck, store, reducedMotion } = Kit;
+const save = store('km');
+
+/* ================= Data ================= */
+let RULES = [], RULE = {}, TEXTS = [];
+
+/* ================= Gap text =================
+   Renders a text whose commas were removed. Every gap after a word is a toggle button.
+   item: {text, kommas:[{regel, optional?, warum?}]}  (one entry per comma in item.text, in order)
+   opts: {small?, onChange(count), onPick(gap)} */
+function gapText(host, item, opts = {}) {
+  host.innerHTML = '';
+  host.classList.add('km-text');
+  host.classList.toggle('km-small', !!opts.small);
+  host.classList.remove('km-locked');
+  const gaps = [];
+  let k = 0, locked = false;
+  item.text.split(/\n+/).forEach(par => {
+    const p = document.createElement('p');
+    const toks = par.trim().split(/\s+/);
+    toks.forEach((tok, i) => {
+      let word = tok, has = false;
+      if (word.endsWith(',')) { has = true; word = word.slice(0, -1); }
+      // Word and its gap stay on one line, so a gap never starts a new line.
+      const w = document.createElement('span');
+      w.className = 'km-w'; w.textContent = word; p.append(w);
+      if (i === toks.length - 1) return;
+      const need = has ? (item.kommas[k++] || { regel: '?' }) : null;
+      // No gap after a full stop, ! or ? (unless a quotation mark closes the speech first).
+      if (need || !/[.!?:;]$/.test(word)) {
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'km-gap'; b.tabIndex = -1;
+        b.setAttribute('aria-pressed', 'false');
+        b.innerHTML = '<span class="km-c" aria-hidden="true">,</span>';
+        const g = { b, need, set: false, word, next: toks[i + 1].replace(/[^\p{L}]/gu, '').toLowerCase(), res: null };
+        g.label = `Lücke nach „${word}“`;
+        b.setAttribute('aria-label', g.label);
+        gaps.push(g); w.append(b);
+      }
+      p.append(' ');
+    });
+    host.append(p);
+  });
+  if (k !== item.kommas.length) console.warn('Kommas und Regeln passen nicht zusammen:', item.id || item.text);
+  if (gaps.length) gaps[0].b.tabIndex = 0;
+
+  const count = () => gaps.filter(g => g.set).length;
+  const required = () => gaps.filter(g => g.need && !g.need.optional).length;
+  function toggle(g) {
+    g.set = !g.set;
+    g.b.setAttribute('aria-pressed', g.set);
+    g.b.classList.remove('km-pop');
+    if (g.set && !reducedMotion.matches) { void g.b.offsetWidth; g.b.classList.add('km-pop'); }
+    opts.onChange && opts.onChange(count());
+  }
+  function focusGap(g) {
+    gaps.forEach(x => x.b.tabIndex = -1);
+    g.b.tabIndex = 0; g.b.focus();
+    g.b.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+  function select(g) {
+    gaps.forEach(x => x.b.classList.toggle('km-sel', x === g));
+    opts.onPick && opts.onPick(g);
+  }
+  gaps.forEach(g => {
+    g.b.addEventListener('click', () => { if (!locked) toggle(g); else if (g.res) select(g); });
+    g.b.addEventListener('focus', () => { gaps.forEach(x => x.b.tabIndex = -1); g.b.tabIndex = 0; });
+  });
+  // Arrow keys move between gaps (roving tabindex); the text is one tab stop.
+  host.onkeydown = e => {
+    if (e.altKey || e.ctrlKey || e.metaKey || e.defaultPrevented) return;
+    const i = gaps.findIndex(g => g.b === e.target);
+    if (i < 0) return;
+    let t = null;
+    if (e.key === 'ArrowRight') t = gaps[i + 1];
+    else if (e.key === 'ArrowLeft') t = gaps[i - 1];
+    else if (e.key === 'Home') t = gaps[0];
+    else if (e.key === 'End') t = gaps[gaps.length - 1];
+    else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') t = lineNeighbour(i, e.key === 'ArrowDown');
+    else if (e.key === ',') { e.preventDefault(); gaps[i].b.click(); return; }
+    if (t) { e.preventDefault(); focusGap(t); }
+  };
+  function lineNeighbour(i, down) {
+    const r = gaps[i].b.getBoundingClientRect(), cx = r.left + r.width / 2;
+    let best = null, bestGap = Infinity, bestDx = Infinity;
+    gaps.forEach(g => {
+      const q = g.b.getBoundingClientRect();
+      const gap = down ? q.top - r.bottom : r.top - q.bottom;
+      if (gap < -2) return;
+      const dx = Math.abs(q.left + q.width / 2 - cx);
+      if (gap < bestGap - 4 || (Math.abs(gap - bestGap) <= 4 && dx < bestDx)) { best = g; bestGap = gap; bestDx = dx; }
+    });
+    return best;
+  }
+
+  function stats() {
+    let ok = 0, miss = 0, extra = 0;
+    gaps.forEach(g => {
+      if (g.need && !g.need.optional) g.set ? ok++ : miss++;
+      else if (!g.need && g.set) extra++;
+    });
+    return { ok, miss, extra, total: required() };
+  }
+  function mark(showAll) {
+    locked = true; host.classList.add('km-locked');
+    gaps.forEach(g => {
+      g.b.classList.remove('km-ok', 'km-miss', 'km-extra', 'km-opt', 'km-res', 'km-sel', 'km-pop');
+      let res = null;
+      if (g.need && g.need.optional) res = 'opt';
+      else if (g.need) res = g.set || showAll ? 'ok' : 'miss';
+      else if (g.set && !showAll) res = 'extra';
+      if (showAll && !g.need) { g.set = false; g.b.setAttribute('aria-pressed', 'false'); }
+      if (showAll && g.need && !g.need.optional) { g.set = true; g.b.setAttribute('aria-pressed', 'true'); }
+      g.res = res;
+      if (res) g.b.classList.add('km-' + res, 'km-res');
+      const rn = g.need && RULE[g.need.regel] ? RULE[g.need.regel].name : '';
+      g.b.setAttribute('aria-label', g.label + ': ' + ({
+        ok: `Komma richtig. Regel: ${rn}`, miss: `Hier fehlt ein Komma. Regel: ${rn}`,
+        extra: 'Dieses Komma ist zu viel.', opt: `Hier darf ein Komma stehen, muss aber nicht. Regel: ${rn}`
+      }[res] || 'kein Komma'));
+    });
+  }
+  return {
+    gaps, count, required, stats,
+    check() { const s = stats(); mark(false); return s; },
+    reveal() { mark(true); },
+    lock() { mark(false); }
+  };
+}
+
+/* Why a comma that the child set does not belong there. */
+function extraWhy(g) {
+  if (g.next === 'und' || g.next === 'oder' || g.next === 'sowie')
+    return `Vor „${g.next}“ steht in einer Aufzählung kein Komma. Das „${g.next}“ verbindet die letzten beiden Teile schon.`;
+  if (g.next === 'als' || g.next === 'wie')
+    return `Bei einem Vergleich mit „${g.next}“ ohne eigenes Verb steht kein Komma, zum Beispiel „größer als ich“.`;
+  return 'Hier gehört kein Komma hin. Lies den Satz leise mit: Beginnt hier ein neuer Hauptsatz, ein Nebensatz, eine wörtliche Rede oder ein neuer Teil einer Aufzählung? Wenn nicht, bleibt die Lücke leer.';
+}
+
+/* Example markup: {Teil} marked, *Wort* signal word, [,] comma that drops in. */
+function exHtml(s, anim) {
+  let h = esc(s);
+  if (anim) h = h.replace(/\{/g, '<span class="km-part">').replace(/\}/g, '</span>').replace(/\*([^*]+)\*/g, '<b class="km-sig">$1</b>').replace(/\[,\]/g, '<span class="km-drop" aria-hidden="true">,</span>');
+  else h = h.replace(/[{}]/g, '').replace(/\*([^*]+)\*/g, '$1').replace(/\[,\]/g, '<b class="km-comma">,</b>');
+  return h;
+}
+const exPlain = s => s.replace(/[{}*]/g, '').replace(/\[,\]/g, ',');
+
+/* ================= Üben ================= */
+const Ueben = (() => {
+  let cur = null, widget = null, checked = false, filter = save.get('filter', 'alle');
+  const done = () => save.get('texte', {});
+  const out = $('#t-out');
+
+  function cards() {
+    const host = $('#rule-cards');
+    RULES.forEach((r, i) => {
+      const c = document.createElement('article');
+      c.className = 'gcard km-rule'; c.dataset.rule = r.id; c.id = 'karte-' + r.id;
+      c.innerHTML = `<h3>${i + 1}. ${esc(r.name)}</h3><p>${esc(r.regel)}</p><p class="km-ex">${exHtml(r.beispiele[0], false)}</p><button type="button" class="link">Regel üben →</button>`;
+      $('.link', c).addEventListener('click', () => Nav.rule(r.id));
+      host.append(c);
+    });
+  }
+  function highlight(id) {
+    $$('.km-rule').forEach(c => c.classList.toggle('flash', c.dataset.rule === id));
+    const c = $('#karte-' + id);
+    if (c && matchMedia('(min-width:960px)').matches) c.scrollIntoView({ block: 'nearest', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+  }
+  function list() { return TEXTS.filter(t => filter === 'alle' || t.art === filter); }
+  function picker() {
+    const host = $('#pick-list'), d = done();
+    host.innerHTML = '';
+    list().forEach(t => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip';
+      b.setAttribute('aria-pressed', cur && t.id === cur.id);
+      b.innerHTML = (d[t.id] ? '<span class="km-tick" aria-hidden="true">✓</span>' : '') + esc(t.titel) + (d[t.id] ? '<span class="sr-only"> (schon geübt)</span>' : '');
+      b.addEventListener('click', () => open(t));
+      host.append(b);
+    });
+  }
+  function countLine(n) {
+    const zahl = $('#t-zahl').checked;
+    $('#t-count').textContent = zahl ? `${n} von ${widget.required()} Kommas gesetzt` : `${n} ${n === 1 ? 'Komma' : 'Kommas'} gesetzt`;
+  }
+  function intro() {
+    out.innerHTML = `<p><b>So geht's:</b> Lies den Text in Ruhe, am besten halblaut. Wo machst du eine kleine Pause? Wo beginnt ein Nebensatz oder eine wörtliche Rede?</p><p>Links stehen die Kommaregeln. Wenn du fertig bist, drück auf <b>Prüfen</b>.</p>`;
+  }
+  function open(t) {
+    cur = t; checked = false;
+    save.set('zuletzt', t.id);
+    $('#t-title').textContent = t.titel;
+    $('#t-art').textContent = t.art === 'sachtext' ? 'Sachtext' : 'Erzählung';
+    $('#t-legend').hidden = true;
+    $('#t-check').disabled = false; $('#t-solve').disabled = false;
+    widget = gapText($('#t-text'), t, { onChange: countLine, onPick: pick });
+    countLine(0); intro(); picker();
+    $$('.km-rule').forEach(c => c.classList.remove('flash'));
+  }
+  function pick(g) {
+    if (g.res === 'extra') {
+      highlight(null);
+      out.innerHTML = `<p class="km-rname">Dieses Komma ist zu viel</p><p>${esc(extraWhy(g))}</p>`;
+      return;
+    }
+    const r = RULE[g.need.regel];
+    highlight(r.id);
+    const head = { ok: 'Richtig gesetzt', miss: 'Hier fehlt ein Komma', opt: 'Dieses Komma darfst du setzen' }[g.res];
+    out.innerHTML = `<p class="eyebrow">${head}</p><p class="km-rname">${esc(r.name)}</p><p>${esc(g.need.warum || r.warum)}</p><p style="color:var(--muted)">Regel: ${esc(r.regel)}</p><button type="button" class="link">Diese Regel üben →</button>`;
+    $('.link', out).addEventListener('click', () => Nav.rule(r.id));
+  }
+  function check() {
+    if (checked) return;
+    checked = true;
+    const s = widget.check();
+    $('#t-legend').hidden = false;
+    $('#t-check').disabled = true; $('#t-solve').disabled = true;
+    // Progress: best result per text, and which rules were missed.
+    const d = done(), prev = d[cur.id];
+    if (!prev || s.ok - s.extra > prev.ok - prev.extra) d[cur.id] = { ok: s.ok, total: s.total, extra: s.extra };
+    save.set('texte', d);
+    const miss = {};
+    widget.gaps.forEach(g => { if (g.res === 'miss') miss[g.need.regel] = (miss[g.need.regel] || 0) + 1; });
+    const stat = save.get('fehler', {});
+    Object.keys(miss).forEach(k => stat[k] = (stat[k] || 0) + miss[k]);
+    save.set('fehler', stat);
+    const worst = Object.keys(miss).sort((a, b) => miss[b] - miss[a])[0];
+    const perfect = s.ok === s.total && !s.extra;
+    out.innerHTML = `<span class="km-score">${s.ok} von ${s.total}</span>
+      <p>${perfect ? '<b>Super! Alle Kommas stehen richtig.</b>' : `Du hast <b>${s.ok} von ${s.total}</b> Kommas richtig gesetzt.`}
+      ${s.miss ? ` ${s.miss === 1 ? 'Ein Komma fehlt' : s.miss + ' Kommas fehlen'}, ${s.miss === 1 ? 'es ist' : 'sie sind'} rot ergänzt.` : ''}
+      ${s.extra ? ` ${s.extra === 1 ? 'Ein Komma ist' : s.extra + ' Kommas sind'} zu viel, ${s.extra === 1 ? 'es ist' : 'sie sind'} rot durchgestrichen.` : ''}</p>
+      <p>Tippe auf ein Komma im Text. Dann siehst du, welche Regel dazu gehört.</p>
+      ${worst ? `<button type="button" class="link">Regel „${esc(RULE[worst].name)}“ noch einmal üben →</button>` : ''}`;
+    if (worst) $('.link', out).addEventListener('click', () => Nav.rule(worst));
+    picker();
+  }
+  function solve() {
+    checked = true; widget.reveal();
+    $('#t-legend').hidden = false;
+    $('#t-check').disabled = true; $('#t-solve').disabled = true;
+    out.innerHTML = `<p class="km-rname">Die Lösung</p><p>So stehen alle Kommas richtig. Tippe auf ein Komma, um die Regel dazu zu sehen. Mit <b>Nochmal</b> kannst du den Text danach selbst üben.</p>`;
+  }
+  function next() {
+    const l = list(), d = done();
+    const i = l.findIndex(t => t.id === cur.id);
+    const rest = [...l.slice(i + 1), ...l.slice(0, i + 1)];
+    open(rest.find(t => !d[t.id]) || rest[0]);
+    $('#t-text').scrollIntoView({ block: 'nearest' });
+  }
+  function init() {
+    cards();
+    makeSeg($('#pick-art'), { label: 'Textart', value: filter, options: [{ v: 'alle', t: 'Alle' }, { v: 'erzaehlung', t: 'Erzählungen' }, { v: 'sachtext', t: 'Sachtexte' }],
+      onChange: v => { filter = v; save.set('filter', v); if (!list().some(t => t.id === cur.id)) open(list()[0]); else picker(); } });
+    $('#t-zahl').checked = save.get('zahl', false);
+    $('#t-zahl').addEventListener('change', e => { save.set('zahl', e.target.checked); countLine(widget.count()); });
+    $('#t-check').addEventListener('click', check);
+    $('#t-again').addEventListener('click', () => open(cur));
+    $('#t-solve').addEventListener('click', solve);
+    $('#t-next').addEventListener('click', next);
+    const last = TEXTS.find(t => t.id === save.get('zuletzt'));
+    open(last && list().includes(last) ? last : list()[0] || TEXTS[0]);
+  }
+  return { init };
+})();
+
+/* ================= Regeln ================= */
+const Regeln = (() => {
+  const host = $('#regeln');
+  let token = 0;
+  function show(id) {
+    const r = RULE[id], n = RULES.indexOf(r) + 1;
+    let ex = 0;
+    host.innerHTML = `
+      <div class="mod-head">
+        <p class="eyebrow">Regel ${n} · ${esc(r.name)}</p>
+        <h2>${esc(r.name)}</h2>
+        <p class="lede">${esc(r.regel)}</p>
+      </div>
+      <div class="lab">
+        <div class="stage km-stage">
+          <p class="km-big" id="r-ex"></p>
+          <p class="hint">Drück auf „Abspielen“: Du siehst, woran du die Stelle für das Komma erkennst.</p>
+        </div>
+        <div class="panel">
+          <div class="actions"><button type="button" class="btn go" id="r-play">Abspielen</button><button type="button" class="btn ghost" id="r-other">Anderes Beispiel</button></div>
+          <div class="readout" id="r-out" aria-live="polite"></div>
+        </div>
+      </div>
+      <div id="r-check"></div>`;
+    const exEl = $('#r-ex', host), outEl = $('#r-out', host);
+    const say = h => { outEl.innerHTML = h; };
+    function load() {
+      token++;
+      exEl.innerHTML = exHtml(r.beispiele[ex], true);
+      exEl.setAttribute('aria-label', exPlain(r.beispiele[ex]));
+      say(`<p>Schau dir den Satz an. Wo fehlt hier ein Komma?</p>`);
+    }
+    async function play() {
+      const my = ++token;
+      const parts = $$('.km-part', exEl), sigs = $$('.km-sig', exEl), drops = $$('.km-drop', exEl);
+      parts.forEach(p => p.classList.remove('on')); sigs.forEach(s => s.classList.remove('on'));
+      drops.forEach(d => { d.style.opacity = 0; d.style.top = ''; });
+      say(`<p>Schau dir den Satz an. Wo fehlt hier ein Komma?</p>`);
+      await wait(700); if (my !== token) return;
+      parts.forEach(p => p.classList.add('on'));
+      say(`<p>Blau markiert: <b>${esc(r.teil)}</b>.</p>`);
+      await wait(1100); if (my !== token) return;
+      if (sigs.length) {
+        sigs.forEach(s => s.classList.add('on'));
+        say(`<p>Gelb unterstrichen: <b>${sigs.map(s => '„' + esc(s.textContent) + '“').join(', ')}</b>. ${esc(r.signalText)}</p>`);
+        await wait(1300); if (my !== token) return;
+      }
+      for (const d of drops) {
+        await tween(450, p => { if (my === token) { d.style.opacity = p; d.style.top = `${(1 - p) * -0.9}em`; } });
+        if (my !== token) return;
+        await wait(250);
+      }
+      say(`<p><b>${drops.length === 1 ? 'Hier steht das Komma.' : 'Hier stehen die Kommas.'}</b></p><p>${esc(r.regel)}</p>` +
+        (r.signal.length && r.id !== 'woertliche_rede' ? `<div class="km-signal" aria-label="Signalwörter">${r.signal.map(s => `<span>${esc(s)}</span>`).join('')}</div>` : ''));
+    }
+    $('#r-play', host).addEventListener('click', play);
+    $('#r-other', host).addEventListener('click', () => { ex = (ex + 1) % r.beispiele.length; load(); play(); });
+    load();
+
+    const items = r.uebung.map(s => ({
+      type: 'task',
+      prompt: 'Setze die fehlenden Kommas in diesen Satz.',
+      mount(body) {
+        const commas = (s.match(/,/g) || []).length;
+        const w = gapText(body, { text: s, kommas: Array.from({ length: commas }, () => ({ regel: r.id })) }, { small: true });
+        return () => {
+          const st = w.stats();
+          if (!st.miss && !st.extra) { w.lock(); return { ok: true, msg: `Alle Kommas stehen richtig. ${esc(r.warum)}` }; }
+          const extra = w.gaps.find(g => g.set && !g.need);
+          if (extra) return { ok: false, msg: `${st.extra === 1 ? 'Ein Komma ist' : st.extra + ' Kommas sind'} zu viel. ${esc(extraWhy(extra))}` };
+          return { ok: false, msg: `${st.miss === 1 ? 'Es fehlt noch ein Komma.' : `Es fehlen noch ${st.miss} Kommas.`} ${esc(r.signalText)}` };
+        };
+      }
+    }));
+    mountCheck($('#r-check', host), items, {
+      onDone: first => { const d = save.get('regeln', {}); d[r.id] = Math.max(d[r.id] || 0, first.filter(Boolean).length); save.set('regeln', d); tabs(id); },
+      next: RULES[n] ? { label: `Nächste Regel: ${RULES[n].name}`, go: () => Nav.rule(RULES[n].id) } : { label: 'Zum Üben mit Texten', go: () => Nav.part('ueben') }
+    });
+  }
+  function tabs(active) {
+    const host = $('#rule-tabs'), d = save.get('regeln', {});
+    host.innerHTML = RULES.map((r, i) => `<button type="button" class="tab${d[r.id] === r.uebung.length ? ' done' : ''}" role="tab" aria-selected="${r.id === active}" aria-controls="regeln" data-rule="${r.id}"><span class="tab-num">${i + 1}</span><span class="tab-name">${esc(r.name)}</span></button>`).join('');
+    $$('.tab', host).forEach(b => b.addEventListener('click', () => Nav.rule(b.dataset.rule)));
+    const a = $('.tab[aria-selected="true"]', host);
+    if (a) a.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+  return { show, tabs };
+})();
+
+/* ================= Navigation ================= */
+const Nav = (() => {
+  function part(p, rule) {
+    $$('.unit').forEach(u => u.setAttribute('aria-pressed', u.dataset.part === p));
+    $('#ueben').hidden = p !== 'ueben';
+    $('#regeln').hidden = p !== 'regeln';
+    $('#rule-tabs').hidden = p !== 'regeln';
+    if (p === 'regeln') {
+      rule = rule || save.get('regel', RULES[0].id);
+      save.set('regel', rule);
+      Regeln.tabs(rule); Regeln.show(rule);
+      history.replaceState(null, '', '#regel-' + rule);
+    } else history.replaceState(null, '', '#ueben');
+    window.scrollTo({ top: 0 });
+  }
+  return { part, rule: id => part('regeln', id) };
+})();
+
+/* ================= Start ================= */
+Promise.all(['regeln.json', 'texte.json'].map(f => fetch(f).then(r => { if (!r.ok) throw new Error(f); return r.json(); })))
+  .then(([rg, tx]) => {
+    RULES = rg.regeln; RULES.forEach(r => RULE[r.id] = r);
+    TEXTS = tx.texte;
+    $$('.unit').forEach(u => u.addEventListener('click', () => Nav.part(u.dataset.part)));
+    Ueben.init();
+    const h = location.hash.slice(1);
+    if (h.startsWith('regel-') && RULE[h.slice(6)]) Nav.rule(h.slice(6));
+    else if (h === 'regeln') Nav.part('regeln');
+  })
+  .catch(() => {
+    $('main').innerHTML = '<div class="tip"><p><b>Die Texte konnten nicht geladen werden.</b> Öffne die Seite über einen Webserver, zum Beispiel mit <code>python3 -m http.server</code>.</p></div>';
+  });
+</script>
+</body>
+</html>
