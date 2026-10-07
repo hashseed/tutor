@@ -106,6 +106,11 @@
     host.classList.add('check');
     let i = 0, first = [], tried = false, solved = false;
     const dots = cls => `<div class="dots" aria-hidden="true">${items.map((_, k) => `<span class="dot ${cls(k)}"></span>`).join('')}</div>`;
+    // Keep the quiz in view: a new question starts just below the sticky navbar, and after an answer the feedback and the button stay on screen.
+    const navBottom = () => { const n = document.querySelector('.navbar'); return (n ? Math.max(0, n.getBoundingClientRect().bottom) : 0) + 12; };
+    const nudge = dy => { if (Math.abs(dy) > 1) window.scrollBy({ top: dy, behavior: RM.matches ? 'auto' : 'smooth' }); };
+    function showTop() { const r = host.getBoundingClientRect(); if (r.top < navBottom() || r.bottom > innerHeight) nudge(r.top - navBottom()); }
+    function showEnd(fb) { const low = host.querySelector('.q-actions').getBoundingClientRect().bottom + 16; if (low > innerHeight) nudge(Math.min(low - innerHeight, fb.getBoundingClientRect().top - navBottom())); }
     function render() {
       const it = items[i]; tried = false; solved = false;
       host.innerHTML = `<div class="check-head"><h3>${title}</h3>${dots(k => k < i ? (first[k] ? 'good' : 'done') : k === i ? 'cur' : '')}</div>
@@ -120,12 +125,17 @@
         if (!tried) { first[i] = ok; tried = true; }
         fb.className = 'feedback ' + (ok ? 'good' : 'bad');
         fb.innerHTML = (ok ? '<b>Richtig!</b> ' : '<b>Noch nicht ganz.</b> ') + msg + (ok && it.after ? `<span class="extra">${it.after}</span>` : '');
+        requestAnimationFrame(() => { host.style.minHeight = ''; showEnd(fb); });
         if (ok && !solved) {
           solved = true;
           const nb = document.createElement('button');
           nb.type = 'button'; nb.className = 'btn';
           nb.textContent = i < items.length - 1 ? 'Nächste Frage' : 'Ergebnis ansehen';
-          nb.addEventListener('click', () => { i++; i < items.length ? render() : summary(); });
+          nb.addEventListener('click', () => {
+            // hold the old height until the answer, so a shorter question doesn't make the page jump
+            i++; host.style.minHeight = i < items.length ? host.offsetHeight + 'px' : '';
+            i < items.length ? render() : summary(); showTop();
+          });
           act.innerHTML = ''; act.appendChild(nb); nb.focus({ preventScroll: true });
         }
       };
@@ -151,7 +161,7 @@
       host.innerHTML = `<div class="check-head"><h3>${title}</h3>${dots(k => first[k] ? 'good' : 'done')}</div>
         <p class="summary">Du hattest <b>${right} von ${items.length}</b> Fragen beim ersten Versuch richtig.${right === items.length ? ' Super gemacht!' : ' Jede falsche Antwort hat dir etwas gezeigt. Das zählt auch.'}</p>
         <div class="q-actions"><button type="button" class="btn ghost" data-again>Noch einmal üben</button>${opts.next ? `<button type="button" class="btn go" data-next>${opts.next.label}</button>` : ''}</div>`;
-      $('[data-again]', host).addEventListener('click', () => { i = 0; first = []; render(); });
+      $('[data-again]', host).addEventListener('click', () => { i = 0; first = []; render(); showTop(); });
       if (opts.next) $('[data-next]', host).addEventListener('click', opts.next.go);
     }
     render();
