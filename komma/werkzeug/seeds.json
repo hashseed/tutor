@@ -1,0 +1,1095 @@
+[
+ {
+  "id": "e-004",
+  "art": "erzaehlung",
+  "thema": "Die Klassenfahrt an die Ostsee",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "anrede",
+   "aufzaehlung",
+   "gegensatz"
+  ],
+  "name": "Ben"
+ },
+ {
+  "id": "s-003",
+  "art": "sachtext",
+  "thema": "Die Feuerwehr",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "nebensatz",
+   "satzreihe",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-005",
+  "art": "erzaehlung",
+  "thema": "Ein Gewitter beim Zelten",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "nebensatz",
+   "aufzaehlung"
+  ],
+  "name": "Niklas"
+ },
+ {
+  "id": "s-004",
+  "art": "sachtext",
+  "thema": "Wie ein Brief zum Empfänger kommt",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "satzreihe",
+   "gegensatz",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-006",
+  "art": "erzaehlung",
+  "thema": "Der Flohmarkt in der Nachbarschaft",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "ausruf",
+   "relativsatz",
+   "nebensatz"
+  ],
+  "name": "Emil"
+ },
+ {
+  "id": "s-005",
+  "art": "sachtext",
+  "thema": "Der tropische Regenwald",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "satzreihe",
+   "aufzaehlung",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-007",
+  "art": "erzaehlung",
+  "thema": "Die Mondrakete aus Pappe",
+  "form": "Tagebucheintrag (Präteritum)",
+  "fokus": [
+   "ausruf",
+   "aufzaehlung",
+   "satzreihe"
+  ],
+  "name": "Elias"
+ },
+ {
+  "id": "s-006",
+  "art": "sachtext",
+  "thema": "Wie Brot gebacken wird",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "relativsatz",
+   "nebensatz",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-008",
+  "art": "erzaehlung",
+  "thema": "Der Wettlauf beim Sportfest",
+  "form": "Erzählung mit viel wörtlicher Rede (Präteritum)",
+  "fokus": [
+   "anrede",
+   "aufzaehlung",
+   "satzreihe"
+  ],
+  "name": "Arne"
+ },
+ {
+  "id": "s-007",
+  "art": "sachtext",
+  "thema": "Wie Pflanzen trinken",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "relativsatz",
+   "nebensatz",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-009",
+  "art": "erzaehlung",
+  "thema": "Der Drache aus dem Märchenbuch",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "satzreihe",
+   "relativsatz"
+  ],
+  "name": "Clara"
+ },
+ {
+  "id": "s-008",
+  "art": "sachtext",
+  "thema": "Der Eisbär",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "gegensatz",
+   "nebensatz",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-010",
+  "art": "erzaehlung",
+  "thema": "Ein Roboter hilft im Haushalt",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "satzreihe",
+   "aufzaehlung"
+  ],
+  "name": "Anton"
+ },
+ {
+  "id": "s-009",
+  "art": "sachtext",
+  "thema": "Der Maulwurf",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "relativsatz",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-011",
+  "art": "erzaehlung",
+  "thema": "Das Rätsel im Museum",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "ausruf",
+   "satzreihe",
+   "relativsatz"
+  ],
+  "name": "Luisa"
+ },
+ {
+  "id": "s-010",
+  "art": "sachtext",
+  "thema": "Eichhörnchen im Winter",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "gegensatz",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-012",
+  "art": "erzaehlung",
+  "thema": "Die Schatzkarte auf dem Dachboden",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "fokus": [
+   "anrede",
+   "aufzaehlung",
+   "relativsatz"
+  ],
+  "name": "Sophie"
+ },
+ {
+  "id": "s-011",
+  "art": "sachtext",
+  "thema": "Schokolade und Kakao",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "satzreihe",
+   "gegensatz",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-013",
+  "art": "erzaehlung",
+  "thema": "Ein Brief von einer Brieffreundin",
+  "form": "Erzählung mit viel wörtlicher Rede (Präteritum)",
+  "fokus": [
+   "ausruf",
+   "aufzaehlung",
+   "gegensatz"
+  ],
+  "name": "Marie"
+ },
+ {
+  "id": "s-012",
+  "art": "sachtext",
+  "thema": "Das Wattenmeer",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "relativsatz",
+   "satzreihe",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-014",
+  "art": "erzaehlung",
+  "thema": "Umzug in eine neue Stadt",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "gegensatz",
+   "relativsatz"
+  ],
+  "name": "Felix"
+ },
+ {
+  "id": "s-013",
+  "art": "sachtext",
+  "thema": "Ritter im Mittelalter",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "aufzaehlung",
+   "nebensatz",
+   "satzreihe"
+  ]
+ },
+ {
+  "id": "e-015",
+  "art": "erzaehlung",
+  "thema": "Ein Fuchs in der Stadt",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "anrede",
+   "satzreihe",
+   "relativsatz"
+  ],
+  "name": "Samuel"
+ },
+ {
+  "id": "s-014",
+  "art": "sachtext",
+  "thema": "Wie Mülltrennung funktioniert",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "aufzaehlung",
+   "gegensatz",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-016",
+  "art": "erzaehlung",
+  "thema": "Die Mutprobe am Sprungturm",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "woertliche_rede",
+   "satzreihe",
+   "gegensatz"
+  ],
+  "name": "Aylin"
+ },
+ {
+  "id": "s-015",
+  "art": "sachtext",
+  "thema": "Der Rhein",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "nebensatz",
+   "relativsatz",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-017",
+  "art": "erzaehlung",
+  "thema": "Ein Hamster ist ausgebüxt",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "anrede",
+   "gegensatz",
+   "relativsatz"
+  ],
+  "name": "Vincent"
+ },
+ {
+  "id": "s-016",
+  "art": "sachtext",
+  "thema": "Wie Bienen Honig machen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "satzreihe",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-018",
+  "art": "erzaehlung",
+  "thema": "Das Weihnachtsgeschenk für Mama",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "ausruf",
+   "aufzaehlung",
+   "satzreihe"
+  ],
+  "name": "David"
+ },
+ {
+  "id": "s-017",
+  "art": "sachtext",
+  "thema": "Die Römer in Germanien",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "relativsatz",
+   "gegensatz",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-019",
+  "art": "erzaehlung",
+  "thema": "Ein Ausflug in die Tropfsteinhöhle",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "woertliche_rede",
+   "nebensatz",
+   "gegensatz"
+  ],
+  "name": "Theo"
+ },
+ {
+  "id": "s-018",
+  "art": "sachtext",
+  "thema": "Die Steinzeit",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "aufzaehlung",
+   "satzreihe",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-020",
+  "art": "erzaehlung",
+  "thema": "Die Bücherei nach Ladenschluss",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "ausruf",
+   "satzreihe",
+   "relativsatz"
+  ],
+  "name": "Leo"
+ },
+ {
+  "id": "s-019",
+  "art": "sachtext",
+  "thema": "Die Pyramiden in Ägypten",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "gegensatz",
+   "nebensatz",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-021",
+  "art": "erzaehlung",
+  "thema": "Streit unter zwei Freundinnen",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "anrede",
+   "satzreihe",
+   "aufzaehlung"
+  ],
+  "name": "Amira"
+ },
+ {
+  "id": "s-020",
+  "art": "sachtext",
+  "thema": "Wie ein Gewitter entsteht",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "gegensatz",
+   "nebensatz",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-022",
+  "art": "erzaehlung",
+  "thema": "Die Fahrradpanne im Wald",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "anrede",
+   "gegensatz",
+   "aufzaehlung"
+  ],
+  "name": "Tilda"
+ },
+ {
+  "id": "s-021",
+  "art": "sachtext",
+  "thema": "Die Erfindung des Buchdrucks",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "satzreihe",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-023",
+  "art": "erzaehlung",
+  "thema": "Die verlorene Brille von Oma",
+  "form": "Tagebucheintrag (Präteritum)",
+  "fokus": [
+   "ausruf",
+   "satzreihe",
+   "nebensatz"
+  ],
+  "name": "Emilia"
+ },
+ {
+  "id": "s-022",
+  "art": "sachtext",
+  "thema": "Der Wasserkreislauf",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "relativsatz",
+   "aufzaehlung",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-024",
+  "art": "erzaehlung",
+  "thema": "Die Theateraufführung der Klasse",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "aufzaehlung",
+   "relativsatz"
+  ],
+  "name": "Leon"
+ },
+ {
+  "id": "s-023",
+  "art": "sachtext",
+  "thema": "Wie Kartoffeln wachsen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "satzreihe",
+   "gegensatz",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-025",
+  "art": "erzaehlung",
+  "thema": "Die Schneeballschlacht",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "ausruf",
+   "satzreihe",
+   "nebensatz"
+  ],
+  "name": "Ole"
+ },
+ {
+  "id": "s-024",
+  "art": "sachtext",
+  "thema": "Wie unser Herz arbeitet",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "aufzaehlung",
+   "gegensatz",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-026",
+  "art": "erzaehlung",
+  "thema": "Ein Nachmittag im Tierheim",
+  "form": "Tagebucheintrag (Präteritum)",
+  "fokus": [
+   "anrede",
+   "relativsatz",
+   "aufzaehlung"
+  ],
+  "name": "Moritz"
+ },
+ {
+  "id": "s-025",
+  "art": "sachtext",
+  "thema": "Wie Papier hergestellt wird",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "satzreihe",
+   "nebensatz",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-027",
+  "art": "erzaehlung",
+  "thema": "Ein Schneetag ohne Schule",
+  "form": "Tagebucheintrag (Präteritum)",
+  "fokus": [
+   "woertliche_rede",
+   "satzreihe",
+   "nebensatz"
+  ],
+  "name": "Jakob"
+ },
+ {
+  "id": "s-026",
+  "art": "sachtext",
+  "thema": "Wie Ameisen zusammenarbeiten",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "gegensatz",
+   "relativsatz",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-028",
+  "art": "erzaehlung",
+  "thema": "Das Lagerfeuer am Strand",
+  "form": "Tagebucheintrag (Präteritum)",
+  "fokus": [
+   "woertliche_rede",
+   "satzreihe",
+   "aufzaehlung"
+  ],
+  "name": "Ben"
+ },
+ {
+  "id": "s-027",
+  "art": "sachtext",
+  "thema": "Warum Blätter im Herbst bunt werden",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "gegensatz",
+   "relativsatz",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-029",
+  "art": "erzaehlung",
+  "thema": "Die Zeitreise in die Ritterzeit",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "ausruf",
+   "aufzaehlung",
+   "nebensatz"
+  ],
+  "name": "Niklas"
+ },
+ {
+  "id": "s-028",
+  "art": "sachtext",
+  "thema": "Wie ein Regenbogen entsteht",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "relativsatz",
+   "satzreihe",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-030",
+  "art": "erzaehlung",
+  "thema": "Ein Geheimgang im Schulkeller",
+  "form": "Tagebucheintrag (Präteritum)",
+  "fokus": [
+   "anrede",
+   "gegensatz",
+   "nebensatz"
+  ],
+  "name": "Emil"
+ },
+ {
+  "id": "s-029",
+  "art": "sachtext",
+  "thema": "Der Storch",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "aufzaehlung",
+   "relativsatz",
+   "satzreihe"
+  ]
+ },
+ {
+  "id": "e-031",
+  "art": "erzaehlung",
+  "thema": "Der Stromausfall am Abend",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "anrede",
+   "aufzaehlung",
+   "satzreihe"
+  ],
+  "name": "Elias"
+ },
+ {
+  "id": "s-030",
+  "art": "sachtext",
+  "thema": "Der Wolf",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "nebensatz",
+   "gegensatz",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-032",
+  "art": "erzaehlung",
+  "thema": "Der erste Tag an der neuen Schule",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "woertliche_rede",
+   "gegensatz",
+   "relativsatz"
+  ],
+  "name": "Arne"
+ },
+ {
+  "id": "s-031",
+  "art": "sachtext",
+  "thema": "Die Zähne",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "satzreihe",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-033",
+  "art": "erzaehlung",
+  "thema": "Der Schulhofgarten",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "ausruf",
+   "satzreihe",
+   "gegensatz"
+  ],
+  "name": "Clara"
+ },
+ {
+  "id": "s-032",
+  "art": "sachtext",
+  "thema": "Warum wir schlafen müssen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "relativsatz",
+   "aufzaehlung",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-034",
+  "art": "erzaehlung",
+  "thema": "Der Besuch beim Zahnarzt",
+  "form": "Tagebucheintrag (Präteritum)",
+  "fokus": [
+   "anrede",
+   "gegensatz",
+   "aufzaehlung"
+  ],
+  "name": "Anton"
+ },
+ {
+  "id": "s-033",
+  "art": "sachtext",
+  "thema": "Das Smartphone",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "relativsatz",
+   "satzreihe",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-035",
+  "art": "erzaehlung",
+  "thema": "Im Kletterwald",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "aufzaehlung",
+   "relativsatz"
+  ],
+  "name": "Luisa"
+ },
+ {
+  "id": "s-034",
+  "art": "sachtext",
+  "thema": "Wie aus einer Raupe ein Schmetterling wird",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "gegensatz",
+   "satzreihe"
+  ]
+ },
+ {
+  "id": "e-036",
+  "art": "erzaehlung",
+  "thema": "Ein verlorener Hund im Park",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "ausruf",
+   "relativsatz",
+   "nebensatz"
+  ],
+  "name": "Sophie"
+ },
+ {
+  "id": "s-035",
+  "art": "sachtext",
+  "thema": "Wale im Ozean",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "gegensatz",
+   "satzreihe",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-037",
+  "art": "erzaehlung",
+  "thema": "Ein Tag als Zirkusartist",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "ausruf",
+   "aufzaehlung",
+   "satzreihe"
+  ],
+  "name": "Marie"
+ },
+ {
+  "id": "s-036",
+  "art": "sachtext",
+  "thema": "Dinosaurier",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "gegensatz",
+   "nebensatz",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-038",
+  "art": "erzaehlung",
+  "thema": "Ein Abenteuer mit dem Floß",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "gegensatz",
+   "aufzaehlung"
+  ],
+  "name": "Felix"
+ },
+ {
+  "id": "s-037",
+  "art": "sachtext",
+  "thema": "Die Sonne",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "satzreihe",
+   "nebensatz",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-039",
+  "art": "erzaehlung",
+  "thema": "Der Kochwettbewerb in der Küche",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "anrede",
+   "gegensatz",
+   "aufzaehlung"
+  ],
+  "name": "Samuel"
+ },
+ {
+  "id": "s-038",
+  "art": "sachtext",
+  "thema": "Das Fahrrad und seine Teile",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "relativsatz",
+   "satzreihe"
+  ]
+ },
+ {
+  "id": "e-040",
+  "art": "erzaehlung",
+  "thema": "Ein verzauberter Regenschirm",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "anrede",
+   "satzreihe",
+   "gegensatz"
+  ],
+  "name": "Aylin"
+ },
+ {
+  "id": "s-039",
+  "art": "sachtext",
+  "thema": "Fledermäuse",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "relativsatz",
+   "nebensatz",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-041",
+  "art": "erzaehlung",
+  "thema": "Das neue Geschwisterchen",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "woertliche_rede",
+   "gegensatz",
+   "aufzaehlung"
+  ],
+  "name": "Vincent"
+ },
+ {
+  "id": "s-040",
+  "art": "sachtext",
+  "thema": "Wie Salz aus dem Meer gewonnen wird",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "satzreihe",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-042",
+  "art": "erzaehlung",
+  "thema": "Die Geburtstagsüberraschung für Opa",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "ausruf",
+   "aufzaehlung",
+   "gegensatz"
+  ],
+  "name": "David"
+ },
+ {
+  "id": "s-041",
+  "art": "sachtext",
+  "thema": "Die Alpen",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "relativsatz",
+   "satzreihe",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-043",
+  "art": "erzaehlung",
+  "thema": "Das Baumhaus",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "fokus": [
+   "anrede",
+   "satzreihe",
+   "gegensatz"
+  ],
+  "name": "Theo"
+ },
+ {
+  "id": "s-042",
+  "art": "sachtext",
+  "thema": "Korallenriffe",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "aufzaehlung",
+   "relativsatz"
+  ]
+ },
+ {
+  "id": "e-044",
+  "art": "erzaehlung",
+  "thema": "Das Kanurennen am See",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "ausruf",
+   "relativsatz",
+   "satzreihe"
+  ],
+  "name": "Leo"
+ },
+ {
+  "id": "s-043",
+  "art": "sachtext",
+  "thema": "Wie Ebbe und Flut entstehen",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "aufzaehlung",
+   "gegensatz",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-045",
+  "art": "erzaehlung",
+  "thema": "Der Ausflug in den Freizeitpark",
+  "form": "Ich-Erzählung im Präsens",
+  "fokus": [
+   "woertliche_rede",
+   "gegensatz",
+   "relativsatz"
+  ],
+  "name": "Amira"
+ },
+ {
+  "id": "s-044",
+  "art": "sachtext",
+  "thema": "Wie ein Flugzeug fliegen kann",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "satzreihe",
+   "aufzaehlung"
+  ]
+ },
+ {
+  "id": "e-046",
+  "art": "erzaehlung",
+  "thema": "Der Laternenumzug",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "ausruf",
+   "aufzaehlung",
+   "satzreihe"
+  ],
+  "name": "Tilda"
+ },
+ {
+  "id": "s-045",
+  "art": "sachtext",
+  "thema": "Das Leben der Pinguine",
+  "form": "kurzer Bericht (Präteritum)",
+  "fokus": [
+   "nebensatz",
+   "relativsatz",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-047",
+  "art": "erzaehlung",
+  "thema": "Ein Pony namens Wolke",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "relativsatz",
+   "satzreihe"
+  ],
+  "name": "Emilia"
+ },
+ {
+  "id": "s-046",
+  "art": "sachtext",
+  "thema": "Die Olympischen Spiele",
+  "form": "Sachtext mit einer Frage als Überschrift (Präsens)",
+  "fokus": [
+   "aufzaehlung",
+   "nebensatz",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-048",
+  "art": "erzaehlung",
+  "thema": "Ferien auf dem Bauernhof",
+  "form": "Erzählung mit viel wörtlicher Rede (Präteritum)",
+  "fokus": [
+   "anrede",
+   "relativsatz",
+   "aufzaehlung"
+  ],
+  "name": "Leon"
+ },
+ {
+  "id": "s-047",
+  "art": "sachtext",
+  "thema": "Wie ein Kompass funktioniert",
+  "form": "Lexikonartikel (Präsens)",
+  "fokus": [
+   "nebensatz",
+   "satzreihe",
+   "gegensatz"
+  ]
+ },
+ {
+  "id": "e-049",
+  "art": "erzaehlung",
+  "thema": "Ein Kuchen, der schiefgeht",
+  "form": "Tagebucheintrag (Präteritum)",
+  "fokus": [
+   "ausruf",
+   "relativsatz",
+   "gegensatz"
+  ],
+  "name": "Ole"
+ },
+ {
+  "id": "s-048",
+  "art": "sachtext",
+  "thema": "Der Mond und seine Phasen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "aufzaehlung",
+   "nebensatz",
+   "satzreihe"
+  ]
+ },
+ {
+  "id": "e-050",
+  "art": "erzaehlung",
+  "thema": "Eine Nacht im Schullandheim",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "fokus": [
+   "anrede",
+   "relativsatz",
+   "aufzaehlung"
+  ],
+  "name": "Moritz"
+ },
+ {
+  "id": "s-049",
+  "art": "sachtext",
+  "thema": "Die Wikinger",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "fokus": [
+   "gegensatz",
+   "satzreihe",
+   "nebensatz"
+  ]
+ },
+ {
+  "id": "e-051",
+  "art": "erzaehlung",
+  "thema": "Ein Papagei, der Wörter nachplappert",
+  "form": "Ich-Erzählung im Präteritum",
+  "fokus": [
+   "woertliche_rede",
+   "gegensatz",
+   "aufzaehlung"
+  ],
+  "name": "Jakob"
+ }
+]

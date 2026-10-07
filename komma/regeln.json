@@ -60,7 +60,7 @@
       "name": "Hauptsatz + Nebensatz",
       "regel": "Einen Nebensatz trennst du vom Hauptsatz durch ein Komma ab. Du erkennst ihn am Bindewort am Anfang und am gebeugten Verb am Ende.",
       "teil": "der Nebensatz",
-      "signal": ["weil", "dass", "wenn", "als", "ob", "obwohl", "damit", "nachdem", "bevor", "während", "wer"],
+      "signal": ["weil", "dass", "wenn", "als", "ob", "obwohl", "damit", "nachdem", "bevor", "während", "wer", "wie", "wo", "warum"],
       "signalText": "Das Bindewort leitet den Nebensatz ein. Das gebeugte Verb steht am Ende des Nebensatzes.",
       "warum": "Hier beginnt oder endet ein Nebensatz. Er wird immer durch ein Komma vom Hauptsatz getrennt.",
       "beispiele": [
@@ -78,7 +78,7 @@
       "name": "Relativsatz",
       "regel": "Ein Relativsatz erklärt ein Nomen genauer. Er beginnt mit „der“, „die“, „das“ oder „welcher“ und wird durch Kommas abgetrennt. Steht er mitten im Satz, braucht er zwei Kommas.",
       "teil": "der Relativsatz",
-      "signal": ["der", "die", "das", "den", "dem", "welcher", "welche", "welches"],
+      "signal": ["der", "die", "das", "den", "dem", "welcher", "welche", "welches", "wo"],
       "signalText": "Das Relativpronomen bezieht sich auf das Nomen davor. Das gebeugte Verb steht am Ende des Relativsatzes.",
       "warum": "Hier beginnt oder endet ein Relativsatz. Er erklärt ein Nomen genauer und wird mit Kommas abgetrennt.",
       "beispiele": [

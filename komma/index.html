@@ -37,6 +37,10 @@
   .km-pick{display:flex;flex-direction:column;gap:12px}
   .km-pick .chip .km-tick{color:var(--good)}
   .km-pick .chip[aria-pressed="true"] .km-tick{color:inherit}
+  .km-stand{margin:0;color:var(--muted)}
+  .km-all summary{cursor:pointer;font-weight:700;color:var(--accent);width:max-content;max-width:100%}
+  .km-all[open] summary{margin-bottom:10px}
+  .km-all .chips{max-height:320px;overflow-y:auto;padding:2px}
 
   /* Text card */
   .km-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
@@ -114,7 +118,11 @@
 
       <div class="card km-pick">
         <div class="controls"><div id="pick-art"></div></div>
-        <div class="chips" id="pick-list" aria-label="Text wählen"></div>
+        <p class="km-stand" id="pick-stand"></p>
+        <details class="km-all">
+          <summary id="pick-sum">Alle Texte zeigen</summary>
+          <div class="chips" id="pick-list" aria-label="Text wählen"></div>
+        </details>
       </div>
 
       <div class="km-grid">
@@ -327,9 +335,12 @@ const Ueben = (() => {
   }
   function list() { return TEXTS.filter(t => filter === 'alle' || t.art === filter); }
   function picker() {
-    const host = $('#pick-list'), d = done();
+    const host = $('#pick-list'), d = done(), l = list();
+    const n = l.filter(t => d[t.id]).length;
+    $('#pick-stand').textContent = `Du hast ${n} von ${l.length} Texten geübt. „Nächster Text“ wählt einen, den du noch nicht kennst.`;
+    $('#pick-sum').textContent = `Alle ${l.length} Texte zeigen`;
     host.innerHTML = '';
-    list().forEach(t => {
+    l.forEach(t => {
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'chip';
       b.setAttribute('aria-pressed', cur && t.id === cur.id);
