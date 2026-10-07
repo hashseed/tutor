@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stil-Galerie · Lern-Werkstatt</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="kit.css">
+<style>
+  /* Gallery-only layout */
+  .gx-sec{display:flex;flex-direction:column;gap:14px}
+  .gx-sec>h2{margin:18px 0 0;font-size:28px}
+  .gx-sec>p{margin:0;color:var(--muted);max-width:70ch}
+  .gx-sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .gx-sw div{border:var(--bw) solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--card);font-size:13px}
+  .gx-sw i{display:block;height:54px;border-bottom:1px solid var(--line)}
+  .gx-sw code{display:block;padding:6px 10px 0;font-weight:700}
+  .gx-sw span{display:block;padding:0 10px 8px;color:var(--muted)}
+  .gx-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .gx-type p{margin:0}
+  code{font-size:.9em}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Navigation">
+  <div class="nav-row">
+    <a class="nav-home" href="../" title="Zur Übersicht"><img class="logo" src="logo.svg" width="30" height="30" alt=""><b>Übersicht</b></a>
+    <div class="units">
+      <a class="unit" href="#farben" aria-current="page"><b>Farben</b><span>Tokens</span></a>
+      <a class="unit" href="#steuerung"><b>Steuerung</b></a>
+      <a class="unit" href="#karten"><b>Karten</b></a>
+      <a class="unit" href="#test"><b>Teste dich</b></a>
+    </div>
+  </div>
+  <div class="nav-row sub">
+    <div class="tabs" role="tablist" aria-label="Beispiel">
+      <button type="button" class="tab" role="tab" aria-selected="true"><span class="tab-num">1</span><span class="tab-name">Ausgewählt</span></button>
+      <button type="button" class="tab done" role="tab" aria-selected="false"><span class="tab-num">2</span><span class="tab-name">Erledigt</span></button>
+      <button type="button" class="tab" role="tab" aria-selected="false"><span class="tab-num">3</span><span class="tab-name">Offen</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="mod-head">
+    <p class="eyebrow">Lern-Werkstatt · Design-System</p>
+    <h2>Stil-Galerie</h2>
+    <p class="lede">Alle gemeinsamen Bausteine auf einer Seite. Jede App nutzt genau diese Farben, Schriften und Bausteine. Ändert man <code>kit/tokens.css</code>, ändern sich alle Apps.</p>
+  </div>
+  <div id="theme"></div>
+
+  <section class="gx-sec" id="farben">
+    <h2>Farben</h2>
+    <p>Nur über Variablen verwenden, z.&nbsp;B. <code>var(--accent)</code>. Im dunklen Modus bekommen alle Variablen automatisch andere Werte.</p>
+    <div class="gx-sw" id="swatches"></div>
+    <h2>Schrift</h2>
+    <div class="card gx-type">
+      <p style="font:800 var(--fs-h2)/1.05 var(--display)">Überschrift (--display)</p>
+      <p style="font:800 var(--fs-h3) var(--display)">Kartentitel 24px</p>
+      <p class="lede">Einleitung 19px (.lede): kurze Sätze, du-Form, freundlich.</p>
+      <p>Fließtext 17px (--body, Atkinson Hyperlegible, gut lesbar für Kinder).</p>
+      <p class="ctl-label">Steuerungs-Beschriftung</p>
+      <p style="font-size:30px">Zahlen: <span class="frac"><span>3</span><span>4</span></span> und <span class="mixed"><span class="whole">2</span><span class="frac sm"><span>1</span><span>3</span></span></span> · 0,75 · 3 : 4 · 2 · 5</p>
+    </div>
+  </section>
+
+  <section class="gx-sec" id="steuerung">
+    <h2>Steuerung und Knöpfe</h2>
+    <div class="gx-row">
+      <button type="button" class="btn go">Los (.btn.go)</button>
+      <button type="button" class="btn">Weiter (.btn)</button>
+      <button type="button" class="btn ghost">Zurück (.btn.ghost)</button>
+      <button type="button" class="btn" disabled>Gesperrt</button>
+      <button type="button" class="link">Textknopf (.link)</button>
+      <span>Ein <button type="button" class="term">Fachbegriff</button> im Text (.term)</span>
+    </div>
+    <div class="controls">
+      <div id="g-step"></div>
+      <div id="g-seg"></div>
+      <div class="ctl"><span class="ctl-label">Eingabe</span><input class="field" inputmode="numeric" value="7" aria-label="Beispiel-Eingabe"></div>
+      <label class="toggle"><input type="checkbox"> Erst schätzen</label>
+    </div>
+    <div class="chips" role="group" aria-label="Beispiel-Auswahl">
+      <button type="button" class="chip" aria-pressed="true">Ausgewählt</button>
+      <button type="button" class="chip" aria-pressed="false">Nicht ausgewählt</button>
+    </div>
+  </section>
+
+  <section class="gx-sec" id="karten">
+    <h2>Arbeitsplatz: Bühne, Steuerung, Anzeige</h2>
+    <p>Jeder Abschnitt einer App hat diese Form: links eine Zeichnung, die sich bewegt, rechts Steuerung und eine Anzeige, die erklärt, was man sieht.</p>
+    <div class="lab">
+      <div class="stage">
+        <svg id="g-svg" viewBox="0 0 640 200" role="img" aria-label="Beispielzeichnung"></svg>
+        <p class="hint">Tippe auf ein Kästchen (.shape.tap).</p>
+      </div>
+      <div class="panel">
+        <div class="actions"><button type="button" class="btn go" id="g-play">Abspielen</button></div>
+        <div class="readout" id="g-out" aria-live="polite"></div>
+      </div>
+    </div>
+    <h2>Karten und Hinweise</h2>
+    <div class="apps">
+      <div class="card"><h3>Karte (.card)</h3><p>Für alles, was zusammengehört.</p></div>
+      <div class="tip"><p><b>Tipp (.tip)</b></p><p>Für Hinweise, die freundlich auffallen sollen.</p></div>
+      <div class="tip good"><p><b>Geschafft (.tip.good)</b></p><p>Für Erfolgsmeldungen.</p></div>
+      <div class="gcard"><h3>Nenner<small>Fachbegriff (.gcard)</small></h3><p>Die Zahl unter dem Bruchstrich.</p></div>
+    </div>
+    <h2>App-Karten (Startseite)</h2>
+    <div class="apps">
+      <a class="app-card" style="--c:var(--subj-1)" href="#karten"><span class="app-icon"></span><p class="eyebrow">Mathe</p><h3>Fach 1</h3><p>--subj-1</p><span class="go-row">Los geht's →</span></a>
+      <a class="app-card" style="--c:var(--subj-2)" href="#karten"><span class="app-icon"></span><p class="eyebrow">Fach 2</p><h3>Fach 2</h3><p>--subj-2</p><span class="go-row">Los geht's →</span></a>
+      <a class="app-card" style="--c:var(--subj-3)" href="#karten"><span class="app-icon"></span><p class="eyebrow">Fach 3</p><h3>Fach 3</h3><p>--subj-3</p><span class="go-row">Los geht's →</span></a>
+      <div class="app-card soon"><span class="app-icon"></span><p class="eyebrow" style="color:var(--muted)">Bald</p><h3>Platzhalter</h3><p>.app-card.soon</p></div>
+    </div>
+  </section>
+
+  <section class="gx-sec" id="test">
+    <h2>Teste dich selbst</h2>
+    <p><code>Kit.mountCheck(host, items, opts)</code>: Auswahlfragen und Aufgaben zum Selbermachen, mit einer Erklärung für jede falsche Antwort.</p>
+    <div id="g-check"></div>
+  </section>
+</div>
+
+<script src="kit.js"></script>
+<script>
+const { $, S, tween, range, makeStepper, makeSeg, mountCheck } = Kit;
+
+/* Theme switch (the gallery only; apps simply follow the system setting) */
+makeSeg($('#theme'), { label: 'Ansicht', value: 'auto', options: [{ v: 'auto', t: 'System' }, { v: 'light', t: 'Hell' }, { v: 'dark', t: 'Dunkel' }],
+  onChange: v => { v === 'auto' ? document.documentElement.removeAttribute('data-theme') : document.documentElement.dataset.theme = v; swatches(); } });
+
+/* Swatches read the live values, so they always match tokens.css */
+const TOK = [['--paper', 'Seiten-Hintergrund'], ['--card', 'Karten'], ['--plate', 'Vertiefung'], ['--ink', 'Text, Umrisse'], ['--muted', 'Nebentext'], ['--line', 'Rahmen'],
+  ['--accent', 'Hauptfarbe'], ['--accent-soft', 'Hover'], ['--sun', 'Los-Knopf, Fokus'], ['--sun-soft', 'Tipp'], ['--good', 'Richtig'], ['--good-soft', 'Richtig hell'],
+  ['--bad', 'Falsch'], ['--bad-soft', 'Falsch hell'], ['--subj-1', 'Fach 1'], ['--subj-2', 'Fach 2'], ['--subj-3', 'Fach 3'], ['--subj-4', 'Fach 4']];
+function swatches() {
+  const cs = getComputedStyle(document.documentElement);
+  $('#swatches').innerHTML = TOK.map(([k, d]) => `<div><i style="background:var(${k})"></i><code>${k}</code><span>${d} · ${cs.getPropertyValue(k).trim()}</span></div>`).join('');
+}
+swatches();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', swatches);
+
+makeStepper($('#g-step'), { label: 'Teile', values: range(2, 8), value: 4, onChange: v => { n = v; draw(); } });
+makeSeg($('#g-seg'), { label: 'Form', options: [{ v: 'rect', t: 'Streifen' }, { v: 'circle', t: 'Kreise' }], value: 'rect', onChange: v => { form = v; draw(); } });
+
+/* Drawing primitives demo */
+let n = 4, form = 'rect', on = new Set([0]), token = 0;
+const svg = $('#g-svg');
+function draw() {
+  svg.textContent = ''; on = new Set([...on].filter(i => i < n));
+  const w = 520 / n;
+  S('line', { x1: 60, x2: 580, y1: 170, y2: 170, class: 'axis' }, svg);
+  for (let i = 0; i < n; i++) {
+    const a = { class: 'shape tap' + (on.has(i) ? ' on' : ''), tabindex: 0, role: 'button', 'aria-label': `Teil ${i + 1}` };
+    const el = form === 'rect' ? S('rect', { ...a, x: 60 + i * w, y: 40, width: w, height: 90, rx: 4 }, svg) : S('circle', { ...a, cx: 60 + (i + .5) * w, cy: 85, r: Math.min(45, w / 2 - 4) }, svg);
+    const flip = () => { on.has(i) ? on.delete(i) : on.add(i); draw(); };
+    el.addEventListener('click', flip);
+    el.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } });
+    S('line', { x1: 60 + i * w, x2: 60 + i * w, y1: 162, y2: 178, class: 'tick' }, svg);
+  }
+  S('line', { x1: 580, x2: 580, y1: 162, y2: 178, class: 'tick' }, svg);
+  S('text', { x: 320, y: 30, 'text-anchor': 'middle', class: 'cap' }, svg).textContent = 'Beschriftung (.cap)';
+  const bead = S('circle', { cx: 60, cy: 170, r: 11, class: 'bead' }, svg);
+  bead.id = 'g-bead';
+  $('#g-out').innerHTML = `<span class="big">${on.size}<span style="color:var(--muted)"> / ${n}</span></span><p><b>${on.size} von ${n}</b> Teilen sind gefärbt.</p><p class="hint" style="margin:0">Die Anzeige erklärt in Worten, was die Zeichnung gerade zeigt.</p>`;
+}
+draw();
+$('#g-play').addEventListener('click', async () => {
+  const my = ++token, b = $('#g-bead'), w = 520 / n;
+  for (let i = 1; i <= on.size; i++) {
+    const x0 = 60 + (i - 1) * w;
+    await tween(500, p => { if (my === token) { b.setAttribute('cx', x0 + w * p); b.setAttribute('cy', 170 - Math.sin(p * Math.PI) * 30); } });
+    if (my !== token) return;
+  }
+});
+
+mountCheck($('#g-check'), [
+  { type: 'mcq', prompt: 'Welcher Knopf startet etwas Neues?',
+    options: [{ text: 'Der gelbe (.btn.go)', correct: true }, { text: 'Der durchsichtige', why: 'Der durchsichtige Knopf (.btn.ghost) ist für Nebensachen wie »Leeren« oder »Zurück«.' }, { text: 'Ein Fachbegriff', why: 'Ein Fachbegriff springt zur Erklärung des Wortes, er startet nichts.' }],
+    explain: 'Der gelbe Knopf ist die Hauptaktion. Pro Bereich gibt es höchstens einen davon.' },
+  { type: 'task', prompt: 'Färbe genau 2 Kästchen.',
+    mount(body) {
+      const st = new Set();
+      body.innerHTML = '<svg viewBox="0 0 300 70" width="300" style="max-width:100%"></svg>';
+      const s = body.querySelector('svg');
+      for (let i = 0; i < 4; i++) { const r = S('rect', { x: 4 + i * 72, y: 4, width: 70, height: 60, rx: 4, class: 'shape tap', tabindex: 0 }, s); r.addEventListener('click', () => { st.has(i) ? st.delete(i) : st.add(i); r.classList.toggle('on'); }); }
+      return () => st.size === 2 ? { ok: true, msg: 'Genau 2 Kästchen sind gefärbt.' } : { ok: false, msg: `Du hast ${st.size} gefärbt. Es sollen genau 2 sein.` };
+    } }
+]);
+</script>
+</body>
+</html>

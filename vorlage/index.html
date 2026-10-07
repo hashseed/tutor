@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Starter for a new app. Copy this folder to /<app-name>/ and follow docs/NEW-APP.md. -->
+<title>Vorlage · Lern-Werkstatt</title>
+<link rel="icon" href="../kit/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/kit.css">
+<style>
+  /* App-only styles. Prefix classes with the app's short name (here "vl-").
+     Colours only via tokens: var(--accent), var(--ink) … never #hex. */
+  .vl-count{font:800 22px var(--display)}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Navigation">
+  <div class="nav-row">
+    <a class="nav-home" href="../" title="Zur Übersicht"><img class="logo" src="../kit/logo.svg" width="30" height="30" alt=""><b>Übersicht</b></a>
+    <div class="units">
+      <button type="button" class="unit" aria-pressed="true" data-part="p1"><b>Teil 1</b><span>Erste Schritte</span></button>
+      <button type="button" class="unit end" aria-pressed="false" data-part="glossar"><b>Fachbegriffe</b></button>
+    </div>
+  </div>
+  <div class="nav-row sub">
+    <div class="tabs" role="tablist" aria-label="Abschnitte">
+      <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="a1"><span class="tab-num">1</span><span class="tab-name">Kreise färben</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <main>
+    <section class="module" id="a1" role="tabpanel">
+      <div class="mod-head">
+        <p class="eyebrow">Abschnitt 1 · Kreise färben</p>
+        <h2>Wie viele sind gefärbt?</h2>
+        <p class="lede">Tippe auf die Kreise, um sie zu färben. Rechts siehst du, wie viele es sind.</p>
+      </div>
+      <div class="lab">
+        <div class="stage">
+          <svg id="a1-svg" viewBox="0 0 640 220" role="img" aria-label="Kreise zum Antippen"></svg>
+          <p class="hint">Tipp: Du kannst auch mit der Tastatur färben (Tab, dann Leertaste).</p>
+        </div>
+        <div class="panel">
+          <div class="controls"><div id="a1-n"></div></div>
+          <div class="actions"><button type="button" class="btn go" id="a1-all">Alle färben</button><button type="button" class="btn ghost" id="a1-clear">Leeren</button></div>
+          <div class="readout" id="a1-out" aria-live="polite"></div>
+        </div>
+      </div>
+      <div id="a1-check"></div>
+    </section>
+  </main>
+</div>
+
+<script src="../kit/kit.js"></script>
+<script>
+const { $, S, tween, range, makeStepper, mountCheck, store } = Kit;
+const save = store('vl'); // every app uses its own storage prefix
+
+(function () {
+  const svg = $('#a1-svg');
+  let n = 5, on = new Set(save.get('a1-on', [0, 1])), token = 0;
+  makeStepper($('#a1-n'), { label: 'Kreise', values: range(2, 8), value: n, onChange: v => { n = v; draw(true); } });
+  $('#a1-all').addEventListener('click', () => { on = new Set(range(0, n - 1)); draw(); });
+  $('#a1-clear').addEventListener('click', () => { on.clear(); draw(); });
+
+  function draw(anim) {
+    const my = ++token; svg.textContent = '';
+    const gap = 600 / n, r = Math.min(34, gap / 2 - 6);
+    for (let i = 0; i < n; i++) {
+      const c = S('circle', { cx: 20 + gap * (i + .5), cy: 110, r: anim ? 0 : r, class: 'shape tap' + (on.has(i) ? ' on' : ''), tabindex: 0, role: 'button', 'aria-label': `Kreis ${i + 1}` }, svg);
+      const flip = () => { on.has(i) ? on.delete(i) : on.add(i); draw(); };
+      c.addEventListener('click', flip);
+      c.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } });
+      if (anim) tween(400 + i * 60, p => { if (my === token) c.setAttribute('r', r * p); });
+    }
+    const k = [...on].filter(i => i < n).length;
+    save.set('a1-on', [...on]);
+    $('#a1-out').innerHTML = `<span class="big">${k}</span><p><b>${k} von ${n}</b> Kreisen sind gefärbt.</p>`;
+  }
+  draw(true);
+
+  mountCheck($('#a1-check'), [
+    { type: 'mcq', prompt: 'Wie viele Kreise brauchst du, damit 3 gefärbt und 2 leer sind?',
+      options: [{ text: '5', correct: true }, { text: '3', why: '3 sind nur die gefärbten. Die leeren zählen auch mit.' }, { text: '6', why: 'Zähl noch einmal nach: 3 und 2 sind zusammen 5.' }],
+      explain: '3 gefärbte und 2 leere Kreise sind zusammen 5 Kreise.' }
+  ]);
+})();
+</script>
+</body>
+</html>

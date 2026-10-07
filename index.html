@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lern-Werkstatt</title>
+<meta name="description" content="Interaktive Lern-Apps zum Ausprobieren: Bilder bewegen, selbst bauen, sich selbst testen.">
+<link rel="icon" href="kit/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="kit/tokens.css">
+<link rel="stylesheet" href="kit/kit.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <img class="logo" src="kit/logo.svg" width="64" height="64" alt="">
+    <div>
+      <h1>Lern-Werkstatt</h1>
+      <p>Hier lernst du mit den Händen: Bilder bewegen, selbst bauen und dich dann selbst testen. Such dir aus, was du heute üben möchtest.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- One <section class="subject"> per subject. One <a class="app-card"> per app.
+         --c picks the subject colour from kit/tokens.css (--subj-1 … --subj-4).
+         How to add an app: docs/NEW-APP.md -->
+    <section class="subject" aria-labelledby="s-mathe">
+      <h2 id="s-mathe">Mathe</h2>
+      <div class="apps">
+        <a class="app-card" style="--c:var(--subj-1)" href="brueche/">
+          <span class="app-icon" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/><path d="M24 24 L24 3 A21 21 0 1 1 3 24 Z" fill="var(--subj-1)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Brüche</h3>
+          <p>Bruchteile und Anteile, Kürzen und Erweitern, Brüche an der Zahlengeraden, Vergleichen und rationale Zahlen. Mit Tests und Spielen.</p>
+          <span class="go-row">Los geht's →</span>
+        </a>
+        <div class="app-card soon">
+          <span class="app-icon" aria-hidden="true"></span>
+          <p class="eyebrow" style="color:var(--muted)">Bald</p>
+          <h3>Weitere Themen</h3>
+          <p>Hier kommen nach und nach neue Fächer und Themen dazu.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Lern-Werkstatt · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de">CC BY-NC-SA 4.0</a></span>
+    <a href="https://github.com/hashseed/tutor">Quellcode auf GitHub</a>
+    <a href="kit/galerie.html">Stil-Galerie</a>
+  </footer>
+</div>
+</body>
+</html>

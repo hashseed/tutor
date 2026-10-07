@@ -1,0 +1,83 @@
+/* Lern-Werkstatt design tokens.
+   Every colour, font, radius and shadow used by any app comes from here.
+   To restyle all apps, change the values below (or load a theme file after this one
+   that overrides them). Never hard-code a colour in an app: use these variables.
+   Docs: docs/DESIGN.md */
+
+:root{
+  /* ---- Surfaces and text ---- */
+  --paper:#EEF2F8;        /* page background */
+  --card:#FFFFFF;         /* cards, panels, stage */
+  --plate:#F5F7FB;        /* recessed areas inside a card */
+  --ink:#18213D;          /* main text, outlines in drawings */
+  --muted:#5B6584;        /* secondary text, captions */
+  --line:#D3DAE8;         /* borders, dividers, empty slots */
+
+  /* ---- Brand / interaction ---- */
+  --accent:#2F5BE8;       /* primary colour: selected states, links, filled pieces */
+  --accent-soft:#DCE4FF;  /* hover, light highlight */
+  --on-accent:#FFFFFF;    /* text on --accent */
+  --sun:#F3B23A;          /* call to action (.btn.go), focus ring, highlights */
+  --sun-soft:#FCEBC7;
+  --on-sun:#18213D;       /* text on --sun (same in both themes) */
+
+  /* ---- Feedback ---- */
+  --good:#1D8657; --good-soft:#DDF3E8;
+  --bad:#C23F37;  --bad-soft:#FBE3E1;
+
+  /* ---- Subject colours (landing page cards, app eyebrows). One per subject. ---- */
+  --subj-1:#2F5BE8; /* Mathe: Brüche */
+  --subj-2:#1D8657;
+  --subj-3:#C2569B;
+  --subj-4:#D9822B;
+
+  /* ---- Type ---- */
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif; /* headings, numbers */
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;      /* everything else */
+  --fs-body:17px;
+  --fs-small:14px;
+  --fs-label:12px;        /* uppercase control labels */
+  --fs-lede:19px;
+  --fs-prompt:21px;
+  --fs-h2:clamp(28px,4vw,40px);
+  --fs-h3:24px;
+
+  /* ---- Shape ---- */
+  --bw:2px;               /* standard border width */
+  --r-sm:12px;            /* inputs, small chips */
+  --r-md:16px;            /* options, tabs, tiles */
+  --r-lg:22px;            /* cards, stage, panels */
+  --r-pill:999px;         /* buttons, steppers, segmented controls */
+  --shadow-bar:0 4px 14px rgba(24,33,61,.06);
+  --shadow-pop:0 20px 60px rgba(0,0,0,.3);
+
+  /* ---- Layout ---- */
+  --page-max:1140px;
+  --gutter:20px;
+  --gap:20px;
+
+  /* ---- Motion ---- */
+  --t-fast:.2s;
+  --t-med:.3s;
+
+  /* ---- Aliases kept for the Bruch-Werkstatt (fractions app) ---- */
+  --piece:var(--accent); --piece-soft:var(--accent-soft); --on-piece:var(--on-accent);
+}
+
+/* Dark theme: follows the system unless the page sets data-theme="light". */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0E1325; --card:#171F37; --plate:#1F2944; --ink:#E8ECF8; --muted:#9BA6C6; --line:#2C3758;
+  --accent:#7090FF; --accent-soft:#26335E; --on-accent:#0E1325;
+  --sun:#F6C25A; --sun-soft:#4A3A16;
+  --good:#4CC489; --good-soft:#163828; --bad:#FF7D73; --bad-soft:#40201E;
+  --subj-1:#7090FF; --subj-2:#4CC489; --subj-3:#E58AC4; --subj-4:#F0A660;
+  --shadow-bar:0 4px 14px rgba(0,0,0,.35);
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --paper:#0E1325; --card:#171F37; --plate:#1F2944; --ink:#E8ECF8; --muted:#9BA6C6; --line:#2C3758;
+  --accent:#7090FF; --accent-soft:#26335E; --on-accent:#0E1325;
+  --sun:#F6C25A; --sun-soft:#4A3A16;
+  --good:#4CC489; --good-soft:#163828; --bad:#FF7D73; --bad-soft:#40201E;
+  --subj-1:#7090FF; --subj-2:#4CC489; --subj-3:#E58AC4; --subj-4:#F0A660;
+  --shadow-bar:0 4px 14px rgba(0,0,0,.35);
+  color-scheme:dark }
