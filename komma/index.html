@@ -37,6 +37,10 @@
   .km-pick{display:flex;flex-direction:column;gap:12px}
   .km-pick .chip .km-tick{color:var(--good)}
   .km-pick .chip[aria-pressed="true"] .km-tick{color:inherit}
+  .km-stand{margin:0;color:var(--muted)}
+  .km-all summary{cursor:pointer;font-weight:700;color:var(--accent);width:max-content;max-width:100%}
+  .km-all[open] summary{margin-bottom:10px}
+  .km-all .chips{max-height:320px;overflow-y:auto;padding:2px}
 
   /* Text card */
   .km-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
@@ -114,7 +118,11 @@
 
       <div class="card km-pick">
         <div class="controls"><div id="pick-art"></div></div>
-        <div class="chips" id="pick-list" aria-label="Text wählen"></div>
+        <p class="km-stand" id="pick-stand"></p>
+        <details class="km-all">
+          <summary id="pick-sum">Alle Texte zeigen</summary>
+          <div class="chips" id="pick-list" aria-label="Text wählen"></div>
+        </details>
       </div>
 
       <div class="km-grid">
@@ -308,6 +316,15 @@ const exPlain = s => s.replace(/[{}*]/g, '').replace(/\[,\]/g, ',');
 const Ueben = (() => {
   let cur = null, widget = null, checked = false, filter = save.get('filter', 'alle');
   const done = () => save.get('texte', {});
+  // A text counts as solved once every comma was right and none was extra.
+  const solved = r => !!r && r.ok === r.total && !r.extra;
+  // Random text that is not solved yet (and not the current one); all texts stay in the list below.
+  function random() {
+    const l = list(), d = done();
+    const pool = l.filter(t => !solved(d[t.id]) && t !== cur);
+    const from = pool.length ? pool : l.filter(t => t !== cur);
+    return from.length ? from[Math.floor(Math.random() * from.length)] : l[0] || TEXTS[0];
+  }
   const out = $('#t-out');
 
   function cards() {
@@ -327,13 +344,19 @@ const Ueben = (() => {
   }
   function list() { return TEXTS.filter(t => filter === 'alle' || t.art === filter); }
   function picker() {
-    const host = $('#pick-list'), d = done();
+    const host = $('#pick-list'), d = done(), l = list();
+    const n = l.filter(t => solved(d[t.id])).length;
+    $('#pick-stand').textContent = n === l.length
+      ? `Super, du hast alle ${l.length} Texte ganz richtig gelöst! „Nächster Text“ wählt trotzdem einen zum Wiederholen.`
+      : `Du hast ${n} von ${l.length} Texten ganz richtig gelöst. „Nächster Text“ wählt zufällig einen, den du noch nicht ganz richtig hast.`;
+    $('#pick-sum').textContent = `Alle ${l.length} Texte zeigen`;
     host.innerHTML = '';
-    list().forEach(t => {
+    l.forEach(t => {
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'chip';
       b.setAttribute('aria-pressed', cur && t.id === cur.id);
-      b.innerHTML = (d[t.id] ? '<span class="km-tick" aria-hidden="true">✓</span>' : '') + esc(t.titel) + (d[t.id] ? '<span class="sr-only"> (schon geübt)</span>' : '');
+      const ok = solved(d[t.id]);
+      b.innerHTML = (ok ? '<span class="km-tick" aria-hidden="true">✓</span>' : '') + esc(t.titel) + (ok ? '<span class="sr-only"> (ganz richtig gelöst)</span>' : '');
       b.addEventListener('click', () => open(t));
       host.append(b);
     });
@@ -347,7 +370,6 @@ const Ueben = (() => {
   }
   function open(t) {
     cur = t; checked = false;
-    save.set('zuletzt', t.id);
     $('#t-title').textContent = t.titel;
     $('#t-art').textContent = t.art === 'sachtext' ? 'Sachtext' : 'Erzählung';
     $('#t-legend').hidden = true;
@@ -401,24 +423,20 @@ const Ueben = (() => {
     out.innerHTML = `<p class="km-rname">Die Lösung</p><p>So stehen alle Kommas richtig. Tippe auf ein Komma, um die Regel dazu zu sehen. Mit <b>Nochmal</b> kannst du den Text danach selbst üben.</p>`;
   }
   function next() {
-    const l = list(), d = done();
-    const i = l.findIndex(t => t.id === cur.id);
-    const rest = [...l.slice(i + 1), ...l.slice(0, i + 1)];
-    open(rest.find(t => !d[t.id]) || rest[0]);
+    open(random());
     $('#t-text').scrollIntoView({ block: 'nearest' });
   }
   function init() {
     cards();
     makeSeg($('#pick-art'), { label: 'Textart', value: filter, options: [{ v: 'alle', t: 'Alle' }, { v: 'erzaehlung', t: 'Erzählungen' }, { v: 'sachtext', t: 'Sachtexte' }],
-      onChange: v => { filter = v; save.set('filter', v); if (!list().some(t => t.id === cur.id)) open(list()[0]); else picker(); } });
+      onChange: v => { filter = v; save.set('filter', v); if (!list().some(t => t.id === cur.id)) open(random()); else picker(); } });
     $('#t-zahl').checked = save.get('zahl', false);
     $('#t-zahl').addEventListener('change', e => { save.set('zahl', e.target.checked); countLine(widget.count()); });
     $('#t-check').addEventListener('click', check);
     $('#t-again').addEventListener('click', () => open(cur));
     $('#t-solve').addEventListener('click', solve);
     $('#t-next').addEventListener('click', next);
-    const last = TEXTS.find(t => t.id === save.get('zuletzt'));
-    open(last && list().includes(last) ? last : list()[0] || TEXTS[0]);
+    open(random());
   }
   return { init };
 })();
