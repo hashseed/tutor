@@ -279,6 +279,21 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
 .t-unlock{background:var(--sun-soft);border:2px solid var(--sun);border-radius:14px;padding:10px 14px;font-size:17px}
 @media (prefers-reduced-motion:reduce){.sn,.g-bar i,.g-sumbar i{transition:none}.shake{animation:none}}
 .m16-kgv{white-space:nowrap}
+.kb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kb-card{min-height:96px;gap:4px;touch-action:manipulation}
+.kb-card .frac{font-size:30px}
+.kb-f{position:relative;display:inline-flex}
+.kb-card.out .kb-f::after{content:"";position:absolute;left:-14px;right:-14px;top:50%;height:5px;margin-top:-2px;border-radius:3px;background:var(--bad);transform:rotate(-28deg);animation:kbstrike .2s ease-out}
+.kb-card.out{border-color:var(--good);background:var(--good-soft)}
+.kb-card.kept:not(.out){opacity:.5}
+.kb-card.nope{border-color:var(--bad);background:var(--bad-soft);animation:shake .4s}
+.kb-card.hint{border-color:var(--sun);animation:kbpulse .5s 3}
+.kb-to{height:52px;font-size:17px;font-weight:700;color:var(--good);display:inline-flex;align-items:center;gap:4px}
+.kb-to .frac{font-size:18px}
+.kb-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-weight:700;color:var(--muted)}
+@keyframes kbstrike{from{transform:rotate(-28deg) scaleX(0)}}
+@keyframes kbpulse{50%{transform:scale(1.06)}}
+@media (max-width:480px){.kb-grid{gap:6px}.kb-card{min-height:0;padding:8px 4px;gap:2px}.kb-card .frac{font-size:24px}.kb-to{height:44px;font-size:14px;gap:2px}.kb-to .frac{font-size:15px}.kb-card.out .kb-f::after{left:-8px;right:-8px;height:4px}}
 </style>
 <style>
 .opt .mixed .whole{font-size:40px}
@@ -1214,6 +1229,15 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
       <div class="game" id="g10-game"></div>
     </section>
 
+    <section class="module" id="g11" role="tabpanel" hidden>
+      <div class="mod-head">
+        <p class="eyebrow"></p>
+        <h2>Kürz-Blitz</h2>
+        <p class="lede">Welche Brüche lassen sich noch kürzen? Streiche sie schnell durch, bevor die Zeit abläuft.</p>
+      </div>
+      <div class="game" id="g11-game"></div>
+    </section>
+
     <section class="module" id="glossar" role="tabpanel" hidden>
       <div class="mod-head">
         <p class="eyebrow">Zum Nachschlagen</p>
@@ -1414,13 +1438,13 @@ const UNITS = [
   { id: 'k3', name: 'Kapitel 3', short: 'K3', title: 'Quotienten und Zahlengerade', page: 14, mods: [['m3', 'Brüche als Quotienten', '3.1', 14], ['m2', 'Bruchzahlen an der Zahlengeraden', '3.2', 15], ['m7', 'Echte und unechte Brüche', '3.3', 14], ['m14', 'Längeneinheit wählen', '3.4', 15]] },
   { id: 'k4', name: 'Kapitel 4', short: 'K4', title: 'Vergleichen', page: 19, mods: [['m6', 'Gleicher Nenner, gleicher Zähler', '4.1', 19], ['m15', 'Gleichnamig machen, kgV', '4.2', 19], ['m16', 'kgV mit Primfaktoren', '4.3', 20], ['m17', 'Dritte Zahl, Weg wählen', '4.4', 20]] },
   { id: 'k5', name: 'Kapitel 5', short: 'K5', title: 'Rationale Zahlen', page: 23, mods: [['m18', 'Gegenzahl und Betrag', '5.1', 23], ['m19', 'Rationale Zahlen, Mengen', '5.2', 24]] },
-  { id: 'sp', name: 'Spiele', short: 'Spiele', title: 'Zum Üben', games: true, mods: [['g1', 'Zahlengerade-Zielwurf'], ['g2', 'Bruch-Memory'], ['g3', 'Größer oder kleiner?'], ['g4', 'Bruch-Bäckerei'], ['g5', 'Bruch-Zauberer'], ['g6', 'Bruch-Rennen'], ['g7', 'Bruch-Wäscheleine'], ['g9', 'Bruch-Bingo'], ['g10', 'Mengen-Sortierer']] }
+  { id: 'sp', name: 'Spiele', short: 'Spiele', title: 'Zum Üben', games: true, mods: [['g1', 'Zahlengerade-Zielwurf'], ['g2', 'Bruch-Memory'], ['g3', 'Größer oder kleiner?'], ['g4', 'Bruch-Bäckerei'], ['g5', 'Bruch-Zauberer'], ['g6', 'Bruch-Rennen'], ['g7', 'Bruch-Wäscheleine'], ['g9', 'Bruch-Bingo'], ['g10', 'Mengen-Sortierer'], ['g11', 'Kürz-Blitz']] }
 ];
 // number and book page of each module, e.g. m4 → '1.2', S. 7; games are counted 1, 2, 3 …
 const NUM = Object.fromEntries(UNITS.flatMap(u => u.mods.map((m, i) => [m[0], m[2] || String(i + 1)])));
 const PAGE = Object.fromEntries(UNITS.flatMap(u => u.mods.filter(m => m[3]).map(m => [m[0], m[3]])));
 // a game counts as 'ready' after a test of 10+ questions that covers these modules, with at least 90 % right; until then it shows a hint
-const GAME_MODS = { g1: ['m2', 'm7', 'm18'], g2: ['m1', 'm8'], g3: ['m6', 'm15', 'm17', 'm18'], g4: ['m1', 'm4'], g5: ['m5', 'm13'], g6: ['m6', 'm15'], g7: ['m17', 'm18'], g9: ['m1', 'm2', 'm3', 'm4'], g10: ['m19'] };
+const GAME_MODS = { g1: ['m2', 'm7', 'm18'], g2: ['m1', 'm8'], g3: ['m6', 'm15', 'm17', 'm18'], g4: ['m1', 'm4'], g5: ['m5', 'm13'], g6: ['m6', 'm15'], g7: ['m17', 'm18'], g9: ['m1', 'm2', 'm3', 'm4'], g10: ['m19'], g11: ['m5', 'm13'] };
 // progress from modules and games that no longer exist
 try { ['m9', 'm10', 'm11', 'm12', 'best-g8'].forEach(k => localStorage.removeItem('bw-' + k)); localStorage.setItem('bw-unlock', JSON.stringify(JSON.parse(localStorage.getItem('bw-unlock') || '[]').filter(g => g !== 'g8'))); } catch (e) {}
 const GAMES = Object.keys(GAME_MODS);
@@ -5839,7 +5863,120 @@ function tapCups(host, T) {
     startCard(host, `<p>Auf deiner Bingo-Karte sind 9 Bilder von Brüchen. Ein Bruch wird vorgelesen, zum Beispiel »drei Achtel«. Tippe auf das passende Bild. Wenn eine Reihe voll ist (waagerecht, senkrecht oder schräg), hast du Bingo!</p><p>Mach den Ton an. Ohne Ton kannst du dir den Bruch auch als Wort anzeigen lassen.</p>${best('g9') != null ? `<p>Dein Rekord: Bingo nach <b>${best('g9')}</b> Ansagen.</p>` : ''}`, play);
   }
 
-  const GAMES_IMPL = { g1: zielwurf, g2: memory, g3: schnell, g4: baeckerei, g5: zauberer, g6: rennen, g7: zug, g9: bingo, g10: mengen };
+  /* ---- Kürz-Blitz ---- */
+  function kuerzblitz(host) {
+    // 12 Karten pro Runde; die kürzbaren schnell durchstreichen. Spätere Runden: größere Zahlen, unechte Brüche, Fallen wie 9/14
+    const TIME = 60, PENALTY = 3, CARDS = 12;
+    const prime = n => { if (n < 2) return false; for (let k = 2; k * k <= n; k++) if (n % k === 0) return false; return true; };
+    let score = 0, misses = 0, round = 0, end = 0, timer = null, cards = [], busy = false;
+    const kuerzbar = lv => {
+      for (;;) {
+        const b = ri(2, lv ? 12 : 9), a = ri(1, lv >= 2 && Math.random() < .3 ? 2 * b : b - 1);
+        const k = pick(lv === 0 ? [2, 2, 3, 5] : lv === 1 ? [2, 3, 4, 5, 6] : [3, 4, 6, 7, 8, 9]);
+        const n = a * k, d = b * k;
+        if (gcd(a, b) === 1 && d <= (lv ? 99 : 40)) return { n, d };
+      }
+    };
+    const falle = lv => {
+      for (;;) {
+        const d = ri(3, lv === 0 ? 15 : lv === 1 ? 40 : 60), n = ri(2, lv >= 2 && Math.random() < .3 ? 2 * d : d - 1);
+        if (n === d || gcd(n, d) !== 1) continue;
+        // later rounds: both numbers have divisors (e.g. 9/14, 15/28), so the child has to really check
+        if (lv && Math.random() < .7 && (prime(n) || prime(d))) continue;
+        return { n, d };
+      }
+    };
+    function deal() {
+      const lv = round < 2 ? 0 : round < 4 ? 1 : 2, want = ri(4, 7), seen = new Set();
+      cards = [];
+      while (cards.length < CARDS) {
+        const c = cards.length < want ? kuerzbar(lv) : falle(lv), key = c.n + '/' + c.d;
+        if (seen.has(key)) continue;
+        seen.add(key); cards.push({ ...c, g: gcd(c.n, c.d), done: false });
+      }
+      cards = shuffle(cards);
+      round++;
+      host.querySelector('.kb-grid').innerHTML = cards.map((c, i) => `<button type="button" class="opt kb-card" data-i="${i}"><span class="kb-f">${fr(c.n, c.d)}</span><span class="kb-to"></span></button>`).join('');
+      host.querySelector('.g-round').textContent = `Runde ${round}`;
+      left();
+    }
+    const left = () => {
+      const n = cards.filter(c => c.g > 1 && !c.done).length;
+      host.querySelector('.kb-left').textContent = n === 1 ? 'Noch 1 Bruch lässt sich kürzen.' : `Noch ${n} Brüche lassen sich kürzen.`;
+      return n;
+    };
+    function tap(i, el) {
+      const c = cards[i], fb = host.querySelector('.g-fb');
+      if (busy || c.done || performance.now() > end) return;
+      c.done = true; el.disabled = true; el.classList.remove('hint');
+      if (c.g > 1) {
+        score++;
+        el.classList.add('out');
+        el.querySelector('.kb-to').innerHTML = `= ${F(c.n / c.g, c.d / c.g)}`;
+        el.setAttribute('aria-label', `${c.n} durch ${c.d}, durchgestrichen, gekürzt ${c.n / c.g} durch ${c.d / c.g}`);
+        fb.className = 'g-fb good';
+        fb.innerHTML = `<b>Richtig!</b> ${F(c.n, c.d)} = ${F(c.n / c.g, c.d / c.g)} (gekürzt mit ${c.g})`;
+        host.querySelector('.g-score').textContent = `${score} durchgestrichen`;
+        if (!left()) {
+          busy = true;
+          fb.innerHTML = '<b>Alle gefunden!</b> Die übrigen Brüche sind schon vollständig gekürzt.';
+          cards.forEach((c, k) => { if (!c.done) host.querySelector(`[data-i="${k}"]`).classList.add('kept'); });
+          setTimeout(() => { busy = false; if (performance.now() < end && document.body.contains(el)) deal(); }, 900);
+        }
+      } else {
+        misses++;
+        end -= PENALTY * 1000;
+        el.classList.add('nope', 'kept');
+        setTimeout(() => el.classList.remove('nope'), 450);
+        fb.className = 'g-fb bad';
+        fb.innerHTML = `<b>Nicht kürzbar.</b> ${c.n} und ${c.d} haben keinen gemeinsamen Teiler außer 1, also ist ${F(c.n, c.d)} schon vollständig gekürzt. −${PENALTY} s`;
+        tick();
+      }
+    }
+    function hint() {
+      const k = cards.findIndex(c => c.g > 1 && !c.done);
+      if (k < 0 || busy || performance.now() > end) return;
+      end -= PENALTY * 1000;
+      const el = host.querySelector(`[data-i="${k}"]`), c = cards[k];
+      let t = 2; while (c.g % t) t++;
+      el.classList.remove('hint'); void el.offsetWidth; el.classList.add('hint');
+      const fb = host.querySelector('.g-fb');
+      fb.className = 'g-fb';
+      fb.innerHTML = `<b>Tipp:</b> Schau dir ${F(c.n, c.d)} an. Zähler und Nenner sind beide durch ${t} teilbar. −${PENALTY} s`;
+      tick();
+    }
+    function tick() {
+      const s = Math.max(0, (end - performance.now()) / 1000), el = host.querySelector('.g-time');
+      if (!el || !document.body.contains(el)) { clearInterval(timer); return; }
+      el.textContent = `${Math.ceil(s)} s`; host.querySelector('.g-bar i').style.width = `${s / TIME * 100}%`;
+      if (s <= 0) {
+        clearInterval(timer);
+        const b = best('g11'); if (b == null || score > b) best('g11', score);
+        endCard(host, `<h3>${score} Brüche durchgestrichen</h3><p>${b == null || score > b ? 'Neuer Rekord!' : `Dein Rekord: ${b}.`}${misses ? ` ${misses === 1 ? 'Einmal' : misses + '-mal'} hast du einen Bruch erwischt, der sich nicht kürzen lässt.` : ' Und kein einziger Fehler!'}</p>
+          <p>Merke: Ein Bruch lässt sich kürzen, wenn Zähler und Nenner einen gemeinsamen Teiler größer als 1 haben.</p>`, play);
+      }
+    }
+    host.onclick = e => {
+      const b = e.target.closest('[data-i]'); if (b) return tap(Number(b.dataset.i), b);
+      if (e.target.closest('[data-kb-hint]')) hint();
+    };
+    function play() {
+      score = 0; misses = 0; round = 0; busy = false; end = performance.now() + TIME * 1000;
+      host.innerHTML = `<div class="g-head"><span class="g-score">0 durchgestrichen</span><span class="g-round"></span><span class="g-time">${TIME} s</span></div><div class="g-bar"><i></i></div>
+        <p class="g-ask">Streiche alle Brüche durch, die sich kürzen lassen.</p>
+        <div class="kb-grid"></div>
+        <div class="kb-row"><span class="kb-left"></span><button type="button" class="btn ghost" data-kb-hint>Tipp (−${PENALTY} s)</button></div>
+        <p class="g-fb" aria-live="polite"></p>`;
+      deal(); clearInterval(timer); timer = setInterval(tick, 250);
+      // the whole board should be on screen while the clock runs
+      const nav = document.querySelector('.navbar'), top = host.getBoundingClientRect().top - (nav ? nav.getBoundingClientRect().bottom : 0) - 12;
+      if (top < 0 || host.getBoundingClientRect().bottom > innerHeight) window.scrollBy({ top, behavior: RM.matches ? 'auto' : 'smooth' });
+    }
+    startCard(host, `<p>Auf jeder Karte steht ein Bruch. Tippe so schnell du kannst alle Brüche an, die sich <b>kürzen</b> lassen. Dann werden sie durchgestrichen und du siehst, wie sie vollständig gekürzt aussehen.</p>
+      <p>Vorsicht: Tippst du einen Bruch an, der schon vollständig gekürzt ist, verlierst du ${PENALTY} Sekunden. Du hast ${TIME} Sekunden. Sind alle kürzbaren Brüche weg, kommt die nächste Runde, mit immer größeren Zahlen.</p>${best('g11') != null ? `<p>Dein Rekord: <b>${best('g11')}</b> Brüche.</p>` : ''}`, play);
+  }
+
+  const GAMES_IMPL = { g1: zielwurf, g2: memory, g3: schnell, g4: baeckerei, g5: zauberer, g6: rennen, g7: zug, g9: bingo, g10: mengen, g11: kuerzblitz };
 })();
 
 /* Direktlink: #m1 …, #tests, #g1 …, #glossar */
