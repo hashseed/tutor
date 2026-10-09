@@ -9,6 +9,7 @@
 <link rel="icon" href="../kit/logo.svg">
 <link rel="stylesheet" href="../kit/tokens.css">
 <link rel="stylesheet" href="../kit/kit.css">
+<script src="../kit/kit.js"></script>
 <style>
 /* Layout: a workbench. Module tabs on top, a large drawing stage beside a control panel, a "check yourself" card below. */
 /* Colours, fonts and the generic components come from ../kit/tokens.css and ../kit/kit.css.
@@ -105,7 +106,6 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
 .gbox.take{fill:var(--sun-soft);stroke:var(--sun)}
 .gbox.copy{stroke:var(--sun);stroke-dasharray:5 4}
 .ogrp{fill:var(--sun-soft);stroke:none}
-.tray{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:7 6}
 .rowcap{fill:var(--muted);font:700 13px var(--body);letter-spacing:.08em}
 .result{fill:var(--ink);font:800 22px var(--display)}
 
@@ -216,10 +216,8 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
 .ms-bin:hover{border-color:var(--piece)}
 .ms-bin.hit{border-color:var(--good);background:var(--good-soft)}
 .g-lives{color:var(--bad);letter-spacing:2px}
-.g-cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .g-side{font-size:30px;min-height:110px}
 .g-side .frac{font-size:40px}
-.g-eq{justify-content:center}
 .mem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 @media (max-width:560px){.mem{grid-template-columns:repeat(3,1fr)}}
 .mem-card{position:relative;aspect-ratio:1/1;min-height:84px;border:2px solid var(--line);border-radius:16px;background:var(--piece);color:var(--ink);cursor:pointer;padding:6px;display:grid;place-items:center;font:800 20px var(--display)}
@@ -231,14 +229,6 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
 .mem-card.up .mem-face{display:flex}
 .mem-card.found{border-color:var(--good);background:var(--good-soft)}
 .g-word{font:700 16px var(--body)}
-.g-tray{display:flex;flex-direction:column;gap:6px}
-.g-stage{position:relative;height:280px;border-radius:16px;background:linear-gradient(var(--piece-soft),var(--paper));overflow:hidden}
-.g-bub{position:absolute;left:-90px;border:2px solid var(--piece);border-radius:50%;width:76px;height:76px;display:grid;place-items:center;background:var(--card);color:var(--ink);font-size:22px;cursor:pointer;animation:fly linear forwards}
-.g-stage.still .g-bub{animation:fade 3s linear forwards}
-.g-bub.hit{background:var(--good-soft);border-color:var(--good)}
-.g-bub.miss{background:var(--bad-soft);border-color:var(--bad)}
-@keyframes fly{from{left:-90px}to{left:100%}}
-@keyframes fade{0%{opacity:0}10%{opacity:1}85%{opacity:1}100%{opacity:0}}
 .race{display:flex;flex-direction:column;gap:14px}
 .lane{display:grid;grid-template-columns:52px 1fr 120px;align-items:center;gap:10px}
 .lane-name{font-weight:700;color:var(--muted)}
@@ -249,17 +239,7 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
 .sn-swirl{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
 .lane .g-side{min-height:64px;font-size:22px}.lane .g-side .frac{font-size:28px}
 @media (max-width:560px){.lane{grid-template-columns:1fr 96px}.lane-name{display:none}}
-.train{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:72px;padding:6px;border-bottom:4px solid var(--ink)}
-.wl{position:relative;padding-top:14px}
-.wl-rope{position:absolute;left:0;right:0;top:10px;height:24px;border-top:3px solid #9C6328;border-radius:50% 50% 0 0/24px 24px 0 0;transform:scaleY(-1)}
-.wl-cards{border-bottom:none;min-height:96px;align-items:flex-start;gap:12px;padding:16px 8px 6px}
-.wl-cards .wagon{position:relative;margin-top:6px;transform:rotate(-2deg);box-shadow:0 3px 6px rgba(0,0,0,.12)}
-.wl-cards .wagon:nth-child(even){transform:rotate(2deg)}
-.wl-cards .wagon::before{content:"";position:absolute;top:-14px;left:50%;width:8px;height:22px;margin-left:-4px;border-radius:3px;background:#C98A4B;border:1.5px solid #7A4A1C}
 .loco{font-size:44px;transform:scaleX(-1)}
-.yard{display:flex;flex-wrap:wrap;gap:10px}
-.wagon{min-width:84px;min-height:72px;border-radius:10px}
-.wagon.on{border-color:var(--piece);background:var(--piece-soft)}
 .shake{animation:shake .35s}
 @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .g-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -293,6 +273,19 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
 .kb-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-weight:700;color:var(--muted)}
 @keyframes kbstrike{from{transform:rotate(-28deg) scaleX(0)}}
 @keyframes kbpulse{50%{transform:scale(1.06)}}
+.ke-stage{display:grid;place-items:center;min-height:150px;border-radius:16px;background:var(--plate)}
+.ke-card{min-width:110px;min-height:120px;display:grid;place-items:center;padding:10px 18px;border:var(--bw) solid var(--line);border-radius:var(--r-md);background:var(--card);transition:transform .25s ease-in,opacity .25s ease-in}
+.ke-card .frac{font-size:46px}
+.ke-card.gone{transform:translateY(60px) scale(.4);opacity:0}
+.ke-card.nope{border-color:var(--bad);background:var(--bad-soft);animation:shake .4s}
+.ke-buckets{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ke-bucket{position:relative;gap:2px;padding:14px 4px 10px;border-radius:8px 8px 26px 26px;border-top-width:6px;touch-action:manipulation}
+.ke-p{font:800 40px/1 var(--display);color:var(--piece)}
+.ke-n{position:absolute;top:6px;right:8px;min-width:24px;height:24px;border-radius:12px;background:var(--piece-soft);font-size:14px;display:grid;place-items:center}
+.ke-last{height:40px;display:inline-flex;align-items:center;gap:3px;font-size:14px;color:var(--good)}
+.ke-last .frac{font-size:15px}
+.ke-bucket.hit{animation:kbpulse .3s}
+@media (max-width:480px){.ke-buckets{gap:6px}.ke-p{font-size:32px}.ke-n{top:4px;right:4px;min-width:20px;height:20px;font-size:12px}.ke-stage{min-height:130px}.ke-card .frac{font-size:40px}}
 @media (max-width:480px){.kb-grid{gap:6px}.kb-card{min-height:0;padding:8px 4px;gap:2px}.kb-card .frac{font-size:24px}.kb-to{height:44px;font-size:14px;gap:2px}.kb-to .frac{font-size:15px}.kb-card.out .kb-f::after{left:-8px;right:-8px;height:4px}}
 </style>
 <style>
@@ -1166,33 +1159,6 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
       <div class="game" id="g2-game"></div>
     </section>
 
-    <section class="module" id="g3" role="tabpanel" hidden>
-      <div class="mod-head">
-        <p class="eyebrow"></p>
-        <h2>Größer oder kleiner?</h2>
-        <p class="lede">Wie viele Brüche kannst du in einer Minute vergleichen?</p>
-      </div>
-      <div class="game" id="g3-game"></div>
-    </section>
-
-    <section class="module" id="g4" role="tabpanel" hidden>
-      <div class="mod-head">
-        <p class="eyebrow"></p>
-        <h2>Bruch-Bäckerei</h2>
-        <p class="lede">Kunden bestellen in Brüchen. Pack genau das Richtige ein.</p>
-      </div>
-      <div class="game" id="g4-game"></div>
-    </section>
-
-    <section class="module" id="g5" role="tabpanel" hidden>
-      <div class="mod-head">
-        <p class="eyebrow"></p>
-        <h2>Bruch-Zauberer</h2>
-        <p class="lede">Der Zauber wirkt nur auf gleich große Brüche. Tippe die richtigen an.</p>
-      </div>
-      <div class="game" id="g5-game"></div>
-    </section>
-
     <section class="module" id="g6" role="tabpanel" hidden>
       <div class="mod-head">
         <p class="eyebrow"></p>
@@ -1200,15 +1166,6 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
         <p class="lede">Zwei Schnecken, zwei Brüche. Die mit dem größeren Bruch kriecht weiter.</p>
       </div>
       <div class="game" id="g6-game"></div>
-    </section>
-
-    <section class="module" id="g7" role="tabpanel" hidden>
-      <div class="mod-head">
-        <p class="eyebrow"></p>
-        <h2>Bruch-Wäscheleine</h2>
-        <p class="lede">Häng die Bruch-Karten der Größe nach an die Wäscheleine, wie im Buch.</p>
-      </div>
-      <div class="game" id="g7-game"></div>
     </section>
 
     <section class="module" id="g9" role="tabpanel" hidden>
@@ -1236,6 +1193,15 @@ h3.sub{font-family:var(--display);font-size:19px;margin:0 0 8px}
         <p class="lede">Welche Brüche lassen sich noch kürzen? Streiche sie schnell durch, bevor die Zeit abläuft.</p>
       </div>
       <div class="game" id="g11-game"></div>
+    </section>
+
+    <section class="module" id="g12" role="tabpanel" hidden>
+      <div class="mod-head">
+        <p class="eyebrow"></p>
+        <h2>Kürz-Eimer</h2>
+        <p class="lede">Mit welcher Zahl lässt sich der Bruch kürzen? Wirf ihn in den richtigen Eimer, so schnell du kannst.</p>
+      </div>
+      <div class="game" id="g12-game"></div>
     </section>
 
     <section class="module" id="glossar" role="tabpanel" hidden>
@@ -1438,15 +1404,15 @@ const UNITS = [
   { id: 'k3', name: 'Kapitel 3', short: 'K3', title: 'Quotienten und Zahlengerade', page: 14, mods: [['m3', 'Brüche als Quotienten', '3.1', 14], ['m2', 'Bruchzahlen an der Zahlengeraden', '3.2', 15], ['m7', 'Echte und unechte Brüche', '3.3', 14], ['m14', 'Längeneinheit wählen', '3.4', 15]] },
   { id: 'k4', name: 'Kapitel 4', short: 'K4', title: 'Vergleichen', page: 19, mods: [['m6', 'Gleicher Nenner, gleicher Zähler', '4.1', 19], ['m15', 'Gleichnamig machen, kgV', '4.2', 19], ['m16', 'kgV mit Primfaktoren', '4.3', 20], ['m17', 'Dritte Zahl, Weg wählen', '4.4', 20]] },
   { id: 'k5', name: 'Kapitel 5', short: 'K5', title: 'Rationale Zahlen', page: 23, mods: [['m18', 'Gegenzahl und Betrag', '5.1', 23], ['m19', 'Rationale Zahlen, Mengen', '5.2', 24]] },
-  { id: 'sp', name: 'Spiele', short: 'Spiele', title: 'Zum Üben', games: true, mods: [['g1', 'Zahlengerade-Zielwurf'], ['g2', 'Bruch-Memory'], ['g3', 'Größer oder kleiner?'], ['g4', 'Bruch-Bäckerei'], ['g5', 'Bruch-Zauberer'], ['g6', 'Bruch-Rennen'], ['g7', 'Bruch-Wäscheleine'], ['g9', 'Bruch-Bingo'], ['g10', 'Mengen-Sortierer'], ['g11', 'Kürz-Blitz']] }
+  { id: 'sp', name: 'Spiele', short: 'Spiele', title: 'Zum Üben', games: true, mods: [['g1', 'Zahlengerade-Zielwurf'], ['g2', 'Bruch-Memory'], ['g6', 'Bruch-Rennen'], ['g9', 'Bruch-Bingo'], ['g10', 'Mengen-Sortierer'], ['g11', 'Kürz-Blitz'], ['g12', 'Kürz-Eimer']] }
 ];
 // number and book page of each module, e.g. m4 → '1.2', S. 7; games are counted 1, 2, 3 …
 const NUM = Object.fromEntries(UNITS.flatMap(u => u.mods.map((m, i) => [m[0], m[2] || String(i + 1)])));
 const PAGE = Object.fromEntries(UNITS.flatMap(u => u.mods.filter(m => m[3]).map(m => [m[0], m[3]])));
 // a game counts as 'ready' after a test of 10+ questions that covers these modules, with at least 90 % right; until then it shows a hint
-const GAME_MODS = { g1: ['m2', 'm7', 'm18'], g2: ['m1', 'm8'], g3: ['m6', 'm15', 'm17', 'm18'], g4: ['m1', 'm4'], g5: ['m5', 'm13'], g6: ['m6', 'm15'], g7: ['m17', 'm18'], g9: ['m1', 'm2', 'm3', 'm4'], g10: ['m19'], g11: ['m5', 'm13'] };
+const GAME_MODS = { g1: ['m2', 'm7', 'm18'], g2: ['m1', 'm8'], g6: ['m6', 'm15'], g9: ['m1', 'm2', 'm3', 'm4'], g10: ['m19'], g11: ['m5', 'm13'], g12: ['m5', 'm13'] };
 // progress from modules and games that no longer exist
-try { ['m9', 'm10', 'm11', 'm12', 'best-g8'].forEach(k => localStorage.removeItem('bw-' + k)); localStorage.setItem('bw-unlock', JSON.stringify(JSON.parse(localStorage.getItem('bw-unlock') || '[]').filter(g => g !== 'g8'))); } catch (e) {}
+try { ['m9', 'm10', 'm11', 'm12', 'best-g3', 'best-g4', 'best-g5', 'best-g7', 'best-g8'].forEach(k => localStorage.removeItem('bw-' + k)); localStorage.setItem('bw-unlock', JSON.stringify(JSON.parse(localStorage.getItem('bw-unlock') || '[]').filter(g => !['g3', 'g4', 'g5', 'g7', 'g8'].includes(g)))); } catch (e) {}
 const GAMES = Object.keys(GAME_MODS);
 function unlockedGames() { try { return JSON.parse(localStorage.getItem('bw-unlock') || '[]'); } catch (e) { return []; } }
 function markReady(ids) { try { localStorage.setItem('bw-unlock', JSON.stringify([...new Set([...unlockedGames(), ...ids])])); } catch (e) {} }
@@ -5490,162 +5456,6 @@ function tapCups(host, T) {
     startCard(host, `<p>12 Karten liegen verdeckt. Je zwei Karten zeigen denselben Wert, aber verschieden geschrieben: als Bild, Bruch, Prozent oder in Worten. Decke immer zwei Karten auf und finde alle Paare mit möglichst wenigen Zügen.</p>${best('g2') != null ? `<p>Dein Rekord: <b>${best('g2')}</b> Züge.</p>` : ''}`, play);
   }
 
-  /* ---- Größer oder kleiner? ---- */
-  function schnell(host) {
-    const TIME = 60;
-    let score = 0, streak = 0, end = 0, timer = null, cur;
-    // second half: also pairs with negative numbers
-    const pair = () => {
-      const late = performance.now() > end - TIME * 500;
-      for (;;) {
-        const d1 = ri(2, 12), d2 = ri(2, 12);
-        let a = ri(1, d1 - 1), c = ri(1, d2 - 1);
-        if (late && Math.random() < .4) { if (Math.random() < .5) a = -a; if (Math.random() < .5) c = -c; }
-        if (a === c && d1 === d2) continue;
-        if (a * d2 === c * d1 && Math.random() < .7) continue;
-        return [a, d1, c, d2];
-      }
-    };
-    function next() {
-      cur = pair();
-      const [a, b, c, d] = cur;
-      host.querySelector('.g-cmp').innerHTML = `<button type="button" class="opt g-side" data-s="1">${sfr(a, b)}</button><button type="button" class="opt g-side" data-s="-1">${sfr(c, d)}</button>`;
-    }
-    function answer(s) {
-      if (!cur || performance.now() > end) return;
-      const [a, b, c, d] = cur, t = Math.sign(a * d - c * b), fb = host.querySelector('.g-fb');
-      const rel = t > 0 ? '&gt;' : t < 0 ? '&lt;' : '=';
-      const A = sfr(a, b, 'sm'), C = sfr(c, d, 'sm');
-      if (s === t) { score++; streak++; fb.innerHTML = `<b>Richtig!</b> ${A} ${rel} ${C}${streak >= 3 ? ` · ${streak} in Folge` : ''}`; fb.className = 'g-fb good'; }
-      else { streak = 0; fb.innerHTML = `<b>Falsch.</b> ${A} ${rel} ${C}`; fb.className = 'g-fb bad'; }
-      host.querySelector('.g-score').textContent = `${score} richtig`;
-      next();
-    }
-    function tick() {
-      const left = Math.max(0, Math.ceil((end - performance.now()) / 1000)), el = host.querySelector('.g-time');
-      if (!el || !document.body.contains(el)) { clearInterval(timer); return; }
-      el.textContent = `${left} s`; host.querySelector('.g-bar i').style.width = `${left / TIME * 100}%`;
-      if (left === 0) {
-        clearInterval(timer);
-        const b = best('g3'); if (b == null || score > b) best('g3', score);
-        endCard(host, `<h3>${score} richtig in ${TIME} Sekunden</h3><p>${b == null || score > b ? 'Neuer Rekord!' : `Dein Rekord: ${b}.`}</p>`, play);
-      }
-    }
-    host.onclick = e => { const b = e.target.closest('[data-s]'); if (b) answer(Number(b.dataset.s)); };
-    function play() {
-      score = 0; streak = 0; end = performance.now() + TIME * 1000;
-      host.innerHTML = `<div class="g-head"><span class="g-score">0 richtig</span><span class="g-time">${TIME} s</span></div><div class="g-bar"><i></i></div>
-        <p class="g-ask">Tippe auf den größeren Bruch.</p><div class="g-cmp"></div><div class="q-actions g-eq"><button type="button" class="btn ghost" data-s="0">Beide gleich groß</button></div><p class="g-fb" aria-live="polite"></p>`;
-      next(); clearInterval(timer); timer = setInterval(tick, 250);
-    }
-    startCard(host, `<p>Zwei Brüche erscheinen. Tippe so schnell du kannst auf den größeren. Sind beide gleich groß, tippe auf »Beide gleich groß«. Du hast ${TIME} Sekunden.</p><p>Tipps: Gleicher Nenner? Gleicher Zähler? Liegt einer unter ${F(1, 2)} oder 1 und einer darüber? Sonst hilft der Hauptnenner. In der zweiten Hälfte kommen auch negative Zahlen.</p>${best('g3') != null ? `<p>Dein Rekord: <b>${best('g3')}</b> richtig.</p>` : ''}`, play);
-  }
-
-  /* ---- Bruch-Bäckerei ---- */
-  function baeckerei(host) {
-    const CUST = 8;
-    let k = 0, coins = 0;
-    const orders = [
-      () => { const b = ri(2, 4), a = ri(1, b - 1), m = pick([1, 2]), d = b * m;
-        return { text: `möchte ${F(a, b)} von einer Pizza. Die Pizza ist in ${d} Stücke geschnitten.`, mount: h => tapPie(h, d), want: a * m,
-          bad: c => `Du hast ${F(c, d)} gegeben.${m > 1 ? ` Jedes ${nw(b)} sind ${m} Stücke.` : ''}` }; },
-      () => { const d = ri(2, 4), m = ri(2, 4), N = d * m, n = ri(1, d - 1);
-        return { text: `möchte ${F(n, d)} von ${N} Muffins.`, mount: h => tapDots(h, N), want: n * m,
-          bad: c => `Du hast ${c} Muffins eingepackt. Teile ${N} in ${d} gleich große Gruppen und nimm ${n} davon.` }; },
-      () => { const b = pick([2, 3, 4, 5]), a = ri(1, b - 1), g = pick([1, 2, 3]), have = a * g, W = b * g, N = W + ri(2, 4);
-        return { text: `hat schon ${have} Kekse. Das ist ${F(a, b)} der ganzen Bestellung. Wie viel ist das Ganze? Pack die ganze Bestellung ein.`, mount: h => tapDots(h, N), want: W,
-          bad: c => `Du hast ${c} Kekse eingepackt. ${F(a, b)} sind ${have} Kekse, also ist ${F(1, b)} ${have / a === 1 ? '1 Keks' : `${have / a} Kekse`}. Das Ganze sind ${b} · ${have / a} Kekse.` }; },
-      () => { const p = ri(2, 4), c = ri(1, 3);
-        return { text: `teilt ${c === 1 ? '1 Kuchen' : c + ' Kuchen'} mit ${p - 1 === 1 ? 'einem Freund' : `${p - 1} Freunden`}, alle bekommen gleich viel. Jeder Kuchen ist in ${p} Stücke geschnitten. Färbe, was eine Person bekommt.`, mount: h => tapBars(h, c, p, 200), want: c,
-          bad: n => `Du hast ${n} ${n === 1 ? 'Stück' : 'Stücke'} gefärbt. Jede Person bekommt von jedem Kuchen ein Stück.` }; },
-      () => { const d = pick([4, 6, 8]), W = 1, r = ri(1, d - 1);
-        return { text: `möchte ${mixed(W, r, d, 'sm')} Pizzen. Jede Pizza ist in ${d} Stücke geschnitten.`, mount: h => { h.innerHTML = `<div class="tap-pies">${miniCircle(d, 0, 52, 116)}${miniCircle(d, 0, 52, 116)}</div><p class="ans-hint">Tippe auf die Stücke, die du einpackst.</p>`; tapify(h, 'path'); }, want: W * d + r,
-          bad: c => `Du hast ${c} ${c === 1 ? 'Stück' : 'Stücke'} eingepackt. ${mixed(W, r, d, 'sm')} heißt: 1 ganze Pizza und noch ${r} ${r === 1 ? 'Stück' : 'Stücke'}.` }; }
-    ];
-    function play() {
-      if (k === CUST) {
-        const b = best('g4'); if (b == null || coins > b) best('g4', coins);
-        return endCard(host, `<h3>${coins} von ${CUST * 3} Münzen verdient</h3><p>${b == null || coins > b ? 'Neuer Rekord!' : `Dein Rekord: ${b} Münzen.`}</p>`, () => { k = 0; coins = 0; play(); });
-      }
-      const o = pick(orders)(), who = pick(NAMES_K);
-      let tries = 0;
-      host.innerHTML = `<div class="g-head"><span>Kunde ${k + 1} von ${CUST}</span><span>🪙 ${coins} Münzen</span></div><p class="g-ask"><b>${who}</b> ${o.text}</p><div class="g-tray"></div><p class="g-fb" aria-live="polite"></p><div class="q-actions"><button type="button" class="btn go" data-serve>Servieren</button></div>`;
-      const tray = host.querySelector('.g-tray'); o.mount(tray);
-      host.querySelector('[data-serve]').addEventListener('click', function serve() {
-        const c = tapCount(tray), fb = host.querySelector('.g-fb');
-        tries++;
-        if (c === o.want) {
-          const got = tries === 1 ? 3 : 1; coins += got; k++;
-          fb.className = 'g-fb good'; fb.innerHTML = `<b>Danke!</b> Genau richtig. +${got} ${got === 1 ? 'Münze' : 'Münzen'}.`;
-          const btn = host.querySelector('[data-serve]'); btn.removeEventListener('click', serve);
-          btn.textContent = k === CUST ? 'Feierabend' : 'Nächster Kunde'; btn.addEventListener('click', play);
-          tray.style.pointerEvents = 'none';
-        } else {
-          fb.className = 'g-fb bad'; fb.innerHTML = `<b>Das stimmt noch nicht.</b> ${o.bad(c)} Versuch es noch einmal.`;
-        }
-      });
-    }
-    startCard(host, `<p>Willkommen in der Bruch-Bäckerei! Kunden bestellen Pizza, Muffins und Kuchen in Brüchen. Tippe an, was du einpackst, und drücke »Servieren«. Richtig beim ersten Versuch gibt 3 Münzen, beim zweiten 1 Münze.</p>${best('g4') != null ? `<p>Dein Rekord: <b>${best('g4')}</b> Münzen.</p>` : ''}`, () => { k = 0; coins = 0; play(); });
-  }
-
-  /* ---- Bruch-Zauberer ---- */
-  function zauberer(host) {
-    const TIME = 45;
-    let score = 0, wrong = 0, end = 0, spawn = null, target, lane = 0, mode = 'gleich', big;
-    function bubble(stage) {
-      const [a, b] = target, eq = Math.random() < .45;
-      let n, d;
-      if (mode === 'kurz') {
-        // the spell only works on the fully reduced form; equal but not fully reduced bubbles are traps
-        const r = Math.random(), G = big[2];
-        if (r < .4) { n = a; d = b; }
-        else if (r < .75) { const ks = range(2, G).filter(k => G % k === 0); const k = ks.length ? pick(ks) : 2; n = a * k; d = b * k; }
-        else { n = a + pick([1, 2]); d = b + pick([0, 1, 2]); if (n * b === d * a) { n = a; d = b + 1; } }
-      }
-      else if (eq) { const k = ri(2, 6); n = a * k; d = b * k; }
-      else {
-        const k = ri(1, 5), t = pick(['plus', 'num', 'den', 'swap']);
-        if (t === 'plus') { n = a + k; d = b + k; } else if (t === 'num') { n = a * (k + 1) + pick([-1, 1]); d = b * (k + 1); } else if (t === 'den') { n = a * (k + 1); d = b * (k + 1) + pick([-1, 1]); } else { n = b * k; d = a * k; }
-        if (n <= 0 || n * b === d * a) { n = a + 1; d = b + 2; }
-      }
-      const el = document.createElement('button');
-      el.type = 'button'; el.className = 'g-bub'; el.innerHTML = fr(n, d);
-      el.style.top = `${4 + (lane++ % 5) * 15}%`; el.style.animationDuration = `${RM.matches ? 3 : ri(55, 75) / 10}s`;
-      if (RM.matches) el.style.left = `${ri(5, 75)}%`;
-      el.addEventListener('animationend', () => el.remove());
-      el.addEventListener('click', () => {
-        const same = n * b === d * a, ok = mode === 'kurz' ? same && gcd(n, d) === 1 : same, fb = host.querySelector('.g-fb');
-        if (ok) { score++; el.classList.add('hit'); fb.className = 'g-fb good'; fb.innerHTML = mode === 'kurz' ? `<b>Treffer!</b> ${F(big[0], big[1])} = ${F(n, d)}, vollständig gekürzt.` : `<b>Treffer!</b> ${F(n, d)} = ${F(a, b)}`; }
-        else { wrong++; el.classList.add('miss'); fb.className = 'g-fb bad'; fb.innerHTML = mode === 'kurz' && same ? `<b>Fast!</b> ${F(n, d)} ist gleich groß, aber noch nicht vollständig gekürzt: ${n} und ${d} haben den Teiler ${gcd(n, d)}.` : `<b>Kein Zauber.</b> ${F(n, d)} ist nicht gleich ${F(mode === 'kurz' ? big[0] : a, mode === 'kurz' ? big[1] : b)}.`; }
-        host.querySelector('.g-score').textContent = `${score} Treffer`;
-        el.disabled = true; setTimeout(() => el.remove(), 350);
-      });
-      stage.appendChild(el);
-    }
-    function play() {
-      score = 0; wrong = 0; target = pick([[1, 2], [2, 3], [3, 4], [2, 5], [3, 5], [1, 3], [3, 7], [5, 6]]); end = performance.now() + TIME * 1000;
-      if (mode === 'kurz') { const G = pick([6, 8, 12, 9, 10]); big = [target[0] * G, target[1] * G, G]; }
-      host.innerHTML = `<div class="g-head"><span class="g-score">0 Treffer</span><span class="g-time">${TIME} s</span></div><div class="g-bar"><i></i></div>
-        <p class="g-ask">${mode === 'kurz' ? `Der Kürz-Zauber wirkt nur auf <span class="g-big">${fr(big[0], big[1])}</span> <b>vollständig gekürzt</b>` : `Der Zauber wirkt nur auf Brüche, die genauso groß sind wie <span class="g-big">${fr(...target)}</span>`}</p><div class="g-stage${RM.matches ? ' still' : ''}"></div><p class="g-fb" aria-live="polite">Tippe nur auf die passenden Brüche.</p>`;
-      const stage = host.querySelector('.g-stage');
-      clearInterval(spawn);
-      spawn = setInterval(() => {
-        const left = Math.max(0, Math.ceil((end - performance.now()) / 1000)), el = host.querySelector('.g-time');
-        if (!el || !document.body.contains(el)) { clearInterval(spawn); return; }
-        el.textContent = `${left} s`; host.querySelector('.g-bar i').style.width = `${left / TIME * 100}%`;
-        if (left === 0) {
-          clearInterval(spawn);
-          const pts = Math.max(0, score - wrong), b = best('g5'); if (b == null || pts > b) best('g5', pts);
-          return endCard(host, `<h3>${score} Treffer, ${wrong} ${wrong === 1 ? 'Fehlgriff' : 'Fehlgriffe'}</h3><p>Punkte: ${score} − ${wrong} = ${pts}. ${b == null || pts > b ? 'Neuer Rekord!' : `Dein Rekord: ${b}.`}</p>`, play);
-        }
-        if (stage.childElementCount < 6) bubble(stage);
-      }, 900);
-      bubble(stage);
-    }
-    startCard(host, `<p>Ein Zauberspruch wirkt nur auf Brüche, die genauso groß sind wie der Zauberbruch. Tippe auf jeden passenden Bruch, der vorbeifliegt. Falsche Treffer kosten einen Punkt. Du hast ${TIME} Sekunden.</p><p>Tipp: Passende Brüche sind erweitert, zum Beispiel ${F(2, 3)} = ${F(4, 6)} = ${F(6, 9)}. Beim Kürz-Zauber zählt nur der vollständig gekürzte Bruch.</p><div class="g5-mode"></div>${best('g5') != null ? `<p>Dein Rekord: <b>${best('g5')}</b> Punkte.</p>` : ''}`, play);
-    makeSeg(host.querySelector('.g5-mode'), { label: 'Zauber', options: [{ v: 'gleich', t: 'Erweitern-Zauber' }, { v: 'kurz', t: 'Kürz-Zauber' }], value: mode, onChange: v => { mode = v; } });
-  }
-
   /* ---- Bruch-Rennen ---- */
   function rennen(host) {
     const GOAL = 8;
@@ -5681,52 +5491,6 @@ function tapCups(host, T) {
       function draw0() { host.querySelectorAll('.sn').forEach((s, i) => { s.style.left = `${pos[i] / GOAL * 82}%`; }); }
     }
     startCard(host, `<p>Zwei Schnecken kriechen um die Wette. Jede trägt einen Bruch. Tippe auf den größeren Bruch, dann kriecht diese Schnecke einen Schritt weiter. Wer zuerst ${GOAL} Schritte schafft, gewinnt. Wie viele hast du richtig?</p>${best('g6') != null ? `<p>Dein Rekord: <b>${best('g6')} %</b> richtig.</p>` : ''}`, play);
-  }
-
-  /* ---- Bruch-Wäscheleine (früher Ordnungs-Zug), wie im Buch S. 20 ---- */
-  function zug(host) {
-    const LEVELS = 6;
-    let lvl, pts, mist;
-    const sets = [[2, 4, 8], [3, 6, 12], [2, 5, 10], [2, 3, 4, 6, 12], [2, 3, 4, 6], [2, 3, 4, 5, 6, 8]];
-    // levels 5 and 6 hang negative cards too
-    function cards(level) {
-      const n = level < 2 ? 4 : 5, set = level === 0 ? [pick([6, 8, 10])] : sets[Math.min(level, sets.length - 1)], neg = level >= 4;
-      let fs; do fs = range(1, n).map(() => { const d = pick(set), a = neg ? ri(1, 2 * d - 1) : ri(1, d - 1); return [neg && Math.random() < .5 ? -a : a, d]; }); while (new Set(fs.map(([a, b]) => a / b)).size < n);
-      return fs;
-    }
-    const lbl = ([a, b]) => sfr(a, b);
-    function play() { lvl = 0; pts = 0; mist = 0; level(); }
-    function level() {
-      if (lvl === LEVELS) {
-        const b = best('g7'); if (b == null || pts > b) best('g7', pts);
-        return endCard(host, `<h3>Alle ${LEVELS} Leinen sind voll!</h3><p>${pts} Karten beim ersten Versuch richtig aufgehängt, ${mist} Fehler. ${b == null || pts > b ? 'Neuer Rekord!' : `Dein Rekord: ${b} Karten.`}</p>`, play);
-      }
-      const fs = cards(lvl), left = fs.map((f, i) => i);
-      let missed = false;
-      host.innerHTML = `<div class="g-head"><span>Leine ${lvl + 1} von ${LEVELS}</span><span class="g-score">${pts} Karten</span></div>
-        <p class="g-ask">Häng die Karten auf, vom <b>kleinsten</b> zum <b>größten</b> Bruch.${lvl === 4 ? ' <b>Jetzt auch negative Zahlen!</b>' : ''}</p>
-        <div class="wl"><div class="wl-rope" aria-hidden="true"></div><div class="train wl-cards"></div></div><div class="yard">${fs.map((f, i) => `<button type="button" class="opt wagon" data-i="${i}">${lbl(f)}</button>`).join('')}</div><p class="g-fb" aria-live="polite"></p>`;
-      host.querySelectorAll('.wagon').forEach(w => w.addEventListener('click', () => {
-        const i = Number(w.dataset.i), v = fs[i][0] / fs[i][1], min = Math.min(...left.map(k => fs[k][0] / fs[k][1])), fb = host.querySelector('.g-fb');
-        if (v === min) {
-          left.splice(left.indexOf(i), 1); if (!missed) pts++; missed = false;
-          host.querySelector('.wl-cards').appendChild(w); w.disabled = true; w.classList.add('on');
-          fb.className = 'g-fb good'; fb.textContent = left.length ? 'Aufgehängt!' : 'Die Leine ist voll!';
-          host.querySelector('.g-score').textContent = `${pts} Karten`;
-          if (!left.length) {
-            const nb = document.createElement('button'); nb.type = 'button'; nb.className = 'btn'; nb.textContent = lvl + 1 === LEVELS ? 'Ergebnis' : 'Nächste Leine';
-            nb.addEventListener('click', () => { lvl++; level(); }); fb.after(nb); nb.focus({ preventScroll: true });
-          }
-        } else {
-          mist++; missed = true; w.classList.add('shake'); setTimeout(() => w.classList.remove('shake'), 400);
-          const k = left.find(x => fs[x][0] / fs[x][1] === min), anyNeg = fs[i][0] < 0 || fs[k][0] < 0;
-          fb.className = 'g-fb bad'; fb.innerHTML = anyNeg
-            ? `Noch nicht. Es gibt eine kleinere Karte. Negative Zahlen liegen links von 0, und je weiter links, desto kleiner.`
-            : `Noch nicht. Es gibt eine kleinere Karte. Vergleiche ${F(...fs[i])} mit den anderen.<span class="extra">${valPic(fs[i][0], fs[i][1], F(...fs[i]))}${valPic(fs[k][0], fs[k][1], 'eine kleinere Karte')}</span>`;
-        }
-      }));
-    }
-    startCard(host, `<p>Auf jeder Karte steht ein Bruch. Häng die Karten an die Wäscheleine, vom kleinsten zum größten Bruch, so wie im Buch. Es gibt ${LEVELS} Leinen, sie werden immer schwieriger. Auf den letzten Leinen hängen auch negative Zahlen.</p>${best('g7') != null ? `<p>Dein Rekord: <b>${best('g7')}</b> Karten beim ersten Versuch.</p>` : ''}`, play);
   }
 
   /* ---- Mengen-Sortierer: ℕ, ℤ oder ℚ? ---- */
@@ -5976,7 +5740,86 @@ function tapCups(host, T) {
       <p>Vorsicht: Tippst du einen Bruch an, der schon vollständig gekürzt ist, verlierst du ${PENALTY} Sekunden. Du hast ${TIME} Sekunden. Sind alle kürzbaren Brüche weg, kommt die nächste Runde, mit immer größeren Zahlen.</p>${best('g11') != null ? `<p>Dein Rekord: <b>${best('g11')}</b> Brüche.</p>` : ''}`, play);
   }
 
-  const GAMES_IMPL = { g1: zielwurf, g2: memory, g3: schnell, g4: baeckerei, g5: zauberer, g6: rennen, g7: zug, g9: bingo, g10: mengen, g11: kuerzblitz };
+  /* ---- Kürz-Eimer ---- */
+  function kuerzeimer(host) {
+    // 16 Brüche in die Eimer 2, 3, 5 und 7 sortieren: in den Eimer der Zahl, mit der man den Bruch kürzen kann. Die Zeit ist das Ergebnis.
+    const BUCKETS = [2, 3, 5, 7], CARDS = 16, PENALTY = 5;
+    let deck = [], k = 0, t0 = 0, extra = 0, misses = 0, timer = null, busy = false, counts = {};
+    const card = (p, late) => {
+      for (;;) {
+        // the common divisor holds only the prime p (2, 4, 8 or 3, 9 …), so exactly one bucket fits
+        const g = p === 2 && Math.random() < .35 ? pick([4, 8]) : p === 3 && late && Math.random() < .25 ? 9 : p;
+        const b = ri(2, late ? 12 : 8), a = ri(1, late && Math.random() < .3 ? 2 * b : b - 1);
+        const n = a * g, d = b * g;
+        if (gcd(a, b) === 1 && d <= (late ? 99 : 42) && !deck.some(c => c.n === n && c.d === d)) return { n, d, p };
+      }
+    };
+    const secs = () => (performance.now() - t0) / 1000 + extra;
+    const fmt = s => s.toFixed(1).replace('.', ',') + ' s';
+    function show() {
+      const c = deck[k];
+      host.querySelector('.ke-left').textContent = `Bruch ${k + 1} von ${CARDS}`;
+      const el = host.querySelector('.ke-card');
+      el.classList.remove('gone', 'nope');
+      el.innerHTML = fr(c.n, c.d);
+    }
+    function drop(p, btn) {
+      const c = deck[k], fb = host.querySelector('.g-fb'), el = host.querySelector('.ke-card');
+      if (busy || !c) return;
+      if (c.n % p === 0 && c.d % p === 0) {
+        busy = true; counts[p]++;
+        btn.querySelector('.ke-n').textContent = counts[p];
+        btn.querySelector('.ke-last').innerHTML = `= ${F(c.n / p, c.d / p)}`;
+        btn.classList.remove('hit'); void btn.offsetWidth; btn.classList.add('hit');
+        el.classList.add('gone');
+        fb.className = 'g-fb good';
+        fb.innerHTML = `<b>Richtig!</b> ${F(c.n, c.d)} = ${F(c.n / p, c.d / p)} (gekürzt mit ${p})`;
+        setTimeout(() => {
+          busy = false; k++;
+          if (!document.body.contains(el)) return;
+          if (k < CARDS) show(); else finish();
+        }, RM.matches ? 60 : 280);
+      } else {
+        misses++; extra += PENALTY;
+        el.classList.remove('nope'); void el.offsetWidth; el.classList.add('nope');
+        const bad = c.n % p ? c.n : c.d;
+        fb.className = 'g-fb bad';
+        fb.innerHTML = `<b>Nicht in diesen Eimer.</b> ${bad} ist nicht durch ${p} teilbar, also kannst du ${F(c.n, c.d)} nicht mit ${p} kürzen. +${PENALTY} s`;
+      }
+    }
+    function tick() {
+      const el = host.querySelector('.g-time');
+      if (!el || !document.body.contains(el)) { clearInterval(timer); return; }
+      el.textContent = fmt(secs());
+    }
+    function finish() {
+      clearInterval(timer);
+      const s = Math.round(secs() * 10) / 10, b = best('g12');
+      if (b == null || s < b) best('g12', s);
+      endCard(host, `<h3>Alle ${CARDS} Brüche in ${fmt(s)}</h3><p>${b == null || s < b ? 'Neuer Rekord!' : `Dein Rekord: ${fmt(b)}.`}${misses ? ` Darin ${misses === 1 ? 'steckt 1 Fehler' : `stecken ${misses} Fehler`}, also ${misses * PENALTY} Strafsekunden.` : ' Und kein einziger Fehler!'}</p>
+        <p>Merke: Du kannst einen Bruch mit einer Zahl kürzen, wenn Zähler und Nenner beide durch diese Zahl teilbar sind.</p>`, play);
+    }
+    host.onclick = e => { const b = e.target.closest('[data-p]'); if (b) drop(Number(b.dataset.p), b); };
+    function play() {
+      k = 0; extra = 0; misses = 0; busy = false; deck = [];
+      counts = Object.fromEntries(BUCKETS.map(p => [p, 0]));
+      const ps = shuffle(BUCKETS.flatMap(p => Array(CARDS / BUCKETS.length).fill(p)));
+      ps.forEach((p, i) => deck.push(card(p, i >= CARDS / 2)));
+      host.innerHTML = `<div class="g-head"><span class="ke-left"></span><span>Zeit: <span class="g-time">0,0 s</span></span></div>
+        <p class="g-ask">Mit welcher Zahl kannst du diesen Bruch kürzen?</p>
+        <div class="ke-stage"><div class="ke-card" aria-live="polite"></div></div>
+        <div class="ke-buckets">${BUCKETS.map(p => `<button type="button" class="opt ke-bucket" data-p="${p}" aria-label="Eimer: kürzen mit ${p}"><span class="ke-p">${p}</span><span class="ke-n">0</span><span class="ke-last"></span></button>`).join('')}</div>
+        <p class="g-fb" aria-live="polite"></p>`;
+      show();
+      t0 = performance.now(); clearInterval(timer); timer = setInterval(tick, 100);
+      const nav = document.querySelector('.navbar'), top = host.getBoundingClientRect().top - (nav ? nav.getBoundingClientRect().bottom : 0) - 12;
+      if (top < 0 || host.getBoundingClientRect().bottom > innerHeight) window.scrollBy({ top, behavior: RM.matches ? 'auto' : 'smooth' });
+    }
+    startCard(host, `<p>Es gibt vier Eimer: <b>kürzen mit 2, 3, 5 und 7</b>. Ein Bruch erscheint. Tippe auf den Eimer mit der Zahl, mit der du ihn kürzen kannst. Zähler und Nenner müssen beide durch diese Zahl teilbar sein.</p>
+      <p>Sortiere alle ${CARDS} Brüche so schnell du kannst. Die Zeit ist dein Ergebnis, je kürzer, desto besser. Ein falscher Eimer kostet ${PENALTY} Strafsekunden.</p>${best('g12') != null ? `<p>Dein Rekord: <b>${fmt(best('g12'))}</b>.</p>` : ''}`, play);
+  }
+
+  const GAMES_IMPL = { g1: zielwurf, g2: memory, g6: rennen, g9: bingo, g10: mengen, g11: kuerzblitz, g12: kuerzeimer };
 })();
 
 /* Direktlink: #m1 …, #tests, #g1 …, #glossar */

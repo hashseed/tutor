@@ -29,6 +29,14 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.1;letter-spaci
 .nav-home .logo{flex:none}
 .units{flex:1;min-width:0;display:flex;flex-wrap:nowrap;gap:2px;overflow-x:auto;scrollbar-width:none}
 .units::-webkit-scrollbar,.tabs::-webkit-scrollbar{display:none}
+/* arrows for rows that scroll sideways (added by kit.js) */
+.side-scroll{position:relative;flex:1;min-width:0;display:flex}
+.side-scroll.for-tabs{width:100%}
+.side-scroll>.units,.side-scroll>.tabs{flex:1}
+.side-btn{position:absolute;top:50%;z-index:2;width:34px;height:34px;margin-top:-17px;padding:0;border-radius:50%;border:var(--bw) solid var(--line);background:var(--card);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-bar)}
+.side-btn:hover{border-color:var(--accent);color:var(--accent)}
+.side-btn.l{left:-4px}.side-btn.r{right:-4px}
+.side-btn[hidden]{display:none}
 .unit{flex:none;display:flex;align-items:baseline;gap:7px;padding:15px 12px 12px;border:0;border-bottom:3px solid transparent;background:none;cursor:pointer;white-space:nowrap;line-height:1.25;text-decoration:none;color:var(--ink)}
 .unit b{font-family:var(--display);font-weight:800;font-size:16px}
 .unit span{font-size:14px;color:var(--muted)}

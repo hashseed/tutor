@@ -168,5 +168,39 @@
     return { restart() { i = 0; first = []; render(); } };
   }
 
-  window.Kit = { $, $$, S, svgPoint, esc, lerp, clamp, range, shuffle, deNum, ease, easeOut, lin, tween, wait, reducedMotion: RM, store, makeStepper, makeSeg, mountCheck };
+  /* ---------- Rows that scroll sideways ----------
+     Every .tabs and .units row gets arrow buttons at the edge where items are hidden, and the mouse wheel scrolls it
+     sideways, so items that don't fit can be reached without a touch screen. Runs on its own once the page has loaded. */
+  function sideScroll(row) {
+    if (row.dataset.sideScroll) return;
+    row.dataset.sideScroll = '1';
+    const wrap = document.createElement('div');
+    wrap.className = 'side-scroll' + (row.classList.contains('tabs') ? ' for-tabs' : '');
+    row.before(wrap); wrap.append(row);
+    const arrow = (dir, label) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'side-btn ' + dir; b.tabIndex = -1; b.setAttribute('aria-label', label);
+      b.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="${dir === 'l' ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'}" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+      b.addEventListener('click', () => row.scrollBy({ left: (dir === 'l' ? -.7 : .7) * row.clientWidth, behavior: RM.matches ? 'auto' : 'smooth' }));
+      wrap.append(b); return b;
+    };
+    const L = arrow('l', 'Weiter nach links'), R = arrow('r', 'Weiter nach rechts');
+    const update = () => {
+      const max = row.scrollWidth - row.clientWidth;
+      L.hidden = row.hidden || row.scrollLeft <= 2;
+      R.hidden = row.hidden || row.scrollLeft >= max - 2;
+    };
+    row.addEventListener('scroll', update, { passive: true });
+    row.addEventListener('wheel', e => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX) || row.scrollWidth <= row.clientWidth) return;
+      row.scrollLeft += e.deltaY; e.preventDefault();
+    }, { passive: false });
+    new ResizeObserver(update).observe(row);
+    new MutationObserver(update).observe(row, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden'] });
+    update();
+  }
+  const initRows = () => $$('.tabs, .units').forEach(sideScroll);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initRows); else initRows();
+
+  window.Kit = { $, $$, S, svgPoint, esc, lerp, clamp, range, shuffle, deNum, ease, easeOut, lin, tween, wait, reducedMotion: RM, store, makeStepper, makeSeg, mountCheck, sideScroll };
 })();

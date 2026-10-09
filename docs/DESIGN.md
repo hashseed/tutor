@@ -92,6 +92,7 @@ All on `window.Kit`:
 | `makeStepper(host, {label, values, value, onChange})` → `{get, set, setValues}` | − value + control |
 | `makeSeg(host, {label, options:[{v,t}], value, onChange})` → `{get, set}` | Segmented choice |
 | `mountCheck(host, items, {title?, tag?, onDone?, next?})` → `{restart}` | "Teste dich selbst". Items are `{type:'mcq', prompt, visual?, options:[{text, pic?, correct?, why?}], explain, after?}` or `{type:'task', prompt, visual?, mount(body) → () => ({ok, msg})}`. Every wrong option needs a `why`. |
+| `sideScroll(row)` | Runs by itself on every `.tabs` and `.units` row once the page has loaded: arrow buttons appear at the edge where items are hidden, and the mouse wheel scrolls the row sideways. Call it yourself only for a row added later. |
 
 Subject-specific helpers (e.g. German fraction words, `fr()` for fraction HTML) stay in their app. Move a helper into the kit only when a second app needs it.
 
