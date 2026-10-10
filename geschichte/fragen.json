@@ -1,0 +1,4997 @@
+{
+ "abschnitte": [
+  {
+   "id": "a1",
+   "title": "Vergangenheit und Geschichte",
+   "heft": [
+    {
+     "type": "mcq",
+     "prompt": "Was ist die Vergangenheit?",
+     "options": [
+      {
+       "text": "Alles, was früher passiert ist.",
+       "correct": true
+      },
+      {
+       "text": "Nur die wichtigen Ereignisse, über die man in Büchern liest.",
+       "why": "Das ist zu eng gedacht. Auch ganz alltägliche Dinge gehören zur Vergangenheit, sobald sie vorbei sind."
+      },
+      {
+       "text": "Nur das, was vor sehr langer Zeit passiert ist.",
+       "why": "Es muss nicht lange her sein. Auch gestern gehört schon zur Vergangenheit."
+      },
+      {
+       "text": "Das, was morgen passieren wird.",
+       "why": "Was morgen passiert, ist die Zukunft. Die Vergangenheit ist schon vorbei."
+      }
+     ],
+     "explain": "Die Vergangenheit ist alles, was früher passiert ist. Egal ob wichtig oder unwichtig, lange her oder erst gestern."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was macht die Geschichte?",
+     "options": [
+      {
+       "text": "Sie beschäftigt sich mit einem Ausschnitt der Vergangenheit und versucht, ihn zu verstehen und zu erforschen.",
+       "correct": true
+      },
+      {
+       "text": "Sie schreibt alles auf, was jemals passiert ist.",
+       "why": "Das schafft niemand. Es ist viel zu viel passiert. Die Geschichte wählt immer einen Ausschnitt aus."
+      },
+      {
+       "text": "Sie erfindet spannende Erzählungen über früher.",
+       "why": "Geschichte erfindet nichts. Sie erforscht mit Quellen, wie es wirklich war."
+      },
+      {
+       "text": "Sie sagt voraus, was in Zukunft passiert.",
+       "why": "Die Geschichte schaut zurück, nicht nach vorn. Sie erforscht die Vergangenheit."
+      }
+     ],
+     "explain": "Geschichte nimmt sich einen Ausschnitt der Vergangenheit vor. Sie will ihn verstehen und erforschen."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Vergangenheit ist nicht gleich Geschichte. Die Vergangenheit ist {alles}, was {früher} passiert ist. Geschichte beschäftigt sich mit einem {Ausschnitt} der Vergangenheit. Sie versucht, diese zu {verstehen} und zu {erforschen}.",
+     "extra": [
+      {
+       "word": "später",
+       "why": "Was später passiert, liegt in der Zukunft. Die Vergangenheit ist das, was früher war."
+      },
+      {
+       "word": "vergessen",
+       "why": "Geschichte will die Vergangenheit nicht vergessen. Sie will sie verstehen und erforschen."
+      },
+      {
+       "word": "nichts",
+       "why": "Die Vergangenheit ist nicht nichts. Sie ist alles, was schon passiert ist."
+      }
+     ],
+     "explain": "Die Vergangenheit ist das Ganze. Die Geschichte erforscht einen Ausschnitt davon."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Stimmt der Satz: „Vergangenheit und Geschichte sind genau dasselbe.“?",
+     "options": [
+      {
+       "text": "Nein. Die Vergangenheit ist alles von früher, die Geschichte erforscht nur einen Ausschnitt davon.",
+       "correct": true
+      },
+      {
+       "text": "Ja. Beide Wörter bedeuten „früher“.",
+       "why": "Die Wörter hängen zusammen, sind aber nicht gleich. Geschichte ist nur der Teil der Vergangenheit, den man erforscht."
+      },
+      {
+       "text": "Nein. Die Geschichte ist größer als die Vergangenheit.",
+       "why": "Es ist umgekehrt. Die Vergangenheit ist das Größere. Die Geschichte ist ein Ausschnitt daraus."
+      }
+     ],
+     "explain": "Vergangenheit ist nicht gleich Geschichte. Die Geschichte ist ein erforschter Ausschnitt der Vergangenheit."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wie hängen Vergangenheit und Geschichte zusammen?",
+     "options": [
+      {
+       "text": "Die Geschichte ist ein Ausschnitt der Vergangenheit, den man genauer untersucht.",
+       "correct": true
+      },
+      {
+       "text": "Gar nicht. Sie haben nichts miteinander zu tun.",
+       "why": "Doch, sie hängen eng zusammen. Die Geschichte erforscht ja gerade die Vergangenheit."
+      },
+      {
+       "text": "Die Vergangenheit ist ein kleiner Teil der Geschichte.",
+       "why": "Andersherum ist es richtig. Die Vergangenheit ist alles, die Geschichte nur ein Ausschnitt."
+      }
+     ],
+     "explain": "Aus der riesigen Vergangenheit sucht sich die Geschichte einen Ausschnitt heraus und erforscht ihn."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "mcq",
+     "prompt": "Lena hat heute Morgen ein Brötchen gegessen. Gehört das schon zur Vergangenheit?",
+     "options": [
+      {
+       "text": "Ja. Es ist schon passiert, also ist es Vergangenheit.",
+       "correct": true
+      },
+      {
+       "text": "Nein. Zur Vergangenheit gehören nur sehr alte Dinge.",
+       "why": "Die Vergangenheit fängt nicht erst vor vielen Jahren an. Alles, was schon vorbei ist, gehört dazu."
+      },
+      {
+       "text": "Nein. Zur Vergangenheit gehören nur wichtige Ereignisse.",
+       "why": "Auch kleine Dinge wie ein Frühstück gehören zur Vergangenheit. Wichtig oder nicht spielt keine Rolle."
+      }
+     ],
+     "explain": "Alles, was früher passiert ist, ist Vergangenheit. Auch das Brötchen von heute Morgen."
+    },
+    {
+     "type": "sort",
+     "prompt": "Ordne zu: Vergangenheit, Gegenwart oder Zukunft?",
+     "buckets": [
+      {
+       "id": "v",
+       "name": "Vergangenheit"
+      },
+      {
+       "id": "g",
+       "name": "Gegenwart"
+      },
+      {
+       "id": "z",
+       "name": "Zukunft"
+      }
+     ],
+     "items": [
+      {
+       "text": "deine Geburt",
+       "b": "v",
+       "why": "Deine Geburt ist schon passiert. Darum gehört sie zur Vergangenheit."
+      },
+      {
+       "text": "gestern Abend",
+       "b": "v",
+       "why": "Gestern ist vorbei. Das ist Vergangenheit."
+      },
+      {
+       "text": "die erste Mondlandung",
+       "b": "v",
+       "why": "Die Mondlandung war 1969. Sie ist lange vorbei."
+      },
+      {
+       "text": "dieser Satz, den du liest",
+       "b": "g",
+       "why": "Du liest ihn genau jetzt. Das ist die Gegenwart."
+      },
+      {
+       "text": "dein nächster Geburtstag",
+       "b": "z",
+       "why": "Dein nächster Geburtstag kommt erst noch. Das ist Zukunft."
+      },
+      {
+       "text": "die Ferien im nächsten Jahr",
+       "b": "z",
+       "why": "Das nächste Jahr hat noch nicht angefangen. Das liegt in der Zukunft."
+      }
+     ],
+     "explain": "Vergangenheit ist vorbei, Gegenwart ist jetzt, Zukunft kommt noch."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Eine Forscherin untersucht, wie Kinder im Mittelalter gespielt haben. Was tut sie?",
+     "options": [
+      {
+       "text": "Sie erforscht einen Ausschnitt der Vergangenheit. Das ist Geschichte.",
+       "correct": true
+      },
+      {
+       "text": "Sie erforscht die ganze Vergangenheit.",
+       "why": "Sie schaut nur auf ein Thema: Spiele von Kindern im Mittelalter. Das ist ein Ausschnitt, nicht die ganze Vergangenheit."
+      },
+      {
+       "text": "Sie erforscht die Zukunft.",
+       "why": "Das Mittelalter ist lange vorbei. Sie schaut also zurück, nicht nach vorn."
+      }
+     ],
+     "explain": "Wer einen Teil der Vergangenheit genau untersucht, beschäftigt sich mit Geschichte."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welche Frage ist eine Frage für die Geschichte?",
+     "options": [
+      {
+       "text": "Wie lebten Kinder vor 200 Jahren?",
+       "correct": true
+      },
+      {
+       "text": "Was gibt es morgen zum Mittagessen?",
+       "why": "Morgen liegt in der Zukunft. Geschichte fragt nach dem, was früher war."
+      },
+      {
+       "text": "Wie wird das Wetter nächste Woche?",
+       "why": "Das ist eine Frage an die Zukunft. Geschichte erforscht die Vergangenheit."
+      },
+      {
+       "text": "Wie viel ist 7 · 8?",
+       "why": "Das ist eine Rechenaufgabe. Mit der Vergangenheit hat sie nichts zu tun."
+      }
+     ],
+     "explain": "Geschichte stellt Fragen an die Vergangenheit, zum Beispiel, wie Menschen früher lebten."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum kann die Geschichte nie die ganze Vergangenheit erforschen?",
+     "options": [
+      {
+       "text": "Weil viel zu viel passiert ist und vieles keine Spuren hinterlassen hat.",
+       "correct": true
+      },
+      {
+       "text": "Weil es verboten ist, alles zu erforschen.",
+       "why": "Es ist nicht verboten. Es geht einfach nicht, weil es zu viel ist und vieles verloren ging."
+      },
+      {
+       "text": "Weil die Vergangenheit erst vor 100 Jahren angefangen hat.",
+       "why": "Die Vergangenheit reicht viel weiter zurück, Millionen von Jahren. Gerade deshalb ist sie so riesig."
+      }
+     ],
+     "explain": "Die Vergangenheit ist riesig, und nicht alles hat Spuren hinterlassen. Darum erforscht die Geschichte immer nur Ausschnitte."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Tom sagt: „Was gestern war, ist noch keine Vergangenheit. Es ist ja noch nicht alt.“ Hat Tom recht?",
+     "options": [
+      {
+       "text": "Nein. Alles, was schon passiert ist, gehört zur Vergangenheit, auch gestern.",
+       "correct": true
+      },
+      {
+       "text": "Ja. Vergangenheit beginnt erst nach 100 Jahren.",
+       "why": "Es gibt keine solche Grenze. Sobald etwas vorbei ist, ist es Vergangenheit."
+      },
+      {
+       "text": "Ja. Gestern gehört noch zur Gegenwart.",
+       "why": "Die Gegenwart ist nur das Jetzt. Gestern ist schon vorbei."
+      }
+     ],
+     "explain": "Vergangenheit ist alles, was früher passiert ist. Wie lange es her ist, spielt keine Rolle."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Dein letzter Geburtstag gehört zur {Vergangenheit}. Eine Forscherin will wissen, wie Kinder vor 100 Jahren Geburtstag feierten. Damit beschäftigt sie sich mit {Geschichte}. Sie untersucht nur einen kleinen {Teil} davon.",
+     "extra": [
+      {
+       "word": "Zukunft",
+       "why": "Dein letzter Geburtstag ist schon vorbei. Er liegt nicht in der Zukunft."
+      },
+      {
+       "word": "Gegenwart",
+       "why": "Die Gegenwart ist nur das Jetzt. Ein Geburtstag, der vorbei ist, ist Vergangenheit."
+      }
+     ],
+     "explain": "Die Vergangenheit ist alles von früher. Geschichte erforscht einen Teil davon."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wozu beschäftigen sich Menschen mit Geschichte?",
+     "options": [
+      {
+       "text": "Um zu verstehen, wie Menschen früher lebten und warum manches heute so ist.",
+       "correct": true
+      },
+      {
+       "text": "Um die Vergangenheit zu verändern.",
+       "why": "Die Vergangenheit kann niemand mehr ändern. Man kann sie aber erforschen und verstehen."
+      },
+      {
+       "text": "Um sich Geschichten auszudenken.",
+       "why": "In der Geschichte wird nichts ausgedacht. Forscher prüfen mit Quellen, was wirklich war."
+      }
+     ],
+     "explain": "Geschichte hilft uns, die Vergangenheit zu verstehen. So verstehen wir auch die Gegenwart besser."
+    },
+    {
+     "type": "explain",
+     "prompt": "Erkläre einem Freund den Unterschied zwischen Vergangenheit und Geschichte.",
+     "keys": [
+      {
+       "label": "Vergangenheit = alles, was früher passiert ist",
+       "words": [
+        "alles",
+        "früher passiert",
+        "schon passiert",
+        "vorbei"
+       ]
+      },
+      {
+       "label": "Geschichte = ein Ausschnitt",
+       "words": [
+        "ausschnitt",
+        "teil",
+        "stück",
+        "nur einen"
+       ]
+      },
+      {
+       "label": "Geschichte erforscht und will verstehen",
+       "words": [
+        "erforsch",
+        "forsch",
+        "versteh",
+        "untersuch"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Die Vergangenheit ist alles, was früher passiert ist. Die Geschichte beschäftigt sich nur mit einem Ausschnitt davon. Sie versucht, diesen Ausschnitt zu verstehen und zu erforschen.",
+     "explain": "Merke: Vergangenheit ist das Ganze, Geschichte ist der erforschte Ausschnitt."
+    }
+   ]
+  },
+  {
+   "id": "a2",
+   "title": "Der Zeitstrahl",
+   "heft": [
+    {
+     "type": "mcq",
+     "prompt": "Was bedeutet die Abkürzung „v. Chr.“?",
+     "options": [
+      {
+       "text": "vor Christus, also vor Christi Geburt",
+       "correct": true
+      },
+      {
+       "text": "von Christus",
+       "why": "Fast. Das „v.“ steht aber für „vor“. Gemeint ist die Zeit vor Christi Geburt."
+      },
+      {
+       "text": "viele Jahrhunderte",
+       "why": "Das „Chr.“ steht für Christus. „v. Chr.“ heißt „vor Christus“."
+      },
+      {
+       "text": "nach Christus",
+       "why": "Nach Christus kürzt man mit „n. Chr.“ ab. „v. Chr.“ heißt „vor Christus“."
+      }
+     ],
+     "explain": "v. Chr. heißt vor Christus, n. Chr. heißt nach Christus. Christi Geburt steht in der Mitte des Zeitstrahls."
+    },
+    {
+     "type": "order",
+     "prompt": "Bring die Ereignisse in die richtige Reihenfolge. Das früheste kommt zuerst.",
+     "items": [
+      "ca. 2,6 Mio. v. Chr.: erste Steinwerkzeuge",
+      "ca. 10.000 v. Chr.: Ackerbau und Viehzucht",
+      "ca. 2.600 v. Chr.: Ägypter bauen Pyramiden",
+      "753 v. Chr.: Rom wird gegründet",
+      "800: Karl der Große wird Kaiser",
+      "1825: die erste Eisenbahn fährt",
+      "1969: der erste Mensch auf dem Mond",
+      "heute: KI im Alltag"
+     ],
+     "why": "Denk daran: Bei v. Chr. ist die größere Zahl früher. Bei n. Chr. ist die kleinere Zahl früher.",
+     "explain": "Zuerst kommen die Jahre v. Chr., von der größten zur kleinsten Zahl. Danach die Jahre n. Chr., von der kleinsten zur größten."
+    },
+    {
+     "type": "order",
+     "prompt": "Ohne Jahreszahlen: Was geschah zuerst? Bring die Ereignisse in die richtige Reihenfolge.",
+     "items": [
+      "Menschen stellen die ersten Steinwerkzeuge her",
+      "Menschen betreiben Ackerbau und Viehzucht",
+      "Die Ägypter bauen die Pyramiden",
+      "Rom wird gegründet",
+      "Karl der Große wird Kaiser",
+      "Die erste Eisenbahn fährt",
+      "Der erste Mensch betritt den Mond",
+      "KI wird Teil unseres Alltags"
+     ],
+     "why": "Erinnere dich an den Zeitstrahl: Steinwerkzeuge, Ackerbau, Pyramiden, Rom, Karl der Große, Eisenbahn, Mond, KI.",
+     "explain": "So stehen die Ereignisse auf dem Zeitstrahl: von den ersten Steinwerkzeugen bis heute."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was war früher: der Bau der Pyramiden (ca. 2.600 v. Chr.) oder die Gründung Roms (753 v. Chr.)?",
+     "options": [
+      {
+       "text": "der Bau der Pyramiden",
+       "correct": true
+      },
+      {
+       "text": "die Gründung Roms",
+       "why": "753 ist zwar die kleinere Zahl. Bei v. Chr. ist aber die größere Zahl früher. 2.600 v. Chr. liegt weiter zurück."
+      },
+      {
+       "text": "Beides war im selben Jahr.",
+       "why": "Die Zahlen sind ganz verschieden. Zwischen den beiden Ereignissen liegen fast 2.000 Jahre."
+      }
+     ],
+     "explain": "Bei v. Chr. zählt man von Christi Geburt rückwärts. Darum liegt 2.600 v. Chr. weiter zurück als 753 v. Chr."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Mit einem {Zeitstrahl} und {Jahreszahlen} können wir Ereignisse zeitlich {ordnen}. In der Mitte steht Christi {Geburt}.",
+     "extra": [
+      {
+       "word": "Landkarte",
+       "why": "Eine Landkarte zeigt, wo etwas liegt. Für die zeitliche Reihenfolge brauchst du einen Zeitstrahl."
+      },
+      {
+       "word": "vergessen",
+       "why": "Mit dem Zeitstrahl wollen wir Ereignisse nicht vergessen, sondern zeitlich ordnen."
+      }
+     ],
+     "explain": "Der Zeitstrahl ordnet Ereignisse nach der Zeit. Christi Geburt ist die Mitte: links v. Chr., rechts n. Chr."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was geschah im Jahr 800?",
+     "options": [
+      {
+       "text": "Karl der Große wurde Kaiser.",
+       "correct": true
+      },
+      {
+       "text": "Rom wurde gegründet.",
+       "why": "Rom wurde viel früher gegründet, nämlich 753 v. Chr."
+      },
+      {
+       "text": "Die erste Eisenbahn fuhr.",
+       "why": "Die erste Eisenbahn fuhr erst 1825, also über 1.000 Jahre später."
+      },
+      {
+       "text": "Der erste Mensch betrat den Mond.",
+       "why": "Die Mondlandung war 1969. Im Jahr 800 gab es noch nicht einmal Motoren."
+      }
+     ],
+     "explain": "Im Jahr 800 wurde Karl der Große Kaiser. Das ist ein Jahr nach Christi Geburt, also n. Chr."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "mcq",
+     "prompt": "Was war früher: 500 v. Chr. oder 200 v. Chr.?",
+     "options": [
+      {
+       "text": "500 v. Chr.",
+       "correct": true
+      },
+      {
+       "text": "200 v. Chr.",
+       "why": "Bei v. Chr. zählt man rückwärts. 500 v. Chr. liegt weiter von Christi Geburt entfernt, also früher."
+      },
+      {
+       "text": "Das kann man nicht sagen.",
+       "why": "Doch, das geht. Bei v. Chr. ist die größere Zahl immer früher."
+      }
+     ],
+     "explain": "Bei v. Chr. gilt: Je größer die Zahl, desto früher war es."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was war früher: 200 v. Chr. oder 100 n. Chr.?",
+     "options": [
+      {
+       "text": "200 v. Chr.",
+       "correct": true
+      },
+      {
+       "text": "100 n. Chr.",
+       "why": "100 ist zwar die kleinere Zahl. Aber alles v. Chr. liegt vor allem n. Chr."
+      },
+      {
+       "text": "Beides war gleichzeitig.",
+       "why": "Das eine war vor Christi Geburt, das andere danach. Dazwischen liegen etwa 300 Jahre."
+      }
+     ],
+     "explain": "Alles, was v. Chr. war, liegt auf dem Zeitstrahl links von Christi Geburt und damit vor allem n. Chr."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welches Jahr liegt am spätesten?",
+     "options": [
+      {
+       "text": "50 n. Chr.",
+       "correct": true
+      },
+      {
+       "text": "2.000 v. Chr.",
+       "why": "2.000 v. Chr. ist sehr früh. Bei v. Chr. bedeutet die große Zahl: lange vor Christi Geburt."
+      },
+      {
+       "text": "1.000 v. Chr.",
+       "why": "1.000 v. Chr. liegt vor Christi Geburt. 50 n. Chr. kommt danach."
+      },
+      {
+       "text": "100 v. Chr.",
+       "why": "100 v. Chr. ist zwar nah an Christi Geburt, aber noch davor. 50 n. Chr. ist schon danach."
+      }
+     ],
+     "explain": "Nur 50 n. Chr. liegt nach Christi Geburt. Darum ist es das späteste Jahr."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Mia sagt: „1.000 v. Chr. ist später als 100 v. Chr., weil 1.000 die größere Zahl ist.“ Stimmt das?",
+     "options": [
+      {
+       "text": "Nein. Bei v. Chr. ist die größere Zahl früher, weil man rückwärts zählt.",
+       "correct": true
+      },
+      {
+       "text": "Ja. Eine größere Zahl ist immer später.",
+       "why": "Das gilt nur bei n. Chr. Bei v. Chr. zählt man von Christi Geburt aus rückwärts."
+      },
+      {
+       "text": "Ja, aber nur ungefähr.",
+       "why": "Es stimmt gar nicht. 1.000 v. Chr. liegt 900 Jahre vor 100 v. Chr."
+      }
+     ],
+     "explain": "1.000 v. Chr. ist 1.000 Jahre vor Christi Geburt, 100 v. Chr. nur 100 Jahre davor. Also ist 1.000 v. Chr. früher."
+    },
+    {
+     "type": "order",
+     "prompt": "Bring die Ereignisse in die richtige Reihenfolge. Das früheste kommt zuerst.",
+     "items": [
+      "776 v. Chr.: erste Olympische Spiele",
+      "um 1450: Gutenberg erfindet den Buchdruck",
+      "1492: Kolumbus erreicht Amerika",
+      "1903: erstes Motorflugzeug",
+      "1989: Fall der Berliner Mauer"
+     ],
+     "why": "Das Jahr v. Chr. kommt zuerst. Danach ordnest du die Jahre n. Chr. von klein nach groß.",
+     "explain": "Die Olympischen Spiele waren vor Christi Geburt. Die anderen Ereignisse folgen nach Christi Geburt, der Größe der Zahl nach."
+    },
+    {
+     "type": "order",
+     "prompt": "Ordne die Jahreszahlen. Die früheste kommt zuerst.",
+     "items": [
+      "1.000 v. Chr.",
+      "400 v. Chr.",
+      "50 v. Chr.",
+      "300 n. Chr.",
+      "1500 n. Chr."
+     ],
+     "why": "Bei v. Chr. kommt die größte Zahl zuerst. Bei n. Chr. kommt die kleinste Zahl zuerst.",
+     "explain": "Erst die Jahre v. Chr. von groß nach klein, dann die Jahre n. Chr. von klein nach groß."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wo steht das Jahr 776 v. Chr. auf dem Zeitstrahl?",
+     "options": [
+      {
+       "text": "links von Christi Geburt",
+       "correct": true
+      },
+      {
+       "text": "rechts von Christi Geburt",
+       "why": "Rechts stehen die Jahre n. Chr. 776 v. Chr. war vor Christi Geburt, also links."
+      },
+      {
+       "text": "genau auf Christi Geburt",
+       "why": "Auf der Mitte steht nur Christi Geburt selbst. 776 v. Chr. liegt 776 Jahre davor."
+      }
+     ],
+     "explain": "Auf dem Zeitstrahl stehen die Jahre v. Chr. links von Christi Geburt, die Jahre n. Chr. rechts davon."
+    },
+    {
+     "type": "sort",
+     "prompt": "Christi Geburt ist heute gut 2.000 Jahre her. War das jeweils vor oder nach Christi Geburt?",
+     "buckets": [
+      {
+       "id": "v",
+       "name": "vor Christi Geburt"
+      },
+      {
+       "id": "n",
+       "name": "nach Christi Geburt"
+      }
+     ],
+     "items": [
+      {
+       "text": "vor 3.000 Jahren",
+       "b": "v",
+       "why": "Bis zu Christi Geburt sind es von heute etwa 2.000 Jahre. 3.000 Jahre zurück liegt also davor."
+      },
+      {
+       "text": "vor 2.500 Jahren",
+       "b": "v",
+       "why": "2.500 Jahre sind mehr als die gut 2.000 Jahre bis Christi Geburt. Das war also v. Chr."
+      },
+      {
+       "text": "vor 2.200 Jahren",
+       "b": "v",
+       "why": "Bis Christi Geburt sind es etwa 2.000 Jahre. 2.200 Jahre zurück ist noch weiter, also v. Chr."
+      },
+      {
+       "text": "vor 500 Jahren",
+       "b": "n",
+       "why": "500 Jahre zurück kommst du noch lange nicht bis Christi Geburt. Das war n. Chr."
+      },
+      {
+       "text": "vor 1.000 Jahren",
+       "b": "n",
+       "why": "Bis Christi Geburt sind es etwa 2.000 Jahre. 1.000 Jahre zurück ist also noch n. Chr."
+      },
+      {
+       "text": "vor 1.800 Jahren",
+       "b": "n",
+       "why": "1.800 Jahre sind weniger als die gut 2.000 Jahre bis Christi Geburt. Das war also n. Chr."
+      }
+     ],
+     "explain": "Christi Geburt ist etwa 2.000 Jahre her. Was länger her ist, war v. Chr., was kürzer her ist, war n. Chr."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Kolumbus erreichte 1492 Amerika. Das war {nach} Christi Geburt. Die ersten Olympischen Spiele waren 776 {vor} Christus. Auf dem Zeitstrahl stehen sie {links} von Christi Geburt. Kolumbus steht {rechts} davon.",
+     "extra": [
+      {
+       "word": "oben",
+       "why": "Ein Zeitstrahl geht von links nach rechts. Oben und unten spielen keine Rolle."
+      },
+      {
+       "word": "gleichzeitig",
+       "why": "Die beiden Ereignisse liegen über 2.000 Jahre auseinander. Sie waren nicht gleichzeitig."
+      }
+     ],
+     "explain": "Ereignisse v. Chr. stehen links, Ereignisse n. Chr. rechts von Christi Geburt."
+    },
+    {
+     "type": "explain",
+     "prompt": "Erkläre, warum bei Jahreszahlen v. Chr. die größere Zahl früher ist.",
+     "keys": [
+      {
+       "label": "Man zählt von Christi Geburt aus rückwärts",
+       "words": [
+        "rückwärts",
+        "zurück",
+        "von christi geburt",
+        "von christus aus"
+       ]
+      },
+      {
+       "label": "Größere Zahl = länger vor Christi Geburt",
+       "words": [
+        "länger",
+        "weiter weg",
+        "weiter entfernt",
+        "mehr jahre",
+        "weiter zurück",
+        "weiter vor"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Bei v. Chr. zählt man von Christi Geburt aus rückwärts. 500 v. Chr. heißt: 500 Jahre vor Christi Geburt. Je größer die Zahl, desto länger vor Christi Geburt war es, also früher.",
+     "explain": "Christi Geburt ist der Startpunkt. Nach links zählt man rückwärts, nach rechts vorwärts."
+    }
+   ]
+  },
+  {
+   "id": "a3",
+   "title": "Wie lange ist das her?",
+   "heft": [
+    {
+     "type": "num",
+     "prompt": "1969 betrat der erste Mensch den Mond. Wie viele Jahre ist das her?",
+     "answer": "heute-1969",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Rechne: heutiges Jahr minus 1969.",
+     "explain": "Bei Jahren n. Chr. ziehst du die Jahreszahl vom heutigen Jahr ab."
+    },
+    {
+     "type": "num",
+     "prompt": "1825 fuhr die erste Eisenbahn. Wie viele Jahre ist das her?",
+     "answer": "heute-1825",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Rechne: heutiges Jahr minus 1825.",
+     "explain": "Beide Jahre sind n. Chr. Darum rechnest du: heute minus 1825."
+    },
+    {
+     "type": "num",
+     "prompt": "Im Jahr 800 wurde Karl der Große Kaiser. Wie viele Jahre ist das her?",
+     "answer": "heute-800",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Rechne: heutiges Jahr minus 800.",
+     "explain": "800 ist ein Jahr n. Chr. Du rechnest: heute minus 800."
+    },
+    {
+     "type": "num",
+     "prompt": "753 v. Chr. wurde Rom gegründet. Wie viele Jahre ist das ungefähr her?",
+     "answer": "753+heute",
+     "tol": 1,
+     "unit": "Jahre",
+     "why": "Rom wurde vor Christi Geburt gegründet. Rechne: 753 Jahre bis Christi Geburt plus die Jahre von Christi Geburt bis heute.",
+     "explain": "Bei einem Jahr v. Chr. addierst du: die Jahre bis Christi Geburt plus das heutige Jahr."
+    },
+    {
+     "type": "num",
+     "prompt": "Um 2.600 v. Chr. bauten die Ägypter die Pyramiden. Wie viele Jahre ist das ungefähr her?",
+     "answer": "2600+heute",
+     "tol": 1,
+     "unit": "Jahre",
+     "why": "Die Pyramiden wurden vor Christi Geburt gebaut. Rechne: 2.600 plus das heutige Jahr.",
+     "explain": "2.600 Jahre bis Christi Geburt, dann noch die Jahre bis heute. Zusammen sind das über 4.600 Jahre."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wie rechnest du aus, wie lange die Gründung Roms (753 v. Chr.) her ist?",
+     "options": [
+      {
+       "text": "753 plus das heutige Jahr",
+       "correct": true
+      },
+      {
+       "text": "das heutige Jahr minus 753",
+       "why": "So rechnest du nur bei Jahren n. Chr. Rom wurde vor Christi Geburt gegründet. Da musst du die Jahre bis Christi Geburt dazuzählen."
+      },
+      {
+       "text": "753 minus das heutige Jahr",
+       "why": "Das ergibt keine sinnvolle Zahl. Bei v. Chr. zählst du beide Strecken zusammen."
+      }
+     ],
+     "explain": "Von 753 v. Chr. bis Christi Geburt sind es 753 Jahre. Von Christi Geburt bis heute kommt das heutige Jahr dazu."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "num",
+     "prompt": "1492 erreichte Kolumbus Amerika. Wie viele Jahre ist das her?",
+     "answer": "heute-1492",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Das Jahr ist n. Chr. Rechne: heutiges Jahr minus 1492.",
+     "explain": "Bei Jahren n. Chr. gilt: heute minus Jahreszahl."
+    },
+    {
+     "type": "num",
+     "prompt": "1989 fiel die Berliner Mauer. Wie viele Jahre ist das her?",
+     "answer": "heute-1989",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Rechne: heutiges Jahr minus 1989.",
+     "explain": "Der Mauerfall war n. Chr. Darum ziehst du 1989 vom heutigen Jahr ab."
+    },
+    {
+     "type": "num",
+     "prompt": "776 v. Chr. fanden die ersten Olympischen Spiele statt. Wie viele Jahre ist das ungefähr her?",
+     "answer": "776+heute",
+     "tol": 1,
+     "unit": "Jahre",
+     "why": "Das war vor Christi Geburt. Rechne: 776 plus das heutige Jahr.",
+     "explain": "776 Jahre bis Christi Geburt plus die Jahre bis heute."
+    },
+    {
+     "type": "num",
+     "prompt": "Um 1450 erfand Gutenberg den Buchdruck. 1492 erreichte Kolumbus Amerika. Wie viele Jahre liegen ungefähr dazwischen?",
+     "answer": "42",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Beide Jahre sind n. Chr. Rechne: 1492 minus 1450.",
+     "explain": "Liegen beide Jahre n. Chr., ziehst du die kleinere Zahl von der größeren ab."
+    },
+    {
+     "type": "num",
+     "prompt": "1903 flog das erste Motorflugzeug. 1969 landeten Menschen auf dem Mond. Wie viele Jahre liegen dazwischen?",
+     "answer": "66",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Rechne: 1969 minus 1903.",
+     "explain": "Nur 66 Jahre nach dem ersten Motorflug flogen Menschen schon zum Mond."
+    },
+    {
+     "type": "num",
+     "prompt": "Wie viele Jahre liegen zwischen 500 v. Chr. und 200 v. Chr.?",
+     "answer": "300",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Beide Jahre sind v. Chr. Hier ziehst du ab: 500 minus 200.",
+     "explain": "Liegen beide Jahre auf derselben Seite von Christi Geburt, ziehst du ab."
+    },
+    {
+     "type": "num",
+     "prompt": "Wie viele Jahre liegen ungefähr zwischen 300 v. Chr. und 200 n. Chr.?",
+     "answer": "500",
+     "tol": 1,
+     "unit": "Jahre",
+     "why": "Christi Geburt liegt dazwischen. Rechne: 300 Jahre bis Christi Geburt plus 200 Jahre danach.",
+     "explain": "Liegt Christi Geburt zwischen zwei Jahren, addierst du beide Zahlen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wie rechnest du, wie viele Jahre zwischen 400 v. Chr. und 100 v. Chr. liegen?",
+     "options": [
+      {
+       "text": "400 minus 100",
+       "correct": true
+      },
+      {
+       "text": "400 plus 100",
+       "why": "Addieren musst du nur, wenn Christi Geburt dazwischen liegt. Hier sind beide Jahre v. Chr."
+      },
+      {
+       "text": "das heutige Jahr minus 400",
+       "why": "Nach dem heutigen Jahr ist hier nicht gefragt. Du willst nur den Abstand zwischen den beiden Jahren wissen."
+      }
+     ],
+     "explain": "Beide Jahre liegen vor Christi Geburt. Den Abstand findest du, wenn du die kleinere Zahl von der größeren abziehst: 300 Jahre."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Opa wurde 1958 geboren. Wie rechnest du aus, wie alt er dieses Jahr wird?",
+     "options": [
+      {
+       "text": "das heutige Jahr minus 1958",
+       "correct": true
+      },
+      {
+       "text": "1958 plus das heutige Jahr",
+       "why": "Plus rechnest du nur bei Jahren v. Chr. 1958 ist n. Chr., also ziehst du ab."
+      },
+      {
+       "text": "1958 minus 100",
+       "why": "Das hat mit Opas Alter nichts zu tun. Du brauchst das heutige Jahr für die Rechnung."
+      }
+     ],
+     "explain": "Bei einem Jahr n. Chr. rechnest du: heutiges Jahr minus Geburtsjahr."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Archäologen finden eine Münze. Sie ist etwa 2.000 Jahre alt. Aus welcher Zeit stammt sie ungefähr?",
+     "options": [
+      {
+       "text": "aus der Zeit um Christi Geburt",
+       "correct": true
+      },
+      {
+       "text": "aus der Zeit um 2.000 v. Chr.",
+       "why": "Dann wäre die Münze rund 4.000 Jahre alt. Bis Christi Geburt sind es von heute aber nur etwa 2.000 Jahre."
+      },
+      {
+       "text": "aus dem Jahr 2000 n. Chr.",
+       "why": "Das Jahr 2000 ist erst gut 25 Jahre her. Die Münze ist aber 2.000 Jahre alt."
+      }
+     ],
+     "explain": "Christi Geburt ist etwa 2.000 Jahre her. Eine 2.000 Jahre alte Münze stammt also ungefähr aus dieser Zeit."
+    },
+    {
+     "type": "explain",
+     "prompt": "Erkläre, warum du bei einem Ereignis v. Chr. die Jahreszahl und das heutige Jahr zusammenzählst.",
+     "keys": [
+      {
+       "label": "Erst die Jahre bis Christi Geburt",
+       "words": [
+        "bis christi",
+        "bis zu christi",
+        "bis christus",
+        "bis zur geburt",
+        "vor christi geburt"
+       ]
+      },
+      {
+       "label": "Dann die Jahre von Christi Geburt bis heute dazu",
+       "words": [
+        "bis heute",
+        "dazu",
+        "plus",
+        "zusammen",
+        "addier",
+        "heutig"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Bei einem Ereignis v. Chr. musst du erst die Jahre bis Christi Geburt zählen. Danach kommen noch die Jahre von Christi Geburt bis heute dazu. Darum rechnest du die Jahreszahl plus das heutige Jahr.",
+     "explain": "Die Strecke geht über Christi Geburt hinweg. Darum zählst du beide Teile zusammen."
+    }
+   ]
+  },
+  {
+   "id": "a4",
+   "title": "Wie Geschichtsforscher arbeiten",
+   "heft": [
+    {
+     "type": "order",
+     "prompt": "Wie gehen Geschichtsforscher vor? Bring die Schritte in die richtige Reihenfolge.",
+     "items": [
+      "Fragen an die Vergangenheit stellen",
+      "Quellen sammeln",
+      "Quellen auswerten",
+      "Erkenntnisse formulieren"
+     ],
+     "why": "Zuerst brauchst du eine Frage. Dann suchst du Quellen, untersuchst sie und schreibst am Ende auf, was du herausgefunden hast.",
+     "explain": "Fragen, sammeln, auswerten, formulieren: So arbeiten Geschichtsforscher, ähnlich wie Kriminalkommissare."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Mit welchen Fragen werten Geschichtsforscher eine Quelle aus?",
+     "options": [
+      {
+       "text": "Fragen nach dem Fundort, dem Urheber, dem Zweck und dem Nutzer",
+       "correct": true
+      },
+      {
+       "text": "Fragen nach dem Fundort und dem Zweck",
+       "why": "Das ist richtig, aber nicht vollständig. Es fehlen noch der Urheber und der Nutzer."
+      },
+      {
+       "text": "Fragen nach dem Preis, der Farbe und dem Gewicht",
+       "why": "Das sagt wenig über die Vergangenheit. Wichtig ist, wo die Quelle lag, wer sie machte, wozu und wer sie benutzte."
+      }
+     ],
+     "explain": "Vier Fragen helfen beim Auswerten: Fundort, Urheber, Zweck und Nutzer."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wie heißt Schritt 4?",
+     "options": [
+      {
+       "text": "Erkenntnisse formulieren",
+       "correct": true
+      },
+      {
+       "text": "Erkenntnisse auswerten",
+       "why": "„Auswerten“ gehört zu Schritt 3: Dort werden die Quellen ausgewertet. In Schritt 4 schreibt man die Erkenntnisse auf, man formuliert sie."
+      },
+      {
+       "text": "Quellen sammeln",
+       "why": "Quellen sammelt man schon in Schritt 2. Am Ende stehen die Erkenntnisse."
+      },
+      {
+       "text": "Fragen stellen",
+       "why": "Die Fragen stehen ganz am Anfang, in Schritt 1."
+      }
+     ],
+     "explain": "In Schritt 4 formulieren die Forscher ihre Erkenntnisse. Sie schreiben auf, was sie herausgefunden haben."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Schritt 1: {Fragen} an die Vergangenheit stellen. Schritt 2: Quellen {sammeln}. Schritt 3: Quellen {auswerten}. Schritt 4: Erkenntnisse {formulieren}.",
+     "extra": [
+      {
+       "word": "erfinden",
+       "why": "Forscher erfinden nichts. Sie stützen sich auf Quellen."
+      },
+      {
+       "word": "wegwerfen",
+       "why": "Quellen sind wertvoll. Man wirft sie nicht weg, sondern untersucht sie."
+      }
+     ],
+     "explain": "Fragen stellen, Quellen sammeln, Quellen auswerten, Erkenntnisse formulieren."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum sagt das Schulbuch, dass Geschichtsforscher wie Kriminalkommissare arbeiten?",
+     "options": [
+      {
+       "text": "Weil sie Spuren sammeln, sie genau untersuchen und daraus Schlüsse ziehen.",
+       "correct": true
+      },
+      {
+       "text": "Weil sie Verbrecher verhaften.",
+       "why": "Verhaften tun sie niemanden. Der Vergleich meint die Arbeitsweise: Spuren suchen und deuten."
+      },
+      {
+       "text": "Weil sie eine Polizeiuniform tragen.",
+       "why": "Es geht nicht um Kleidung. Beide suchen Hinweise und werten sie aus."
+      }
+     ],
+     "explain": "Wie Kommissare suchen Forscher Hinweise (Quellen), prüfen sie und ziehen dann Schlüsse."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welche ist eine „Frage an die Vergangenheit“, wie sie Forscher in Schritt 1 stellen?",
+     "options": [
+      {
+       "text": "Wie wohnten die Menschen früher?",
+       "correct": true
+      },
+      {
+       "text": "Wo habe ich meinen Schlüssel hingelegt?",
+       "why": "Das ist eine Alltagsfrage. Forscher fragen danach, wie Menschen früher lebten."
+      },
+      {
+       "text": "Wer hat diese Quelle hergestellt?",
+       "why": "Diese Frage nach dem Urheber gehört zu Schritt 3, zum Auswerten einer Quelle."
+      }
+     ],
+     "explain": "In Schritt 1 fragen Forscher zum Beispiel: Wie sah der Alltag unserer Vorfahren aus? Wie wohnten sie? Wie kleideten sie sich?"
+    }
+   ],
+   "transfer": [
+    {
+     "type": "mcq",
+     "prompt": "Deine Frage lautet: „Wie sah eine Schule vor 100 Jahren aus?“ Welche Quelle hilft dir am besten?",
+     "options": [
+      {
+       "text": "ein altes Klassenfoto aus dem Jahr 1925",
+       "correct": true
+      },
+      {
+       "text": "ein Foto deiner Klasse von heute",
+       "why": "Das zeigt die Schule von heute. Du willst aber wissen, wie sie vor 100 Jahren aussah."
+      },
+      {
+       "text": "ein Kochbuch von 1925",
+       "why": "Das ist zwar alt, sagt aber nichts über die Schule. Die Quelle muss zur Frage passen."
+      },
+      {
+       "text": "ein Bericht über ein Fußballspiel von gestern",
+       "why": "Der ist weder alt noch über die Schule. Er hilft bei deiner Frage nicht."
+      }
+     ],
+     "explain": "Eine gute Quelle stammt aus der Zeit, nach der du fragst, und passt zum Thema."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Eine Forscherin geht ins Archiv und sucht alte Zeitungen über ihre Stadt. Welcher Schritt ist das?",
+     "options": [
+      {
+       "text": "Schritt 2: Quellen sammeln",
+       "correct": true
+      },
+      {
+       "text": "Schritt 1: Fragen stellen",
+       "why": "Ihre Frage hat sie schon. Jetzt sucht sie nach Material."
+      },
+      {
+       "text": "Schritt 3: Quellen auswerten",
+       "why": "Ausgewertet wird erst, wenn die Quellen gesammelt sind. Sie sucht sie gerade noch."
+      },
+      {
+       "text": "Schritt 4: Erkenntnisse formulieren",
+       "why": "Erkenntnisse hat sie noch keine. Dazu muss sie die Zeitungen erst finden und lesen."
+      }
+     ],
+     "explain": "Wer Quellen sucht und zusammenträgt, ist bei Schritt 2: Quellen sammeln."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Jonas liest einen alten Brief und fragt sich: „Wer hat ihn geschrieben?“ Welcher Schritt ist das?",
+     "options": [
+      {
+       "text": "Schritt 3: Quellen auswerten (Frage nach dem Urheber)",
+       "correct": true
+      },
+      {
+       "text": "Schritt 2: Quellen sammeln",
+       "why": "Den Brief hat er schon. Jetzt untersucht er ihn genauer."
+      },
+      {
+       "text": "Schritt 4: Erkenntnisse formulieren",
+       "why": "Er schreibt noch kein Ergebnis auf. Er stellt Fragen an die Quelle."
+      }
+     ],
+     "explain": "Die Frage, wer etwas gemacht oder geschrieben hat, ist die Frage nach dem Urheber. Sie gehört zum Auswerten."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Am Ende schreibt eine Forscherin: „Vor 100 Jahren saßen oft über 50 Kinder in einer Klasse.“ Welcher Schritt ist das?",
+     "options": [
+      {
+       "text": "Schritt 4: Erkenntnisse formulieren",
+       "correct": true
+      },
+      {
+       "text": "Schritt 3: Quellen auswerten",
+       "why": "Ausgewertet hat sie schon vorher. Jetzt schreibt sie auf, was dabei herauskam."
+      },
+      {
+       "text": "Schritt 1: Fragen stellen",
+       "why": "Das ist keine Frage, sondern ein Ergebnis. Fragen stehen am Anfang."
+      }
+     ],
+     "explain": "Ein Satz, der festhält, was man herausgefunden hat, ist eine Erkenntnis. Das ist Schritt 4."
+    },
+    {
+     "type": "order",
+     "prompt": "Lea will wissen: „Wie feierten Kinder vor 70 Jahren Weihnachten?“ Bring ihre Arbeit in die richtige Reihenfolge.",
+     "items": [
+      "Lea überlegt sich ihre Frage.",
+      "Sie sucht alte Fotos und befragt ihre Oma.",
+      "Sie fragt: Wer machte das Foto? Wozu?",
+      "Sie schreibt auf, was sie herausgefunden hat."
+     ],
+     "why": "Denk an die vier Schritte: Frage, sammeln, auswerten, Erkenntnisse formulieren.",
+     "explain": "Lea arbeitet wie eine Geschichtsforscherin: Frage stellen, Quellen sammeln, Quellen auswerten, Erkenntnisse formulieren."
+    },
+    {
+     "type": "sort",
+     "prompt": "Auf dem Dachboden liegt eine alte Schiefertafel. Welche Frage beantwortet jede Information?",
+     "buckets": [
+      {
+       "id": "f",
+       "name": "Fundort"
+      },
+      {
+       "id": "u",
+       "name": "Urheber"
+      },
+      {
+       "id": "z",
+       "name": "Zweck"
+      },
+      {
+       "id": "n",
+       "name": "Nutzer"
+      }
+     ],
+     "items": [
+      {
+       "text": "lag in einer Kiste auf dem Dachboden",
+       "b": "f",
+       "why": "Das sagt, wo die Tafel gefunden wurde. Das ist der Fundort."
+      },
+      {
+       "text": "ein Handwerker stellte sie her",
+       "b": "u",
+       "why": "Das sagt, wer die Tafel gemacht hat. Das ist der Urheber."
+      },
+      {
+       "text": "zum Schreibenüben gemacht",
+       "b": "z",
+       "why": "Das sagt, wozu die Tafel gedacht war. Das ist der Zweck."
+      },
+      {
+       "text": "Uroma schrieb als Schulkind darauf",
+       "b": "n",
+       "why": "Das sagt, wer die Tafel benutzt hat. Das ist der Nutzer."
+      },
+      {
+       "text": "gekauft für ABC-Schützen",
+       "b": "z",
+       "why": "Das sagt, wofür die Tafel gekauft wurde. Das ist ihr Zweck."
+      }
+     ],
+     "explain": "Fundort: Wo lag es? Urheber: Wer machte es? Zweck: Wozu? Nutzer: Wer benutzte es?"
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein Forscher findet ein altes Holzpferd zum Spielen. Er fragt: „Welches Kind hat damit gespielt?“ Nach welchem Punkt fragt er?",
+     "options": [
+      {
+       "text": "nach dem Nutzer",
+       "correct": true
+      },
+      {
+       "text": "nach dem Urheber",
+       "why": "Der Urheber ist, wer das Pferd geschnitzt hat. Wer damit spielte, ist der Nutzer."
+      },
+      {
+       "text": "nach dem Fundort",
+       "why": "Der Fundort sagt, wo das Pferd lag. Hier geht es darum, wer es benutzte."
+      },
+      {
+       "text": "nach dem Zweck",
+       "why": "Der Zweck ist, wozu es da war, nämlich zum Spielen. Gefragt ist aber, wer damit spielte."
+      }
+     ],
+     "explain": "Wer eine Quelle benutzt hat, ist ihr Nutzer."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein Soldat hat einen Brief über eine Schlacht geschrieben. Warum ist es wichtig zu wissen, wer den Brief geschrieben hat?",
+     "options": [
+      {
+       "text": "Weil er alles aus seiner eigenen Sicht erzählt. Ein Gegner hätte es vielleicht anders erzählt.",
+       "correct": true
+      },
+      {
+       "text": "Weil man dann weiß, wie schwer der Brief ist.",
+       "why": "Das Gewicht ist unwichtig. Wichtig ist, aus wessen Sicht der Brief geschrieben ist."
+      },
+      {
+       "text": "Das ist nicht wichtig. Ein Brief stimmt immer.",
+       "why": "Jede Quelle zeigt nur einen Ausschnitt aus einer bestimmten Sicht. Darum fragt man nach dem Urheber."
+      }
+     ],
+     "explain": "Die Frage nach dem Urheber zeigt, aus welcher Sicht eine Quelle berichtet."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein altes Plakat lobt ein Waschmittel: „Das beste der Welt!“ Warum hilft hier die Frage nach dem Zweck?",
+     "options": [
+      {
+       "text": "Weil das Plakat Werbung ist. Werbung will verkaufen und übertreibt darum oft.",
+       "correct": true
+      },
+      {
+       "text": "Weil man so erfährt, wo das Plakat hing.",
+       "why": "Wo es hing, verrät der Fundort. Der Zweck sagt, wozu es gemacht wurde."
+      },
+      {
+       "text": "Weil man so erfährt, wer es gedruckt hat.",
+       "why": "Wer es gemacht hat, ist der Urheber. Der Zweck sagt, wozu es gemacht wurde."
+      }
+     ],
+     "explain": "Wer den Zweck kennt, versteht, warum eine Quelle etwas so darstellt. Werbung soll verkaufen."
+    },
+    {
+     "type": "explain",
+     "prompt": "Erkläre in deinen Worten, wie Geschichtsforscher vorgehen.",
+     "keys": [
+      {
+       "label": "Fragen stellen",
+       "words": [
+        "frage"
+       ]
+      },
+      {
+       "label": "Quellen sammeln",
+       "words": [
+        "sammel",
+        "suche",
+        "such"
+       ]
+      },
+      {
+       "label": "Quellen auswerten",
+       "words": [
+        "auswert",
+        "untersuch",
+        "prüf"
+       ]
+      },
+      {
+       "label": "Erkenntnisse formulieren",
+       "words": [
+        "erkenntnis",
+        "ergebnis",
+        "formulier",
+        "aufschreib",
+        "schreiben auf",
+        "herausgefunden"
+       ]
+      }
+     ],
+     "need": 3,
+     "model": "Zuerst stellen Geschichtsforscher eine Frage an die Vergangenheit. Dann sammeln sie Quellen, zum Beispiel Briefe oder Fotos. Sie werten die Quellen aus und fragen nach Fundort, Urheber, Zweck und Nutzer. Am Ende formulieren sie ihre Erkenntnisse.",
+     "explain": "Vier Schritte: Fragen stellen, Quellen sammeln, Quellen auswerten, Erkenntnisse formulieren."
+    }
+   ]
+  },
+  {
+   "id": "a5",
+   "title": "Vier Quellenarten",
+   "heft": [
+    {
+     "type": "sort",
+     "prompt": "In Großonkel Walthers alter Truhe liegen viele Dinge. Welche Quellenart ist es?",
+     "buckets": [
+      {
+       "id": "s",
+       "name": "schriftlich"
+      },
+      {
+       "id": "b",
+       "name": "bildlich"
+      },
+      {
+       "id": "m",
+       "name": "mündlich"
+      },
+      {
+       "id": "g",
+       "name": "gegenständlich"
+      }
+     ],
+     "items": [
+      {
+       "text": "Urkunde vom Fußballturnier",
+       "b": "s",
+       "why": "Auf der Urkunde steht ein Text. Darum ist sie eine schriftliche Quelle."
+      },
+      {
+       "text": "Grundschulzeugnisse",
+       "b": "s",
+       "why": "Zeugnisse sind geschrieben. Das ist eine schriftliche Quelle."
+      },
+      {
+       "text": "Zeitungsberichte zum Mauerfall",
+       "b": "s",
+       "why": "Zeitungsberichte liest man. Sie sind schriftliche Quellen."
+      },
+      {
+       "text": "Briefe vom Bruder Michael",
+       "b": "s",
+       "why": "Briefe sind geschrieben. Darum sind sie schriftliche Quellen."
+      },
+      {
+       "text": "Fotoalbum",
+       "b": "b",
+       "why": "Im Album sind Fotos. Fotos sind Bilder, also bildliche Quellen."
+      },
+      {
+       "text": "Kassette mit Liedern",
+       "b": "m",
+       "why": "Es zählt der Inhalt: Die Lieder hört man. Darum ist sie eine mündliche Quelle, auch wenn die Kassette selbst ein Gegenstand ist."
+      },
+      {
+       "text": "Halstücher der Pfadfinder",
+       "b": "g",
+       "why": "Halstücher sind Dinge, die man anfassen kann. Das sind gegenständliche Quellen."
+      },
+      {
+       "text": "D-Mark- und Ost-Mark-Münzen",
+       "b": "g",
+       "why": "Münzen sind Gegenstände. Darum sind sie gegenständliche Quellen."
+      }
+     ],
+     "explain": "Schriftlich: man liest es. Bildlich: man sieht ein Bild. Mündlich: man hört es. Gegenständlich: ein Ding zum Anfassen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welche Quellenart ist die Kassette mit Liedern aus den 1980er-Jahren?",
+     "options": [
+      {
+       "text": "mündlich, denn es zählen die Lieder, die man hört",
+       "correct": true
+      },
+      {
+       "text": "gegenständlich, denn eine Kassette ist ein Gegenstand",
+       "why": "Die Kassette allein wäre ein Gegenstand. Aber es kommt auf den Inhalt an: die Lieder. Die hört man, also ist sie mündlich."
+      },
+      {
+       "text": "schriftlich, denn auf der Kassette steht ein Titel",
+       "why": "Der kleine Aufkleber ist nicht das Wichtige. Wichtig sind die Lieder, die man anhört."
+      },
+      {
+       "text": "bildlich, denn die Hülle ist bunt",
+       "why": "Die Hülle ist nicht die eigentliche Quelle. Die Lieder darauf sind wichtig, und die hört man."
+      }
+     ],
+     "explain": "Bei Quellen zählt, was sie uns mitteilen. Lieder hört man, darum ist die Kassette eine mündliche Quelle."
+    },
+    {
+     "type": "mcq",
+     "prompt": "In der Truhe liegt ein Ordner mit Zeitungsberichten über den Mauerfall. Was ist hier die Quelle?",
+     "options": [
+      {
+       "text": "die Zeitungsberichte im Ordner, eine schriftliche Quelle",
+       "correct": true
+      },
+      {
+       "text": "der Ordner, eine gegenständliche Quelle",
+       "why": "Der Ordner ist nur die Hülle, in der die Berichte aufbewahrt werden. Etwas über die Vergangenheit erzählen die Berichte darin."
+      },
+      {
+       "text": "Ordner und Berichte zusammen, eine bildliche Quelle",
+       "why": "Die Berichte liest man, sie sind also schriftlich. Der Ordner ist nur der Behälter."
+      }
+     ],
+     "explain": "Ein Behälter ist nicht die Quelle. Wichtig ist, was drin ist: die Zeitungsberichte."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welche Quellenart sind die Halstücher aus Walthers Pfadfinderzeit?",
+     "options": [
+      {
+       "text": "gegenständlich",
+       "correct": true
+      },
+      {
+       "text": "bildlich",
+       "why": "Halstücher sind keine Bilder. Es sind Dinge zum Anfassen."
+      },
+      {
+       "text": "schriftlich",
+       "why": "Auf Halstüchern steht kein Text, den man liest. Sie sind Gegenstände."
+      },
+      {
+       "text": "mündlich",
+       "why": "Halstücher kann man nicht anhören. Sie sind Gegenstände."
+      }
+     ],
+     "explain": "Dinge, die man anfassen kann, wie Kleidung, Werkzeuge oder Münzen, sind gegenständliche Quellen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welche Quellenart ist das Fotoalbum aus der Zeit des Zweiten Weltkriegs?",
+     "options": [
+      {
+       "text": "bildlich",
+       "correct": true
+      },
+      {
+       "text": "gegenständlich",
+       "why": "Das Album selbst ist ein Gegenstand. Es zählt aber, was drin ist: Fotos. Fotos sind Bilder."
+      },
+      {
+       "text": "schriftlich",
+       "why": "Vielleicht steht unter einem Foto ein Wort. Das Wichtige sind aber die Bilder."
+      }
+     ],
+     "explain": "Fotos, Gemälde und Zeichnungen sind bildliche Quellen."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Historiker unterscheiden zwischen {schriftlichen}, {mündlichen}, {bildlichen} und {gegenständlichen} Quellen.",
+     "extra": [
+      {
+       "word": "erfundenen",
+       "why": "Quellen sind nicht erfunden. Sie stammen wirklich aus der Vergangenheit."
+      },
+      {
+       "word": "teuren",
+       "why": "Ob eine Quelle teuer ist, spielt keine Rolle. Man ordnet sie danach, wie sie uns etwas mitteilt."
+      }
+     ],
+     "explain": "Es gibt vier Quellenarten: schriftlich, mündlich, bildlich und gegenständlich."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "sort",
+     "prompt": "Lena hilft Oma Inge, den Dachboden auszuräumen. In einem alten Koffer findet sie: Omas Tagebuch, eine Schallplatte mit Märchen, einen Teddybären, Postkarten aus Italien, eine Zugfahrkarte, eine alte Kamera und Dias von Omas Hochzeit. Am Abend erzählt Oma, wie sie früher zur Schule gelaufen ist. Ordne die Quellen zu.",
+     "buckets": [
+      {
+       "id": "s",
+       "name": "Schriftliche Quelle"
+      },
+      {
+       "id": "b",
+       "name": "Bildliche Quelle"
+      },
+      {
+       "id": "m",
+       "name": "Mündliche Quelle"
+      },
+      {
+       "id": "g",
+       "name": "Gegenständliche Quelle"
+      }
+     ],
+     "items": [
+      {
+       "text": "Tagebuch",
+       "b": "s",
+       "why": "Ein Tagebuch ist geschrieben."
+      },
+      {
+       "text": "Schallplatte mit Märchen",
+       "b": "m",
+       "why": "Auf der Schallplatte hört man eine Stimme. Wie die Kassette bei Walther ist sie eine mündliche Quelle."
+      },
+      {
+       "text": "Teddybär",
+       "b": "g",
+       "why": "Ein Teddybär ist ein Ding, eine gegenständliche Quelle."
+      },
+      {
+       "text": "Zugfahrkarte",
+       "b": "s",
+       "why": "Auf der Fahrkarte stehen Orte, Datum und Preis. Sie ist geschrieben."
+      },
+      {
+       "text": "Alte Kamera",
+       "b": "g",
+       "why": "Die Kamera macht Bilder, ist aber selbst ein Ding. Darum ist sie gegenständlich."
+      },
+      {
+       "text": "Dias von der Hochzeit",
+       "b": "b",
+       "why": "Dias sind Fotos, also Bilder."
+      },
+      {
+       "text": "Omas Erzählung",
+       "b": "m",
+       "why": "Oma erzählt als Zeitzeugin. Was man hört, ist eine mündliche Quelle."
+      }
+     ],
+     "explain": "Frag bei jedem Ding: Ist es geschrieben, ein Bild, etwas zum Hören oder ein Gegenstand? Bei der Kamera zählt das Ding selbst, bei der Schallplatte der Inhalt."
+    },
+    {
+     "type": "sort",
+     "prompt": "Im Museum: Welche Quellenart ist es?",
+     "buckets": [
+      {
+       "id": "s",
+       "name": "schriftlich"
+      },
+      {
+       "id": "b",
+       "name": "bildlich"
+      },
+      {
+       "id": "m",
+       "name": "mündlich"
+      },
+      {
+       "id": "g",
+       "name": "gegenständlich"
+      }
+     ],
+     "items": [
+      {
+       "text": "Tagebuch eines Mädchens",
+       "b": "s",
+       "why": "Ein Tagebuch ist geschrieben. Das ist eine schriftliche Quelle."
+      },
+      {
+       "text": "Gemälde einer Stadt",
+       "b": "b",
+       "why": "Ein Gemälde ist ein Bild. Darum ist es eine bildliche Quelle."
+      },
+      {
+       "text": "Höhlenmalerei",
+       "b": "b",
+       "why": "Eine Höhlenmalerei ist ein Bild an der Wand. Das ist eine bildliche Quelle."
+      },
+      {
+       "text": "Interview mit einer Zeitzeugin",
+       "b": "m",
+       "why": "Die Zeitzeugin erzählt, man hört ihr zu. Das ist eine mündliche Quelle."
+      },
+      {
+       "text": "Schallplatte mit Liedern",
+       "b": "m",
+       "why": "Es zählt der Inhalt: Die Lieder hört man. Darum ist sie mündlich."
+      },
+      {
+       "text": "alte Kamera",
+       "b": "g",
+       "why": "Die Kamera selbst ist ein Gerät zum Anfassen. Nur die Fotos, die sie macht, wären bildlich."
+      },
+      {
+       "text": "Ritterrüstung",
+       "b": "g",
+       "why": "Eine Rüstung ist ein Gegenstand. Das ist eine gegenständliche Quelle."
+      },
+      {
+       "text": "Steinbeil",
+       "b": "g",
+       "why": "Ein Steinbeil ist ein Werkzeug zum Anfassen. Es ist gegenständlich."
+      }
+     ],
+     "explain": "Frag dich: Lese ich es, sehe ich ein Bild, höre ich es, oder fasse ich ein Ding an?"
+    },
+    {
+     "type": "mcq",
+     "prompt": "Im Museum steht eine alte Kamera von 1930. Welche Quellenart ist sie?",
+     "options": [
+      {
+       "text": "gegenständlich",
+       "correct": true
+      },
+      {
+       "text": "bildlich, weil man mit ihr Fotos macht",
+       "why": "Die Fotos wären bildlich. Die Kamera selbst ist aber ein Gerät zum Anfassen, also gegenständlich."
+      },
+      {
+       "text": "mündlich",
+       "why": "Eine Kamera erzählt nichts, das man hört. Sie ist ein Gegenstand."
+      }
+     ],
+     "explain": "Ein Gerät ist ein Gegenstand. Die Bilder, die es macht, wären eine andere Quelle."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Auf einer alten Schallplatte ist die Rede eines Bürgermeisters von 1960. Welche Quellenart ist das?",
+     "options": [
+      {
+       "text": "mündlich, denn man hört die Rede",
+       "correct": true
+      },
+      {
+       "text": "gegenständlich, denn eine Schallplatte ist ein Ding",
+       "why": "Die Platte ist nur der Träger. Es kommt auf den Inhalt an, und die Rede hört man."
+      },
+      {
+       "text": "schriftlich, denn eine Rede wird vorher aufgeschrieben",
+       "why": "Vielleicht gab es einen Zettel. Auf der Platte ist aber die gesprochene Rede, die man hört."
+      }
+     ],
+     "explain": "Was man anhört, ist eine mündliche Quelle, egal auf welchem Gerät es gespeichert ist."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Paul findet bei seiner Oma einen Schuhkarton voller alter Fotos. Was ist hier die Quelle?",
+     "options": [
+      {
+       "text": "die Fotos, eine bildliche Quelle",
+       "correct": true
+      },
+      {
+       "text": "der Schuhkarton, eine gegenständliche Quelle",
+       "why": "Der Karton ist nur der Behälter. Über früher erzählen die Fotos darin."
+      },
+      {
+       "text": "der Schuhkarton, eine schriftliche Quelle",
+       "why": "Auf dem Karton steht vielleicht eine Marke. Die eigentliche Quelle sind aber die Fotos."
+      }
+     ],
+     "explain": "Wie beim Ordner gilt: Der Behälter ist nicht die Quelle. Es zählt der Inhalt."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Deine Oma erzählt dir, wie sie als Kind ohne Fernseher aufgewachsen ist. Welche Quellenart ist das?",
+     "options": [
+      {
+       "text": "mündlich",
+       "correct": true
+      },
+      {
+       "text": "schriftlich",
+       "why": "Oma schreibt nichts auf. Sie erzählt, und du hörst zu."
+      },
+      {
+       "text": "bildlich",
+       "why": "Du siehst kein Bild. Du hörst Omas Erzählung."
+      },
+      {
+       "text": "Das ist keine Quelle.",
+       "why": "Doch. Menschen, die etwas selbst erlebt haben, sind Zeitzeugen. Ihre Erzählungen sind mündliche Quellen."
+      }
+     ],
+     "explain": "Erzählungen von Zeitzeugen sind mündliche Quellen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welche dieser Quellen ist schriftlich?",
+     "options": [
+      {
+       "text": "ein Einkaufszettel von 1950",
+       "correct": true
+      },
+      {
+       "text": "eine Pfeilspitze aus Stein",
+       "why": "Eine Pfeilspitze ist ein Gegenstand. Darauf steht nichts geschrieben."
+      },
+      {
+       "text": "ein Foto vom Marktplatz",
+       "why": "Ein Foto ist ein Bild, also eine bildliche Quelle."
+      },
+      {
+       "text": "ein altes Volkslied, das man singt",
+       "why": "Ein gesungenes Lied hört man. Das ist eine mündliche Quelle."
+      }
+     ],
+     "explain": "Alles, was man liest, zum Beispiel Zettel, Briefe oder Bücher, ist eine schriftliche Quelle."
+    },
+    {
+     "type": "mcq",
+     "prompt": "In einer Blechdose von Uropa liegen alte Murmeln aus Ton. Welche Quellenart sind die Murmeln?",
+     "options": [
+      {
+       "text": "gegenständlich",
+       "correct": true
+      },
+      {
+       "text": "bildlich",
+       "why": "Murmeln sind keine Bilder. Es sind kleine Dinge zum Anfassen."
+      },
+      {
+       "text": "mündlich",
+       "why": "Murmeln erzählen nichts, das man hört. Sie sind Gegenstände."
+      }
+     ],
+     "explain": "Spielzeug ist ein Gegenstand, also eine gegenständliche Quelle. Die Dose ist nur der Behälter."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Clara findet eine Postkarte. Vorne ist ein Bild vom Hafen, hinten hat jemand einen Gruß geschrieben. Was stimmt?",
+     "options": [
+      {
+       "text": "Das Bild ist eine bildliche Quelle, der Gruß eine schriftliche.",
+       "correct": true
+      },
+      {
+       "text": "Die Postkarte ist nur gegenständlich.",
+       "why": "Man kann sie anfassen, ja. Aber wichtig ist der Inhalt: ein Bild und ein Text."
+      },
+      {
+       "text": "Die ganze Postkarte ist mündlich.",
+       "why": "Auf einer Postkarte hört man nichts. Man sieht ein Bild und liest einen Text."
+      }
+     ],
+     "explain": "Eine Quelle kann zwei Arten von Inhalt haben. Frag bei jedem Teil: Lese ich es, oder sehe ich ein Bild?"
+    },
+    {
+     "type": "explain",
+     "prompt": "Opa hat auf seinem alten Handy Sprachnachrichten gespeichert, in denen er von früher erzählt. Erkläre, welche Quellenart das ist und warum.",
+     "keys": [
+      {
+       "label": "mündliche Quelle",
+       "words": [
+        "mündlich"
+       ]
+      },
+      {
+       "label": "Man hört den Inhalt",
+       "words": [
+        "hör",
+        "sprach",
+        "erzähl",
+        "stimme",
+        "inhalt"
+       ]
+      },
+      {
+       "label": "Das Handy ist nur der Träger",
+       "words": [
+        "nur das handy",
+        "nur der träger",
+        "behälter",
+        "gerät",
+        "gegenst",
+        "nicht das handy"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Die Sprachnachrichten sind eine mündliche Quelle. Man hört Opa erzählen. Das Handy ist nur das Gerät, auf dem sie gespeichert sind. Es kommt auf den Inhalt an.",
+     "explain": "Wie bei Kassette oder Schallplatte zählt der Inhalt, nicht das Gerät."
+    }
+   ]
+  },
+  {
+   "id": "a6",
+   "title": "Überrest oder Tradition",
+   "heft": [
+    {
+     "type": "sort",
+     "prompt": "Überrest, Tradition oder Überschneidung? Ordne die Quellen zu.",
+     "buckets": [
+      {
+       "id": "u",
+       "name": "Überrest"
+      },
+      {
+       "id": "t",
+       "name": "Tradition"
+      },
+      {
+       "id": "x",
+       "name": "Überschneidung"
+      }
+     ],
+     "items": [
+      {
+       "text": "Waffen",
+       "b": "u",
+       "why": "Waffen wurden zum Kämpfen gemacht, nicht damit spätere Menschen davon erfahren. Sie sind zufällig erhalten geblieben."
+      },
+      {
+       "text": "Vasen",
+       "b": "u",
+       "why": "Vasen benutzte man im Alltag. Sie sind zufällig erhalten geblieben, also Überreste."
+      },
+      {
+       "text": "Einkaufsnotizen",
+       "b": "u",
+       "why": "Eine Einkaufsnotiz schreibt man für sich selbst, nicht für die Nachwelt. Darum ist sie ein Überrest."
+      },
+      {
+       "text": "Reden",
+       "b": "t",
+       "why": "Reden wurden oft gehalten und aufgeschrieben, damit man sich an sie erinnert. Darum sind sie Tradition."
+      },
+      {
+       "text": "Chroniken",
+       "b": "t",
+       "why": "Eine Chronik wurde geschrieben, damit spätere Menschen erfahren, was geschah. Das ist Tradition."
+      },
+      {
+       "text": "Gemälde",
+       "b": "x",
+       "why": "Ein Gemälde kann einfach schmücken, aber auch absichtlich etwas für später festhalten. Darum ist es eine Überschneidung."
+      },
+      {
+       "text": "Gebäude",
+       "b": "x",
+       "why": "Gebäude dienen zum Wohnen oder Arbeiten. Manche sollen aber auch zeigen, wie mächtig ihr Erbauer war. Darum: Überschneidung."
+      },
+      {
+       "text": "Statuen",
+       "b": "x",
+       "why": "Eine Statue kann Schmuck sein und zugleich an jemanden erinnern sollen. Darum ist sie eine Überschneidung."
+      }
+     ],
+     "explain": "Leitfrage: Wurde es gemacht, damit Menschen später davon erfahren? Ja: Tradition. Nein: Überrest. Beides möglich: Überschneidung."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Mit welcher Frage findest du heraus, ob eine Quelle ein Überrest oder Tradition ist?",
+     "options": [
+      {
+       "text": "Wurde es gemacht, damit Menschen später davon erfahren?",
+       "correct": true
+      },
+      {
+       "text": "Wie alt ist die Quelle?",
+       "why": "Das Alter hilft hier nicht. Alte und junge Quellen können Überrest oder Tradition sein."
+      },
+      {
+       "text": "Ist die Quelle schriftlich oder gegenständlich?",
+       "why": "Das ist die Frage nach der Quellenart. Für Überrest oder Tradition fragst du nach der Absicht."
+      },
+      {
+       "text": "Wie viel ist die Quelle wert?",
+       "why": "Der Wert spielt keine Rolle. Entscheidend ist, ob sie für die Nachwelt gemacht wurde."
+      }
+     ],
+     "explain": "Ja heißt Tradition (absichtlich überliefert), Nein heißt Überrest (zufällig erhalten)."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was ist ein Überrest?",
+     "options": [
+      {
+       "text": "eine Quelle, die zufällig erhalten geblieben ist",
+       "correct": true
+      },
+      {
+       "text": "eine Quelle, die absichtlich für die Nachwelt gemacht wurde",
+       "why": "Das ist Tradition. Ein Überrest ist nur zufällig übrig geblieben."
+      },
+      {
+       "text": "eine Quelle, die kaputt ist",
+       "why": "Ein Überrest muss nicht kaputt sein. Er wurde nur nicht für spätere Menschen gemacht."
+      }
+     ],
+     "explain": "Überreste sind zufällig erhalten geblieben, zum Beispiel Waffen, Vasen oder Einkaufsnotizen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was bedeutet Tradition bei Quellen?",
+     "options": [
+      {
+       "text": "Die Quelle wurde absichtlich überliefert, damit spätere Menschen davon erfahren.",
+       "correct": true
+      },
+      {
+       "text": "Die Quelle ist ein alter Brauch.",
+       "why": "Im Alltag meint Tradition oft einen Brauch. Bei Quellen heißt es aber: absichtlich für später überliefert."
+      },
+      {
+       "text": "Die Quelle ist zufällig erhalten geblieben.",
+       "why": "Das ist ein Überrest. Tradition wurde mit Absicht weitergegeben."
+      }
+     ],
+     "explain": "Traditionsquellen wurden absichtlich überliefert, zum Beispiel Reden oder Chroniken."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum zählt eine Statue zu den Überschneidungen?",
+     "options": [
+      {
+       "text": "Sie kann einen Platz schmücken und zugleich absichtlich an jemanden erinnern.",
+       "correct": true
+      },
+      {
+       "text": "Weil sie aus Stein ist.",
+       "why": "Das Material sagt nichts darüber, ob sie für die Nachwelt gemacht wurde."
+      },
+      {
+       "text": "Weil sie sehr alt ist.",
+       "why": "Das Alter entscheidet nicht. Es geht um die Absicht, mit der sie gemacht wurde."
+      }
+     ],
+     "explain": "Bei einer Überschneidung treffen zwei Absichten zusammen: ein Zweck für damals und eine Botschaft für später."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Quellen können {zufällig} erhalten geblieben sein. Dann heißen sie {Überreste}. Andere wurden {absichtlich} überliefert. Das nennt man {Tradition}.",
+     "extra": [
+      {
+       "word": "versteckt",
+       "why": "Ob eine Quelle versteckt war, ist nicht entscheidend. Es geht darum, ob sie mit Absicht für später gemacht wurde."
+      },
+      {
+       "word": "Abfall",
+       "why": "Auch Abfall kann ein Überrest sein, aber so heißt der Fachbegriff nicht. Das Wort ist Überrest."
+      }
+     ],
+     "explain": "Zufällig erhalten: Überrest. Absichtlich überliefert: Tradition."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "sort",
+     "prompt": "Überrest oder Tradition? Ordne die neuen Quellen zu.",
+     "buckets": [
+      {
+       "id": "u",
+       "name": "Überrest"
+      },
+      {
+       "id": "t",
+       "name": "Tradition"
+      }
+     ],
+     "items": [
+      {
+       "text": "Spielzeugpuppe",
+       "b": "u",
+       "why": "Mit der Puppe hat ein Kind gespielt. Sie wurde nicht für die Nachwelt gemacht."
+      },
+      {
+       "text": "Busfahrkarte",
+       "b": "u",
+       "why": "Eine Fahrkarte braucht man für die Fahrt. Dass sie übrig blieb, ist Zufall."
+      },
+      {
+       "text": "Kochtopf",
+       "b": "u",
+       "why": "Ein Topf ist zum Kochen da. Er ist zufällig erhalten geblieben."
+      },
+      {
+       "text": "Zahnbürste",
+       "b": "u",
+       "why": "Eine Zahnbürste benutzt man jeden Tag. Sie ist nicht für spätere Menschen gemacht."
+      },
+      {
+       "text": "Denkmal für einen König",
+       "b": "t",
+       "why": "Ein Denkmal steht dort, damit sich alle an den König erinnern. Das ist Tradition."
+      },
+      {
+       "text": "Lebenserinnerungen einer Königin",
+       "b": "t",
+       "why": "Sie schrieb ihre Erinnerungen auf, damit andere davon erfahren. Das ist Tradition."
+      },
+      {
+       "text": "Gedenktafel an einem Haus",
+       "b": "t",
+       "why": "Eine Gedenktafel soll an etwas erinnern. Sie ist absichtlich für später gemacht."
+      }
+     ],
+     "explain": "Alltagsdinge sind meist Überreste. Was erinnern soll, ist Tradition."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein Kassenzettel aus einem Supermarkt von 1985 wird gefunden. Was ist er?",
+     "options": [
+      {
+       "text": "ein Überrest",
+       "correct": true
+      },
+      {
+       "text": "Tradition",
+       "why": "Der Kassenzettel wurde nicht gedruckt, damit spätere Menschen davon erfahren. Er ist zufällig übrig geblieben."
+      },
+      {
+       "text": "eine Überschneidung",
+       "why": "Der Zettel hatte nur einen Alltagszweck. Eine Botschaft für später steckt nicht darin."
+      }
+     ],
+     "explain": "Der Kassenzettel war nur fürs Einkaufen da. Darum ist er ein Überrest."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Auf einem großen Tor steht in Stein gemeißelt: „Kaiser Markus besiegte hier seine Feinde.“ Was ist das?",
+     "options": [
+      {
+       "text": "Tradition",
+       "correct": true
+      },
+      {
+       "text": "ein Überrest",
+       "why": "Der Satz wurde absichtlich eingemeißelt, damit alle, auch spätere Menschen, davon erfahren. Das ist kein Zufall."
+      },
+      {
+       "text": "weder noch, weil es aus Stein ist",
+       "why": "Das Material entscheidet nicht. Entscheidend ist die Absicht, und die war: Nachwelt informieren."
+      }
+     ],
+     "explain": "Eine Inschrift, die an einen Sieg erinnern soll, wurde absichtlich überliefert. Das ist Tradition."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Das Schulheft eines Kindes von 1930 liegt im Museum. Was ist es?",
+     "options": [
+      {
+       "text": "ein Überrest",
+       "correct": true
+      },
+      {
+       "text": "Tradition, weil es im Museum liegt",
+       "why": "Im Museum liegen Überreste und Traditionsquellen. Das Kind schrieb ins Heft, um zu lernen, nicht für die Nachwelt."
+      },
+      {
+       "text": "Tradition, weil es alt ist",
+       "why": "Das Alter entscheidet nicht. Das Heft war für den Unterricht gedacht, also ist es ein Überrest."
+      }
+     ],
+     "explain": "Das Heft wurde zum Lernen benutzt. Dass es heute noch da ist, ist Zufall: ein Überrest."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Opa schreibt seine Lebensgeschichte auf, damit seine Enkel später wissen, wie er gelebt hat. Was ist das?",
+     "options": [
+      {
+       "text": "Tradition",
+       "correct": true
+      },
+      {
+       "text": "ein Überrest",
+       "why": "Opa schreibt mit Absicht für später. Bei einem Überrest ist das nicht so."
+      },
+      {
+       "text": "keine Quelle",
+       "why": "Doch, auch das ist eine Quelle. Sie erzählt von Opas Leben."
+      }
+     ],
+     "explain": "Opa will, dass spätere Menschen davon erfahren. Die Antwort auf die Leitfrage ist Ja, also Tradition."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein König lässt ein riesiges Schloss bauen. Er will darin wohnen, und alle sollen seine Macht sehen, auch noch nach seinem Tod. Was ist das Schloss?",
+     "options": [
+      {
+       "text": "eine Überschneidung",
+       "correct": true
+      },
+      {
+       "text": "nur ein Überrest",
+       "why": "Zum Wohnen allein wäre es ein Überrest. Aber der König wollte auch der Nachwelt seine Macht zeigen."
+      },
+      {
+       "text": "nur Tradition",
+       "why": "Die Botschaft an die Nachwelt stimmt. Aber das Schloss war auch ganz praktisch zum Wohnen da."
+      }
+     ],
+     "explain": "Beim Schloss treffen beide Absichten zusammen: Wohnen und eine Botschaft für später. Das ist eine Überschneidung."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Mia sagt: „Alles, was sehr alt ist, ist Tradition.“ Stimmt das?",
+     "options": [
+      {
+       "text": "Nein. Es kommt nicht auf das Alter an, sondern darauf, ob es absichtlich für später gemacht wurde.",
+       "correct": true
+      },
+      {
+       "text": "Ja. Tradition bedeutet einfach alt.",
+       "why": "Im Alltag klingt das so. Bei Quellen bedeutet Tradition aber: absichtlich überliefert."
+      },
+      {
+       "text": "Ja, aber nur bei Gegenständen.",
+       "why": "Auch das stimmt nicht. Ein uralter Faustkeil ist zum Beispiel ein Überrest."
+      }
+     ],
+     "explain": "Ein sehr alter Kochtopf ist ein Überrest. Ein ganz neues Denkmal ist Tradition. Die Absicht entscheidet."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum sind Überreste für Forscher oft besonders wertvoll?",
+     "options": [
+      {
+       "text": "Sie zeigen den echten Alltag, weil niemand sie gemacht hat, um spätere Menschen zu beeindrucken.",
+       "correct": true
+      },
+      {
+       "text": "Weil sie immer aus Gold sind.",
+       "why": "Die meisten Überreste sind ganz einfache Dinge wie Töpfe oder Zettel. Wertvoll sind sie wegen ihrer Ehrlichkeit."
+      },
+      {
+       "text": "Weil sie immer die ganze Wahrheit erzählen.",
+       "why": "Auch ein Überrest zeigt nur einen Ausschnitt. Er ist aber nicht geschönt, weil er nicht für die Nachwelt gemacht wurde."
+      }
+     ],
+     "explain": "Wer etwas für die Nachwelt macht, will oft gut dastehen. Überreste wurden ohne diese Absicht gemacht."
+    },
+    {
+     "type": "explain",
+     "prompt": "Erkläre den Unterschied zwischen Überrest und Tradition. Nenne für beides ein eigenes Beispiel.",
+     "keys": [
+      {
+       "label": "Überrest = zufällig erhalten",
+       "words": [
+        "zufäll",
+        "nicht absicht",
+        "ohne absicht",
+        "aus versehen",
+        "nicht für später"
+       ]
+      },
+      {
+       "label": "Tradition = absichtlich überliefert",
+       "words": [
+        "absicht",
+        "für später",
+        "nachwelt",
+        "damit",
+        "erinner"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Ein Überrest ist zufällig erhalten geblieben, zum Beispiel eine alte Busfahrkarte. Tradition wurde absichtlich überliefert, damit spätere Menschen davon erfahren, zum Beispiel ein Denkmal.",
+     "explain": "Die Leitfrage hilft immer: Wurde es gemacht, damit Menschen später davon erfahren?"
+    }
+   ]
+  },
+  {
+   "id": "a7",
+   "title": "Historiker und Archäologen",
+   "heft": [
+    {
+     "type": "mcq",
+     "prompt": "Das Wort „Archäologie“ kommt aus dem Griechischen. Was bedeutet es?",
+     "options": [
+      {
+       "text": "Lehre vom Alten (archaios = alt, logos = Lehre)",
+       "correct": true
+      },
+      {
+       "text": "Lehre vom Graben",
+       "why": "Archäologen graben zwar oft. Das Wort bedeutet aber: archaios = alt, logos = Lehre."
+      },
+      {
+       "text": "Lehre von den Steinen",
+       "why": "Gesteine untersuchen Geologen. Archäologie heißt „Lehre vom Alten“."
+      }
+     ],
+     "explain": "Archäologie ist die Lehre vom Alten: Sie erforscht, wie Menschen früher lebten."
+    },
+    {
+     "type": "sort",
+     "prompt": "Werkzeuge der Archäologen: Wozu brauchen sie es vor allem?",
+     "buckets": [
+      {
+       "id": "f",
+       "name": "Freilegen"
+      },
+      {
+       "id": "d",
+       "name": "Festhalten (dokumentieren)"
+      }
+     ],
+     "items": [
+      {
+       "text": "Spitzhacke",
+       "b": "f",
+       "why": "Mit der Spitzhacke lockert man grobe Erde. Damit legt man die Fundstelle frei."
+      },
+      {
+       "text": "Maurerkelle",
+       "b": "f",
+       "why": "Mit der Kelle trägt man Erde Schicht für Schicht ab. Das gehört zum Freilegen."
+      },
+      {
+       "text": "Pinsel",
+       "b": "f",
+       "why": "Mit dem Pinsel fegt man Erde ganz vorsichtig vom Fund. Das ist Freilegen."
+      },
+      {
+       "text": "Zahnarztinstrumente",
+       "b": "f",
+       "why": "Damit kratzt man Erde aus winzigen Ritzen. Auch das ist Freilegen."
+      },
+      {
+       "text": "Fotoapparat",
+       "b": "d",
+       "why": "Mit Fotos hält man fest, wie der Fund in der Erde lag."
+      },
+      {
+       "text": "Zeichenbrett",
+       "b": "d",
+       "why": "Auf dem Zeichenbrett zeichnet und beschreibt man den Fund. Das ist Festhalten."
+      },
+      {
+       "text": "Bandmaß",
+       "b": "d",
+       "why": "Mit dem Bandmaß vermisst man die Fundstelle. So wird alles genau festgehalten."
+      },
+      {
+       "text": "Senkblei",
+       "b": "d",
+       "why": "Das Senkblei zeigt genau senkrecht nach unten. Es hilft beim genauen Vermessen."
+      }
+     ],
+     "explain": "Archäologen legen Funde frei und halten alles genau fest: vermessen, fotografieren, zeichnen, beschreiben."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum gibt es immer weniger Quellen, je weiter wir in die Vergangenheit zurückgehen?",
+     "options": [
+      {
+       "text": "Es gab noch keine Schrift, und vieles ist zerfallen. Oft sind nur Bruchstücke übrig.",
+       "correct": true
+      },
+      {
+       "text": "Weil früher viel weniger passiert ist.",
+       "why": "Auch früher haben Menschen viel erlebt. Es sind nur weniger Spuren davon erhalten."
+      },
+      {
+       "text": "Weil die Archäologen nicht tief genug graben.",
+       "why": "Es liegt nicht an den Forschern. Viele Dinge sind einfach zerfallen, und schriftliche Zeugnisse gab es noch nicht."
+      }
+     ],
+     "explain": "Ohne Schrift fehlen schriftliche Quellen. Holz, Fell und Stoff verrotten. Übrig bleiben oft nur Knochensplitter oder Grabbeigaben."
+    },
+    {
+     "type": "mcq",
+     "prompt": "In Erding bei München fand man 2014 über 4000 Jahre alte Gräber. Wie kam es zu dem Fund?",
+     "options": [
+      {
+       "text": "durch Zufall beim Ausheben einer Kellergrube",
+       "correct": true
+      },
+      {
+       "text": "durch eine geplante Ausgrabung",
+       "why": "Diesmal nicht. Die Gräber kamen zufällig beim Bau einer Kellergrube ans Licht."
+      },
+      {
+       "text": "durch einen alten Brief, der den Ort verriet",
+       "why": "Vor über 4000 Jahren gab es hier noch keine Schrift. Gefunden wurden die Gräber durch Zufall."
+      }
+     ],
+     "explain": "„Der Zufall führte zu dem Skelettfund.“ Viele Funde entdeckt man beim Bauen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Der keltische Kessel aus dem Fürstengrab von Hochdorf wurde restauriert. Was heißt das?",
+     "options": [
+      {
+       "text": "Er wurde ausgebessert und wiederhergestellt.",
+       "correct": true
+      },
+      {
+       "text": "Er wurde eingeschmolzen.",
+       "why": "Dann wäre der Kessel zerstört. Restaurieren heißt: vorsichtig ausbessern und wiederherstellen."
+      },
+      {
+       "text": "Er wurde wieder vergraben.",
+       "why": "Er wurde nicht vergraben, sondern repariert. Heute steht er im Keltenmuseum Hochdorf."
+      },
+      {
+       "text": "Er wurde nachgebaut, und das Original weggeworfen.",
+       "why": "Originale sind sehr wertvoll und werden nie weggeworfen. Restaurieren heißt: das Original ausbessern."
+      }
+     ],
+     "explain": "Restaurieren bedeutet ausbessern und wiederherstellen. Die schönsten Funde kommen danach ins Museum."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was unterscheidet Historiker und Archäologen?",
+     "options": [
+      {
+       "text": "Historiker werten vor allem Schriften, Bilder und Zeitzeugenaussagen aus. Archäologen untersuchen Funde, oft aus Ausgrabungen und aus der Zeit ohne Schrift.",
+       "correct": true
+      },
+      {
+       "text": "Historiker graben, Archäologen lesen nur Bücher.",
+       "why": "Es ist eher umgekehrt. Archäologen graben Funde aus, Historiker werten vor allem Schriften und andere Quellen aus."
+      },
+      {
+       "text": "Es gibt keinen Unterschied.",
+       "why": "Beide erforschen die Vergangenheit, aber mit verschiedenen Quellen und Methoden."
+      }
+     ],
+     "explain": "Für die Zeit ohne Schrift sind vor allem Archäologen gefragt. Für die Zeit mit Schrift vor allem Historiker. Oft arbeiten sie zusammen."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "mcq",
+     "prompt": "Familie Kaya baut ein Haus. Beim Graben findet der Bagger eine alte römische Münze. Was sollte die Familie tun?",
+     "options": [
+      {
+       "text": "Den Fund melden, damit Archäologen ihn untersuchen.",
+       "correct": true
+      },
+      {
+       "text": "Die Münze behalten und weitergraben.",
+       "why": "Alte Funde sind wichtige Quellen für alle. In Deutschland muss man sie melden, damit Fachleute sie untersuchen."
+      },
+      {
+       "text": "Einen Historiker rufen, der nur alte Briefe liest.",
+       "why": "Für Funde aus der Erde sind Archäologen die Fachleute. Sie wissen, wie man ausgräbt und dokumentiert."
+      },
+      {
+       "text": "Die Münze gründlich mit Seife schrubben.",
+       "why": "Das kann den Fund beschädigen. Reinigen und restaurieren machen Fachleute ganz vorsichtig."
+      }
+     ],
+     "explain": "Für Funde im Boden sind Archäologen zuständig. Vielleicht liegt dort noch mehr."
+    },
+    {
+     "type": "order",
+     "prompt": "Die Archäologen sind da. Bring ihre Arbeit in die richtige Reihenfolge.",
+     "items": [
+      "Fundstelle vorsichtig freilegen",
+      "Fund vermessen, fotografieren und zeichnen",
+      "Fund bergen und Proben entnehmen",
+      "Fund im Labor restaurieren",
+      "Fund im Museum ausstellen"
+     ],
+     "why": "Erst wird freigelegt, dann alles festgehalten, solange der Fund noch liegt. Danach wird er geborgen, restauriert und zuletzt gezeigt.",
+     "explain": "Freilegen, dokumentieren, bergen, restaurieren, ausstellen: So läuft eine Ausgrabung ab."
+    },
+    {
+     "type": "order",
+     "prompt": "Mit welchem Werkzeug arbeiten die Archäologen zuerst, wenn sie zur Münze hinuntergraben? Vom gröbsten zum feinsten.",
+     "items": [
+      "Spitzhacke",
+      "Maurerkelle",
+      "Pinsel",
+      "Zahnarztinstrumente"
+     ],
+     "why": "Weit weg vom Fund nimmt man grobe Werkzeuge. Je näher man kommt, desto feiner und vorsichtiger wird gearbeitet.",
+     "explain": "Erst grob, dann immer feiner. So wird der Fund nicht beschädigt."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum fotografieren und zeichnen Archäologen einen Fund, bevor sie ihn aus der Erde nehmen?",
+     "options": [
+      {
+       "text": "Weil man danach nicht mehr sehen kann, wie und wo er genau lag.",
+       "correct": true
+      },
+      {
+       "text": "Damit sie ein schönes Andenken haben.",
+       "why": "Es geht nicht um Andenken. Die Lage eines Fundes verrät viel, und sie ist nach dem Bergen verloren."
+      },
+      {
+       "text": "Weil Fotografieren schneller geht als Graben.",
+       "why": "Es geht nicht um Zeit. Wenn der Fund herausgenommen ist, kann man die Fundstelle nicht wieder herstellen."
+      }
+     ],
+     "explain": "Eine Ausgrabung verändert die Fundstelle für immer. Darum wird vorher alles genau festgehalten."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum legen Archäologen beim Fotografieren einen Maßstab neben den Fund?",
+     "options": [
+      {
+       "text": "Damit man auf dem Foto erkennt, wie groß der Fund wirklich ist.",
+       "correct": true
+      },
+      {
+       "text": "Damit der Fund nicht wegrollt.",
+       "why": "Der Maßstab hält nichts fest. Er zeigt auf dem Foto die echte Größe."
+      },
+      {
+       "text": "Weil er gut aussieht.",
+       "why": "Er hat einen wichtigen Zweck: Ohne ihn weiß man auf dem Foto nicht, wie groß der Fund ist."
+      }
+     ],
+     "explain": "Auf einem Foto kann eine Münze so groß wie ein Teller wirken. Der Maßstab zeigt die wirkliche Größe."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Bei einer Ausgrabung findet man ein Skelett. Wer kann herausfinden, wie alt der Mensch wurde und ob er krank war?",
+     "options": [
+      {
+       "text": "ein Anthropologe",
+       "correct": true
+      },
+      {
+       "text": "ein Geologe",
+       "why": "Geologen untersuchen Gesteine und Erdschichten. Für Menschen und ihre Knochen sind Anthropologen da."
+      },
+      {
+       "text": "ein Restaurator",
+       "why": "Ein Restaurator bessert Fundstücke aus. Was ein Skelett über den Menschen verrät, untersuchen Anthropologen."
+      }
+     ],
+     "explain": "Archäologen arbeiten mit anderen Fachleuten zusammen: Anthropologen, Geologen, Biologen und Physikern."
+    },
+    {
+     "type": "sort",
+     "prompt": "Wer macht das eher: Historiker oder Archäologe?",
+     "buckets": [
+      {
+       "id": "h",
+       "name": "Historiker"
+      },
+      {
+       "id": "a",
+       "name": "Archäologe"
+      }
+     ],
+     "items": [
+      {
+       "text": "alte Briefe lesen",
+       "b": "h",
+       "why": "Briefe sind schriftliche Quellen. Die werten vor allem Historiker aus."
+      },
+      {
+       "text": "Zeitzeugen befragen",
+       "b": "h",
+       "why": "Zeitzeugen gibt es nur für die jüngere Vergangenheit. Ihre Aussagen werten Historiker aus."
+      },
+      {
+       "text": "alte Stadtpläne auswerten",
+       "b": "h",
+       "why": "Stadtpläne sind Quellen aus der Zeit mit Schrift. Damit arbeiten vor allem Historiker."
+      },
+      {
+       "text": "Gräber ausgraben",
+       "b": "a",
+       "why": "Ausgraben ist die typische Arbeit von Archäologen."
+      },
+      {
+       "text": "Scherben zusammensetzen",
+       "b": "a",
+       "why": "Scherben sind Bruchstücke aus dem Boden. Die untersuchen Archäologen."
+      },
+      {
+       "text": "Erdschichten freilegen",
+       "b": "a",
+       "why": "Fundstellen freilegen ist Aufgabe der Archäologen."
+      }
+     ],
+     "explain": "Historiker arbeiten vor allem mit Schriften, Bildern und Zeitzeugen. Archäologen mit Funden aus dem Boden."
+    },
+    {
+     "type": "mcq",
+     "prompt": "In einer Steinzeitsiedlung findet man nur Tonscherben und Knochensplitter. Warum ist es schwer, daraus sichere Aussagen zu machen?",
+     "options": [
+      {
+       "text": "Es sind nur Bruchstücke, und es gibt keine Schrift. Die Forscher müssen vieles vermuten.",
+       "correct": true
+      },
+      {
+       "text": "Weil Tonscherben gar keine Quellen sind.",
+       "why": "Doch, Scherben sind Quellen, nämlich Überreste. Sie zeigen aber nur einen kleinen Ausschnitt."
+      },
+      {
+       "text": "Weil die Menschen damals absichtlich falsche Spuren gelegt haben.",
+       "why": "Das ist nicht der Grund. Die Funde sind einfach unvollständig, und niemand hat etwas aufgeschrieben."
+      }
+     ],
+     "explain": "Aus Bruchstücken ohne Schrift kann man nur Vermutungen ableiten. Weitere Funde können sie stützen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Eine Forscherin vermutet, dass in einem alten Dorf nur Bauern lebten. Dann findet man dort eine Schmiede mit Werkzeugen. Was passiert?",
+     "options": [
+      {
+       "text": "Sie muss ihre Vermutung überprüfen und vielleicht ändern.",
+       "correct": true
+      },
+      {
+       "text": "Sie ignoriert die Schmiede, weil ihre Vermutung schon feststeht.",
+       "why": "Gute Forscher halten nicht stur an einer Vermutung fest. Neue Quellen können das Ergebnis ändern."
+      },
+      {
+       "text": "Die Schmiede beweist, dass es das Dorf nie gab.",
+       "why": "Die Schmiede zeigt eher, dass dort auch Handwerker lebten. Das Dorf gab es trotzdem."
+      }
+     ],
+     "explain": "Schlussfolgerungen sind zuerst Vermutungen. Neue Quellen können sie erhärten oder ändern."
+    },
+    {
+     "type": "explain",
+     "prompt": "Erkläre, warum Forscher über die Steinzeit oft nur Vermutungen anstellen können.",
+     "keys": [
+      {
+       "label": "keine Schrift",
+       "words": [
+        "schrift",
+        "geschrieben",
+        "aufgeschrieben"
+       ]
+      },
+      {
+       "label": "nur wenige Bruchstücke",
+       "words": [
+        "bruchst",
+        "wenig",
+        "kaputt",
+        "zerfall",
+        "scherben",
+        "knochen",
+        "überrest",
+        "teile"
+       ]
+      },
+      {
+       "label": "Forscher müssen vermuten",
+       "words": [
+        "vermut",
+        "raten",
+        "nicht sicher",
+        "unsicher",
+        "deuten"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "In der Steinzeit gab es noch keine Schrift. Darum hat niemand aufgeschrieben, wie die Menschen lebten. Es sind nur wenige Überreste erhalten, oft nur Bruchstücke wie Knochensplitter. Die Forscher müssen deshalb vieles vermuten.",
+     "explain": "Keine Schrift und nur Bruchstücke: Darum sind Aussagen über die Steinzeit oft unsicher."
+    }
+   ]
+  },
+  {
+   "id": "a8",
+   "heft": [
+    {
+     "type": "mcq",
+     "prompt": "Wann war die Altsteinzeit?",
+     "options": [
+      {
+       "text": "Vor etwa 2 Millionen Jahren bis vor etwa 10.000 Jahren",
+       "correct": true
+      },
+      {
+       "text": "Vor etwa 2.000 Jahren bis heute",
+       "why": "Das ist viel zu kurz und viel zu spät. Vor 2.000 Jahren gab es schon Rom und Schrift."
+      },
+      {
+       "text": "Von 753 v. Chr. bis 800 n. Chr.",
+       "why": "Das ist die Zeit von der Gründung Roms bis zu Karl dem Großen. Die Altsteinzeit lag lange davor."
+      },
+      {
+       "text": "Von 10.000 v. Chr. bis 2.600 v. Chr.",
+       "why": "Um 10.000 v. Chr. betrieben die Menschen schon Ackerbau und Viehzucht. Da war die Altsteinzeit gerade zu Ende."
+      }
+     ],
+     "explain": "Die Altsteinzeit begann vor etwa 2 Millionen Jahren mit den ersten Steinwerkzeugen. Sie endete vor etwa 10.000 Jahren."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was geschah um ca. 2,6 Mio. v. Chr.?",
+     "options": [
+      {
+       "text": "Menschen stellen die ersten Steinwerkzeuge her.",
+       "correct": true
+      },
+      {
+       "text": "Menschen betreiben Ackerbau und Viehzucht.",
+       "why": "Ackerbau und Viehzucht kamen erst um ca. 10.000 v. Chr. Das ist viel später."
+      },
+      {
+       "text": "Die Ägypter bauen die Pyramiden.",
+       "why": "Die Pyramiden entstanden um ca. 2.600 v. Chr., nicht 2,6 Millionen v. Chr. Achte auf das „Mio.“!"
+      },
+      {
+       "text": "Die Menschen erfinden die Schrift.",
+       "why": "Schrift gab es in der Altsteinzeit noch nicht. Sie kam viel, viel später."
+      }
+     ],
+     "explain": "Mit den ersten Steinwerkzeugen beginnt die Altsteinzeit. Deshalb heißt sie auch „Steinzeit“."
+    },
+    {
+     "type": "order",
+     "prompt": "Bring die Ereignisse vom Zeitstrahl in die richtige Reihenfolge. Das älteste kommt zuerst.",
+     "items": [
+      "Menschen stellen die ersten Steinwerkzeuge her",
+      "Menschen betreiben Ackerbau und Viehzucht",
+      "Die Ägypter bauen die Pyramiden",
+      "Rom wird gegründet",
+      "Karl der Große wird Kaiser"
+     ],
+     "why": "Vor Christus gilt: Je größer die Zahl, desto länger ist es her. 2,6 Millionen v. Chr. ist also am ältesten.",
+     "explain": "2,6 Mio. v. Chr., 10.000 v. Chr., 2.600 v. Chr., 753 v. Chr., 800 n. Chr. Die Altsteinzeit liegt ganz am Anfang."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Womit endete die Altsteinzeit?",
+     "options": [
+      {
+       "text": "Die Menschen begannen mit Ackerbau und Viehzucht und bauten Siedlungen.",
+       "correct": true
+      },
+      {
+       "text": "Rom wurde gegründet.",
+       "why": "Rom wurde erst 753 v. Chr. gegründet. Die Altsteinzeit war da schon fast 10.000 Jahre vorbei."
+      },
+      {
+       "text": "Die erste Eisenbahn fuhr.",
+       "why": "Die erste Eisenbahn fuhr 1825. Das ist fast heute. Die Altsteinzeit endete viel früher."
+      },
+      {
+       "text": "Die Menschen stellten die ersten Steinwerkzeuge her.",
+       "why": "Damit hat die Altsteinzeit angefangen, nicht aufgehört."
+      }
+     ],
+     "explain": "Um ca. 10.000 v. Chr. wurden die Menschen sesshaft. Sie bauten Getreide an und hielten Tiere. Damit endete die Altsteinzeit."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Die Menschen in der Altsteinzeit mussten sich vor {Kälte} schützen und {Nahrung} beschaffen. Die {Dunkelheit} brachte Gefahren. Sie lernten durch Beobachten, {Ausprobieren} und Nachdenken.",
+     "extra": [
+      {
+       "word": "Hitze",
+       "why": "Es gab in der Altsteinzeit lange, sehr kalte Zeiten. Die Menschen mussten sich vor allem vor Kälte schützen."
+      },
+      {
+       "word": "Lesen",
+       "why": "Es gab noch keine Schrift und keine Bücher. Die Menschen lernten, indem sie es selbst versuchten: durch Ausprobieren."
+      }
+     ],
+     "explain": "Kälte, Hunger und die gefährliche Dunkelheit bestimmten das Leben. Die Menschen lernten durch Beobachten, Ausprobieren und Nachdenken."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "mcq",
+     "prompt": "Warum heißt diese Zeit „Steinzeit“?",
+     "options": [
+      {
+       "text": "Weil die Menschen viele Werkzeuge aus Stein herstellten.",
+       "correct": true
+      },
+      {
+       "text": "Weil die Menschen in Häusern aus Stein wohnten.",
+       "why": "Feste Steinhäuser gab es noch nicht. Die Menschen wohnten in Zelten und zogen umher."
+      },
+      {
+       "text": "Weil es damals nur Steine und keine Pflanzen gab.",
+       "why": "Es gab viele Pflanzen, zum Beispiel Beeren und Wurzeln. Die Menschen sammelten sie."
+      },
+      {
+       "text": "Weil die Menschen Steine gesammelt haben, um damit zu bezahlen.",
+       "why": "Geld gab es noch nicht. Die Steine wurden zu Werkzeugen wie dem Faustkeil."
+      }
+     ],
+     "explain": "Werkzeuge aus Stein sind typisch für diese Zeit. Sie haben sich bis heute erhalten, darum finden Forscher sie noch."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welche Zeitspanne ist am längsten?",
+     "options": [
+      {
+       "text": "Die Altsteinzeit",
+       "correct": true
+      },
+      {
+       "text": "Die Zeit von der Gründung Roms bis heute",
+       "why": "Das sind etwa 2.800 Jahre. Die Altsteinzeit dauerte etwa 2 Millionen Jahre."
+      },
+      {
+       "text": "Die Zeit vom Bau der Pyramiden bis heute",
+       "why": "Das sind etwa 4.600 Jahre. Das ist winzig im Vergleich zu 2 Millionen Jahren."
+      },
+      {
+       "text": "Die Zeit von der ersten Eisenbahn bis heute",
+       "why": "Das sind nur gut 200 Jahre. Das ist die kürzeste Zeitspanne hier."
+      }
+     ],
+     "explain": "Die Altsteinzeit dauerte etwa 2 Millionen Jahre. Sie ist der allergrößte Teil der Geschichte der Menschen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Stell dir vor, die ganze Geschichte der Menschen wäre ein einziger Tag. Wie viel davon wäre die Altsteinzeit?",
+     "options": [
+      {
+       "text": "Fast der ganze Tag",
+       "correct": true
+      },
+      {
+       "text": "Ungefähr eine Stunde",
+       "why": "Die Altsteinzeit war viel länger als alles, was danach kam. Sie wäre fast der ganze Tag."
+      },
+      {
+       "text": "Nur die letzten paar Minuten",
+       "why": "Die letzten Minuten wären die Zeit seit den ersten Dörfern. Die Altsteinzeit kam ganz am Anfang und dauerte am längsten."
+      },
+      {
+       "text": "Genau die Hälfte",
+       "why": "Die Altsteinzeit dauerte etwa 2 Millionen Jahre, alles danach nur etwa 10.000 Jahre. Das ist viel mehr als die Hälfte."
+      }
+     ],
+     "explain": "Von den ersten Steinwerkzeugen bis heute war die meiste Zeit Altsteinzeit. Alles andere passt in die letzten Minuten des Tages."
+    },
+    {
+     "type": "num",
+     "prompt": "Die Altsteinzeit endete vor etwa 10.000 Jahren. Die Pyramiden wurden vor etwa 4.600 Jahren gebaut. Wie viele Jahre liegen ungefähr dazwischen?",
+     "answer": "5400",
+     "tol": 0,
+     "unit": "Jahre",
+     "why": "Rechne: 10.000 minus 4.600.",
+     "explain": "10.000 - 4.600 = 5.400. Zwischen dem Ende der Altsteinzeit und den Pyramiden liegen etwa 5.400 Jahre."
+    },
+    {
+     "type": "sort",
+     "prompt": "Passt das zur Altsteinzeit oder kam es erst später?",
+     "buckets": [
+      {
+       "id": "a",
+       "name": "Altsteinzeit"
+      },
+      {
+       "id": "s",
+       "name": "Erst später"
+      }
+     ],
+     "items": [
+      {
+       "text": "Mammut jagen",
+       "b": "a",
+       "why": "Mammuts lebten in der Altsteinzeit. Die Menschen jagten sie mit Speeren."
+      },
+      {
+       "text": "Höhlenwände bemalen",
+       "b": "a",
+       "why": "Die Höhlenmalereien, zum Beispiel in Lascaux, stammen aus der Altsteinzeit."
+      },
+      {
+       "text": "Im Zelt wohnen und weiterziehen",
+       "b": "a",
+       "why": "Die Jäger und Sammler zogen den Tieren hinterher und wohnten in Zelten."
+      },
+      {
+       "text": "Werkzeug aus Stein schlagen",
+       "b": "a",
+       "why": "Steinwerkzeuge sind typisch für die Altsteinzeit."
+      },
+      {
+       "text": "Ein Getreidefeld anlegen",
+       "b": "s",
+       "why": "Felder legten die Menschen erst an, als sie sesshaft wurden. Da war die Altsteinzeit vorbei."
+      },
+      {
+       "text": "Kühe im Stall halten",
+       "b": "s",
+       "why": "Viehzucht kam erst nach der Altsteinzeit. Vorher jagte man wilde Tiere."
+      },
+      {
+       "text": "Einen Brief schreiben",
+       "b": "s",
+       "why": "In der Altsteinzeit gab es noch keine Schrift."
+      },
+      {
+       "text": "Ein Steinhaus bauen",
+       "b": "s",
+       "why": "Feste Häuser passen nicht zum Umherziehen. Sie kamen mit den Dörfern später."
+      }
+     ],
+     "explain": "Jagen, Sammeln, Zelte, Steinwerkzeuge und Höhlenbilder gehören zur Altsteinzeit. Felder, Ställe, Häuser und Schrift kamen später."
+    },
+    {
+     "type": "order",
+     "prompt": "Bring die Ereignisse in die richtige Reihenfolge. Das älteste kommt zuerst.",
+     "items": [
+      "Jäger jagen ein Mammut mit Speeren",
+      "Bauern säen das erste Getreide",
+      "Ritter bauen Burgen",
+      "Das erste Auto fährt"
+     ],
+     "why": "Überlege: Wann gab es noch Mammuts? Wann gab es Ritter? Und wann Autos?",
+     "explain": "Mammutjagd in der Altsteinzeit, dann die ersten Bauern, viel später die Ritter im Mittelalter, zuletzt das Auto."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Lena sagt: „In der Altsteinzeit lebten die Menschen zusammen mit den Dinosauriern.“ Stimmt das?",
+     "options": [
+      {
+       "text": "Nein. Die Dinosaurier waren schon viele Millionen Jahre vorher ausgestorben.",
+       "correct": true
+      },
+      {
+       "text": "Ja, die Menschen jagten Dinosaurier mit Speeren.",
+       "why": "Das sieht man oft in Filmen, aber es stimmt nicht. Die Menschen jagten zum Beispiel Mammuts, Rentiere und Wildpferde."
+      },
+      {
+       "text": "Ja, aber nur am Anfang der Altsteinzeit.",
+       "why": "Auch am Anfang nicht. Die Dinosaurier starben vor etwa 66 Millionen Jahren aus. Das ist viel länger her als 2 Millionen Jahre."
+      },
+      {
+       "text": "Nein, die Dinosaurier kamen erst nach der Altsteinzeit.",
+       "why": "Andersherum: Die Dinosaurier lebten lange vor den Menschen."
+      }
+     ],
+     "explain": "Zwischen den letzten Dinosauriern und den ersten Menschen liegen über 60 Millionen Jahre. In der Altsteinzeit gab es aber Mammuts."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein Junge aus der Altsteinzeit will lernen, wie man einen scharfen Stein macht. Wie lernt er das am ehesten?",
+     "options": [
+      {
+       "text": "Er schaut den Erwachsenen zu und probiert es selbst aus.",
+       "correct": true
+      },
+      {
+       "text": "Er liest es in einem Buch nach.",
+       "why": "Es gab noch keine Schrift und keine Bücher."
+      },
+      {
+       "text": "Er geht in die Schule.",
+       "why": "Schulen gab es noch nicht. Man lernte in der Gruppe, durch Zuschauen und Mitmachen."
+      },
+      {
+       "text": "Er kauft einen fertigen Stein.",
+       "why": "Es gab noch kein Geld und keine Läden. Jeder musste es selbst lernen."
+      }
+     ],
+     "explain": "Die Menschen lernten durch Beobachten, Ausprobieren und Nachdenken."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wie viel wissen wir über die Altsteinzeit im Vergleich zu späteren Zeiten?",
+     "options": [
+      {
+       "text": "Weniger, weil die Zeit so weit zurückliegt und es keine Schrift gab.",
+       "correct": true
+      },
+      {
+       "text": "Mehr, weil sie so lange gedauert hat.",
+       "why": "Lange Dauer heißt nicht viele Quellen. Je weiter etwas zurückliegt, desto weniger ist erhalten."
+      },
+      {
+       "text": "Gleich viel, weil Forscher alles ausgraben können.",
+       "why": "Vieles ist längst verrottet, zum Beispiel Holz und Felle. Darum fehlen viele Spuren."
+      },
+      {
+       "text": "Alles, weil es Tagebücher aus der Altsteinzeit gibt.",
+       "why": "Es gab noch keine Schrift. Darum gibt es auch keine Tagebücher."
+      }
+     ],
+     "explain": "Je weiter wir in die Vergangenheit zurückgehen, desto weniger Quellen gibt es."
+    },
+    {
+     "type": "explain",
+     "prompt": "Warum war die Dunkelheit für die Menschen der Altsteinzeit gefährlich? Erkläre.",
+     "keys": [
+      {
+       "label": "wilde Tiere",
+       "words": [
+        "tier",
+        "wolf",
+        "wölf",
+        "baer",
+        "bär",
+        "raubtier",
+        "löw"
+       ]
+      },
+      {
+       "label": "man sieht nichts, kein Licht",
+       "words": [
+        "sehen",
+        "sah",
+        "sieht",
+        "licht",
+        "hell",
+        "dunkel",
+        "erkennen"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Im Dunkeln konnten die Menschen kaum etwas sehen. Wilde Tiere wie Wölfe oder Bären konnten sich dann unbemerkt anschleichen.",
+     "explain": "Ohne Licht sieht man Gefahren nicht. Darum war später das Feuer so wichtig."
+    }
+   ]
+  },
+  {
+   "id": "a9",
+   "heft": [
+    {
+     "type": "sort",
+     "prompt": "M1 zeigt den Nachbau eines Zeltes aus der Altsteinzeit. Welche Stichwörter passen zur Bildbeschreibung?",
+     "buckets": [
+      {
+       "id": "p",
+       "name": "Passt zum Bild"
+      },
+      {
+       "id": "n",
+       "name": "Passt nicht"
+      }
+     ],
+     "items": [
+      {
+       "text": "Gerüst aus Holzstangen",
+       "b": "p",
+       "why": "Das Zelt steht auf langen Holzstangen. Das passt."
+      },
+      {
+       "text": "Hülle aus Tierfellen",
+       "b": "p",
+       "why": "Über den Stangen liegen Tierfelle. Das passt."
+      },
+      {
+       "text": "Spitze Zeltform",
+       "b": "p",
+       "why": "Die Stangen laufen oben zusammen. So entsteht eine spitze Form."
+      },
+      {
+       "text": "Eingang mit Fell davor",
+       "b": "p",
+       "why": "Ein Fell kann den Eingang verschließen. Das passt zu einem Zelt aus Fellen."
+      },
+      {
+       "text": "Mauern aus Stein",
+       "b": "n",
+       "why": "Das Zelt hat keine Mauern. Es besteht aus Stangen und Fellen."
+      },
+      {
+       "text": "Fenster aus Glas",
+       "b": "n",
+       "why": "Glas gab es in der Altsteinzeit noch nicht."
+      },
+      {
+       "text": "Altes, zerfallenes Zelt",
+       "b": "n",
+       "why": "M1 ist ein Nachbau von heute. Darum sieht es heil und neu aus."
+      }
+     ],
+     "explain": "Ein Gerüst aus Holzstangen, darüber Tierfelle: So stellen sich Forscher ein Zelt der Altsteinzeit vor."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was zeigt M1 genau?",
+     "options": [
+      {
+       "text": "Einen Nachbau (eine Rekonstruktion) eines Zeltes aus der Altsteinzeit",
+       "correct": true
+      },
+      {
+       "text": "Ein echtes, altes Zelt aus der Altsteinzeit",
+       "why": "Ein Zelt aus Holz und Fell wäre nach so langer Zeit längst verrottet. M1 wurde heute nachgebaut."
+      },
+      {
+       "text": "Ein altes, zerfallenes Zelt, das man ausgegraben hat",
+       "why": "Das Zelt sieht heil und neu aus. Es ist ein Nachbau im Archäopark Vogelherd."
+      },
+      {
+       "text": "Ein Foto aus der Altsteinzeit",
+       "why": "In der Altsteinzeit gab es keine Fotoapparate. Das Foto wurde heute gemacht, von einem Nachbau."
+      }
+     ],
+     "explain": "Forscher haben das Zelt nach Funden und Vermutungen nachgebaut. Man nennt das Nachbau oder Rekonstruktion."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was erfährst du aus M1 über die Lebensweise der Menschen in der Altsteinzeit?",
+     "options": [
+      {
+       "text": "Sie zogen umher und brauchten Zelte, die man leicht auf- und abbauen konnte.",
+       "correct": true
+      },
+      {
+       "text": "Sie wohnten ihr ganzes Leben am selben Ort.",
+       "why": "Ein Zelt aus Stangen und Fellen kann man abbauen und mitnehmen. Das passt zu Menschen, die umherziehen."
+      },
+      {
+       "text": "Sie bauten große Dörfer mit festen Häusern.",
+       "why": "Feste Häuser und Dörfer gab es erst nach der Altsteinzeit."
+      },
+      {
+       "text": "Sie hatten keine Tiere in ihrer Nähe.",
+       "why": "Die Felle stammen von gejagten Tieren. Die Menschen lebten von der Jagd."
+      }
+     ],
+     "explain": "Das Zelt zeigt: Die Menschen nutzten Holz und Felle aus ihrer Umgebung. Sie konnten schnell weiterziehen."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Die Menschen der Altsteinzeit folgten den gejagten {Tieren} über viele Kilometer. So senkten sie das Risiko zu {verhungern}. Sie wohnten in {Zelten}, die man leicht auf- und abbauen konnte. Außerdem sammelten sie essbare Pflanzen wie {Beeren} und {Wurzeln}. Darum nennt man sie Jäger und {Sammler}.",
+     "extra": [
+      {
+       "word": "Häusern",
+       "why": "Feste Häuser kann man nicht mitnehmen. Die Menschen zogen den Tieren hinterher, darum wohnten sie in Zelten."
+      },
+      {
+       "word": "Getreide",
+       "why": "Getreide bauten erst die Bauern nach der Altsteinzeit an. Die Jäger und Sammler sammelten, was wild wuchs."
+      },
+      {
+       "word": "Bauern",
+       "why": "Bauern bauen Pflanzen an und halten Tiere. Das gab es erst später. Die Menschen der Altsteinzeit waren Jäger und Sammler."
+      }
+     ],
+     "explain": "Die Menschen jagten Tiere und sammelten Pflanzen. Weil sie den Tieren folgten, wohnten sie in Zelten."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum zogen die Tiere im Lauf des Jahres weiter?",
+     "options": [
+      {
+       "text": "Sie zogen je nach Jahreszeit dorthin, wo sie Futter fanden.",
+       "correct": true
+      },
+      {
+       "text": "Sie hatten Angst vor den Zelten.",
+       "why": "Die Zelte waren nicht der Grund. Die Tiere suchten Futter, und das wächst je nach Jahreszeit an anderen Orten."
+      },
+      {
+       "text": "Sie wollten den Menschen helfen.",
+       "why": "Tiere denken nicht an die Menschen. Sie gehen dorthin, wo sie genug zu fressen finden."
+      },
+      {
+       "text": "Sie wurden von den Menschen getrieben.",
+       "why": "Die Menschen folgten den Tieren, nicht umgekehrt. Die Tiere suchten Futter."
+      }
+     ],
+     "explain": "Die Tiere folgten dem Futter, die Menschen folgten den Tieren. So hatten sie genug zu essen."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "mcq",
+     "prompt": "Archäologen finden einen alten Lagerplatz: eine Feuerstelle, Tierknochen und Löcher im Boden in einem Kreis. Was waren die Löcher wohl?",
+     "options": [
+      {
+       "text": "Spuren der Stangen eines Zeltes",
+       "correct": true
+      },
+      {
+       "text": "Brunnen für Wasser",
+       "why": "Brunnen wären tief und einzeln. Kleine Löcher im Kreis passen zu Zeltstangen."
+      },
+      {
+       "text": "Spuren von Hausmauern",
+       "why": "Feste Häuser gab es in der Altsteinzeit noch nicht."
+      },
+      {
+       "text": "Löcher für Zaunpfähle eines Stalls",
+       "why": "Ställe gab es erst mit der Viehzucht, nach der Altsteinzeit."
+      }
+     ],
+     "explain": "Stangen eines Zeltes steckten im Boden. Die Löcher im Kreis zeigen, wo ein Zelt stand."
+    },
+    {
+     "type": "sort",
+     "prompt": "Jagen oder Sammeln? Ordne zu.",
+     "buckets": [
+      {
+       "id": "j",
+       "name": "Jagen"
+      },
+      {
+       "id": "s",
+       "name": "Sammeln"
+      }
+     ],
+     "items": [
+      {
+       "text": "Ein Rentier erlegen",
+       "b": "j",
+       "why": "Ein Tier erlegen ist Jagen."
+      },
+      {
+       "text": "Haselnüsse aufheben",
+       "b": "s",
+       "why": "Nüsse wachsen an Sträuchern. Man sammelt sie."
+      },
+      {
+       "text": "Pilze suchen",
+       "b": "s",
+       "why": "Pilze wachsen im Wald. Man sammelt sie."
+      },
+      {
+       "text": "Einen Fisch mit dem Speer fangen",
+       "b": "j",
+       "why": "Auch Fische fängt man mit Waffen. Das gehört zur Jagd."
+      },
+      {
+       "text": "Vogeleier aus dem Nest holen",
+       "b": "s",
+       "why": "Eier holt man sich, ohne ein Tier zu jagen. Das ist Sammeln."
+      },
+      {
+       "text": "Ein Wildpferd verfolgen",
+       "b": "j",
+       "why": "Ein Wildpferd wurde gejagt."
+      },
+      {
+       "text": "Kräuter pflücken",
+       "b": "s",
+       "why": "Kräuter pflückt man. Das ist Sammeln."
+      }
+     ],
+     "explain": "Jäger erlegen Tiere. Sammler suchen essbare Pflanzen, Nüsse, Pilze oder Eier."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was bedeutet „Sammler“ bei den Menschen der Altsteinzeit?",
+     "options": [
+      {
+       "text": "Sie sammelten essbare Pflanzen wie Beeren, Wurzeln und Nüsse.",
+       "correct": true
+      },
+      {
+       "text": "Sie sammelten schöne Steine für eine Sammlung.",
+       "why": "Hier geht es ums Essen. Sammler suchten Nahrung, die wild wuchs."
+      },
+      {
+       "text": "Sie sammelten Geld.",
+       "why": "Geld gab es noch nicht."
+      },
+      {
+       "text": "Sie sammelten die Tiere in einem Stall.",
+       "why": "Ställe und Viehzucht kamen erst später. Tiere wurden gejagt."
+      }
+     ],
+     "explain": "Jäger und Sammler: Die einen jagten Tiere, die anderen sammelten essbare Pflanzen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welches heutige Ding hat einen ähnlichen Zweck wie das Zelt der Altsteinzeit?",
+     "options": [
+      {
+       "text": "Ein Campingzelt, das man schnell auf- und abbaut",
+       "correct": true
+      },
+      {
+       "text": "Ein Hochhaus",
+       "why": "Ein Hochhaus kann man nicht mitnehmen. Das Zelt der Altsteinzeit sollte man schnell abbauen können."
+      },
+      {
+       "text": "Eine Burg",
+       "why": "Eine Burg steht fest an einem Ort. Die Menschen der Altsteinzeit zogen aber umher."
+      },
+      {
+       "text": "Ein Gartenhaus aus Stein",
+       "why": "Ein Steinhaus bleibt am selben Platz. Das passt nicht zum Umherziehen."
+      }
+     ],
+     "explain": "Wie beim Campen: Man baut das Zelt auf, bleibt eine Weile und zieht dann weiter."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum bauten die Menschen der Altsteinzeit keine festen Häuser?",
+     "options": [
+      {
+       "text": "Weil sie den Tieren hinterherzogen und ihr Zuhause mitnehmen mussten.",
+       "correct": true
+      },
+      {
+       "text": "Weil sie nicht klug genug dafür waren.",
+       "why": "Die Menschen waren sehr klug. Sie lernten durch Beobachten und Ausprobieren. Ein Haus passte nur nicht zu ihrem Leben."
+      },
+      {
+       "text": "Weil es damals nie regnete.",
+       "why": "Es regnete und war oft sehr kalt. Darum brauchten sie Schutz, eben Zelte."
+      },
+      {
+       "text": "Weil es verboten war.",
+       "why": "Es gab keine solchen Verbote. Der Grund war das Umherziehen."
+      }
+     ],
+     "explain": "Wer weiterzieht, braucht ein Zuhause zum Mitnehmen. Darum wohnten sie in Zelten."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Woraus bauten die Menschen der Altsteinzeit wohl ihre Zelte?",
+     "options": [
+      {
+       "text": "Aus Holzstangen und Tierfellen",
+       "correct": true
+      },
+      {
+       "text": "Aus Plastikplanen",
+       "why": "Plastik wurde erst vor gut 100 Jahren erfunden."
+      },
+      {
+       "text": "Aus Ziegeln und Mörtel",
+       "why": "Ziegel braucht man für feste Häuser. Die gab es noch nicht."
+      },
+      {
+       "text": "Aus Stoff von einem Webstuhl",
+       "why": "Gewebten Stoff gab es noch nicht. Die Menschen nahmen Felle der gejagten Tiere."
+      }
+     ],
+     "explain": "Die Menschen nutzten Materialien aus ihrer Umgebung: Holz, Fell, Knochen und Stein."
+    },
+    {
+     "type": "order",
+     "prompt": "Im Herbst ziehen die Rentiere in ein anderes Tal. Was machen die Menschen? Bring in die richtige Reihenfolge.",
+     "items": [
+      "Die Rentiere ziehen weiter",
+      "Die Menschen bauen ihre Zelte ab",
+      "Sie wandern den Rentieren hinterher",
+      "Sie bauen die Zelte an einem neuen Platz auf",
+      "Sie jagen und sammeln dort"
+     ],
+     "why": "Wer zieht zuerst los: die Tiere oder die Menschen?",
+     "explain": "Erst ziehen die Tiere, dann folgen die Menschen. Am neuen Platz bauen sie ihr Lager wieder auf."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum war das Leben als Jäger und Sammler manchmal gefährlich?",
+     "options": [
+      {
+       "text": "Wenn sie keine Tiere fanden, mussten sie hungern.",
+       "correct": true
+      },
+      {
+       "text": "Weil die Zelte oft einstürzten.",
+       "why": "Die Zelte waren eher stabil. Die größte Gefahr war, nicht genug zu essen zu finden."
+      },
+      {
+       "text": "Weil die Läden geschlossen hatten.",
+       "why": "Es gab keine Läden. Alles Essen mussten sie selbst jagen oder sammeln."
+      },
+      {
+       "text": "Weil sie zu viel essen mussten.",
+       "why": "Das Problem war eher zu wenig Essen, besonders im Winter."
+      }
+     ],
+     "explain": "Deshalb folgten sie den Tieren: So senkten sie das Risiko zu verhungern."
+    },
+    {
+     "type": "mcq",
+     "prompt": "In einem Museum steht ein Zelt aus neuen Fellen. Daneben ist ein Schild: „Rekonstruktion“. Was bedeutet das?",
+     "options": [
+      {
+       "text": "Forscher haben das Zelt nach Funden und Vermutungen nachgebaut.",
+       "correct": true
+      },
+      {
+       "text": "Es ist das älteste Zelt der Welt.",
+       "why": "Ein so altes Zelt aus Fell gäbe es nicht mehr. Es wäre längst zerfallen."
+      },
+      {
+       "text": "Das Zelt ist kaputt und wird repariert.",
+       "why": "Reparieren alter Funde heißt restaurieren. Rekonstruktion heißt: neu nachbauen."
+      },
+      {
+       "text": "Man darf darin übernachten.",
+       "why": "Das Schild sagt nichts übers Übernachten. Es sagt, dass es ein Nachbau ist."
+      }
+     ],
+     "explain": "Rekonstruktion heißt Nachbau. Er zeigt, wie es vermutlich ausgesehen hat."
+    },
+    {
+     "type": "explain",
+     "prompt": "Erkläre, warum die Menschen der Altsteinzeit in Zelten wohnten.",
+     "keys": [
+      {
+       "label": "sie folgten den Tieren / zogen umher",
+       "words": [
+        "tier",
+        "umher",
+        "weiterzieh",
+        "zogen",
+        "ziehen",
+        "wander",
+        "folgt"
+       ]
+      },
+      {
+       "label": "Zelte leicht auf- und abbauen / mitnehmen",
+       "words": [
+        "abbau",
+        "aufbau",
+        "mitnehm",
+        "mitgenomm",
+        "leicht",
+        "schnell",
+        "trag"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Die Menschen folgten den Tieren, die sie jagten. Darum zogen sie oft weiter. Zelte konnte man leicht abbauen, mitnehmen und wieder aufbauen.",
+     "explain": "Das Zelt passt zum Leben der Jäger und Sammler: immer unterwegs."
+    }
+   ]
+  },
+  {
+   "id": "a10",
+   "heft": [
+    {
+     "type": "mcq",
+     "prompt": "Wofür verwendeten die Menschen den Faustkeil?",
+     "options": [
+      {
+       "text": "Zum Schneiden, Schaben und Hacken, zum Beispiel um Fell abzuziehen und Fleisch zu zerlegen",
+       "correct": true
+      },
+      {
+       "text": "Um Waffen und Werkzeuge zu bauen",
+       "why": "Der Faustkeil ist selbst schon das Werkzeug. Mit ihm schnitt, schabte und hackte man."
+      },
+      {
+       "text": "Als Schmuck um den Hals",
+       "why": "Der Faustkeil lag schwer in der Hand. Er war zum Arbeiten da, nicht zum Schmücken."
+      },
+      {
+       "text": "Um damit Tiere aus großer Entfernung zu treffen",
+       "why": "Dafür nahm man den Speer. Den Faustkeil hielt man in der Hand."
+      }
+     ],
+     "explain": "Der Faustkeil war ein Alleskönner: Fell abziehen, Fleisch zerlegen, Knochen aufschlagen, Holz bearbeiten."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Die Menschen schlugen gerundete Steine, zum Beispiel {Feuerstein}, so lange, bis sie {messerscharfe} Kanten hatten und gut in einer {Hand} lagen. So entstand der {Faustkeil}.",
+     "extra": [
+      {
+       "word": "Eisen",
+       "why": "Metall wie Eisen kannten die Menschen in der Altsteinzeit noch nicht. Sie nahmen Steine."
+      },
+      {
+       "word": "stumpfe",
+       "why": "Stumpfe Kanten schneiden nicht. Die Menschen schlugen so lange, bis die Kanten scharf waren."
+      }
+     ],
+     "explain": "Aus Feuerstein entstand durch geschicktes Schlagen ein scharfer Faustkeil, der gut in der Faust lag. Daher kommt sein Name."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was war die wichtigste Jagdwaffe der Altsteinzeit?",
+     "options": [
+      {
+       "text": "Der Speer",
+       "correct": true
+      },
+      {
+       "text": "Pfeil und Bogen",
+       "why": "Pfeil und Bogen kamen erst ganz am Ende der Altsteinzeit. Die meiste Zeit jagte man mit dem Speer."
+      },
+      {
+       "text": "Der Faustkeil",
+       "why": "Der Faustkeil war vor allem ein Werkzeug zum Schneiden und Schaben. Zum Jagen nahm man den Speer."
+      },
+      {
+       "text": "Das Schwert",
+       "why": "Schwerter sind aus Metall. Metall gab es in der Altsteinzeit noch nicht."
+      }
+     ],
+     "explain": "Der Speer war erst ganz aus Holz, später hatte er eine Spitze aus Stein."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wozu brauchten die Menschen Waffen und Werkzeuge?",
+     "options": [
+      {
+       "text": "Zur Jagd, zur Verteidigung und zum Verarbeiten der Tiere",
+       "correct": true
+      },
+      {
+       "text": "Nur zum Spielen",
+       "why": "Waffen und Werkzeuge waren lebenswichtig. Ohne sie gab es kein Fleisch und keine Felle."
+      },
+      {
+       "text": "Um Felder zu pflügen",
+       "why": "Felder gab es erst nach der Altsteinzeit. Die Menschen jagten und sammelten."
+      },
+      {
+       "text": "Nur zum Bauen von Häusern",
+       "why": "Feste Häuser gab es noch nicht. Werkzeuge brauchte man vor allem für Jagd und Tiere."
+      }
+     ],
+     "explain": "Jagen, sich verteidigen, Tiere zerlegen: Für alles brauchte man Waffen und Werkzeuge."
+    },
+    {
+     "type": "order",
+     "prompt": "Wie entwickelten sich die Jagdwaffen? Bring in die richtige Reihenfolge.",
+     "items": [
+      "Speer ganz aus Holz",
+      "Speer mit Spitze aus Stein",
+      "Pfeil und Bogen"
+     ],
+     "why": "Pfeil und Bogen kamen erst ganz am Ende der Altsteinzeit.",
+     "explain": "Erst Holzspeer, dann Speer mit Steinspitze, ganz am Ende Pfeil und Bogen."
+    },
+    {
+     "type": "sort",
+     "prompt": "Woraus bestanden die Hilfsmittel? Ordne zu.",
+     "buckets": [
+      {
+       "id": "n",
+       "name": "Natürliche Materialien"
+      },
+      {
+       "id": "x",
+       "name": "Gab es noch nicht"
+      }
+     ],
+     "items": [
+      {
+       "text": "Stein",
+       "b": "n",
+       "why": "Stein lag überall. Daraus machte man Faustkeile und Speerspitzen."
+      },
+      {
+       "text": "Holz",
+       "b": "n",
+       "why": "Holz fand man in der Umgebung, zum Beispiel für Speere."
+      },
+      {
+       "text": "Knochen",
+       "b": "n",
+       "why": "Knochen blieben von der Jagd übrig und wurden genutzt."
+      },
+      {
+       "text": "Fell",
+       "b": "n",
+       "why": "Felle der gejagten Tiere wärmten und deckten die Zelte."
+      },
+      {
+       "text": "Eisen",
+       "b": "x",
+       "why": "Eisen kannte man in der Altsteinzeit noch nicht."
+      },
+      {
+       "text": "Plastik",
+       "b": "x",
+       "why": "Plastik gibt es erst seit gut 100 Jahren."
+      }
+     ],
+     "explain": "Die Menschen nutzten, was sie in ihrer Umgebung fanden: Stein, Holz, Knochen und Fell."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "mcq",
+     "prompt": "Archäologen finden eine kleine, spitze Nadel aus Knochen. Am einen Ende hat sie ein Loch. Wofür diente sie wohl?",
+     "options": [
+      {
+       "text": "Zum Nähen von Kleidung aus Fell",
+       "correct": true
+      },
+      {
+       "text": "Als Waffe für die Jagd",
+       "why": "Dafür ist die Nadel viel zu klein. Zum Jagen nahm man den Speer."
+      },
+      {
+       "text": "Zum Schreiben",
+       "why": "Es gab noch keine Schrift."
+      },
+      {
+       "text": "Zum Feuermachen",
+       "why": "Mit einer Knochennadel macht man kein Feuer. Das Loch ist für einen Faden, zum Beispiel aus Tiersehne."
+      }
+     ],
+     "explain": "Das Loch ist ein Nadelöhr. Damit nähten die Menschen Felle zu warmer Kleidung zusammen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Auf einem Bild umzingeln mehrere Jäger mit Speeren ein Mammut. Warum jagten sie es gemeinsam?",
+     "options": [
+      {
+       "text": "Allein wäre es zu gefährlich gewesen, und ein Mammut gab Fleisch für alle.",
+       "correct": true
+      },
+      {
+       "text": "Weil jeder nur einen Speer tragen durfte.",
+       "why": "Es ging nicht um Regeln. Ein Mammut war riesig und stark. Nur gemeinsam hatten sie eine Chance."
+      },
+      {
+       "text": "Weil sie Pfeil und Bogen vergessen hatten.",
+       "why": "Pfeil und Bogen gab es die meiste Zeit noch gar nicht. Der Speer war die wichtigste Waffe."
+      },
+      {
+       "text": "Weil sie das Mammut zähmen wollten.",
+       "why": "Mammuts wurden nicht gezähmt. Die Menschen jagten sie für Fleisch, Fell und Knochen."
+      }
+     ],
+     "explain": "Zusammenarbeit machte die Jagd sicherer und brachte viel Nahrung für die ganze Gruppe."
+    },
+    {
+     "type": "sort",
+     "prompt": "Aus welchem Material war das wohl? Ordne zu.",
+     "buckets": [
+      {
+       "id": "st",
+       "name": "Stein"
+      },
+      {
+       "id": "h",
+       "name": "Holz"
+      },
+      {
+       "id": "k",
+       "name": "Knochen"
+      },
+      {
+       "id": "f",
+       "name": "Fell"
+      }
+     ],
+     "items": [
+      {
+       "text": "Speerspitze",
+       "b": "st",
+       "why": "Speerspitzen schlug man aus Stein, zum Beispiel aus Feuerstein."
+      },
+      {
+       "text": "Speerschaft",
+       "b": "h",
+       "why": "Der lange Stiel des Speers war aus Holz."
+      },
+      {
+       "text": "Nähnadel",
+       "b": "k",
+       "why": "Feine Nadeln schnitzte man aus Knochen."
+      },
+      {
+       "text": "Winterjacke",
+       "b": "f",
+       "why": "Warme Kleidung nähte man aus Tierfellen."
+      },
+      {
+       "text": "Schaber",
+       "b": "st",
+       "why": "Ein Schaber braucht eine scharfe Kante. Die bekam man durch Schlagen von Stein."
+      },
+      {
+       "text": "Zeltstange",
+       "b": "h",
+       "why": "Die Stangen des Zeltes waren aus Holz."
+      },
+      {
+       "text": "Angelhaken",
+       "b": "k",
+       "why": "Kleine Haken schnitzte man aus Knochen."
+      },
+      {
+       "text": "Schlafdecke",
+       "b": "f",
+       "why": "Eine weiche, warme Decke war aus Fell."
+      }
+     ],
+     "explain": "Stein, Holz, Knochen und Fell: Daraus machten die Menschen fast alles."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum finden Forscher heute viele Steinwerkzeuge, aber kaum Speere aus Holz?",
+     "options": [
+      {
+       "text": "Holz verrottet mit der Zeit, Stein bleibt erhalten.",
+       "correct": true
+      },
+      {
+       "text": "Weil es nie Holzspeere gab.",
+       "why": "Doch, es gab sie. Der Speer war die wichtigste Jagdwaffe. Das Holz ist nur meist verrottet."
+      },
+      {
+       "text": "Weil Holzspeere verboten waren.",
+       "why": "Es gab keine solchen Verbote. Der Grund ist das Material."
+      },
+      {
+       "text": "Weil die Forscher nicht nach Holz suchen.",
+       "why": "Forscher suchen sehr genau. Aber Holz bleibt nur selten so lange erhalten."
+      }
+     ],
+     "explain": "Darum ist unser Bild von der Altsteinzeit lückenhaft: Vieles aus Holz, Fell und Pflanzen ist verschwunden."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein Forscher findet einen Stein mit scharfer Kante. Daneben liegen Tierknochen mit feinen Schnittspuren. Was schließt er daraus?",
+     "options": [
+      {
+       "text": "Der Stein war wohl ein Werkzeug, mit dem man Fleisch von den Knochen schnitt.",
+       "correct": true
+      },
+      {
+       "text": "Der Stein ist zufällig scharf und hat nichts mit den Knochen zu tun.",
+       "why": "Die Schnittspuren passen gut zur scharfen Kante. Das spricht für ein Werkzeug."
+      },
+      {
+       "text": "Die Tiere haben sich am Stein verletzt.",
+       "why": "Feine Schnittspuren entstehen beim Schneiden, nicht bei einem Sturz."
+      },
+      {
+       "text": "Mit dem Stein wurde ein Bild gemalt.",
+       "why": "Zum Malen nahm man Farbe. Schnittspuren an Knochen zeigen, dass geschnitten wurde."
+      }
+     ],
+     "explain": "Fundstücke zusammen erzählen mehr: Stein und Knochen mit Schnittspuren zeigen, wie gearbeitet wurde."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Ein Jäger geht auf die Jagd. In der Hand trägt er einen langen {Speer} aus Holz. Vorne hat er eine scharfe Spitze aus {Stein}. Nach der Jagd zieht er dem Tier mit seinem {Faustkeil} das Fell ab. Aus einem Knochen schnitzt er eine {Nadel}.",
+     "extra": [
+      {
+       "word": "Gewehr",
+       "why": "Gewehre gibt es erst seit wenigen hundert Jahren. In der Altsteinzeit jagte man mit dem Speer."
+      },
+      {
+       "word": "Eisen",
+       "why": "Eisen kannte man noch nicht. Speerspitzen waren aus Stein."
+      },
+      {
+       "word": "Messer aus Stahl",
+       "why": "Stahl ist ein Metall und viel jünger. Zum Fellabziehen nahm man den Faustkeil."
+      }
+     ],
+     "explain": "Speer zum Jagen, Faustkeil zum Zerlegen, Knochen für Nadeln: Alles kam aus der Natur."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was konnte man mit einem Faustkeil NICHT gut machen?",
+     "options": [
+      {
+       "text": "Ein Tier aus großer Entfernung treffen",
+       "correct": true
+      },
+      {
+       "text": "Fleisch zerlegen",
+       "why": "Das ging gut mit dem Faustkeil. Gesucht ist, was er nicht konnte."
+      },
+      {
+       "text": "Knochen aufschlagen",
+       "why": "Auch das schaffte der Faustkeil. Gesucht ist, wofür man etwas anderes brauchte."
+      },
+      {
+       "text": "Holz bearbeiten",
+       "why": "Mit dem Faustkeil konnte man auch Holz bearbeiten. Für die Jagd aus der Ferne nahm man den Speer."
+      }
+     ],
+     "explain": "Der Faustkeil war ein Werkzeug für die Hand. Aus der Entfernung jagte man mit dem Speer."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wann kamen Pfeil und Bogen auf?",
+     "options": [
+      {
+       "text": "Erst ganz am Ende der Altsteinzeit",
+       "correct": true
+      },
+      {
+       "text": "Gleich am Anfang der Altsteinzeit",
+       "why": "Am Anfang gab es nur einfache Steinwerkzeuge. Pfeil und Bogen sind viel jünger."
+      },
+      {
+       "text": "Zusammen mit dem ersten Faustkeil",
+       "why": "Faustkeile sind viel älter. Pfeil und Bogen kamen erst ganz zum Schluss."
+      },
+      {
+       "text": "Erst bei den Römern",
+       "why": "Pfeil und Bogen gab es schon lange vor den Römern, nämlich am Ende der Altsteinzeit."
+      }
+     ],
+     "explain": "Die meiste Zeit der Altsteinzeit war der Speer die wichtigste Jagdwaffe."
+    },
+    {
+     "type": "explain",
+     "prompt": "Warum war der Speer für die Jäger so wichtig? Erkläre.",
+     "keys": [
+      {
+       "label": "wichtigste Waffe für die Jagd",
+       "words": [
+        "jagd",
+        "jag",
+        "erleg",
+        "waffe"
+       ]
+      },
+      {
+       "label": "Abstand zum gefährlichen Tier",
+       "words": [
+        "abstand",
+        "entfern",
+        "fern",
+        "werf",
+        "wurf",
+        "sicher",
+        "gefähr",
+        "nicht so nah",
+        "weg"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Mit dem Speer konnten die Jäger Tiere erlegen. Sie konnten ihn werfen oder stoßen und mussten nicht ganz nah an das gefährliche Tier heran.",
+     "explain": "Der Speer war die wichtigste Jagdwaffe. Er hielt die Jäger auf Abstand."
+    },
+    {
+     "type": "explain",
+     "prompt": "Woraus machten die Menschen der Altsteinzeit ihre Werkzeuge und Waffen? Und warum gerade daraus?",
+     "keys": [
+      {
+       "label": "Materialien nennen",
+       "words": [
+        "stein",
+        "holz",
+        "knochen",
+        "fell",
+        "feuerstein"
+       ]
+      },
+      {
+       "label": "aus der Umgebung, aus der Natur",
+       "words": [
+        "umgebung",
+        "natur",
+        "fand",
+        "finden",
+        "überall",
+        "draußen",
+        "gab es"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Sie machten sie aus Stein, Holz, Knochen und Fell. Diese Materialien fanden sie in ihrer Umgebung oder bekamen sie von der Jagd.",
+     "explain": "Metall und Kunststoff gab es noch nicht. Die Natur lieferte alles."
+    }
+   ]
+  },
+  {
+   "id": "a11",
+   "heft": [
+    {
+     "type": "mcq",
+     "prompt": "Was war das Feuer für die Menschen lange Zeit vor allem?",
+     "options": [
+      {
+       "text": "Eine Gefahr",
+       "correct": true
+      },
+      {
+       "text": "Ein Spielzeug",
+       "why": "Feuer war gefährlich. Es konnte Wälder und Lager zerstören."
+      },
+      {
+       "text": "Etwas, das sie jeden Tag selbst anzündeten",
+       "why": "Das lernten sie erst im Lauf der Altsteinzeit. Lange war Feuer vor allem gefährlich."
+      },
+      {
+       "text": "Etwas völlig Unbekanntes",
+       "why": "Sie kannten Feuer zum Beispiel von Bränden nach einem Blitz. Genau deshalb fürchteten sie es."
+      }
+     ],
+     "explain": "Erst im Lauf der Altsteinzeit lernten die Menschen, Feuer zu kontrollieren und zu nutzen."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Im Lauf der Altsteinzeit lernten die Menschen, das Feuer zu {kontrollieren} und zu nutzen. Mit Feuer konnten sie Essen besser genießbar und {haltbar} machen. Sie konnten wilde Tiere {fernhalten} und sich im Winter {wärmen}. Die Feuerstelle war der {Mittelpunkt} des Lagerplatzes und förderte die {Gemeinschaft}.",
+     "extra": [
+      {
+       "word": "braten",
+       "why": "Das Feuer sollte wilde Tiere vom Lager fernhalten, denn Tiere haben Angst vor Flammen. Gebraten wurde nur das Fleisch, das man schon erjagt hatte."
+      },
+      {
+       "word": "anlocken",
+       "why": "Andersherum: Tiere fürchten das Feuer. Es hielt sie fern."
+      },
+      {
+       "word": "löschen",
+       "why": "Die Menschen wollten das Feuer gerade nutzen. Dazu mussten sie es kontrollieren, nicht nur löschen."
+      }
+     ],
+     "explain": "Feuer machte Essen genießbar und haltbar, hielt Tiere fern, wärmte und gab Licht. Am Feuer kam die Gruppe zusammen."
+    },
+    {
+     "type": "sort",
+     "prompt": "Was konnten die Menschen mit Feuer tun? Ordne zu.",
+     "buckets": [
+      {
+       "id": "j",
+       "name": "Nutzen des Feuers"
+      },
+      {
+       "id": "n",
+       "name": "Stimmt nicht"
+      }
+     ],
+     "items": [
+      {
+       "text": "Essen genießbarer machen",
+       "b": "j",
+       "why": "Gegartes Essen ist besser genießbar."
+      },
+      {
+       "text": "Fleisch haltbar machen",
+       "b": "j",
+       "why": "Über dem Feuer getrocknetes oder geräuchertes Fleisch hält länger."
+      },
+      {
+       "text": "Wilde Tiere fernhalten",
+       "b": "j",
+       "why": "Tiere haben Angst vor Flammen. Sie blieben weg."
+      },
+      {
+       "text": "Sich im Winter wärmen",
+       "b": "j",
+       "why": "Das Feuer gab Wärme in kalten Zeiten."
+      },
+      {
+       "text": "Licht im Dunkeln haben",
+       "b": "j",
+       "why": "Feuer macht hell. So war die Nacht weniger gefährlich."
+      },
+      {
+       "text": "Wilde Tiere anlocken",
+       "b": "n",
+       "why": "Andersherum: Feuer hält wilde Tiere fern."
+      },
+      {
+       "text": "Strom erzeugen",
+       "b": "n",
+       "why": "Strom gab es erst viele tausend Jahre später."
+      }
+     ],
+     "explain": "Feuer brachte Wärme, Licht, Schutz und besseres Essen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum war die Feuerstelle so wichtig für die Gruppe?",
+     "options": [
+      {
+       "text": "Sie war der Mittelpunkt des Lagers. Dort kamen alle zusammen, aßen und wärmten sich.",
+       "correct": true
+      },
+      {
+       "text": "Dort wurde das Geld aufbewahrt.",
+       "why": "Geld gab es noch nicht. Die Feuerstelle war wichtig, weil sich die Gruppe dort traf."
+      },
+      {
+       "text": "Dort durfte nur der Anführer sitzen.",
+       "why": "Am Feuer saß die ganze Gruppe. Es förderte die Gemeinschaft."
+      },
+      {
+       "text": "Dort wurden die Werkzeuge verbrannt.",
+       "why": "Werkzeuge waren wertvoll und wurden nicht verbrannt. Am Feuer kam man zusammen."
+      }
+     ],
+     "explain": "Am Feuer saß man zusammen: Das förderte die Gemeinschaft."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welcher Satz über das Feuer in der Altsteinzeit stimmt?",
+     "options": [
+      {
+       "text": "Im Lauf der Altsteinzeit nutzten die Menschen das Feuer, um sich zu wärmen.",
+       "correct": true
+      },
+      {
+       "text": "Die Menschen konnten in der ganzen Altsteinzeit kein Feuer nutzen, darum war ihnen immer kalt.",
+       "why": "Doch, sie lernten im Lauf der Altsteinzeit, Feuer zu nutzen. Sie wärmten sich damit im Winter."
+      },
+      {
+       "text": "Feuer wurde erst von den Römern entdeckt.",
+       "why": "Die Römer lebten viel später. Feuer nutzten schon die Menschen der Altsteinzeit."
+      },
+      {
+       "text": "Die Menschen nutzten Feuer nur, um wilde Tiere zu braten.",
+       "why": "Feuer hielt wilde Tiere fern. Es wärmte, gab Licht und machte das Essen besser."
+      }
+     ],
+     "explain": "Lange war Feuer gefährlich. Dann lernten die Menschen, es zu nutzen, auch zum Wärmen."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "mcq",
+     "prompt": "Archäologen finden einen Ring aus Steinen. Darin liegen Asche und verkohlte Tierknochen. Was können sie daraus schließen?",
+     "options": [
+      {
+       "text": "Hier war eine Feuerstelle, an der wohl Fleisch gegart wurde.",
+       "correct": true
+      },
+      {
+       "text": "Hier stand ein Haus aus Stein.",
+       "why": "Ein kleiner Steinring mit Asche ist kein Haus. Er ist eine Feuerstelle."
+      },
+      {
+       "text": "Hier hat ein Blitz eingeschlagen.",
+       "why": "Ein Blitz legt keinen ordentlichen Steinring. Den haben Menschen gebaut."
+      },
+      {
+       "text": "Hier wurden Tiere gezähmt.",
+       "why": "Verkohlte Knochen zeigen, dass Fleisch am Feuer war. Gezähmt wurde in der Altsteinzeit nicht."
+      }
+     ],
+     "explain": "Steinring und Asche zeigen eine Feuerstelle. Verkohlte Knochen deuten auf eine Mahlzeit hin."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Es ist Nacht. In der Nähe des Lagers heulen Wölfe. Was ist für die Menschen am wichtigsten?",
+     "options": [
+      {
+       "text": "Das Feuer brennen zu lassen, damit die Wölfe wegbleiben",
+       "correct": true
+      },
+      {
+       "text": "Das Feuer auszumachen, damit die Wölfe sie nicht sehen",
+       "why": "Ohne Feuer wäre es dunkel und gefährlich. Die Flammen halten Tiere fern."
+      },
+      {
+       "text": "Die Zelte abzubauen und im Dunkeln wegzulaufen",
+       "why": "Im Dunkeln wäre das sehr gefährlich. Am Feuer sind sie sicherer."
+      },
+      {
+       "text": "Die Wölfe ans Feuer zu locken",
+       "why": "Wölfe haben Angst vor dem Feuer. Es soll sie fernhalten, nicht anlocken."
+      }
+     ],
+     "explain": "Wilde Tiere fürchten Flammen. Das Feuer schützte die Gruppe in der Nacht."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Die Jäger haben viel Fleisch erbeutet. Wie können sie es mit Feuer länger haltbar machen?",
+     "options": [
+      {
+       "text": "Sie trocknen und räuchern es über dem Feuer.",
+       "correct": true
+      },
+      {
+       "text": "Sie legen es in den Kühlschrank.",
+       "why": "Kühlschränke brauchen Strom. Den gab es noch nicht."
+      },
+      {
+       "text": "Sie werfen es ins Feuer, bis es ganz verbrannt ist.",
+       "why": "Verbranntes Fleisch kann man nicht mehr essen. Rauch und Wärme sollten es nur trocknen."
+      },
+      {
+       "text": "Sie lassen es in der Sonne liegen, weit weg vom Feuer.",
+       "why": "Das hilft nicht viel, und Tiere würden es fressen. Rauch und Wärme vom Feuer machen Fleisch haltbar."
+      }
+     ],
+     "explain": "Rauch und Hitze trocknen das Fleisch. So verdirbt es nicht so schnell."
+    },
+    {
+     "type": "sort",
+     "prompt": "Gefahr oder Nutzen? Ordne zu.",
+     "buckets": [
+      {
+       "id": "g",
+       "name": "Gefahr"
+      },
+      {
+       "id": "n",
+       "name": "Nutzen"
+      }
+     ],
+     "items": [
+      {
+       "text": "Waldbrand nach einem Blitz",
+       "b": "g",
+       "why": "Ein Waldbrand kann alles zerstören. Er ist gefährlich."
+      },
+      {
+       "text": "Wärme in der Winternacht",
+       "b": "n",
+       "why": "Wärme schützt vor Kälte. Das ist ein Nutzen."
+      },
+      {
+       "text": "Brandwunden an der Hand",
+       "b": "g",
+       "why": "Verbrennungen tun weh und sind gefährlich."
+      },
+      {
+       "text": "Licht in der Höhle",
+       "b": "n",
+       "why": "Licht hilft, im Dunkeln etwas zu sehen."
+      },
+      {
+       "text": "Ein Zelt fängt Feuer",
+       "b": "g",
+       "why": "Ein brennendes Zelt ist gefährlich für alle."
+      },
+      {
+       "text": "Weicheres, gegartes Fleisch",
+       "b": "n",
+       "why": "Gegartes Essen ist besser genießbar."
+      },
+      {
+       "text": "Bären bleiben dem Lager fern",
+       "b": "n",
+       "why": "Feuer hält wilde Tiere fern. Das schützt."
+      }
+     ],
+     "explain": "Feuer kann beides sein: gefährlich, wenn es außer Kontrolle gerät, und nützlich, wenn man es beherrscht."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Tief in dunklen Höhlen haben Menschen der Altsteinzeit Bilder an die Wände gemalt. Was brauchten sie dafür unbedingt?",
+     "options": [
+      {
+       "text": "Licht vom Feuer, zum Beispiel Fackeln oder Lampen mit Tierfett",
+       "correct": true
+      },
+      {
+       "text": "Elektrisches Licht",
+       "why": "Strom gab es noch nicht. Das Licht kam vom Feuer."
+      },
+      {
+       "text": "Sonnenlicht durch ein Fenster",
+       "why": "Tief in einer Höhle gibt es keine Fenster und kein Sonnenlicht."
+      },
+      {
+       "text": "Gar kein Licht, sie malten blind",
+       "why": "Die Bilder sind sehr genau gemalt. Dafür brauchten die Maler Licht."
+      }
+     ],
+     "explain": "Feuer gab Licht. Ohne Feuer hätte es keine Höhlenmalerei in dunklen Höhlen gegeben."
+    },
+    {
+     "type": "order",
+     "prompt": "Wie wurde aus der Gefahr ein Nutzen? Bring in eine sinnvolle Reihenfolge.",
+     "items": [
+      "Die Menschen fürchten das Feuer",
+      "Sie beobachten Brände, zum Beispiel nach einem Blitz",
+      "Sie bewahren glühende Reste auf",
+      "Sie lernen, das Feuer zu kontrollieren",
+      "Die Feuerstelle wird der Mittelpunkt des Lagers"
+     ],
+     "why": "Am Anfang steht die Angst, am Ende das gemeinsame Feuer im Lager.",
+     "explain": "Durch Beobachten und Ausprobieren lernten die Menschen, das gefährliche Feuer zu beherrschen."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Es ist Winter. Am Abend sitzt die Gruppe um die {Feuerstelle}. Das Feuer gibt {Licht}, denn draußen ist es schon dunkel. Es {wärmt} die Kinder. Die Wölfe bleiben {weg}, weil sie Angst vor den Flammen haben. Über dem Feuer wird Fleisch {gegart}.",
+     "extra": [
+      {
+       "word": "näher",
+       "why": "Wölfe kommen nicht näher, denn sie fürchten das Feuer. Sie bleiben weg."
+      },
+      {
+       "word": "Strom",
+       "why": "Strom gab es noch nicht. Licht und Wärme kamen vom Feuer."
+      },
+      {
+       "word": "kühlt",
+       "why": "Feuer kühlt nicht, es wärmt. Gerade im Winter war das wichtig."
+      }
+     ],
+     "explain": "Licht, Wärme, Schutz vor Tieren und gegartes Essen: Das Feuer half in vielen Dingen."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Archäologen finden in einer Höhle Asche und verkohlte Knochen. Sie sind viele hunderttausend Jahre alt. Was zeigt das?",
+     "options": [
+      {
+       "text": "Schon damals nutzten Menschen das Feuer.",
+       "correct": true
+      },
+      {
+       "text": "Die Menschen hatten damals noch nie Feuer gesehen.",
+       "why": "Die Asche zeigt das Gegenteil. Hier brannte ein Feuer, wo Menschen lebten."
+      },
+      {
+       "text": "Die Höhle war ein Ofen für Brot.",
+       "why": "Brot aus Getreide gab es erst bei den Bauern. Verkohlte Knochen zeigen eher Fleisch."
+      },
+      {
+       "text": "Die Menschen froren, weil sie kein Feuer hatten.",
+       "why": "Asche zeigt, dass es ein Feuer gab. Daran konnten sie sich wärmen."
+      }
+     ],
+     "explain": "Asche und verkohlte Knochen sind Überreste. Sie zeigen, dass Menschen Feuer nutzten."
+    },
+    {
+     "type": "explain",
+     "prompt": "Erkläre, warum das Feuer das Leben in der Altsteinzeit leichter machte. Nenne zwei Gründe.",
+     "keys": [
+      {
+       "label": "Wärme",
+       "words": [
+        "wärm",
+        "warm",
+        "kälte",
+        "kalt",
+        "frier",
+        "fror"
+       ]
+      },
+      {
+       "label": "Schutz vor wilden Tieren",
+       "words": [
+        "tier",
+        "fern",
+        "abschreck",
+        "schutz",
+        "schütz",
+        "wölf",
+        "wolf"
+       ]
+      },
+      {
+       "label": "Licht",
+       "words": [
+        "licht",
+        "hell",
+        "dunkel",
+        "sehen"
+       ]
+      },
+      {
+       "label": "besseres, haltbares Essen",
+       "words": [
+        "essen",
+        "fleisch",
+        "gar",
+        "genieß",
+        "haltbar",
+        "koch",
+        "brat",
+        "räucher"
+       ]
+      },
+      {
+       "label": "Gemeinschaft",
+       "words": [
+        "gemeinschaft",
+        "zusammen",
+        "mittelpunkt"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Das Feuer wärmte die Menschen im Winter und gab Licht in der Nacht. Außerdem hielt es wilde Tiere fern, und gegartes Essen war besser genießbar und länger haltbar.",
+     "explain": "Wärme, Licht, Schutz, Essen und Gemeinschaft: Jeder dieser Gründe zählt."
+    },
+    {
+     "type": "explain",
+     "prompt": "Warum war das Feuer am Anfang vor allem eine Gefahr? Erkläre.",
+     "keys": [
+      {
+       "label": "es konnte verbrennen und zerstören",
+       "words": [
+        "brenn",
+        "brann",
+        "brand",
+        "verletz",
+        "zerstör",
+        "wald",
+        "gefähr"
+       ]
+      },
+      {
+       "label": "man konnte es noch nicht kontrollieren",
+       "words": [
+        "kontroll",
+        "beherrsch",
+        "nicht machen",
+        "nicht steuern",
+        "ausbreit",
+        "nicht umgehen",
+        "nicht löschen"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Die Menschen konnten das Feuer noch nicht kontrollieren. Ein Brand konnte sich ausbreiten, Menschen verletzen und das Lager zerstören.",
+     "explain": "Erst als sie lernten, das Feuer zu kontrollieren, wurde es nützlich."
+    }
+   ]
+  },
+  {
+   "id": "a12",
+   "heft": [
+    {
+     "type": "mcq",
+     "prompt": "Wo befindet sich die Höhle mit den Wandmalereien aus M2 und M4?",
+     "options": [
+      {
+       "text": "In Lascaux in Südfrankreich",
+       "correct": true
+      },
+      {
+       "text": "In Rom in Italien",
+       "why": "Rom wurde erst 753 v. Chr. gegründet. Die Malereien sind viel älter und liegen in Frankreich."
+      },
+      {
+       "text": "Bei den Pyramiden in Ägypten",
+       "why": "Die Pyramiden sind viel jünger. Die Höhle liegt in Lascaux in Südfrankreich."
+      },
+      {
+       "text": "Im Archäopark Vogelherd",
+       "why": "Dort steht der Nachbau des Zeltes aus M1. Die Malereien sind in Lascaux."
+      }
+     ],
+     "explain": "Die Höhle von Lascaux liegt in Südfrankreich. Ihre Bilder sind sehr berühmt."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was ist auf den Wandmalereien in M2 und M4 zu sehen?",
+     "options": [
+      {
+       "text": "Stiere und eine Jagd auf einen Bison mit Waffen",
+       "correct": true
+      },
+      {
+       "text": "Häuser und Felder",
+       "why": "Häuser und Felder gab es noch nicht. Die Bilder zeigen Tiere und eine Jagd."
+      },
+      {
+       "text": "Buchstaben und Wörter",
+       "why": "In der Altsteinzeit gab es noch keine Schrift. Die Menschen malten Bilder."
+      },
+      {
+       "text": "Ein Foto von Jägern",
+       "why": "Es gab keine Fotoapparate. Die Bilder wurden mit Farbe an die Wand gemalt."
+      }
+     ],
+     "explain": "M2 zeigt Stiere, M4 eine Jagd auf einen Bison mit Waffen."
+    },
+    {
+     "type": "sort",
+     "prompt": "Was wissen wir über die Höhlenmalereien sicher, was vermuten wir nur?",
+     "buckets": [
+      {
+       "id": "s",
+       "name": "Sicher"
+      },
+      {
+       "id": "w",
+       "name": "Vermutung"
+      }
+     ],
+     "items": [
+      {
+       "text": "Menschen malten Stiere an die Wand",
+       "b": "s",
+       "why": "Das sieht man auf dem Bild. Das ist sicher."
+      },
+      {
+       "text": "Ein Bild zeigt eine Jagd auf einen Bison",
+       "b": "s",
+       "why": "Das kann man auf M4 sehen. Das ist sicher."
+      },
+      {
+       "text": "Die Bilder sind in Lascaux",
+       "b": "s",
+       "why": "Den Ort kennen wir genau. Das ist sicher."
+      },
+      {
+       "text": "Sie wollten sich Jagdglück wünschen",
+       "b": "w",
+       "why": "Das hat niemand aufgeschrieben. Es ist eine Vermutung."
+      },
+      {
+       "text": "Sie wollten sich an Jagden erinnern",
+       "b": "w",
+       "why": "Warum sie malten, wissen wir nicht genau. Das ist eine Vermutung."
+      },
+      {
+       "text": "Sie erzählten damit Geschichten",
+       "b": "w",
+       "why": "Das könnte sein, aber niemand kann es beweisen. Eine Vermutung."
+      },
+      {
+       "text": "Sie zeigten den Jüngeren die Jagd",
+       "b": "w",
+       "why": "Auch das ist möglich, aber nicht sicher. Eine Vermutung."
+      }
+     ],
+     "explain": "Was man sehen kann, ist sicher. Warum die Menschen malten, können wir nur vermuten."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum fertigten die Menschen womöglich Wandmalereien an? Welche Vermutung ist sinnvoll?",
+     "options": [
+      {
+       "text": "Sie wünschten sich Glück bei der Jagd.",
+       "correct": true
+      },
+      {
+       "text": "Sie wollten die Bilder verkaufen.",
+       "why": "Es gab noch kein Geld und keinen Handel mit Bildern."
+      },
+      {
+       "text": "Die Schule hatte es als Hausaufgabe aufgegeben.",
+       "why": "Schulen gab es noch nicht. Die Gründe waren andere, zum Beispiel Jagdglück."
+      },
+      {
+       "text": "Sie wollten Wörter aufschreiben.",
+       "why": "Schrift gab es noch nicht. Sie malten Tiere und Jagdszenen."
+      }
+     ],
+     "explain": "Mögliche Gründe sind Jagdglück, Erinnerung, Geschichten erzählen oder den Jüngeren etwas zeigen. Sicher wissen wir es nicht."
+    },
+    {
+     "type": "explain",
+     "prompt": "Warum sind über das Leben in der Altsteinzeit kaum sichere Aussagen möglich? Erkläre.",
+     "keys": [
+      {
+       "label": "keine Schrift",
+       "words": [
+        "schrift",
+        "geschrieben",
+        "schreib",
+        "aufgeschrieb",
+        "lesen"
+       ]
+      },
+      {
+       "label": "nur Überreste, Bruchstücke",
+       "words": [
+        "überrest",
+        "ueberrest",
+        "bruchst",
+        "reste",
+        "funde",
+        "fundst",
+        "wenig",
+        "verrott",
+        "kaputt"
+       ]
+      },
+      {
+       "label": "Forscher müssen vermuten",
+       "words": [
+        "vermut",
+        "raten",
+        "deuten",
+        "nicht sicher",
+        "nicht genau"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "In der Altsteinzeit gab es noch keine Schrift. Es gibt nur Überreste, oft nur Bruchstücke. Darum müssen die Forscher vieles vermuten.",
+     "explain": "Ohne schriftliche Quellen fehlen die Erklärungen der Menschen selbst."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "sort",
+     "prompt": "Archäologen finden eine Feuerstelle mit Tierknochen. Was wissen sie sicher, was vermuten sie nur?",
+     "buckets": [
+      {
+       "id": "s",
+       "name": "Sicher"
+      },
+      {
+       "id": "w",
+       "name": "Vermutung"
+      }
+     ],
+     "items": [
+      {
+       "text": "Hier hat es gebrannt",
+       "b": "s",
+       "why": "Asche und verkohlte Reste zeigen das. Das ist sicher."
+      },
+      {
+       "text": "Hier lagen Tierknochen",
+       "b": "s",
+       "why": "Die Knochen wurden gefunden. Das ist sicher."
+      },
+      {
+       "text": "Einige Knochen sind verkohlt",
+       "b": "s",
+       "why": "Das kann man an den Knochen sehen. Das ist sicher."
+      },
+      {
+       "text": "Eine Familie feierte ein Fest",
+       "b": "w",
+       "why": "Ein Fest hinterlässt keine sicheren Spuren. Das ist eine Vermutung."
+      },
+      {
+       "text": "Die Gruppe lebte hier im Winter",
+       "b": "w",
+       "why": "Das könnte sein, aber die Funde beweisen es nicht. Eine Vermutung."
+      },
+      {
+       "text": "Am Feuer wurden Geschichten erzählt",
+       "b": "w",
+       "why": "Worte hinterlassen keine Spuren. Das ist eine Vermutung."
+      },
+      {
+       "text": "Die Jäger waren stolz auf ihre Beute",
+       "b": "w",
+       "why": "Gefühle kann man nicht ausgraben. Das ist eine Vermutung."
+      }
+     ],
+     "explain": "Sicher ist, was man am Fund sehen und messen kann. Was die Menschen dachten oder fühlten, bleibt Vermutung."
+    },
+    {
+     "type": "mcq",
+     "prompt": "In einer Höhle findet man den Umriss einer Hand an der Wand, gemalt mit roter Farbe. Was ist sicher?",
+     "options": [
+      {
+       "text": "Ein Mensch hat seine Hand an die Wand gehalten und Farbe darum herum aufgetragen.",
+       "correct": true
+      },
+      {
+       "text": "Das war die Unterschrift des Anführers.",
+       "why": "Das ist nur eine Vermutung. Niemand hat aufgeschrieben, wem die Hand gehörte."
+      },
+      {
+       "text": "Ein Kind wollte zeigen, wie groß es ist.",
+       "why": "Auch das könnte sein, aber es ist nicht sicher. Es ist eine Vermutung."
+      },
+      {
+       "text": "Die Hand sollte böse Geister abwehren.",
+       "why": "Das kann man nicht beweisen. Es ist eine Vermutung."
+      }
+     ],
+     "explain": "Den Abdruck selbst kann man sehen. Warum er gemacht wurde, kann man nur vermuten."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welcher Satz ist eine Vermutung?",
+     "options": [
+      {
+       "text": "Wahrscheinlich wollten die Maler sich an eine erfolgreiche Jagd erinnern.",
+       "correct": true
+      },
+      {
+       "text": "In der Höhle von Lascaux gibt es Bilder von Tieren.",
+       "why": "Das kann man sehen. Das ist eine sichere Aussage."
+      },
+      {
+       "text": "Die Bilder wurden mit Farbe gemalt.",
+       "why": "Die Farbe ist an der Wand. Das ist sicher."
+      },
+      {
+       "text": "Auf einem Bild ist ein Bison zu sehen.",
+       "why": "Den Bison sieht man auf dem Bild. Das ist sicher."
+      }
+     ],
+     "explain": "Wörter wie „wahrscheinlich“, „vielleicht“ oder „womöglich“ zeigen eine Vermutung."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Forscher finden eine kleine Figur aus Elfenbein. Sie zeigt ein Wildpferd. Wofür diente sie?",
+     "options": [
+      {
+       "text": "Das weiß man nicht sicher. Es gibt mehrere Vermutungen, zum Beispiel Spielzeug oder Glücksbringer.",
+       "correct": true
+      },
+      {
+       "text": "Sie war sicher ein Spielzeug für Kinder.",
+       "why": "Das ist möglich, aber nicht sicher. Niemand hat es aufgeschrieben."
+      },
+      {
+       "text": "Sie war sicher Geld zum Bezahlen.",
+       "why": "Geld gab es in der Altsteinzeit noch nicht."
+      },
+      {
+       "text": "Sie war ein Werkzeug zum Schneiden.",
+       "why": "Eine kleine geschnitzte Tierfigur hat keine scharfe Kante. Zum Schneiden nahm man den Faustkeil."
+      }
+     ],
+     "explain": "Bei vielen Funden der Altsteinzeit bleibt der Zweck eine Vermutung, weil es keine Schrift gibt."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Forscher hatten eine Vermutung über einen Fundplatz. Dann finden sie neue Fundstücke, die nicht dazu passen. Was passiert?",
+     "options": [
+      {
+       "text": "Sie prüfen ihre Vermutung und ändern sie, wenn nötig.",
+       "correct": true
+      },
+      {
+       "text": "Sie werfen die neuen Funde weg.",
+       "why": "Neue Funde sind wertvoll. Sie können eine Vermutung bestätigen oder ändern."
+      },
+      {
+       "text": "Die alte Vermutung bleibt für immer richtig.",
+       "why": "Vermutungen sind nicht für immer fest. Neue Quellen können das Ergebnis ändern."
+      },
+      {
+       "text": "Sie hören auf zu forschen.",
+       "why": "Gerade dann wird es spannend. Neue Funde helfen, besser zu verstehen."
+      }
+     ],
+     "explain": "Durch weitere Quellen lassen sich Vermutungen erhärten. Neue Quellen können das Ergebnis auch ändern."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Was für eine Quelle ist eine Höhlenmalerei?",
+     "options": [
+      {
+       "text": "Eine bildliche Quelle",
+       "correct": true
+      },
+      {
+       "text": "Eine schriftliche Quelle",
+       "why": "In der Altsteinzeit gab es noch keine Schrift. Die Höhlenmalerei ist ein Bild."
+      },
+      {
+       "text": "Eine mündliche Quelle",
+       "why": "Eine mündliche Quelle hört man, zum Beispiel einen Zeitzeugen. Eine Malerei sieht man."
+      },
+      {
+       "text": "Eine gegenständliche Quelle",
+       "why": "Die Höhlenwand ist zwar ein Gegenstand, aber es zählt, was darauf ist: ein Bild."
+      }
+     ],
+     "explain": "Bei der Quellenart zählt der Inhalt. Eine Malerei ist eine bildliche Quelle."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Woraus machten die Höhlenmaler ihre Farben?",
+     "options": [
+      {
+       "text": "Aus farbiger Erde, Holzkohle und zerriebenen Steinen",
+       "correct": true
+      },
+      {
+       "text": "Aus Farbe in Tuben aus dem Laden",
+       "why": "Läden und Tuben gab es noch nicht. Die Farben kamen aus der Natur."
+      },
+      {
+       "text": "Aus Filzstiften",
+       "why": "Filzstifte gibt es erst seit wenigen Jahrzehnten."
+      },
+      {
+       "text": "Aus Tinte zum Schreiben",
+       "why": "Es gab noch keine Schrift und auch keine Tinte dafür."
+      }
+     ],
+     "explain": "Rote und gelbe Erde, schwarze Holzkohle: Auch die Farben stammten aus der Umgebung."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Aus der Altsteinzeit gibt es keine {schriftlichen} Quellen, denn es gab noch keine Schrift. Die Forscher haben nur {Überreste}, oft sogar nur {Bruchstücke}. Darum müssen sie vieles {vermuten}.",
+     "extra": [
+      {
+       "word": "Zeitzeugen",
+       "why": "Zeitzeugen müssen die Zeit selbst erlebt haben. Aus der Altsteinzeit lebt niemand mehr."
+      },
+      {
+       "word": "Tagebücher",
+       "why": "Tagebücher sind geschrieben. Schrift gab es in der Altsteinzeit noch nicht."
+      },
+      {
+       "word": "wissen",
+       "why": "Wenn Quellen fehlen, kann man vieles nicht sicher wissen. Man muss es vermuten."
+      }
+     ],
+     "explain": "Keine Schrift, nur Bruchstücke: Darum bleibt vieles über die Altsteinzeit Vermutung."
+    },
+    {
+     "type": "explain",
+     "prompt": "Archäologen finden einen Speer neben den Knochen eines Mammuts. Was wissen sie sicher, und was vermuten sie nur?",
+     "keys": [
+      {
+       "label": "sicher: Speer und Knochen wurden gefunden",
+       "words": [
+        "speer",
+        "knochen",
+        "gefunden",
+        "lag"
+       ]
+      },
+      {
+       "label": "vermutet: Mammut wurde gejagt",
+       "words": [
+        "jagd",
+        "gejagt",
+        "jagt",
+        "erleg",
+        "getötet"
+       ]
+      },
+      {
+       "label": "Unterschied sicher / Vermutung",
+       "words": [
+        "vermut",
+        "vielleicht",
+        "wahrscheinlich",
+        "nicht sicher",
+        "sicher"
+       ]
+      }
+     ],
+     "need": 2,
+     "model": "Sicher ist: Ein Speer lag neben Mammutknochen. Vermuten können sie, dass Menschen das Mammut mit dem Speer gejagt haben. Es könnte aber auch Zufall sein.",
+     "explain": "Der Fund selbst ist sicher. Was dort passiert ist, ist eine Vermutung."
+    },
+    {
+     "type": "order",
+     "prompt": "Forscher entdecken eine neue Höhle mit Bildern. Bring ihre Arbeit in eine sinnvolle Reihenfolge.",
+     "items": [
+      "Sie fragen: Wer hat das gemalt und warum?",
+      "Sie fotografieren und zeichnen die Bilder genau",
+      "Sie vergleichen mit Bildern aus anderen Höhlen",
+      "Sie schreiben ihre Vermutungen auf"
+     ],
+     "why": "Am Anfang steht eine Frage. Am Ende steht das, was die Forscher herausgefunden haben.",
+     "explain": "Fragen, Quellen sammeln und genau ansehen, auswerten und vergleichen, dann das Ergebnis formulieren."
+    }
+   ]
+  },
+  {
+   "id": "s1",
+   "heft": [
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Die Menschen der Altsteinzeit waren Jäger und Sammler. Sie wohnten in {Zelten}. Wie diese aussahen, zeigt heute ein {Nachbau} im Archäopark. Zur Jagd, zur Verteidigung und zum Verarbeiten der Tiere brauchten sie {Waffen und Werkzeuge}. Ein wichtiges Werkzeug war der {Faustkeil}. Die wichtigste Jagdwaffe war der Speer. Pfeil und Bogen kamen erst ganz am Ende der Altsteinzeit. Mit dem Feuer konnten sie wilde Tiere {fernhalten} und sich im Winter {wärmen}.",
+     "extra": [
+      {
+       "word": "Häusern",
+       "why": "Feste Häuser kann man nicht mitnehmen. Die Menschen zogen den Tieren hinterher und wohnten in Zelten."
+      },
+      {
+       "word": "Original",
+       "why": "Ein echtes Zelt aus Holz und Fell wäre längst zerfallen. Im Archäopark steht ein Nachbau von heute."
+      },
+      {
+       "word": "Pfeil und Bogen",
+       "why": "Pfeil und Bogen kamen erst ganz am Ende der Altsteinzeit. Gemeint sind hier alle Hilfsmittel: Waffen und Werkzeuge."
+      },
+      {
+       "word": "braten",
+       "why": "Das Feuer sollte wilde Tiere vom Lager fernhalten, denn sie fürchten Flammen. Gebraten wurde nur das Fleisch erlegter Tiere."
+      }
+     ],
+     "explain": "Zelte, ein Nachbau, Waffen und Werkzeuge, der Faustkeil, Tiere fernhalten, sich wärmen: Das sind die wichtigsten Punkte."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Historiker gehen in vier Schritten vor. Zuerst stellen sie Fragen, dann sammeln sie Quellen. In Schritt 3 {werten} sie die Quellen aus. Dabei fragen sie nach dem Fundort, dem {Urheber}, dem Zweck und dem {Nutzer} der Quelle. In Schritt 4 {formulieren} sie ihre Erkenntnisse. In Walthers Truhe liegt eine Kassette mit Liedern. Weil man die Lieder hört, ist sie eine {mündliche} Quelle. In einem Ordner liegen Berichte über den Mauerfall. Die Quelle sind die {Zeitungsberichte}, nicht der Ordner.",
+     "extra": [
+      {
+       "word": "gegenständliche",
+       "why": "Die Kassette ist zwar ein Gegenstand, aber es zählt ihr Inhalt. Die Lieder hört man, darum ist sie eine mündliche Quelle."
+      },
+      {
+       "word": "Ordner",
+       "why": "Der Ordner ist nur die Hülle. Die Quelle sind die Zeitungsberichte darin."
+      },
+      {
+       "word": "Farbe",
+       "why": "Die Farbe ist für die Auswertung nicht wichtig. Man fragt nach Fundort, Urheber, Zweck und Nutzer."
+      }
+     ],
+     "explain": "Schritt 3: auswerten mit Fundort, Urheber, Zweck und Nutzer. Schritt 4: Erkenntnisse formulieren. Bei der Quellenart zählt der Inhalt."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Wofür benutzten die Menschen den Faustkeil?",
+     "options": [
+      {
+       "text": "Er war selbst das Werkzeug: zum Schneiden, Schaben, Fellabziehen und Fleischzerlegen.",
+       "correct": true
+      },
+      {
+       "text": "Um damit Waffen und Werkzeuge zu bauen",
+       "why": "Der Faustkeil ist schon selbst ein Werkzeug. Mit ihm schnitt und schabte man direkt."
+      },
+      {
+       "text": "Als Pfeilspitze für Pfeil und Bogen",
+       "why": "Pfeil und Bogen kamen erst ganz am Ende der Altsteinzeit. Der Faustkeil lag in der Hand."
+      },
+      {
+       "text": "Um damit Feuer zu machen",
+       "why": "Der Faustkeil war zum Schneiden und Schaben da. Gesucht ist seine Hauptaufgabe."
+      }
+     ],
+     "explain": "Faustkeil heißt: ein Keil für die Faust. Er war das Allzweck-Werkzeug der Altsteinzeit."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Welcher Satz über das Feuer stimmt?",
+     "options": [
+      {
+       "text": "Im Lauf der Altsteinzeit lernten die Menschen, Feuer zu nutzen. Sie wärmten sich damit im Winter.",
+       "correct": true
+      },
+      {
+       "text": "Die Menschen konnten nie Feuer machen, darum war ihnen immer kalt.",
+       "why": "Doch, sie lernten im Lauf der Altsteinzeit, Feuer zu nutzen. Damit wärmten sie sich."
+      },
+      {
+       "text": "Mit dem Feuer brieten sie wilde Tiere, die ins Lager kamen.",
+       "why": "Das Feuer hielt wilde Tiere vom Lager fern. Sie fürchten die Flammen."
+      },
+      {
+       "text": "Feuer war immer nur gefährlich und hatte keinen Nutzen.",
+       "why": "Am Anfang war es vor allem gefährlich. Später brachte es Wärme, Licht, Schutz und besseres Essen."
+      }
+     ],
+     "explain": "Erst Gefahr, dann Nutzen: Feuer wärmte, gab Licht, hielt Tiere fern und machte Essen besser."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Nach welchen vier Dingen fragen Historiker, wenn sie eine Quelle auswerten?",
+     "options": [
+      {
+       "text": "Fundort, Urheber, Zweck und Nutzer",
+       "correct": true
+      },
+      {
+       "text": "Nur Fundort und Zweck",
+       "why": "Das sind erst zwei. Es fehlen noch der Urheber (wer hat sie gemacht?) und der Nutzer (für wen war sie?)."
+      },
+      {
+       "text": "Fundort, Zweck, Farbe und Gewicht",
+       "why": "Farbe und Gewicht helfen selten weiter. Wichtig sind Urheber und Nutzer."
+      },
+      {
+       "text": "Urheber, Preis, Größe und Alter des Finders",
+       "why": "Gefragt wird nach Fundort, Urheber, Zweck und Nutzer. Der Preis spielt keine Rolle."
+      }
+     ],
+     "explain": "Wo gefunden? Wer hat sie gemacht? Wozu? Für wen? Diese vier Fragen helfen beim Auswerten."
+    }
+   ],
+   "transfer": [
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Mia besucht einen Archäopark. Dort steht ein Zelt aus Holzstangen und frischen Fellen. Ein Schild erklärt: Das ist kein echtes Zelt aus der Altsteinzeit, sondern eine {Rekonstruktion}. Daneben liegt ein Faustkeil. Er ist selbst ein {Werkzeug}, mit dem man Fleisch schnitt und Felle schabte. Abends brannte im Lager ein Feuer. Es hielt Bären und Wölfe {fern} und {wärmte} die Menschen. Zur Jagd nahmen die Männer vor allem {Speere} mit.",
+     "extra": [
+      {
+       "word": "Original",
+       "why": "Ein echtes Zelt aus der Altsteinzeit wäre längst zerfallen. Frische Felle zeigen: Es ist ein Nachbau."
+      },
+      {
+       "word": "Pfeil und Bogen",
+       "why": "Pfeil und Bogen kamen erst ganz am Ende der Altsteinzeit. Die meiste Zeit jagte man mit Speeren."
+      },
+      {
+       "word": "Baumaterial",
+       "why": "Mit dem Faustkeil baute man keine anderen Werkzeuge. Er war selbst das Werkzeug."
+      }
+     ],
+     "explain": "Rekonstruktion heißt Nachbau. Der Faustkeil ist ein Werkzeug. Feuer hält Tiere fern und wärmt. Der Speer war die wichtigste Jagdwaffe."
+    },
+    {
+     "type": "gap",
+     "prompt": "Fülle die Lücken.",
+     "text": "Jonas will wissen, wie seine Oma als Kind lebte. In einer Schuhschachtel findet er eine CD, auf der Oma von früher erzählt. Weil man ihre Stimme hört, ist das eine {mündliche} Quelle. Außerdem liegt dort ein Umschlag mit alten {Postkarten}. Sie sind die Quelle, nicht der Umschlag. Jonas fragt: Wer hat die Karten geschrieben? Das ist die Frage nach dem {Urheber}. Wer hat sie bekommen und gelesen? Das ist die Frage nach dem {Nutzer}. Zum Schluss schreibt Jonas auf, was er herausgefunden hat. Er {formuliert} seine Erkenntnisse.",
+     "extra": [
+      {
+       "word": "gegenständliche",
+       "why": "Die CD ist zwar ein Gegenstand, aber es zählt ihr Inhalt. Man hört Omas Stimme, darum ist es eine mündliche Quelle."
+      },
+      {
+       "word": "Umschlag",
+       "why": "Der Umschlag ist nur die Hülle. Die Quelle sind die Postkarten darin."
+      },
+      {
+       "word": "Fundort",
+       "why": "Der Fundort ist die Schuhschachtel. Wer die Karten geschrieben hat, ist der Urheber."
+      },
+      {
+       "word": "wertet",
+       "why": "Ausgewertet hat Jonas schon in Schritt 3. Jetzt schreibt er sein Ergebnis auf: Er formuliert seine Erkenntnisse."
+      }
+     ],
+     "explain": "Inhalt zählt, nicht die Hülle. Urheber und Nutzer gehören zum Auswerten. Am Ende werden die Erkenntnisse formuliert."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Lea hat einen alten Brief. Sie weiß schon, wo er gefunden wurde und wozu er geschrieben wurde. Was muss sie noch fragen?",
+     "options": [
+      {
+       "text": "Wer ihn geschrieben hat und wer ihn bekommen hat",
+       "correct": true
+      },
+      {
+       "text": "Nichts mehr, Fundort und Zweck reichen.",
+       "why": "Es fehlen noch zwei Fragen: Wer ist der Urheber? Wer ist der Nutzer?"
+      },
+      {
+       "text": "Wie schwer das Papier ist",
+       "why": "Das Gewicht hilft kaum weiter. Wichtig sind Urheber und Nutzer."
+      },
+      {
+       "text": "Welche Farbe der Umschlag hat",
+       "why": "Der Umschlag ist nur die Hülle. Wichtig ist, wer den Brief geschrieben und wer ihn bekommen hat."
+      }
+     ],
+     "explain": "Zu Fundort und Zweck gehören noch Urheber und Nutzer. Erst dann ist die Auswertung vollständig."
+    },
+    {
+     "type": "order",
+     "prompt": "Ben will wissen, wie sein Opa früher zur Schule ging. Bring Bens Schritte in die richtige Reihenfolge.",
+     "items": [
+      "Ben fragt sich: Wie sah Opas Schultag aus?",
+      "Ben sucht alte Fotos und Schulhefte",
+      "Ben prüft: Wer hat das Foto gemacht, wo, wozu und für wen?",
+      "Ben schreibt auf, was er herausgefunden hat"
+     ],
+     "why": "Denk an die vier Schritte: Fragen, Quellen sammeln, Quellen auswerten, Erkenntnisse formulieren.",
+     "explain": "Ben geht vor wie ein Historiker: Fragen stellen, sammeln, auswerten, formulieren."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Auf einer alten Schallplatte ist eine Rede zu hören. Was für eine Quelle ist sie?",
+     "options": [
+      {
+       "text": "Eine mündliche Quelle, weil man die Rede hört",
+       "correct": true
+      },
+      {
+       "text": "Eine gegenständliche Quelle, weil die Platte ein Gegenstand ist",
+       "why": "Die Platte ist nur der Träger. Es zählt der Inhalt: eine gesprochene Rede."
+      },
+      {
+       "text": "Eine schriftliche Quelle, weil eine Rede vorher aufgeschrieben wird",
+       "why": "Auf der Platte ist die Rede gesprochen, nicht geschrieben. Man hört sie."
+      },
+      {
+       "text": "Eine bildliche Quelle",
+       "why": "Auf einer Schallplatte gibt es nichts zu sehen, nur zu hören."
+      }
+     ],
+     "explain": "Wie bei der Kassette: Was man hört, ist eine mündliche Quelle."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein Museum zeigt eine Höhle aus Beton. Die Tierbilder darin wurden genau von der echten Höhle abgemalt. Was ist das?",
+     "options": [
+      {
+       "text": "Ein Nachbau",
+       "correct": true
+      },
+      {
+       "text": "Die echte Höhle aus der Altsteinzeit",
+       "why": "Die Höhle ist aus Beton und neu bemalt. Die echte Höhle ist woanders."
+      },
+      {
+       "text": "Eine Ruine",
+       "why": "Eine Ruine ist ein zerfallener alter Bau. Diese Höhle ist neu gebaut."
+      },
+      {
+       "text": "Eine schriftliche Quelle",
+       "why": "Es gibt keine Schrift darin. Und es ist keine echte Quelle, sondern ein Nachbau."
+      }
+     ],
+     "explain": "Echte Höhlen sind empfindlich. Darum baut man sie nach, damit viele Menschen sie sehen können."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Warum ließen die Menschen der Altsteinzeit nachts das Feuer brennen?",
+     "options": [
+      {
+       "text": "Damit wilde Tiere vom Lager fernblieben",
+       "correct": true
+      },
+      {
+       "text": "Um wilde Tiere zu braten, die ins Lager kamen",
+       "why": "Wilde Tiere kamen gar nicht erst, weil sie das Feuer fürchten. Es hielt sie fern."
+      },
+      {
+       "text": "Weil sie nicht wussten, wie man es löscht",
+       "why": "Es ging um Schutz, Wärme und Licht. Darum ließen sie es brennen."
+      },
+      {
+       "text": "Um den Nachbarn Zeichen zu geben",
+       "why": "Wichtiger war der Schutz: Das Feuer hielt wilde Tiere fern."
+      }
+     ],
+     "explain": "Feuer hält wilde Tiere fern, wärmt und gibt Licht."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Ein Besucher fragt im Museum: „Welche Werkzeuge hat man mit dem Faustkeil gebaut?“ Was antwortet die Museumsführerin?",
+     "options": [
+      {
+       "text": "Der Faustkeil war selbst das Werkzeug. Damit hat man geschnitten, geschabt und gehackt.",
+       "correct": true
+      },
+      {
+       "text": "Damit hat man Pfeil und Bogen gebaut.",
+       "why": "Pfeil und Bogen kamen erst ganz am Ende der Altsteinzeit. Der Faustkeil war selbst das Werkzeug."
+      },
+      {
+       "text": "Damit hat man Werkzeuge aus Eisen gebaut.",
+       "why": "Eisen kannte man in der Altsteinzeit noch nicht."
+      },
+      {
+       "text": "Damit hat man Hämmer und Sägen gebaut.",
+       "why": "Der Faustkeil war kein Bauteil für andere Werkzeuge. Er selbst war das Werkzeug."
+      }
+     ],
+     "explain": "Die Frage enthält schon einen Fehler: Mit dem Faustkeil baute man keine Werkzeuge. Er war das Werkzeug."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Mia sagt: „Das Zelt im Archäopark ist ein altes, zerfallenes Zelt aus der Altsteinzeit.“ Was stimmt?",
+     "options": [
+      {
+       "text": "Es ist ein Nachbau. Forscher haben es heute nach Funden gebaut.",
+       "correct": true
+      },
+      {
+       "text": "Mia hat recht, man hat es so ausgegraben.",
+       "why": "Holz und Fell zerfallen in so langer Zeit ganz. Darum baut man Zelte nach."
+      },
+      {
+       "text": "Es ist ein echtes Zelt, das man restauriert hat.",
+       "why": "Restaurieren heißt ausbessern. Von den Zelten ist aber nichts übrig, was man ausbessern könnte."
+      },
+      {
+       "text": "Es ist ein Zelt aus der Zeit der Römer.",
+       "why": "Das Zelt zeigt, wie Menschen in der Altsteinzeit vermutlich wohnten. Es ist ein Nachbau von heute."
+      }
+     ],
+     "explain": "Nachbau oder Rekonstruktion heißt: neu gebaut, so wie es vermutlich war."
+    }
+   ]
+  }
+ ],
+ "begriffe": [
+  {
+   "wort": "Vergangenheit",
+   "kurz": "Alles, was früher passiert ist.",
+   "text": "Zur Vergangenheit gehört alles, was schon vorbei ist: gestern, dein erster Schultag und die Zeit der Mammuts. Vergangenheit ist nicht gleich Geschichte."
+  },
+  {
+   "wort": "Geschichte",
+   "kurz": "Die Erforschung eines Ausschnitts der Vergangenheit.",
+   "text": "Geschichte beschäftigt sich mit einem Ausschnitt der Vergangenheit und versucht, ihn zu verstehen und zu erforschen. Zum Beispiel: Wie lebten die Menschen in der Altsteinzeit?"
+  },
+  {
+   "wort": "Zeitstrahl",
+   "kurz": "Eine Linie, auf der Ereignisse der Reihe nach stehen.",
+   "text": "Mit einem Zeitstrahl und Jahreszahlen können wir Ereignisse zeitlich ordnen. Links steht das Ältere, rechts das Neuere, zum Beispiel erst die Pyramiden, dann Rom."
+  },
+  {
+   "wort": "v. Chr. und n. Chr.",
+   "kurz": "Vor Christus und nach Christus.",
+   "text": "Christi Geburt steht in der Mitte des Zeitstrahls. Vor Christus gilt: Je größer die Zahl, desto länger ist es her. Rom wurde 753 v. Chr. gegründet, Karl der Große wurde 800 n. Chr. Kaiser."
+  },
+  {
+   "wort": "Quelle",
+   "kurz": "Alles, was uns etwas über die Vergangenheit verrät.",
+   "text": "Quellen sind Spuren aus der Vergangenheit, zum Beispiel Briefe, Fotos, Werkzeuge oder Erzählungen. Historiker werten sie aus wie Detektive."
+  },
+  {
+   "wort": "Quellenarten",
+   "kurz": "Schriftlich, bildlich, mündlich oder gegenständlich.",
+   "text": "Schriftliche Quellen liest man (Brief, Zeugnis), bildliche sieht man (Foto, Gemälde), mündliche hört man (Erzählung eines Zeitzeugen, Lieder auf einer Kassette), gegenständliche kann man anfassen (Münze, Faustkeil). Es zählt der Inhalt, nicht die Hülle: Bei einem Ordner mit Zeitungsberichten sind die Berichte die Quelle."
+  },
+  {
+   "wort": "Überrest",
+   "kurz": "Eine Quelle, die zufällig erhalten geblieben ist.",
+   "text": "Überreste wurden nicht gemacht, damit spätere Menschen davon erfahren. Zum Beispiel ein Einkaufszettel, eine Vase oder ein Faustkeil."
+  },
+  {
+   "wort": "Tradition",
+   "kurz": "Eine Quelle, die absichtlich überliefert wurde.",
+   "text": "Traditionsquellen wurden gemacht, damit Menschen später davon erfahren. Zum Beispiel eine Chronik oder eine Rede. Leitfrage: Wurde es für die Nachwelt gemacht? Ja, dann ist es Tradition."
+  },
+  {
+   "wort": "Zeitzeuge",
+   "kurz": "Ein Mensch, der eine Zeit selbst erlebt hat.",
+   "text": "Ein Zeitzeuge kann erzählen, wie es früher war, zum Beispiel deine Oma vom Mauerfall. Seine Erzählung ist eine mündliche Quelle."
+  },
+  {
+   "wort": "Historiker",
+   "kurz": "Ein Geschichtsforscher.",
+   "text": "Historiker arbeiten wie Kommissare: Sie stellen Fragen, sammeln Quellen, werten sie aus (Fundort, Urheber, Zweck, Nutzer) und formulieren Erkenntnisse."
+  },
+  {
+   "wort": "Archäologe",
+   "kurz": "Ein Forscher, der Spuren im Boden sucht und deutet.",
+   "text": "Archäologen erforschen vor allem Zeiten ohne Schrift. Sie graben Funde aus, ordnen sie zeitlich ein und finden heraus, wie Menschen früher lebten. Das Wort kommt vom griechischen archaios (alt) und logos (Lehre)."
+  },
+  {
+   "wort": "Ausgrabung",
+   "kurz": "Das vorsichtige Freilegen von Funden im Boden.",
+   "text": "Bei einer Ausgrabung arbeiten Archäologen mit Pinsel, Kelle und Bandmaß. Sie vermessen, fotografieren und zeichnen alles genau, bevor sie etwas herausnehmen."
+  },
+  {
+   "wort": "restaurieren",
+   "kurz": "Einen alten Fund ausbessern und wiederherstellen.",
+   "text": "Wenn ein Fund kaputt ist, wird er restauriert. Zum Beispiel der keltische Kessel aus Hochdorf: Er wurde ausgebessert und steht heute im Museum."
+  },
+  {
+   "wort": "Nachbau (Rekonstruktion)",
+   "kurz": "Etwas, das heute so nachgebaut wurde, wie es vermutlich war.",
+   "text": "Ein Nachbau ist nicht alt, sondern neu gebaut, nach Funden und Vermutungen. Das Zelt im Archäopark Vogelherd ist so ein Nachbau. Das echte Zelt ist längst zerfallen."
+  },
+  {
+   "wort": "Altsteinzeit",
+   "kurz": "Die Zeit von vor etwa 2 Millionen Jahren bis vor etwa 10.000 Jahren.",
+   "text": "In der Altsteinzeit machten die Menschen ihre Werkzeuge vor allem aus Stein. Sie lebten als Jäger und Sammler. Mit Ackerbau und Viehzucht ging sie zu Ende."
+  },
+  {
+   "wort": "Jäger und Sammler",
+   "kurz": "Menschen, die jagen und wilde Pflanzen sammeln.",
+   "text": "Die Menschen der Altsteinzeit jagten Tiere und sammelten Beeren und Wurzeln. Sie folgten den Tieren und wohnten darum in Zelten, die man leicht auf- und abbauen konnte."
+  },
+  {
+   "wort": "Faustkeil",
+   "kurz": "Ein scharfes Steinwerkzeug, das in der Hand liegt.",
+   "text": "Für einen Faustkeil schlug man einen Stein, zum Beispiel Feuerstein, bis er messerscharfe Kanten hatte. Er war selbst das Werkzeug: zum Schneiden, Schaben, Fellabziehen und Fleischzerlegen."
+  },
+  {
+   "wort": "Speer",
+   "kurz": "Die wichtigste Jagdwaffe der Altsteinzeit.",
+   "text": "Ein Speer ist ein langer Stab aus Holz, später mit einer Spitze aus Stein. Pfeil und Bogen kamen erst ganz am Ende der Altsteinzeit."
+  },
+  {
+   "wort": "Höhlenmalerei",
+   "kurz": "Bilder, die Menschen der Altsteinzeit an Höhlenwände malten.",
+   "text": "Berühmt sind die Bilder in der Höhle von Lascaux in Südfrankreich. Sie zeigen Stiere und eine Jagd auf einen Bison. Warum die Menschen malten, wissen wir nicht sicher."
+  },
+  {
+   "wort": "Vermutung",
+   "kurz": "Eine Erklärung, die gut sein kann, aber nicht bewiesen ist.",
+   "text": "Weil es aus der Altsteinzeit keine Schrift gibt, müssen Forscher vieles vermuten. Zum Beispiel: Vielleicht malten die Menschen, um Jagdglück zu bekommen. Neue Funde können eine Vermutung bestätigen oder ändern."
+  }
+ ]
+}
