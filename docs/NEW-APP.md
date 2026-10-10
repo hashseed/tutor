@@ -23,4 +23,5 @@ Larger apps (like the fractions app) are organised as **parts** (`.unit` in the 
 | `bw` | Brüche (Bruch-Werkstatt) |
 | `km` | Kommas (Komma-Werkstatt) |
 | `gs` | Geschichte (Geschichts-Werkstatt) |
+| `kg` | Kerngedanken (Kerngedanken-Werkstatt) |
 | `vl` | `vorlage/` (example only) |

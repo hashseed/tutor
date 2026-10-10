@@ -1,0 +1,946 @@
+[
+ {
+  "id": "b-001",
+  "art": "bericht",
+  "thema": "Storch brütet erstmals wieder im Dorf",
+  "form": "Zeitungsbericht (Präteritum, W-Fragen)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-001",
+  "art": "sachtext",
+  "thema": "Wie Ameisen ihren Staat organisieren",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-001",
+  "art": "erzaehlung",
+  "thema": "Ein Missverständnis unter Freunden",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "anderes-thema",
+  "name": "Noah"
+ },
+ {
+  "id": "s-002",
+  "art": "sachtext",
+  "thema": "Wie Elektrizität ins Haus kommt",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-003",
+  "art": "sachtext",
+  "thema": "Wie Schokolade hergestellt wird",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-eng",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-004",
+  "art": "sachtext",
+  "thema": "Warum es Jahreszeiten gibt",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-005",
+  "art": "sachtext",
+  "thema": "Warum Bewegung gesund ist",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-006",
+  "art": "sachtext",
+  "thema": "Warum Eisbären bedroht sind",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-007",
+  "art": "sachtext",
+  "thema": "Die Geschichte der Eisenbahn",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-002",
+  "art": "erzaehlung",
+  "thema": "Die erste Nacht im Zelt",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "gegenteil",
+  "name": "Lena"
+ },
+ {
+  "id": "s-008",
+  "art": "sachtext",
+  "thema": "Wie Fledermäuse im Dunkeln jagen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-009",
+  "art": "sachtext",
+  "thema": "Wie Impfungen schützen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "e-003",
+  "art": "erzaehlung",
+  "thema": "Ein Gewitter auf dem Heimweg",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "zu-allgemein",
+  "teils": "verdreht",
+  "falsch": "erfunden",
+  "name": "Clara"
+ },
+ {
+  "id": "e-004",
+  "art": "erzaehlung",
+  "thema": "Der Kuchen für den Schulbasar",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema",
+  "name": "Marie"
+ },
+ {
+  "id": "b-002",
+  "art": "bericht",
+  "thema": "Neue Stadtbücherei öffnet mit Leseclub",
+  "form": "Zeitungsbericht (Präteritum, W-Fragen)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-010",
+  "art": "sachtext",
+  "thema": "Wie Kinder im alten Rom lebten",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-005",
+  "art": "erzaehlung",
+  "thema": "Die Angst vor dem Sprungbrett",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "erfunden",
+  "name": "Niklas"
+ },
+ {
+  "id": "e-006",
+  "art": "erzaehlung",
+  "thema": "Der Vorlesewettbewerb",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema",
+  "name": "Luisa"
+ },
+ {
+  "id": "e-007",
+  "art": "erzaehlung",
+  "thema": "Der Ausflug in die Berge",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "erfunden",
+  "name": "Ida"
+ },
+ {
+  "id": "e-008",
+  "art": "erzaehlung",
+  "thema": "Der Schneemann-Wettbewerb",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-allgemein",
+  "teils": "verdreht",
+  "falsch": "gegenteil",
+  "name": "Frieda"
+ },
+ {
+  "id": "e-009",
+  "art": "erzaehlung",
+  "thema": "Das Fußballspiel im Regen",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "anderes-thema",
+  "name": "Elias"
+ },
+ {
+  "id": "b-003",
+  "art": "bericht",
+  "thema": "Kinder retten Kröten an der Landstraße",
+  "form": "Zeitungsbericht (Präteritum, W-Fragen)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "f-001",
+  "art": "fabel",
+  "thema": "Der Löwe und die Maus",
+  "form": "Fabel im Präteritum, die Lehre wird NICHT ausgesprochen",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-011",
+  "art": "sachtext",
+  "thema": "Wie Chamäleons ihre Farbe ändern",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-010",
+  "art": "erzaehlung",
+  "thema": "Die Reise mit dem Nachtzug",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "erfunden",
+  "name": "Johanna"
+ },
+ {
+  "id": "e-011",
+  "art": "erzaehlung",
+  "thema": "Die Suche nach dem Schlüssel",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil",
+  "name": "Aylin"
+ },
+ {
+  "id": "e-012",
+  "art": "erzaehlung",
+  "thema": "Ein Tag als Gärtner im Schulgarten",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema",
+  "name": "Finn"
+ },
+ {
+  "id": "s-012",
+  "art": "sachtext",
+  "thema": "Warum Lärm krank machen kann",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-013",
+  "art": "sachtext",
+  "thema": "Warum Wasser so kostbar ist",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-014",
+  "art": "sachtext",
+  "thema": "Die Erfindung des Rades",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "zu-eng",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "e-013",
+  "art": "erzaehlung",
+  "thema": "Die Katze auf dem Dach",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil",
+  "name": "Zoe"
+ },
+ {
+  "id": "e-014",
+  "art": "erzaehlung",
+  "thema": "Die Wette um den höchsten Turm aus Bauklötzen",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema",
+  "name": "Tilda"
+ },
+ {
+  "id": "f-002",
+  "art": "fabel",
+  "thema": "Der Hase und der Igel",
+  "form": "Fabel im Präteritum, die Lehre wird NICHT ausgesprochen",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "e-015",
+  "art": "erzaehlung",
+  "thema": "Die Kürbissuppe für die Nachbarin",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "gegenteil",
+  "name": "Karim"
+ },
+ {
+  "id": "s-015",
+  "art": "sachtext",
+  "thema": "Das Leben im Mittelalter auf einer Burg",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "e-016",
+  "art": "erzaehlung",
+  "thema": "Ein neues Kind in der Klasse",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema",
+  "name": "Felix"
+ },
+ {
+  "id": "e-017",
+  "art": "erzaehlung",
+  "thema": "Der Streit um die Fernbedienung",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil",
+  "name": "Emilia"
+ },
+ {
+  "id": "s-016",
+  "art": "sachtext",
+  "thema": "Wie Wind entsteht",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "e-018",
+  "art": "erzaehlung",
+  "thema": "Opas alter Fotoapparat",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "anderes-thema",
+  "name": "Ole"
+ },
+ {
+  "id": "e-019",
+  "art": "erzaehlung",
+  "thema": "Das verlorene Kuscheltier des kleinen Bruders",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil",
+  "name": "Mats"
+ },
+ {
+  "id": "e-020",
+  "art": "erzaehlung",
+  "thema": "Die Klassensprecherwahl",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema",
+  "name": "Henri"
+ },
+ {
+  "id": "e-021",
+  "art": "erzaehlung",
+  "thema": "Die Theaterrolle, die keiner wollte",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "erfunden",
+  "name": "Elif"
+ },
+ {
+  "id": "b-004",
+  "art": "bericht",
+  "thema": "Sportverein sucht Trainer für Kindermannschaft",
+  "form": "Zeitungsbericht (Präteritum, W-Fragen)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-017",
+  "art": "sachtext",
+  "thema": "Wie Kraken jagen und sich verstecken",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "e-022",
+  "art": "erzaehlung",
+  "thema": "Der Streit um den Fensterplatz",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil",
+  "name": "Sophie"
+ },
+ {
+  "id": "f-003",
+  "art": "fabel",
+  "thema": "Der Wolf und der Kranich",
+  "form": "Fabel im Präteritum, die Lehre wird NICHT ausgesprochen",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-018",
+  "art": "sachtext",
+  "thema": "Wie Erdbeben entstehen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "e-023",
+  "art": "erzaehlung",
+  "thema": "Ein verletzter Igel im Garten",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil",
+  "name": "Leon"
+ },
+ {
+  "id": "e-024",
+  "art": "erzaehlung",
+  "thema": "Der verpasste Bus",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "gegenteil",
+  "name": "Pia"
+ },
+ {
+  "id": "f-004",
+  "art": "fabel",
+  "thema": "Die Ameise und die Taube",
+  "form": "Fabel im Präteritum, die Lehre wird NICHT ausgesprochen",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "e-025",
+  "art": "erzaehlung",
+  "thema": "Ein Abend im Planetarium",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "anderes-thema",
+  "name": "Leo"
+ },
+ {
+  "id": "b-005",
+  "art": "bericht",
+  "thema": "Klasse 6b gewinnt Müllsammelaktion",
+  "form": "Zeitungsbericht (Präteritum, W-Fragen)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-026",
+  "art": "erzaehlung",
+  "thema": "Der Besuch bei der Uroma",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "anderes-thema",
+  "name": "Samuel"
+ },
+ {
+  "id": "s-019",
+  "art": "sachtext",
+  "thema": "Wie ein Vulkan ausbricht",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "e-027",
+  "art": "erzaehlung",
+  "thema": "Ein Brief, der zu spät ankommt",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "erfunden",
+  "name": "Ben"
+ },
+ {
+  "id": "s-020",
+  "art": "sachtext",
+  "thema": "Wie Brücken gebaut werden",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-021",
+  "art": "sachtext",
+  "thema": "Wie das Internet funktioniert",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-022",
+  "art": "sachtext",
+  "thema": "Warum der Regenwald wichtig ist",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "e-028",
+  "art": "erzaehlung",
+  "thema": "Ein Wettlauf gegen die Zeit beim Bäcker",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-allgemein",
+  "teils": "verdreht",
+  "falsch": "erfunden",
+  "name": "Jakob"
+ },
+ {
+  "id": "b-006",
+  "art": "bericht",
+  "thema": "Schülerzeitung deckt Problem mit Schulweg auf",
+  "form": "Zeitungsbericht (Präteritum, W-Fragen)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-023",
+  "art": "sachtext",
+  "thema": "Wie unser Gehirn lernt",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "f-005",
+  "art": "fabel",
+  "thema": "Der Esel in der Löwenhaut",
+  "form": "Fabel im Präteritum, die Lehre wird NICHT ausgesprochen",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-024",
+  "art": "sachtext",
+  "thema": "Die alten Ägypter und ihre Schrift",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-029",
+  "art": "erzaehlung",
+  "thema": "Ein Umzug in eine andere Stadt",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "erfunden",
+  "name": "Theo"
+ },
+ {
+  "id": "s-025",
+  "art": "sachtext",
+  "thema": "Das Wattenmeer bei Ebbe und Flut",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "e-030",
+  "art": "erzaehlung",
+  "thema": "Die Reparatur des Rollers",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "gegenteil",
+  "name": "Milan"
+ },
+ {
+  "id": "s-026",
+  "art": "sachtext",
+  "thema": "Wie Bienen und Blumen sich gegenseitig helfen",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "verdreht",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "f-006",
+  "art": "fabel",
+  "thema": "Die Stadtmaus und die Feldmaus",
+  "form": "Fabel im Präteritum, die Lehre wird NICHT ausgesprochen",
+  "nah": "zu-eng",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-027",
+  "art": "sachtext",
+  "thema": "Warum der Mond leuchtet",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-028",
+  "art": "sachtext",
+  "thema": "Wie Zugvögel ihren Weg finden",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-029",
+  "art": "sachtext",
+  "thema": "Wie Wale miteinander sprechen",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "verdreht",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "e-031",
+  "art": "erzaehlung",
+  "thema": "Das verschwundene Fahrrad",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "erfunden",
+  "name": "Yusuf"
+ },
+ {
+  "id": "s-030",
+  "art": "sachtext",
+  "thema": "Das Leben der Honigbienen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-031",
+  "art": "sachtext",
+  "thema": "Wie Brieftauben heimfinden",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "f-007",
+  "art": "fabel",
+  "thema": "Der Fuchs und der Storch",
+  "form": "Fabel im Präteritum, die Lehre wird NICHT ausgesprochen",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-032",
+  "art": "sachtext",
+  "thema": "Warum Meerwasser salzig ist",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-033",
+  "art": "sachtext",
+  "thema": "Warum Schlaf für Kinder wichtig ist",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-032",
+  "art": "erzaehlung",
+  "thema": "Das Baumhaus der Nachbarskinder",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "erfunden",
+  "name": "Greta"
+ },
+ {
+  "id": "e-033",
+  "art": "erzaehlung",
+  "thema": "Die Mathearbeit",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema",
+  "name": "Ella"
+ },
+ {
+  "id": "e-034",
+  "art": "erzaehlung",
+  "thema": "Die kaputte Vase",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "erfunden",
+  "name": "Amira"
+ },
+ {
+  "id": "e-035",
+  "art": "erzaehlung",
+  "thema": "Ein Hund aus dem Tierheim",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "gegenteil",
+  "name": "David"
+ },
+ {
+  "id": "b-007",
+  "art": "bericht",
+  "thema": "Jugendfeuerwehr übt mit der Schule",
+  "form": "Zeitungsbericht (Präteritum, W-Fragen)",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "e-036",
+  "art": "erzaehlung",
+  "thema": "Das Geschenk, das selbst gebastelt war",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "erfunden",
+  "name": "Moritz"
+ },
+ {
+  "id": "e-037",
+  "art": "erzaehlung",
+  "thema": "Die Mutprobe im dunklen Keller",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil",
+  "name": "Emil"
+ },
+ {
+  "id": "s-034",
+  "art": "sachtext",
+  "thema": "Wie Pflanzen Sonnenlicht nutzen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-035",
+  "art": "sachtext",
+  "thema": "Warum Dinosaurier ausgestorben sind",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "s-036",
+  "art": "sachtext",
+  "thema": "Warum wir Träume haben",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "anderes-thema"
+ },
+ {
+  "id": "s-037",
+  "art": "sachtext",
+  "thema": "Wie Höhlen entstehen",
+  "form": "Erklärtext für Kinder (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-038",
+  "art": "erzaehlung",
+  "thema": "Das Schulprojekt über Bienen",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "anderes-thema",
+  "name": "Anton"
+ },
+ {
+  "id": "e-039",
+  "art": "erzaehlung",
+  "thema": "Ein Schachturnier",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "erfunden",
+  "name": "Lina"
+ },
+ {
+  "id": "e-040",
+  "art": "erzaehlung",
+  "thema": "Eine Freundschaft per Brief",
+  "form": "Er-/Sie-Erzählung im Präteritum",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "anderes-thema",
+  "name": "Nele"
+ },
+ {
+  "id": "e-041",
+  "art": "erzaehlung",
+  "thema": "Das Geheimnis der alten Truhe",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "ohne-ende",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil",
+  "name": "Hannah"
+ },
+ {
+  "id": "b-008",
+  "art": "bericht",
+  "thema": "Schulfest sammelt Geld für einen neuen Spielplatz",
+  "form": "Zeitungsbericht (Präteritum, W-Fragen)",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-038",
+  "art": "sachtext",
+  "thema": "Wie Recycling von Plastik funktioniert",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "zu-eng",
+  "teils": "verdreht",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-042",
+  "art": "erzaehlung",
+  "thema": "Die Generalprobe für das Schulkonzert",
+  "form": "Erzählung mit wörtlicher Rede (Präteritum)",
+  "nah": "ohne-ende",
+  "teils": "detail",
+  "falsch": "anderes-thema",
+  "name": "Mia"
+ },
+ {
+  "id": "f-008",
+  "art": "fabel",
+  "thema": "Der Rabe und der Krug",
+  "form": "Fabel im Präteritum, die Lehre wird NICHT ausgesprochen",
+  "nah": "zu-allgemein",
+  "teils": "uebertrieben",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "s-039",
+  "art": "sachtext",
+  "thema": "Warum Bäume Jahresringe haben",
+  "form": "Sachtext mit Frage als Überschrift (Präsens)",
+  "nah": "zu-eng",
+  "teils": "uebertrieben",
+  "falsch": "gegenteil"
+ },
+ {
+  "id": "e-043",
+  "art": "erzaehlung",
+  "thema": "Ein Tag ohne Handy",
+  "form": "Ich-Erzählung im Präteritum",
+  "nah": "zu-allgemein",
+  "teils": "detail",
+  "falsch": "anderes-thema",
+  "name": "Mila"
+ },
+ {
+  "id": "s-040",
+  "art": "sachtext",
+  "thema": "Wie ein Fluss von der Quelle zum Meer fließt",
+  "form": "Lexikonartikel (Präsens)",
+  "nah": "ohne-ende",
+  "teils": "verdreht",
+  "falsch": "erfunden"
+ },
+ {
+  "id": "e-044",
+  "art": "erzaehlung",
+  "thema": "Der Flohmarktstand",
+  "form": "Ich-Erzählung im Präsens",
+  "nah": "zu-eng",
+  "teils": "detail",
+  "falsch": "gegenteil",
+  "name": "Oskar"
+ }
+]
