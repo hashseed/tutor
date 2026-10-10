@@ -188,6 +188,9 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.1;letter-spaci
 .hero p{margin:6px 0 0;font-size:var(--fs-lede);color:var(--muted);max-width:52ch}
 @media (max-width:480px){.hero{flex-direction:column;align-items:flex-start;gap:10px}.hero .logo{width:48px;height:48px}}
 .subject h2{margin:10px 0 12px;font-size:var(--fs-h3)}
+.subjects{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.subjects .subject{display:flex;flex-direction:column}
+.subjects .apps{flex:1;grid-template-columns:1fr}
 .apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .app-card{--c:var(--accent);position:relative;display:flex;flex-direction:column;gap:10px;background:var(--card);border:var(--bw) solid var(--line);border-radius:var(--r-lg);padding:18px 20px 20px;color:var(--ink);text-decoration:none;font-weight:400;transition:border-color var(--t-fast),transform var(--t-fast)}
 a.app-card:hover{border-color:var(--c);transform:translateY(-2px)}
