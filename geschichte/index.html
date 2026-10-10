@@ -90,6 +90,11 @@
   /* Order task */
   .gs-order{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
   .gs-row{display:flex;align-items:center;gap:10px;border:var(--bw) solid var(--line);border-radius:var(--r-md);background:var(--paper);padding:6px 6px 6px 10px}
+  .gs-hint{margin:0 0 8px;color:var(--muted);font-size:var(--fs-small)}
+  .gs-order .gs-row{touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+  .gs-order.gs-locked .gs-row{touch-action:auto;cursor:default}
+  .gs-order .gs-row.drag{position:relative;z-index:2;cursor:grabbing;border-color:var(--accent);box-shadow:var(--shadow-pop)}
+  .gs-dragging{cursor:grabbing}
   .gs-row.ok{border-color:var(--good);background:var(--good-soft)}
   .gs-row.bad{border-color:var(--bad);background:var(--bad-soft)}
   .gs-pos{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);font:800 14px var(--display)}

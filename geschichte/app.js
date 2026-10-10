@@ -102,15 +102,61 @@ function sortTask(it, body) {
   };
 }
 
-/* Order: move cards up and down. */
+/* Order: drag a row with finger or mouse, or move it with the arrow buttons (keyboard). */
 function orderTask(it, body) {
   let order = shuffle(it.items.map((_, k) => k));
   if (order.every((v, k) => v === k) && order.length > 1) order.reverse();
-  body.innerHTML = '<ol class="gs-order"></ol>';
+  body.innerHTML = '<p class="gs-hint">Zieh die Karten an die richtige Stelle oder benutze die Pfeile.</p><ol class="gs-order"></ol>';
   const list = $('.gs-order', body);
-  let marks = null;
+  let marks = null, locked = false;
+  list.addEventListener('pointerdown', e => {
+    const li = e.target.closest('.gs-row');
+    if (locked || !li || e.target.closest('.gs-mv') || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    e.preventDefault();
+    const startY = e.clientY, top0 = li.offsetTop, scroll0 = scrollY;
+    let moved = false, lastY = startY, raf = 0;
+    li.setPointerCapture(e.pointerId);
+    const midOf = el => { const r = el.getBoundingClientRect(); return r.top + r.height / 2; };
+    function follow() {
+      const dy = lastY - startY + scrollY - scroll0;
+      for (;;) { // the finger decides: pass a neighbour's middle and the two swap
+        const prev = li.previousElementSibling, next = li.nextElementSibling;
+        if (next && lastY > midOf(next)) list.insertBefore(next, li);
+        else if (prev && lastY < midOf(prev)) list.insertBefore(prev, li.nextElementSibling); // move the neighbour, never li, so pointer capture stays
+        else break;
+      }
+      li.style.transform = `translateY(${dy - (li.offsetTop - top0)}px)`;
+      $$('.gs-pos', list).forEach((p, i) => p.textContent = i + 1);
+    }
+    function edgeScroll() { // near the top or bottom of the screen the page scrolls along
+      const edge = 70, v = lastY > innerHeight - edge ? 10 : lastY < edge ? -10 : 0;
+      if (v) { const y = scrollY; scrollBy(0, v); if (scrollY !== y) follow(); }
+      raf = requestAnimationFrame(edgeScroll);
+    }
+    const onMove = ev => {
+      lastY = ev.clientY;
+      if (!moved && Math.abs(lastY - startY) < 4) return;
+      if (!moved) { moved = true; li.classList.add('drag'); list.classList.add('gs-dragging'); raf = requestAnimationFrame(edgeScroll); }
+      follow();
+    };
+    const onEnd = () => {
+      cancelAnimationFrame(raf);
+      li.removeEventListener('pointermove', onMove);
+      li.removeEventListener('pointerup', onEnd);
+      li.removeEventListener('pointercancel', onEnd);
+      list.classList.remove('gs-dragging');
+      if (!moved) return;
+      const next = [...list.children].map(r => Number(r.dataset.k));
+      if (next.some((k, i) => k !== order[i])) marks = null;
+      order = next;
+      draw();
+    };
+    li.addEventListener('pointermove', onMove);
+    li.addEventListener('pointerup', onEnd);
+    li.addEventListener('pointercancel', onEnd);
+  });
   function draw(focusK, dir) {
-    list.innerHTML = order.map((k, i) => `<li class="gs-row${marks ? (marks[i] ? ' ok' : ' bad') : ''}"><span class="gs-pos">${i + 1}</span><span class="gs-txt">${esc(it.items[k])}</span>
+    list.innerHTML = order.map((k, i) => `<li class="gs-row${marks ? (marks[i] ? ' ok' : ' bad') : ''}" data-k="${k}"><span class="gs-pos">${i + 1}</span><span class="gs-txt">${esc(it.items[k])}</span>
       <span class="gs-move"><button type="button" class="gs-mv" data-i="${i}" data-d="-1" aria-label="Nach oben: ${esc(it.items[k])}" ${i === 0 ? 'disabled' : ''}>▲</button><button type="button" class="gs-mv" data-i="${i}" data-d="1" aria-label="Nach unten: ${esc(it.items[k])}" ${i === order.length - 1 ? 'disabled' : ''}>▼</button></span></li>`).join('');
     $$('.gs-mv', list).forEach(b => b.addEventListener('click', () => {
       const i = Number(b.dataset.i), j = i + Number(b.dataset.d);
@@ -125,7 +171,7 @@ function orderTask(it, body) {
   return () => {
     marks = order.map((k, i) => k === i);
     draw();
-    if (marks.every(Boolean)) { $$('.gs-mv', list).forEach(b => b.disabled = true); return { ok: true, msg: esc(it.explain || 'Die Reihenfolge stimmt.') }; }
+    if (marks.every(Boolean)) { locked = true; list.classList.add('gs-locked'); $$('.gs-mv', list).forEach(b => b.disabled = true); return { ok: true, msg: esc(it.explain || 'Die Reihenfolge stimmt.') }; }
     return { ok: false, msg: `${marks.filter(m => !m).length} Karten stehen noch nicht am richtigen Platz. ${esc(it.why || '')}` };
   };
 }
