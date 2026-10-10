@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geschichts-Werkstatt · Lern-Werkstatt</title>
+<meta name="description" content="Geschichte üben: Zeitstrahl, Quellen und die Altsteinzeit, mit Animationen, Transfer-Aufgaben und Probe.">
+<link rel="icon" href="../kit/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/kit.css">
+<style>
+  /* Geschichts-Werkstatt. App prefix "gs-". Colours only via tokens; app tokens below for light and dark. */
+  :root{
+    --gs-night:#1E2747;   /* night sky and cave, dark in both themes */
+    --gs-on-night:#F4F1E6;
+    --gs-earth:#C9A57A;   /* soil, cave wall */
+    --gs-earth-soft:#EADBC6;
+    --gs-stone:#9AA0AE;   /* stone tools */
+    --gs-grass:#8DBA6A;
+    --gs-fire:#F08A24;
+    --gs-flame:#FFD15C;
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+    --gs-night:#0A0F20; --gs-on-night:#E8ECF8; --gs-earth:#8C6E4C; --gs-earth-soft:#3B3126;
+    --gs-stone:#7D8494; --gs-grass:#4F7A3A; --gs-fire:#F08A24; --gs-flame:#FFD15C } }
+  :root[data-theme="dark"]{
+    --gs-night:#0A0F20; --gs-on-night:#E8ECF8; --gs-earth:#8C6E4C; --gs-earth-soft:#3B3126;
+    --gs-stone:#7D8494; --gs-grass:#4F7A3A; --gs-fire:#F08A24; --gs-flame:#FFD15C }
+
+  .eyebrow{color:var(--subj-4)}
+  .gs-player{display:flex;flex-direction:column;gap:10px}
+  .gs-checkwrap{display:flex;flex-direction:column;gap:14px}
+  .gs-best{margin:0;color:var(--muted);font-size:var(--fs-small)}
+  .muted{color:var(--muted)}
+  .readout ul{margin:0;padding-left:20px}
+  .readout .gs-merk{background:var(--sun-soft);border-radius:var(--r-sm);padding:8px 12px;font-weight:700}
+
+  /* SVG drawing classes (stages) */
+  .gs-card-svg{fill:var(--card);stroke:var(--ink);stroke-width:2}
+  .gs-txt-svg{fill:var(--ink);font:700 15px var(--body)}
+  .gs-txt-sm{fill:var(--ink);font:700 13px var(--body)}
+  .gs-txt-xs{fill:var(--ink);font:700 11.5px var(--body)}
+  .gs-txt-mu{fill:var(--muted);font:700 13px var(--body)}
+  .gs-big-svg{fill:var(--ink);font:800 24px var(--display)}
+  .gs-night{fill:var(--gs-night)}
+  .gs-on-night{fill:var(--gs-on-night);font:700 15px var(--body)}
+  .gs-earth{fill:var(--gs-earth);stroke:var(--ink);stroke-width:2}
+  .gs-earth-soft{fill:var(--gs-earth-soft)}
+  .gs-stone{fill:var(--gs-stone);stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
+  .gs-grass{fill:var(--gs-grass)}
+  .gs-fire{fill:var(--gs-fire)}
+  .gs-flame{fill:var(--gs-flame)}
+  .gs-acc{fill:var(--accent);stroke:var(--ink);stroke-width:2}
+  .gs-acc-soft{fill:var(--accent-soft);stroke:var(--ink);stroke-width:2}
+  .gs-sun{fill:var(--sun);stroke:var(--ink);stroke-width:2}
+  .gs-sun-soft{fill:var(--sun-soft);stroke:var(--ink);stroke-width:2}
+  .gs-good{fill:var(--good-soft);stroke:var(--good);stroke-width:2.5}
+  .gs-pink{fill:var(--subj-3);stroke:var(--ink);stroke-width:2}
+  .gs-orange{fill:var(--subj-4);stroke:var(--ink);stroke-width:2}
+  .gs-green{fill:var(--subj-2);stroke:var(--ink);stroke-width:2}
+  .gs-line{stroke:var(--ink);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .gs-line-mu{stroke:var(--muted);stroke-width:2;fill:none;stroke-dasharray:5 5}
+  .gs-paint{fill:none;stroke:var(--gs-fire);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  .gs-paint-dark{fill:none;stroke:var(--gs-night);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  @keyframes gs-flicker{0%,100%{transform:scale(1,1)}50%{transform:scale(1.06,.92)}}
+  .gs-flick{transform-box:fill-box;transform-origin:50% 100%;animation:gs-flicker .5s ease-in-out infinite}
+  .gs-tap{cursor:pointer}
+
+  /* Sort task */
+  .gs-pool{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;padding:10px;border:var(--bw) dashed var(--line);border-radius:var(--r-md)}
+  .gs-pool:empty::before{content:"Alle Karten liegen in einem Kasten.";color:var(--muted);font-size:var(--fs-small);align-self:center}
+  .gs-card{border:var(--bw) solid var(--line);border-radius:var(--r-sm);background:var(--paper);padding:8px 12px;font-weight:700;font-size:16px;cursor:pointer;text-align:left}
+  .gs-card:hover{border-color:var(--accent)}
+  .gs-card[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px var(--accent-soft)}
+  .gs-card.ok{border-color:var(--good);background:var(--good-soft)}
+  .gs-card.bad{border-color:var(--bad);background:var(--bad-soft)}
+  .gs-card:disabled{cursor:default}
+  .gs-buckets{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+  .gs-bucket{border:var(--bw) solid var(--line);border-radius:var(--r-md);background:var(--plate);display:flex;flex-direction:column;min-width:0}
+  .gs-bhead{overflow-wrap:anywhere;hyphens:manual;border:0;background:none;padding:10px 12px 6px;font-weight:800;font-family:var(--display);font-size:17px;text-align:left;cursor:pointer;border-radius:var(--r-md) var(--r-md) 0 0}
+  .gs-bin{display:flex;flex-wrap:wrap;gap:6px;padding:4px 10px 12px;min-height:56px;cursor:pointer}
+  .gs-picking .gs-bucket{border-color:var(--accent)}
+  .gs-picking .gs-bin{background:var(--accent-soft);border-radius:0 0 var(--r-md) var(--r-md)}
+  .gs-why{display:block;margin-top:6px}
+  .gs-model{display:block;margin-top:8px;color:var(--ink);background:var(--plate);border-radius:var(--r-sm);padding:8px 12px}
+
+  /* Order task */
+  .gs-order{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .gs-row{display:flex;align-items:center;gap:10px;border:var(--bw) solid var(--line);border-radius:var(--r-md);background:var(--paper);padding:6px 6px 6px 10px}
+  .gs-row.ok{border-color:var(--good);background:var(--good-soft)}
+  .gs-row.bad{border-color:var(--bad);background:var(--bad-soft)}
+  .gs-pos{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);font:800 14px var(--display)}
+  .gs-txt{flex:1;min-width:0;font-weight:700}
+  .gs-move{flex:none;display:flex;gap:4px}
+  .gs-mv{width:40px;height:40px;border:var(--bw) solid var(--line);border-radius:var(--r-sm);background:var(--card);cursor:pointer;font-size:14px}
+  .gs-mv:hover:not(:disabled){border-color:var(--accent)}
+  .gs-mv:disabled{opacity:.3;cursor:default}
+
+  /* Gap text */
+  .gs-gaptext{margin:0;font-size:19px;line-height:2.3;max-width:62ch}
+  .gs-gap{display:inline-block;min-width:6.5em;margin:0 2px;padding:0 8px;border:0;border-bottom:3px solid var(--ink);border-radius:6px 6px 0 0;background:var(--plate);font:inherit;font-weight:700;line-height:1.5;cursor:pointer;vertical-align:baseline}
+  .gs-gap.sel{background:var(--sun-soft);border-bottom-color:var(--sun)}
+  .gs-gap.full{color:var(--accent)}
+  .gs-gap.ok{background:var(--good-soft);border-bottom-color:var(--good);color:var(--good)}
+  .gs-gap.bad{background:var(--bad-soft);border-bottom-color:var(--bad);color:var(--bad)}
+  .gs-words{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .gs-word{border:var(--bw) solid var(--line);border-radius:var(--r-pill);background:var(--paper);padding:6px 14px;font-weight:700;font-size:16px;cursor:pointer}
+  .gs-word:hover{border-color:var(--accent)}
+
+  /* Number and text answers */
+  .gs-num{display:inline-flex;align-items:center;gap:10px;font-weight:700}
+  .gs-field{width:140px}
+  .gs-text{width:100%;max-width:62ch;border:var(--bw) solid var(--line);border-radius:var(--r-md);background:var(--paper);padding:10px 12px;font-size:17px;resize:vertical}
+  .gs-text:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .gs-keys{margin-top:10px}
+  .gs-keys ul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px}
+  .gs-keys li{color:var(--muted);font-weight:700}
+  .gs-keys li.ok{color:var(--good)}
+
+  .gs-games{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .gs-timer{font:800 28px var(--display);color:var(--accent)}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Navigation">
+  <div class="nav-row">
+    <a class="nav-home" href="../" title="Zur Übersicht"><img class="logo" src="../kit/logo.svg" width="30" height="30" alt=""><b>Übersicht</b></a>
+    <div class="units" id="units"></div>
+  </div>
+  <div class="nav-row sub">
+    <div class="tabs" role="tablist" aria-label="Abschnitte" id="tabs" hidden></div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <main></main>
+</div>
+
+<script src="../kit/kit.js"></script>
+<script src="buehnen.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
