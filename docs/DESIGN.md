@@ -71,7 +71,7 @@ See them live in `kit/galerie.html`.
 - **Quiz** `.check` and its parts: built by `Kit.mountCheck`.
 - **Maths type** `.frac` (`<span class="frac"><span>3</span><span>4</span></span>`, `.sm` inline), `.mixed` (`.whole` + `.frac`).
 - **SVG primitives** `.shape` (outlined shape; `.on` = filled with accent; `.tap` = clickable with hover and focus ring), `.axis`, `.tick`, `.guide`, `.bead`, `.cap` (caption text), `.lbl` (big label text).
-- **Landing** `.hero`, `.subject`, `.apps`, `.app-card` (`--c` = subject colour; `.app-icon`, `.eyebrow`, `h3`, `p`, `.go-row`), `.app-card.soon`, `.foot`.
+- **Landing** `.hero`, `.subjects` (grid of subject columns), `.subject`, `.apps`, `.app-card` (`--c` = subject colour; `.app-icon`, `.eyebrow`, `h3`, `p`, `.go-row`), `.app-card.soon`, `.foot`.
 
 Visual language: rounded, flat, 2px outlines, no gradients, almost no shadows. Drawings are outlined in `--ink`, filled parts in `--accent`, markers in `--sun`. One yellow `.btn.go` per area at most.
 
