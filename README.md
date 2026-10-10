@@ -10,6 +10,7 @@ Live: <https://hashseed.github.io/tutor/>
 | --- | --- | --- |
 | Brüche (Bruch-Werkstatt) | [`brueche/`](https://hashseed.github.io/tutor/brueche/) | Brüche und Dezimalbrüche, Kapitel 1–5 |
 | Kommas (Komma-Werkstatt) | [`komma/`](https://hashseed.github.io/tutor/komma/) | Kommaregeln, Kommas in Texte setzen |
+| Kerngedanken (Kerngedanken-Werkstatt) | [`kerngedanke/`](https://hashseed.github.io/tutor/kerngedanke/) | Den Kerngedanken eines Textes finden, 100 Texte |
 | Geschichte (Geschichts-Werkstatt) | [`geschichte/`](https://hashseed.github.io/tutor/geschichte/) | Zeitstrahl, Quellen, Altsteinzeit |
 
 ## Aufbau

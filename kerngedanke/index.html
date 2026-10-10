@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kerngedanken-Werkstatt · Lern-Werkstatt</title>
+<meta name="description" content="Den Kerngedanken eines Textes finden: Text lesen und die Zusammenfassung wählen, die am besten passt.">
+<link rel="icon" href="../kit/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/kit.css">
+<style>
+  /* Kerngedanken-Werkstatt. App prefix "kg-". Colours only via tokens. */
+  .eyebrow{color:var(--subj-2)}
+  .muted{color:var(--muted)}
+
+  /* ---- Üben: text on the left, answers on the right ---- */
+  .kg-pick{display:flex;flex-direction:column;gap:12px}
+  .kg-pick .chip .kg-tick{color:var(--good)}
+  .kg-stand{margin:0;color:var(--muted)}
+  .kg-all summary{cursor:pointer;font-weight:700;color:var(--accent);width:max-content;max-width:100%}
+  .kg-all[open] summary{margin-bottom:10px}
+  .kg-all .chips{max-height:320px;overflow-y:auto;padding:2px}
+  .kg-filter{display:flex;flex-wrap:wrap;gap:8px}
+
+  .kg-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-items:start}
+  @media (min-width:960px){
+    .kg-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+  }
+  .kg-side{display:flex;flex-direction:column;gap:16px;min-width:0}
+  .kg-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+  .kg-art{font-size:var(--fs-label);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--line);border-radius:var(--r-pill);padding:2px 10px}
+  .kg-words{color:var(--muted);font-size:var(--fs-small)}
+  .kg-textcard h3{font-size:var(--fs-h3)}
+  .kg-text p{margin:0 0 .8em;font-size:19px;line-height:1.65;max-width:62ch}
+  .kg-text p:last-child{margin-bottom:0}
+
+  /* Answer options: full sentences, so left-aligned and normal weight */
+  .kg-q{margin:0;font:800 var(--fs-prompt)/1.25 var(--display)}
+  .kg-opts{display:flex;flex-direction:column;gap:10px}
+  .kg-opt{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;align-items:start;width:100%;text-align:left;border:var(--bw) solid var(--line);border-radius:var(--r-md);background:var(--paper);padding:12px 14px;font-size:17px;line-height:1.45;cursor:pointer;transition:border-color var(--t-fast),background-color var(--t-fast)}
+  .kg-opt:hover:not(:disabled){border-color:var(--accent)}
+  .kg-opt:disabled{cursor:default;color:var(--ink)}
+  .kg-letter{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--card);border:var(--bw) solid var(--ink);font:800 16px var(--display)}
+  .kg-opt .kg-why{grid-column:2;font-size:15px;color:var(--ink)}
+  .kg-opt .kg-badge{grid-column:2;justify-self:start;font-size:var(--fs-label);font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:var(--r-pill);padding:2px 10px}
+  .kg-opt.r-richtig{border-color:var(--good);background:var(--good-soft)}
+  .kg-opt.r-richtig .kg-letter{background:var(--good);border-color:var(--good);color:var(--card)}
+  .kg-opt.r-nah{border-color:var(--sun);background:var(--sun-soft)}
+  .kg-opt.r-teils,.kg-opt.r-falsch{border-color:var(--bad);background:var(--bad-soft)}
+  .kg-badge.b-richtig{background:var(--good);color:var(--card)}
+  .kg-badge.b-nah{background:var(--sun);color:var(--on-sun)}
+  .kg-badge.b-teils{background:var(--card);color:var(--bad);border:var(--bw) solid var(--bad)}
+  .kg-badge.b-falsch{background:var(--bad);color:var(--card)}
+  .kg-opt.kg-chosen{box-shadow:0 0 0 4px var(--accent-soft)}
+  .kg-shake{animation:kg-shake .35s ease-out}
+  @keyframes kg-shake{25%{transform:translateX(-6px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+  .kg-think{display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:var(--plate);border-radius:var(--r-md);padding:14px 16px}
+  .kg-think p{margin:0}
+  .readout .kg-score{font:800 26px/1.15 var(--display);margin:0}
+  .readout .kg-score.good{color:var(--good)}
+
+  /* ---- Target (Zielscheibe) ---- */
+  .kg-target{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 22px}
+  .kg-target svg{width:min(100%,260px);height:auto;flex:none}
+  .kg-legend{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none;font-size:15px;max-width:300px}
+  .kg-legend li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start}
+  .kg-legend i{width:18px;height:18px;border-radius:50%;border:var(--bw) solid var(--ink);margin-top:2px}
+  .kg-legend b{display:block}
+  .ring-0{fill:var(--good-soft);stroke:var(--good)} .kg-legend .ring-0{background:var(--good-soft);border-color:var(--good)}
+  .ring-1{fill:var(--sun-soft);stroke:var(--ink)} .kg-legend .ring-1{background:var(--sun-soft)}
+  .ring-2{fill:var(--plate);stroke:var(--ink)} .kg-legend .ring-2{background:var(--plate)}
+  .ring-3{fill:var(--bad-soft);stroke:var(--ink)} .kg-legend .ring-3{background:var(--bad-soft)}
+  .kg-ring{stroke-width:2.5}
+  .kg-dart circle{fill:var(--accent);stroke:var(--ink);stroke-width:2}
+  .kg-dart.me circle{stroke:var(--sun);stroke-width:5}
+  .kg-dart text{fill:var(--on-accent);font:800 15px var(--display);text-anchor:middle;dominant-baseline:central}
+  .kg-legend li.on b{text-decoration:underline 3px var(--sun);text-underline-offset:4px}
+
+  /* ---- So geht's: example text with marked parts ---- */
+  .kg-ex{display:flex;flex-direction:column;gap:12px;padding:14px 12px}
+  .kg-ex p{margin:0;font-size:18px;line-height:1.7}
+  .kg-ex p+p{margin-top:8px}
+  .kg-key{border-radius:6px;padding:.05em .1em;transition:background-color var(--t-med),box-shadow var(--t-med)}
+  .kg-key.on{background:var(--sun-soft);box-shadow:inset 0 -3px 0 var(--sun)}
+  .kg-det{transition:opacity var(--t-med),color var(--t-med)}
+  .kg-det.off{opacity:.38;text-decoration:line-through;text-decoration-color:var(--muted)}
+  .kg-steps{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+  .kg-steps li{border:var(--bw) solid var(--line);border-radius:var(--r-pill);padding:3px 12px;font-weight:700;font-size:15px;color:var(--muted);transition:all var(--t-med)}
+  .kg-steps li.on{border-color:var(--sun);background:var(--sun-soft);color:var(--ink)}
+  .kg-steps li.done{border-color:var(--good);color:var(--good)}
+  .kg-kern{border:var(--bw) dashed var(--line);border-radius:var(--r-md);padding:12px 14px;min-height:56px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .kg-kern.full{border-style:solid;border-color:var(--good);background:var(--good-soft)}
+  .kg-kern .lbl-k{font-size:var(--fs-label);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);width:100%}
+  .kg-piece{background:var(--card);border:var(--bw) solid var(--ink);border-radius:var(--r-sm);padding:2px 10px;font-weight:700}
+  .kg-sentence{font-size:18px;font-weight:700;margin:0}
+
+  /* Absatz-Probe */
+  .kg-paras{display:flex;flex-direction:column;gap:10px;padding:12px}
+  .kg-para{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px;align-items:center;border:var(--bw) solid var(--line);border-radius:var(--r-md);padding:10px 12px;background:var(--card);overflow:hidden;transition:border-color var(--t-med)}
+  .kg-para p{margin:0;font-size:16px;line-height:1.5}
+  .kg-para .n{font-size:var(--fs-label);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block}
+  .kg-para.scan{border-color:var(--accent)}
+  .kg-para .kg-bar{position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent);opacity:0}
+  .kg-stamp{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:800 22px var(--display);border:var(--bw) solid var(--line);color:var(--muted);transform:scale(.6);opacity:0}
+  .kg-stamp.yes{border-color:var(--good);background:var(--good-soft);color:var(--good)}
+  .kg-stamp.part{border-color:var(--sun);background:var(--sun-soft);color:var(--on-sun)}
+  .kg-stamp.no{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}
+  .kg-cand{display:flex;flex-direction:column;gap:8px}
+  .kg-cand .kg-opt{font-size:16px;padding:10px 12px}
+  .kg-cand .kg-opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+
+  /* Quiz with sentence answers */
+  .kg-check .opts{grid-template-columns:minmax(0,1fr)}
+  .kg-check .opt{font-size:17px;font-weight:400;text-align:left;align-items:flex-start;line-height:1.45}
+  .kg-mini{background:var(--plate);border-radius:var(--r-sm);padding:10px 14px;margin:0;font-size:17px;line-height:1.6}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Navigation">
+  <div class="nav-row">
+    <a class="nav-home" href="../" title="Zur Übersicht"><img class="logo" src="../kit/logo.svg" width="30" height="30" alt=""><b>Übersicht</b></a>
+    <div class="units">
+      <button type="button" class="unit" aria-pressed="true" data-part="ueben"><b>Üben</b><span>Texte lesen, Kern finden</span></button>
+      <button type="button" class="unit" aria-pressed="false" data-part="sogehts"><b>So geht's</b><span>Drei Tricks</span></button>
+    </div>
+  </div>
+  <div class="nav-row sub">
+    <div class="tabs" role="tablist" aria-label="So geht's" id="how-tabs" hidden></div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <main>
+    <section class="module" id="ueben">
+      <div class="mod-head">
+        <p class="eyebrow">Üben · Den Kerngedanken finden</p>
+        <h2>Was ist das Wichtigste?</h2>
+        <p class="lede">Lies den Text genau. Dann wähle die Zusammenfassung, die den <b>ganzen</b> Text am besten trifft. Vorsicht: Eine Antwort ist sehr nah dran, aber nicht ganz vollständig.</p>
+      </div>
+
+      <div class="card kg-pick">
+        <div class="kg-filter" id="pick-art" role="group" aria-label="Textart"></div>
+        <p class="kg-stand" id="pick-stand"></p>
+        <details class="kg-all">
+          <summary id="pick-sum">Alle Texte zeigen</summary>
+          <div class="chips" id="pick-list" aria-label="Text wählen"></div>
+        </details>
+      </div>
+
+      <div class="kg-grid">
+        <article class="card kg-textcard">
+          <div class="kg-meta"><span class="kg-art" id="t-art"></span><span class="kg-words" id="t-words"></span></div>
+          <h3 id="t-title"></h3>
+          <div class="kg-text" id="t-text"></div>
+        </article>
+
+        <div class="kg-side">
+          <div class="card">
+            <p class="kg-q" id="q-head">Welche Zusammenfassung passt am besten?</p>
+            <label class="toggle"><input type="checkbox" id="t-think"> Erst selbst überlegen, dann die Antworten sehen</label>
+            <div class="kg-think" id="t-thinkbox" hidden>
+              <p>Sag dir in einem Satz: <b>Worum geht es, und was ist das Wichtigste?</b> Dann vergleiche mit den Antworten.</p>
+              <button type="button" class="btn" id="t-show">Antworten zeigen</button>
+            </div>
+            <div class="kg-opts" id="t-opts" role="group" aria-label="Antworten"></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn ghost" id="t-tip">Tipp</button>
+            <button type="button" class="btn ghost" id="t-solve">Lösung zeigen</button>
+            <button type="button" class="btn go" id="t-next">Nächster Text →</button>
+          </div>
+          <div class="readout" id="t-out" aria-live="polite"></div>
+          <div class="stage kg-target" id="t-target" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="sogehts" hidden></section>
+  </main>
+</div>
+
+<script src="../kit/kit.js"></script>
+<script>
+const { $, $$, S, esc, shuffle, tween, wait, mountCheck, store, reducedMotion } = Kit;
+const save = store('kg');
+
+const ARTEN = { erzaehlung: 'Erzählung', sachtext: 'Sachtext', fabel: 'Fabel', bericht: 'Bericht' };
+const RING = ['richtig', 'nah', 'teils', 'falsch'];
+const RNAME = { richtig: 'Trifft den Kern', nah: 'Sehr nah dran', teils: 'Nicht ganz richtig', falsch: 'Falsch' };
+const RLONG = {
+  richtig: 'Fasst den ganzen Text zusammen.',
+  nah: 'Stimmt, aber etwas Wichtiges fehlt.',
+  teils: 'Nebensache oder ein Fehler darin.',
+  falsch: 'Passt nicht zum Text.'
+};
+const LETTERS = 'ABCD';
+let TEXTS = [];
+
+/* ================= Target (Zielscheibe) =================
+   Draws four rings: centre = richtig, then nah, teils, falsch. throwDart(letter, ring, mine) lets a dart fly in. */
+function target(host) {
+  host.innerHTML = '';
+  const svg = S('svg', { viewBox: '0 0 260 260', role: 'img', 'aria-label': 'Zielscheibe: In der Mitte trifft eine Antwort den Kern, außen ist sie falsch.' }, host);
+  const R = [30, 62, 94, 125];
+  for (let i = 3; i >= 0; i--) S('circle', { cx: 130, cy: 130, r: R[i], class: `kg-ring ring-${i}` }, svg);
+  const darts = S('g', {}, svg);
+  const ul = document.createElement('ul');
+  ul.className = 'kg-legend';
+  ul.innerHTML = RING.map((r, i) => `<li data-r="${r}"><i class="ring-${i}"></i><span><b>${i ? ['', 'Ring 1', 'Ring 2', 'Außen'][i] : 'Mitte'}: ${RNAME[r]}</b>${RLONG[r]}</span></li>`).join('');
+  host.append(ul);
+  const used = [];
+  async function throwDart(letter, ring, mine) {
+    const i = RING.indexOf(ring);
+    const r0 = i ? (R[i - 1] + R[i]) / 2 : 0;
+    // pick an angle away from the darts already in the same ring
+    let a = Math.random() * Math.PI * 2;
+    for (let k = 0; k < 12; k++) {
+      if (!used.some(u => u.i === i && Math.abs(Math.atan2(Math.sin(u.a - a), Math.cos(u.a - a))) < 0.9)) break;
+      a += 0.7;
+    }
+    used.push({ i, a });
+    const x = 130 + r0 * Math.cos(a), y = 130 + r0 * Math.sin(a);
+    const g = S('g', { class: 'kg-dart' + (mine ? ' me' : '') }, darts);
+    S('circle', { r: 12.5 }, g);
+    const t = S('text', {}, g); t.textContent = letter;
+    const sx = 300, sy = -30;
+    $$('li', ul).forEach(li => li.classList.toggle('on', li.dataset.r === ring));
+    await tween(520, p => g.setAttribute('transform', `translate(${sx + (x - sx) * p} ${sy + (y - sy) * p - Math.sin(p * Math.PI) * 40}) scale(${1.6 - .6 * p})`));
+  }
+  return { throwDart, clear() { darts.textContent = ''; used.length = 0; $$('li', ul).forEach(li => li.classList.remove('on')); } };
+}
+
+/* ================= Üben ================= */
+const Ueben = (() => {
+  let cur = null, order = [], state = 'open', tries = 0, filter = save.get('filter', 'alle'), board = null;
+  const out = $('#t-out');
+  const done = () => save.get('texte', {});
+  // A text counts as solved when the first choice was the right one.
+  const solved = r => !!r && r.first === true;
+  const list = () => TEXTS.filter(t => filter === 'alle' || t.art === filter);
+  function random() {
+    const l = list(), d = done();
+    const pool = l.filter(t => !solved(d[t.id]) && t !== cur);
+    const from = pool.length ? pool : l.filter(t => t !== cur);
+    return from.length ? from[Math.floor(Math.random() * from.length)] : l[0] || TEXTS[0];
+  }
+  function filters() {
+    const host = $('#pick-art');
+    const opts = [['alle', 'Alle'], ['erzaehlung', 'Erzählungen'], ['sachtext', 'Sachtexte'], ['fabel', 'Fabeln'], ['bericht', 'Berichte']];
+    host.innerHTML = opts.map(([v, t]) => `<button type="button" class="chip" aria-pressed="${v === filter}" data-v="${v}">${t}</button>`).join('');
+    $$('button', host).forEach(b => b.addEventListener('click', () => {
+      filter = b.dataset.v; save.set('filter', filter); filters();
+      if (!list().includes(cur)) open(random()); else picker();
+    }));
+  }
+  function picker() {
+    const host = $('#pick-list'), d = done(), l = list();
+    const n = l.filter(t => solved(d[t.id])).length;
+    $('#pick-stand').textContent = n === l.length
+      ? `Super, du hast alle ${l.length} Texte gelöst! „Nächster Text“ wählt trotzdem einen zum Wiederholen.`
+      : `Du hast ${n} von ${l.length} Texten gelöst (gleich beim ersten Versuch richtig). „Nächster Text“ wählt zufällig einen, den du noch nicht gelöst hast.`;
+    $('#pick-sum').textContent = `Alle ${l.length} Texte zeigen`;
+    host.innerHTML = '';
+    l.forEach(t => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip';
+      b.setAttribute('aria-pressed', cur && t.id === cur.id);
+      const ok = solved(d[t.id]);
+      b.innerHTML = (ok ? '<span class="kg-tick" aria-hidden="true">✓</span>' : '') + esc(t.titel) + (ok ? '<span class="sr-only"> (gelöst)</span>' : '');
+      b.addEventListener('click', () => { open(t); $('.kg-textcard').scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'auto' : 'smooth' }); });
+      host.append(b);
+    });
+  }
+  function intro() {
+    out.innerHTML = `<p><b>So gehst du vor:</b> Lies den ganzen Text. Frag dich: Worum geht es? Was ist das Wichtigste, und wie geht es aus?</p><p>Prüfe jede Antwort: Passt sie zum <b>ganzen</b> Text, nicht nur zu einem Teil? Stimmt alles, was darin steht?</p>`;
+  }
+  function open(t) {
+    cur = t; state = 'open'; tries = 0;
+    $('#t-title').textContent = t.titel;
+    $('#t-art').textContent = ARTEN[t.art];
+    $('#t-words').textContent = `${t.text.split(/\s+/).length} Wörter`;
+    $('#t-text').innerHTML = t.text.split(/\n+/).map(p => `<p>${esc(p)}</p>`).join('');
+    order = shuffle(t.antworten);
+    $('#t-solve').disabled = false; $('#t-tip').disabled = false;
+    $('#t-target').hidden = true;
+    const think = $('#t-think').checked;
+    $('#t-thinkbox').hidden = !think;
+    $('#t-opts').hidden = think;
+    renderOpts();
+    intro(); picker();
+  }
+  function renderOpts() {
+    const host = $('#t-opts');
+    host.innerHTML = '';
+    order.forEach((a, k) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'kg-opt';
+      b.innerHTML = `<span class="kg-letter" aria-hidden="true">${LETTERS[k]}</span><span><span class="sr-only">Antwort ${LETTERS[k]}: </span>${esc(a.text)}</span>`;
+      b.addEventListener('click', () => choose(k));
+      a.el = b; host.append(b);
+    });
+  }
+  function label(a, k) {
+    if (a.shown) return;
+    a.shown = true;
+    a.el.classList.add('r-' + a.art);
+    a.el.insertAdjacentHTML('beforeend', `<span class="kg-badge b-${a.art}">${RNAME[a.art]}</span><span class="kg-why">${esc(a.warum)}</span>`);
+    a.el.disabled = true;
+  }
+  function record(first) {
+    const d = done(), prev = d[cur.id];
+    if (!prev || (!prev.first && first)) d[cur.id] = { first };
+    save.set('texte', d);
+  }
+  function choose(k) {
+    if (state !== 'open') return;
+    const a = order[k];
+    tries++;
+    if (tries === 1) record(a.art === 'richtig');
+    $$('.kg-opt').forEach(b => b.classList.remove('kg-chosen'));
+    a.el.classList.add('kg-chosen');
+    label(a, k);
+    if (a.art === 'richtig') return finish(k);
+    if (!reducedMotion.matches) { a.el.classList.remove('kg-shake'); void a.el.offsetWidth; a.el.classList.add('kg-shake'); }
+    const lead = { nah: 'Knapp daneben! Diese Antwort ist sehr nah dran.', teils: 'Nicht ganz richtig.', falsch: 'Diese Antwort ist falsch.' }[a.art];
+    out.innerHTML = `<p class="kg-score">${lead}</p><p>${esc(a.warum)}</p><p class="muted">Lies den Text noch einmal und versuch eine andere Antwort.</p>`;
+    picker();
+  }
+  async function finish(k, shown) {
+    state = 'done';
+    $('#t-solve').disabled = true; $('#t-tip').disabled = true;
+    order.forEach((a, j) => label(a, j));
+    const first = tries === 1 && !shown;
+    out.innerHTML = shown
+      ? `<p class="kg-score">Die Lösung</p><p>Antwort ${LETTERS[k]} trifft den Kern. Unter jeder Antwort steht, warum sie passt oder nicht. Die Zielscheibe zeigt, wie nah jede Antwort dran ist.</p>`
+      : `<p class="kg-score good">${first ? 'Volltreffer! Gleich beim ersten Versuch.' : 'Richtig!'}</p><p>Unter jeder Antwort steht jetzt, warum sie passt oder nicht. Die Zielscheibe zeigt, wie nah jede Antwort dran ist.</p>${first ? '' : '<p class="muted">Dieser Text kommt später noch einmal dran, damit du ihn gleich beim ersten Mal schaffst.</p>'}`;
+    picker();
+    const tg = $('#t-target');
+    tg.hidden = false;
+    board = target(tg);
+    const my = cur;
+    // the wrong ones first, the centre last
+    for (const r of ['falsch', 'teils', 'nah', 'richtig']) {
+      const j = order.findIndex(a => a.art === r);
+      await wait(180);
+      if (cur !== my) return;
+      await board.throwDart(LETTERS[j], r, order[j].el.classList.contains('kg-chosen'));
+    }
+  }
+  function solve() {
+    if (state !== 'open') return;
+    if (!tries) record(false);
+    $('#t-opts').hidden = false; $('#t-thinkbox').hidden = true;
+    finish(order.findIndex(a => a.art === 'richtig'), true);
+  }
+  function tip() {
+    out.innerHTML = `<div class="tip"><p><b>Tipp:</b> ${esc(cur.tipp)}</p></div><p class="muted">Eine gute Zusammenfassung passt zu jedem Absatz des Textes. Mach die Absatz-Probe: Welche Antwort deckt alle Absätze ab?</p>`;
+  }
+  function init() {
+    filters();
+    $('#t-think').checked = save.get('think', false);
+    $('#t-think').addEventListener('change', e => {
+      save.set('think', e.target.checked);
+      if (state === 'open' && !tries) { $('#t-thinkbox').hidden = !e.target.checked; $('#t-opts').hidden = e.target.checked; }
+    });
+    $('#t-show').addEventListener('click', () => { $('#t-thinkbox').hidden = true; $('#t-opts').hidden = false; $('.kg-opt').focus(); });
+    $('#t-solve').addEventListener('click', solve);
+    $('#t-tip').addEventListener('click', tip);
+    $('#t-next').addEventListener('click', () => { open(random()); $('.kg-textcard').scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'auto' : 'smooth' }); });
+    open(random());
+  }
+  return { init };
+})();
+
+/* ================= So geht's =================
+   Example markup: [n|…] = key part found in step n, {…} = detail that is left out. */
+const EX = {
+  lena: {
+    art: 'Erzählung', titel: 'Bruno',
+    text: [
+      'Jeden Morgen ging [1|Lena] an {Herrn Krauses} Garten vorbei. Dort wohnte [2|Bruno, ein großer] {schwarzer} [2|Hund]. Wenn er bellte, rannte Lena über die Straße. [2|Sie hatte Angst vor ihm.]',
+      'Eines Tages flog Lenas {roter} Ball über den Zaun. Bruno schnappte ihn sich. {Lena wollte schon weinen.} Doch [3|Bruno trug den Ball zum Zaun und ließ ihn vor ihre Füße fallen.] {Dann wedelte er mit dem Schwanz.}',
+      'Seitdem bleibt Lena jeden Morgen am Zaun stehen und krault Bruno {hinter den Ohren}. [4|Vor ihm hat sie keine Angst mehr.]'
+    ],
+    steps: [
+      { q: 'Wer?', piece: 'Lena', say: 'Zuerst: <b>Wer</b> ist die Hauptfigur? Hier ist es Lena.' },
+      { q: 'Was ist das Problem?', piece: 'hat Angst vor dem Hund Bruno', say: 'Dann: <b>Was ist das Problem</b> am Anfang? Lena hat Angst vor Bruno.' },
+      { q: 'Was passiert?', piece: 'Bruno bringt ihr den Ball zurück', say: 'Jetzt: <b>Was passiert</b> Wichtiges? Bruno bringt den Ball zurück, statt ihn zu behalten.' },
+      { q: 'Wie geht es aus?', piece: 'keine Angst mehr', say: 'Zum Schluss: <b>Wie geht es aus?</b> Lena hat keine Angst mehr vor Bruno.' }
+    ],
+    kern: 'Lena hat Angst vor dem großen Hund Bruno, bis er ihr freundlich ihren Ball zurückbringt. Seitdem hat sie keine Angst mehr vor ihm.'
+  },
+  igel: {
+    art: 'Sachtext', titel: 'Der Igel im Winter',
+    text: [
+      'Im Herbst frisst [1|der Igel] besonders viel: {Käfer, Würmer und Schnecken.} So [2|legt er eine dicke Fettschicht an.]',
+      'Wenn es kalt wird, baut er sich ein Nest aus Laub, {zum Beispiel unter einer Hecke.} Dort rollt er sich zusammen und [3|hält Winterschlaf.]',
+      'Im Winterschlaf schlägt sein Herz nur noch {etwa fünfmal in der Minute,} und sein Körper wird kühl. So [4|braucht er kaum Energie und kommt mit seinem Fett bis zum Frühling aus.]'
+    ],
+    steps: [
+      { q: 'Worum geht es?', piece: 'der Igel im Winter', say: 'Bei einem Sachtext fragst du zuerst: <b>Worum geht es?</b> Um den Igel und wie er durch den Winter kommt.' },
+      { q: 'Absatz 1', piece: 'frisst sich Fett an', say: 'Dann suchst du das <b>Wichtigste in jedem Absatz</b>. Absatz 1: Der Igel frisst sich ein Fettpolster an.' },
+      { q: 'Absatz 2', piece: 'hält Winterschlaf', say: 'Absatz 2: Er baut ein Nest und hält Winterschlaf.' },
+      { q: 'Absatz 3', piece: 'braucht kaum Energie', say: 'Absatz 3: Im Winterschlaf braucht er so wenig Energie, dass das Fett bis zum Frühling reicht.' }
+    ],
+    kern: 'Der Igel frisst sich im Herbst ein Fettpolster an und überlebt den Winter, weil er im Winterschlaf kaum Energie braucht.'
+  }
+};
+function exHtml(paras) {
+  return paras.map(p => '<p>' + esc(p).replace(/\[(\d)\|([^\]]+)\]/g, '<span class="kg-key" data-s="$1">$2</span>').replace(/\{([^}]+)\}/g, '<span class="kg-det">$1</span>') + '</p>').join('');
+}
+const exPlain = paras => paras.map(p => p.replace(/\[\d\|([^\]]+)\]/g, '$1').replace(/[{}]/g, '')).join(' ');
+
+/* Probe candidates for the Igel text: which paragraphs each one covers (1 yes, .5 only a detail, 0 no). */
+const PROBE = [
+  { text: 'Der Igel frisst sich im Herbst Fett an und überlebt so den Winterschlaf, in dem er kaum Energie braucht.', art: 'richtig', cover: [1, 1, 1],
+    say: 'Diese Antwort passt zu <b>allen drei Absätzen</b>. Sie ist der Kerngedanke.' },
+  { text: 'Im Herbst frisst der Igel viele Käfer, Würmer und Schnecken und wird dabei richtig dick.', art: 'nah', cover: [1, 0, 0],
+    say: 'Diese Antwort passt nur zum <b>ersten Absatz</b>. Alles darin stimmt, aber der Winterschlaf fehlt. Sie ist <b>sehr nah dran</b>, aber zu eng.' },
+  { text: 'Im Winterschlaf schlägt das Herz des Igels nur noch etwa fünfmal in der Minute.', art: 'teils', cover: [0, 0, .5],
+    say: 'Diese Antwort nennt nur <b>eine Einzelheit</b> aus dem dritten Absatz. Eine Nebensache wird zur Hauptsache gemacht: <b>nicht ganz richtig</b>.' },
+  { text: 'Igel sind im Winter besonders munter und suchen unter Hecken nach Futter.', art: 'falsch', cover: [0, 0, 0],
+    say: 'Diese Antwort passt zu <b>keinem Absatz</b>. Sie behauptet sogar das Gegenteil: Der Igel schläft im Winter. Sie ist <b>falsch</b>.' }
+];
+
+/* Target example for Lena */
+const DARTS = [
+  { art: 'richtig', text: 'Lena hat Angst vor dem Hund Bruno, bis er ihr den Ball zurückbringt. Danach hat sie keine Angst mehr.',
+    say: 'Antwort A trifft <b>die Mitte</b>: Sie nennt das Problem, die Wendung und das Ende. So fasst sie den ganzen Text zusammen.' },
+  { art: 'nah', text: 'Lena hat jeden Morgen Angst vor dem großen Hund Bruno und rennt deshalb über die Straße.',
+    say: 'Antwort B ist <b>sehr nah dran</b>: Alles stimmt, aber es fehlt das Wichtigste, nämlich wie es ausgeht. Solche Antworten sind oft <b>zu eng</b>, lassen das <b>Ende weg</b> oder sind <b>zu allgemein</b>.' },
+  { art: 'teils', text: 'Bruno hat Angst vor Lena, bis sie ihm ihren roten Ball über den Zaun zuwirft.',
+    say: 'Antwort C ist <b>nicht ganz richtig</b>: Sie hat mit dem Text zu tun, aber sie verdreht ihn. Nicht Bruno hat Angst, sondern Lena. Hier landen auch Antworten, die eine <b>Nebensache</b> zur Hauptsache machen oder <b>übertreiben</b>.' },
+  { art: 'falsch', text: 'Lena wünscht sich zum Geburtstag einen eigenen Hund und einen roten Ball.',
+    say: 'Antwort D ist <b>falsch</b>: Von einem Geburtstag steht nichts im Text. Falsche Antworten behandeln ein <b>anderes Thema</b>, behaupten das <b>Gegenteil</b> oder <b>erfinden</b> etwas.' }
+];
+
+const SECTIONS = [
+  { id: 'kern', name: 'Kern finden' },
+  { id: 'probe', name: 'Absatz-Probe' },
+  { id: 'ziel', name: 'Vier Antworten' }
+];
+
+/* quiz option helper */
+const o = (text, why) => why ? { text: esc(text), why } : { text: esc(text), correct: true };
+const mini = s => `<p class="kg-mini">${esc(s)}</p>`;
+
+const CHECKS = {
+  kern: [
+    { type: 'mcq', prompt: 'Was ist der Kerngedanke eines Textes?',
+      options: [o('Das Wichtigste aus dem ganzen Text, in ein oder zwei Sätzen.'),
+        o('Der erste Satz des Textes.', 'Der erste Satz ist oft nur der Anfang. Der Kerngedanke fasst den ganzen Text zusammen.'),
+        o('Die spannendste Stelle im Text.', 'Eine spannende Stelle ist nur ein Teil des Textes. Der Kerngedanke gilt für den ganzen Text.'),
+        o('Eine Liste mit allen Einzelheiten.', 'Einzelheiten lässt du gerade weg. Der Kerngedanke ist kurz.')],
+      explain: 'Der Kerngedanke ist das Wichtigste aus dem ganzen Text, kurz gesagt.' },
+    { type: 'mcq', prompt: 'Welche Einzelheit lässt du im Kerngedanken weg?',
+      visual: mini('Tim übt jeden Tag Einrad fahren. Am Anfang fällt er ständig hin und schürft sich die Knie auf. Nach drei Wochen fährt er quer über den Schulhof, und alle klatschen.'),
+      options: [o('dass er sich die Knie aufschürft'),
+        o('dass Tim Einrad fahren übt', 'Das ist das Thema der Geschichte. Ohne das weiß man nicht, worum es geht.'),
+        o('dass er es am Ende kann', 'Das ist das Ergebnis. Wie eine Geschichte ausgeht, gehört fast immer in den Kerngedanken.')],
+      explain: 'Die aufgeschürften Knie sind eine Einzelheit. Der Kern ist: Tim übt fleißig Einrad fahren und kann es am Ende.' },
+    { type: 'mcq', prompt: 'Welcher Satz ist der Kerngedanke?',
+      visual: mini('Kraniche ziehen im Herbst nach Süden, weil sie bei uns im Winter kein Futter finden. Sie fliegen in großen Gruppen, oft in Form eines Keils. So spart jeder Vogel Kraft. Im Frühling kehren sie zurück.'),
+      options: [o('Kraniche fliegen im Herbst in großen Gruppen nach Süden, weil sie hier im Winter kein Futter finden.'),
+        o('Kraniche fliegen oft in Form eines Keils.', 'Das stimmt, ist aber nur eine Einzelheit aus der Mitte des Textes.'),
+        o('Kraniche bleiben den ganzen Winter bei uns.', 'Das ist das Gegenteil. Im Text steht, dass sie nach Süden ziehen.')],
+      explain: 'Diese Antwort sagt, worum es geht (der Zug nach Süden) und warum.' }
+  ],
+  probe: [
+    { type: 'mcq', prompt: 'Wozu machst du die Absatz-Probe?',
+      options: [o('Damit ich merke, ob eine Antwort zum ganzen Text passt.'),
+        o('Damit ich die Absätze zählen kann.', 'Zählen allein hilft nicht. Du prüfst, ob die Antwort zu jedem Absatz passt.'),
+        o('Damit ich den längsten Absatz finde.', 'Der längste Absatz ist nicht automatisch der wichtigste. Es geht um alle Absätze zusammen.')],
+      explain: 'Eine gute Zusammenfassung passt zu jedem Absatz. Die Probe zeigt dir das.' },
+    { type: 'mcq', prompt: 'Eine Antwort passt nur zum ersten Absatz. Alles darin stimmt. Was ist sie?',
+      options: [o('Sehr nah dran, aber zu eng: Ihr fehlt der Rest des Textes.'),
+        o('Der Kerngedanke, weil der Anfang am wichtigsten ist.', 'Der Anfang allein reicht nicht. Der Kerngedanke muss den ganzen Text abdecken.'),
+        o('Ganz falsch.', 'Was in ihr steht, stimmt ja. Sie ist nur unvollständig. Darum ist sie sehr nah dran, aber nicht die beste Antwort.')],
+      explain: 'Stimmt alles, fehlt aber ein großer Teil, dann ist die Antwort sehr nah dran, aber zu eng.' },
+    { type: 'mcq', prompt: 'Eine Antwort passt zu keinem einzigen Absatz. Was ist sie?',
+      options: [o('Falsch: Sie hat mit dem Text nichts zu tun oder widerspricht ihm.'),
+        o('Sehr nah dran.', 'Sehr nah dran ist eine Antwort, die zu einem Teil des Textes passt. Diese passt zu gar keinem.'),
+        o('Der Kerngedanke, nur mit anderen Worten.', 'Der Kerngedanke passt zu allen Absätzen, nicht zu keinem.')],
+      explain: 'Passt eine Antwort zu keinem Absatz, ist sie falsch.' }
+  ],
+  ziel: (() => {
+    const text = mini('Mia hat ihr Pausenbrot vergessen. Ihr Freund Emre bricht sein Brot in zwei Hälften und gibt ihr eine. Am nächsten Tag bringt Mia für Emre einen extra Apfel mit.');
+    const rings = (correct, whys) => RING.map(r => r === correct ? o(RNAME[r]) : o(RNAME[r], whys[r]));
+    return [
+      { type: 'mcq', prompt: 'Wohin gehört diese Antwort: „Emre teilt sein Pausenbrot mit Mia.“', visual: text,
+        options: rings('nah', { richtig: 'Fast! Aber es fehlt, wie es ausgeht: Mia bedankt sich am nächsten Tag mit einem Apfel.', teils: 'In dieser Antwort ist nichts falsch und keine Nebensache. Ihr fehlt nur etwas.', falsch: 'Das steht doch im Text. Die Antwort ist nur nicht vollständig.' }),
+        explain: 'Alles stimmt, aber das Ende fehlt. Darum ist sie sehr nah dran.' },
+      { type: 'mcq', prompt: 'Wohin gehört diese Antwort: „Mia bringt gern Äpfel mit in die Schule.“', visual: text,
+        options: rings('teils', { richtig: 'Der Apfel kommt vor, aber nur am Rand. Um das Teilen geht es in dieser Antwort gar nicht.', nah: 'Sehr nah dran wäre eine Antwort, die richtig ist und nur etwas weglässt. Diese macht eine Nebensache zur Hauptsache, und „gern“ steht nicht im Text.', falsch: 'Ganz falsch ist sie nicht, denn Mia bringt wirklich einen Apfel mit. Aber sie macht eine Nebensache zur Hauptsache.' }),
+        explain: 'Die Antwort hat mit dem Text zu tun, macht aber eine Nebensache zur Hauptsache.' },
+      { type: 'mcq', prompt: 'Wohin gehört diese Antwort: „Mia und Emre streiten sich um einen Apfel.“', visual: text,
+        options: rings('falsch', { richtig: 'Von einem Streit steht nichts im Text. Die beiden helfen einander.', nah: 'Sehr nah dran ist eine Antwort, in der alles stimmt. Hier stimmt fast nichts.', teils: 'Diese Antwort enthält nicht nur einen kleinen Fehler. Sie erfindet einen Streit, den es gar nicht gibt.' }),
+        explain: 'Die Antwort erfindet einen Streit. Sie ist falsch.' },
+      { type: 'mcq', prompt: 'Wohin gehört diese Antwort: „Emre hilft Mia, als sie ihr Pausenbrot vergisst, und Mia bedankt sich am nächsten Tag mit einem Apfel.“', visual: text,
+        options: rings('richtig', { nah: 'Hier fehlt nichts: Es geht ums Helfen und ums Danken, also um den ganzen Text.', teils: 'Alles in dieser Antwort stimmt, und sie nennt die Hauptsachen.', falsch: 'Vergleiche noch einmal mit dem Text: Jede Aussage dieser Antwort steht dort.' }),
+        explain: 'Diese Antwort nennt Anfang, Mitte und Ende. Sie trifft den Kern.' }
+    ];
+  })()
+};
+
+const SoGehts = (() => {
+  const host = $('#sogehts');
+  let token = 0;
+  function head(n, s, h2, lede) {
+    return `<div class="mod-head"><p class="eyebrow">So geht's ${n} · ${s.name}</p><h2>${h2}</h2><p class="lede">${lede}</p></div>`;
+  }
+  function check(id, n) {
+    const el = $('#how-check', host);
+    el.classList.add('kg-check');
+    mountCheck(el, CHECKS[id], {
+      onDone: first => { const d = save.get('sogehts', {}); d[id] = Math.max(d[id] || 0, first.filter(Boolean).length); save.set('sogehts', d); tabs(id); },
+      next: SECTIONS[n] ? { label: `Weiter: ${SECTIONS[n].name}`, go: () => Nav.how(SECTIONS[n].id) } : { label: 'Jetzt mit Texten üben', go: () => Nav.part('ueben') }
+    });
+  }
+
+  /* 1: Kern finden */
+  function kern() {
+    let ex = 'lena';
+    host.innerHTML = head(1, SECTIONS[0], 'Wie finde ich den Kerngedanken?', 'Der Kerngedanke ist das Wichtigste aus dem <b>ganzen</b> Text, in ein oder zwei Sätzen. Du findest ihn mit ein paar Fragen. Einzelheiten lässt du weg.') + `
+      <div class="lab">
+        <div class="stage">
+          <div class="kg-ex">
+            <div class="kg-meta"><span class="kg-art" id="k-art"></span><b id="k-title"></b></div>
+            <div id="k-text"></div>
+            <ul class="kg-steps" id="k-steps" aria-label="Fragen"></ul>
+            <div class="kg-kern" id="k-kern" aria-live="polite"></div>
+          </div>
+          <p class="hint">Drück auf „Abspielen“: Die Fragen markieren das Wichtige, die Einzelheiten werden blass.</p>
+        </div>
+        <div class="panel">
+          <div class="actions"><button type="button" class="btn go" id="k-play">Abspielen</button><button type="button" class="btn ghost" id="k-other">Sachtext-Beispiel</button></div>
+          <div class="readout" id="k-out" aria-live="polite"></div>
+        </div>
+      </div>
+      <div id="how-check"></div>`;
+    const say = h => { $('#k-out').innerHTML = h; };
+    function load() {
+      token++;
+      const e = EX[ex];
+      $('#k-art').textContent = e.art; $('#k-title').textContent = e.titel;
+      $('#k-text').innerHTML = exHtml(e.text);
+      $('#k-text').setAttribute('aria-label', exPlain(e.text));
+      $('#k-steps').innerHTML = e.steps.map(s => `<li>${esc(s.q)}</li>`).join('') + '<li>Einzelheiten weglassen</li>';
+      $('#k-kern').className = 'kg-kern';
+      $('#k-kern').innerHTML = '<span class="lbl-k">Kerngedanke</span>';
+      $('#k-other').textContent = ex === 'lena' ? 'Sachtext-Beispiel' : 'Erzähl-Beispiel';
+      say(e.art === 'Erzählung'
+        ? '<p>Lies die kleine Geschichte. Was ist das Wichtigste daran?</p><p>Bei einer <b>Erzählung</b> helfen die Fragen: Wer? Was ist das Problem? Was passiert? Wie geht es aus?</p>'
+        : '<p>Lies den kleinen Sachtext. Was ist das Wichtigste daran?</p><p>Bei einem <b>Sachtext</b> fragst du: Worum geht es? Was ist das Wichtigste in jedem Absatz?</p>');
+    }
+    async function play() {
+      load();
+      const my = token, e = EX[ex], lis = $$('#k-steps li');
+      await wait(500);
+      for (let i = 0; i < e.steps.length; i++) {
+        if (my !== token) return;
+        lis.forEach((l, j) => { l.classList.toggle('on', j === i); l.classList.toggle('done', j < i); });
+        $$(`#k-text .kg-key[data-s="${i + 1}"]`).forEach(k => k.classList.add('on'));
+        say(`<p>${e.steps[i].say}</p>`);
+        const piece = document.createElement('span');
+        piece.className = 'kg-piece'; piece.textContent = e.steps[i].piece;
+        $('#k-kern').append(piece);
+        await tween(380, p => { piece.style.opacity = p; piece.style.transform = `translateY(${(1 - p) * -14}px)`; });
+        await wait(1500);
+      }
+      if (my !== token) return;
+      lis.forEach((l, j) => { l.classList.toggle('on', j === lis.length - 1); l.classList.toggle('done', j < lis.length - 1); });
+      $$('#k-text .kg-det').forEach(d => d.classList.add('off'));
+      say('<p>Alles, was blass wird, sind <b>Einzelheiten</b>. Sie machen den Text lebendig, gehören aber nicht in den Kerngedanken.</p>');
+      await wait(1900);
+      if (my !== token) return;
+      lis.forEach(l => { l.classList.remove('on'); l.classList.add('done'); });
+      const k = $('#k-kern');
+      await tween(300, p => { k.style.opacity = 1 - p * .7; });
+      k.className = 'kg-kern full';
+      k.innerHTML = `<span class="lbl-k">Kerngedanke</span><p class="kg-sentence">${esc(e.kern)}</p>`;
+      await tween(300, p => { k.style.opacity = .3 + p * .7; });
+      say(`<p><b>Jetzt setzt du die Teile zu einem Satz zusammen.</b></p><p>${esc(e.kern)}</p><p class="muted">Achte darauf, dass dein Satz zum ganzen Text passt: zum Anfang, zur Mitte und zum Ende.</p>`);
+    }
+    $('#k-play').addEventListener('click', play);
+    $('#k-other').addEventListener('click', () => { ex = ex === 'lena' ? 'igel' : 'lena'; play(); });
+    load();
+    check('kern', 1);
+  }
+
+  /* 2: Absatz-Probe */
+  function probe() {
+    let pick = 0;
+    host.innerHTML = head(2, SECTIONS[1], 'Die Absatz-Probe', 'Eine gute Zusammenfassung passt zu <b>jedem</b> Absatz des Textes. Wähle eine Antwort und lass sie prüfen: Zu welchen Absätzen passt sie?') + `
+      <div class="lab">
+        <div class="stage">
+          <div class="kg-paras" id="p-paras"></div>
+          <p class="hint">Der Text „Der Igel im Winter“, Absatz für Absatz. Ein Häkchen heißt: Die Antwort passt zu diesem Absatz.</p>
+        </div>
+        <div class="panel">
+          <div class="kg-cand" id="p-cand" role="group" aria-label="Antwort zum Prüfen"></div>
+          <div class="actions"><button type="button" class="btn go" id="p-play">Probe machen</button></div>
+          <div class="readout" id="p-out" aria-live="polite"></div>
+        </div>
+      </div>
+      <div id="how-check"></div>`;
+    const paras = EX.igel.text.map(p => p.replace(/\[\d\|([^\]]+)\]/g, '$1').replace(/[{}]/g, ''));
+    $('#p-paras').innerHTML = paras.map((p, i) => `<div class="kg-para"><span class="kg-bar"></span><p><span class="n">Absatz ${i + 1}</span>${esc(p)}</p><span class="kg-stamp" aria-hidden="true"></span></div>`).join('');
+    const say = h => { $('#p-out').innerHTML = h; };
+    function cands() {
+      $('#p-cand').innerHTML = PROBE.map((c, k) => `<button type="button" class="kg-opt" aria-pressed="${k === pick}" data-k="${k}"><span class="kg-letter" aria-hidden="true">${LETTERS[k]}</span><span>${esc(c.text)}</span></button>`).join('');
+      $$('#p-cand .kg-opt').forEach(b => b.addEventListener('click', () => { pick = Number(b.dataset.k); cands(); play(); }));
+    }
+    function reset() {
+      $$('.kg-para').forEach(p => { p.classList.remove('scan'); const s = $('.kg-stamp', p); s.className = 'kg-stamp'; s.textContent = ''; s.style.opacity = 0; });
+    }
+    async function play() {
+      const my = ++token, c = PROBE[pick];
+      reset();
+      say(`<p>Prüfe Antwort ${LETTERS[pick]}: Passt sie zu Absatz 1, 2 und 3?</p>`);
+      const ps = $$('.kg-para');
+      for (let i = 0; i < ps.length; i++) {
+        if (my !== token) return;
+        const p = ps[i], bar = $('.kg-bar', p), st = $('.kg-stamp', p);
+        p.classList.add('scan');
+        await tween(500, q => { bar.style.opacity = Math.sin(q * Math.PI); bar.style.left = `calc(${q * 100}% - ${q * 6}px)`; });
+        if (my !== token) return;
+        p.classList.remove('scan');
+        const v = c.cover[i];
+        st.className = 'kg-stamp ' + (v === 1 ? 'yes' : v ? 'part' : 'no');
+        st.textContent = v === 1 ? '✓' : v ? '~' : '✗';
+        await tween(260, q => { st.style.opacity = q; st.style.transform = `scale(${1.5 - .5 * q})`; });
+        await wait(200);
+      }
+      if (my !== token) return;
+      const n = c.cover.filter(v => v === 1).length;
+      say(`<p class="kg-score${c.art === 'richtig' ? ' good' : ''}">${n} von 3 Absätzen</p><p>${c.say}</p>${c.art !== 'richtig' ? '<p class="muted">Probier auch die anderen Antworten aus.</p>' : ''}`);
+    }
+    cands();
+    say('<p>Wähle eine Antwort. Dann drück auf <b>Probe machen</b>.</p><p>Am Ende siehst du: Nur eine Antwort passt zu allen drei Absätzen.</p>');
+    $('#p-play').addEventListener('click', play);
+    check('probe', 2);
+  }
+
+  /* 3: Vier Antworten (Zielscheibe) */
+  function ziel() {
+    host.innerHTML = head(3, SECTIONS[2], 'Vier Antworten, vier Ringe', 'In jeder Übung gibt es vier Antworten. Eine trifft den Kern, eine ist <b>sehr nah dran</b>, eine ist <b>nicht ganz richtig</b>, und eine ist <b>falsch</b>. Die Zielscheibe zeigt, wie nah jede dran ist.') + `
+      <div class="lab">
+        <div class="stage">
+          <div class="kg-ex">
+            <div class="kg-meta"><span class="kg-art">Erzählung</span><b>Bruno</b></div>
+            <details><summary class="link">Text „Bruno“ lesen</summary><div class="kg-ex" style="padding:8px 0 0">${exHtml(EX.lena.text)}</div></details>
+            <div class="kg-target" id="z-target"></div>
+          </div>
+          <p class="hint">Drück auf „Abspielen“: Jede Antwort landet in ihrem Ring.</p>
+        </div>
+        <div class="panel">
+          <div class="kg-cand" id="z-cand"></div>
+          <div class="actions"><button type="button" class="btn go" id="z-play">Abspielen</button></div>
+          <div class="readout" id="z-out" aria-live="polite"></div>
+        </div>
+      </div>
+      <div id="how-check"></div>`;
+    const board = target($('#z-target'));
+    const say = h => { $('#z-out').innerHTML = h; };
+    function cands(upto) {
+      $('#z-cand').innerHTML = DARTS.map((d, k) => `<div class="kg-opt${k < upto ? ' r-' + d.art : ''}" style="cursor:default"><span class="kg-letter" aria-hidden="true">${LETTERS[k]}</span><span><span class="sr-only">Antwort ${LETTERS[k]}: </span>${esc(d.text)}</span>${k < upto ? `<span class="kg-badge b-${d.art}">${RNAME[d.art]}</span>` : ''}</div>`).join('');
+    }
+    async function play() {
+      const my = ++token;
+      board.clear(); cands(0);
+      say('<p>Schau, wo jede Antwort landet.</p>');
+      for (let k = 0; k < DARTS.length; k++) {
+        await wait(400); if (my !== token) return;
+        await board.throwDart(LETTERS[k], DARTS[k].art);
+        if (my !== token) return;
+        cands(k + 1);
+        say(`<p>${DARTS[k].say}</p>`);
+        await wait(2600);
+      }
+      if (my !== token) return;
+      say('<p><b>Merke:</b> Die schwierigste Antwort ist die, die <b>sehr nah dran</b> ist. Prüfe deshalb immer: Fehlt etwas Wichtiges? Passt sie zum ganzen Text?</p>');
+    }
+    cands(0);
+    say('<p>Hier sind vier Antworten zur Geschichte „Bruno“. Welche trifft den Kern? Überleg kurz, dann drück auf <b>Abspielen</b>.</p>');
+    $('#z-play').addEventListener('click', play);
+    check('ziel', 3);
+  }
+
+  function show(id) { token++; ({ kern, probe, ziel })[id](); }
+  function tabs(active) {
+    const t = $('#how-tabs'), d = save.get('sogehts', {});
+    t.innerHTML = SECTIONS.map((s, i) => `<button type="button" class="tab${d[s.id] === CHECKS[s.id].length ? ' done' : ''}" role="tab" aria-selected="${s.id === active}" aria-controls="sogehts" data-s="${s.id}"><span class="tab-num">${i + 1}</span><span class="tab-name">${esc(s.name)}</span></button>`).join('');
+    $$('.tab', t).forEach(b => b.addEventListener('click', () => Nav.how(b.dataset.s)));
+  }
+  return { show, tabs };
+})();
+
+/* ================= Navigation ================= */
+const Nav = (() => {
+  function part(p, sec) {
+    $$('.unit').forEach(u => u.setAttribute('aria-pressed', u.dataset.part === p));
+    $('#ueben').hidden = p !== 'ueben';
+    $('#sogehts').hidden = p !== 'sogehts';
+    $('#how-tabs').hidden = p !== 'sogehts';
+    if (p === 'sogehts') {
+      sec = sec || save.get('sec', 'kern');
+      if (!SECTIONS.some(s => s.id === sec)) sec = 'kern';
+      save.set('sec', sec);
+      SoGehts.tabs(sec); SoGehts.show(sec);
+      history.replaceState(null, '', '#' + sec);
+    } else history.replaceState(null, '', '#ueben');
+    window.scrollTo({ top: 0 });
+  }
+  return { part, how: id => part('sogehts', id) };
+})();
+
+/* ================= Start ================= */
+fetch('texte.json').then(r => { if (!r.ok) throw new Error('texte.json'); return r.json(); })
+  .then(tx => {
+    TEXTS = tx.texte;
+    $$('.unit').forEach(u => u.addEventListener('click', () => Nav.part(u.dataset.part)));
+    Ueben.init();
+    const h = location.hash.slice(1);
+    if (SECTIONS.some(s => s.id === h)) Nav.how(h);
+    else if (h === 'sogehts') Nav.part('sogehts');
+  })
+  .catch(() => {
+    $('main').innerHTML = '<div class="tip"><p><b>Die Texte konnten nicht geladen werden.</b> Öffne die Seite über einen Webserver, zum Beispiel mit <code>python3 -m http.server</code>.</p></div>';
+  });
+</script>
+</body>
+</html>

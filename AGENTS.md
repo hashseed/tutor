@@ -25,6 +25,7 @@ A family of small, interactive learning apps for a 10-year-old who attends a **G
 | Change the look of everything | [docs/DESIGN.md](docs/DESIGN.md), section "Restyling" |
 | Add or change a shared component | [docs/DESIGN.md](docs/DESIGN.md), section "Changing the kit" |
 | Work on the comma app | `komma/`: rules in `komma/regeln.json`, texts in `komma/texte.json`; new texts: [komma/werkzeug/SCHREIBEN.md](komma/werkzeug/SCHREIBEN.md), check with `python3 komma/werkzeug/pruefen.py` |
+| Work on the main-idea app | `kerngedanke/`: texts in `kerngedanke/texte.json`; seeds, guide and checker in `kerngedanke/werkzeug/` ([SCHREIBEN.md](kerngedanke/werkzeug/SCHREIBEN.md), `python3 kerngedanke/werkzeug/pruefen.py`) |
 | Work on the history app | `geschichte/`: questions in `geschichte/fragen.json` (format and Lernstoff in [geschichte/FRAGEN.md](geschichte/FRAGEN.md)), animated stages in `geschichte/buehnen.js`, engine in `geschichte/app.js` |
 | Work on the fractions app | `brueche/` and its own notes; move plan in [docs/MOVE-FRACTIONS.md](docs/MOVE-FRACTIONS.md) |
 
